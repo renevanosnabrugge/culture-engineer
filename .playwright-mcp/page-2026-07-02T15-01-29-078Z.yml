@@ -1,0 +1,194 @@
+- generic [active] [ref=f18e1]:
+  - generic [ref=f18e2]:
+    - navigation [ref=f18e3]:
+      - list [ref=f18e6]:
+        - listitem [ref=f18e7]:
+          - link [ref=f18e9] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f18e10]:
+          - generic [ref=f18e11]:
+            - group [ref=f18e12]:
+              - link " Organizer" [ref=f18e13] [cursor=pointer]:
+                - /url: /app/organizer
+                - generic [ref=f18e14]: 
+                - text: Organizer
+              - link " Speaker" [ref=f18e15] [cursor=pointer]:
+                - /url: /app/speaker
+                - generic [ref=f18e16]: 
+                - text: Speaker
+            - text:  
+        - listitem [ref=f18e17]:
+          - generic [ref=f18e19]: René van Osnabrugge
+        - listitem [ref=f18e20]:
+          - link " Overview" [ref=f18e21] [cursor=pointer]:
+            - /url: /app/speaker
+            - generic [ref=f18e22]: 
+            - text: Overview
+        - listitem [ref=f18e23]:
+          - link " Edit Profile" [ref=f18e24] [cursor=pointer]:
+            - /url: /app/speaker/profile
+            - generic [ref=f18e25]: 
+            - text: Edit Profile
+        - listitem [ref=f18e26]:
+          - link " Events" [ref=f18e27] [cursor=pointer]:
+            - /url: /app/speaker/events
+            - generic [ref=f18e28]: 
+            - text: Events
+        - listitem [ref=f18e29]:
+          - link " Sessions" [ref=f18e30] [cursor=pointer]:
+            - /url: /app/speaker/sessions
+            - generic [ref=f18e31]: 
+            - text: Sessions
+        - listitem [ref=f18e32]:
+          - link " Inbox" [ref=f18e33] [cursor=pointer]:
+            - /url: /app/speaker/inbox
+            - generic [ref=f18e34]: 
+            - text: Inbox
+        - listitem [ref=f18e35]:
+          - link "襤 Discover events" [ref=f18e36] [cursor=pointer]:
+            - /url: /app/speaker/discover
+            - generic [ref=f18e37]: 襤
+            - text: Discover events
+        - listitem [ref=f18e38]:
+          - link " Embed on your Blog" [ref=f18e39] [cursor=pointer]:
+            - /url: /app/speaker/embed
+            - generic [ref=f18e40]: 
+            - text: Embed on your Blog
+        - listitem [ref=f18e41]
+        - listitem [ref=f18e42]:
+          - link " My Public Profile" [ref=f18e43] [cursor=pointer]:
+            - /url: /ReneVanOsnabrugge/
+            - generic [ref=f18e44]: 
+            - text: My Public Profile
+        - listitem [ref=f18e45]:
+          - link " Speakers Directory " [ref=f18e46] [cursor=pointer]:
+            - /url: /speakers-directory
+            - generic [ref=f18e47]: 
+            - text: Speakers Directory
+            - generic [ref=f18e49]: 
+    - generic [ref=f18e51]:
+      - navigation [ref=f18e53]:
+        - link "" [ref=f18e55] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f18e56]: 
+        - list [ref=f18e57]:
+          - listitem [ref=f18e58]:
+            - button " Help & Support" [ref=f18e59] [cursor=pointer]:
+              - generic [ref=f18e60]: 
+              - text: Help & Support
+            - text:  
+          - listitem [ref=f18e62]:
+            - generic [ref=f18e63]:
+              - button "René van Osnabrugge (rvanosnabrugge@live.com)" [ref=f18e64] [cursor=pointer]: René van Osnabrugge (rvanosnabrugge@live.com)
+              - text: 
+      - generic [ref=f18e67]:
+        - generic [ref=f18e68]:
+          - heading "René van Osnabrugge" [level=2] [ref=f18e69]
+          - list [ref=f18e70]:
+            - listitem [ref=f18e71]:
+              - link "My Events" [ref=f18e72] [cursor=pointer]:
+                - /url: /app/speaker/events
+            - listitem [ref=f18e73]:
+              - text: /
+              - link "Visual Studio Live! Las Vegas 2024" [ref=f18e74] [cursor=pointer]:
+                - /url: /app/speaker/event/details/12328
+            - listitem [ref=f18e75]:
+              - text: /
+              - strong [ref=f18e76]: Code to Cloud with GitHub
+        - link " Public Profile" [ref=f18e79] [cursor=pointer]:
+          - /url: /ReneVanOsnabrugge/
+          - generic [ref=f18e80]: 
+          - text: Public Profile
+      - generic [ref=f18e81]:
+        - generic [ref=f18e85]:
+          - generic [ref=f18e86]:
+            - link " Event Dashboard" [ref=f18e87] [cursor=pointer]:
+              - /url: /app/speaker/event/details/12328
+              - generic [ref=f18e88]: 
+              - text: Event Dashboard
+            - button " Contact Organizer" [ref=f18e89] [cursor=pointer]:
+              - generic [ref=f18e90]: 
+              - text: Contact Organizer
+          - heading "Visual Studio Live! Las Vegas 2024 finished 2 years ago" [level=2] [ref=f18e91]:
+            - text: Visual Studio Live! Las Vegas 2024
+            - generic [ref=f18e92]: finished 2 years ago
+        - generic [ref=f18e95]:
+          - paragraph [ref=f18e96]:
+            - text: Congratulations! Your
+            - strong [ref=f18e97]: session has been accepted
+            - text: "!"
+          - link "Confirm participation" [ref=f18e99] [cursor=pointer]:
+            - /url: /app/speaker/session/confirmStatus/535570/ifgadnez
+          - paragraph
+        - generic [ref=f18e101]:
+          - generic [ref=f18e102]:
+            - generic [ref=f18e103]:
+              - generic "Editing not allowed. Contact the event organizer." [ref=f18e105]:
+                - link " Edit session":
+                  - /url: /app/speaker/session/535570
+                  - generic: 
+                  - text: Edit session
+              - heading "Code to Cloud with GitHub" [level=3] [ref=f18e106]
+            - generic [ref=f18e107]:
+              - heading "Description" [level=4] [ref=f18e108]
+              - paragraph [ref=f18e109]: Join us for a full-day hands-on workshop exploring the exciting world of GitHub and Azure. This day
+              - table [ref=f18e110]:
+                - rowgroup [ref=f18e111]:
+                  - row "Session format Hands-On Lab (8-Hour)" [ref=f18e112]:
+                    - rowheader "Session format" [ref=f18e113]
+                    - cell "Hands-On Lab (8-Hour)" [ref=f18e114]:
+                      - paragraph [ref=f18e115]: Hands-On Lab (8-Hour)
+                  - row "Track Modern Software Engineering" [ref=f18e116]:
+                    - rowheader "Track" [ref=f18e117]
+                    - cell "Modern Software Engineering" [ref=f18e118]:
+                      - paragraph [ref=f18e119]: Modern Software Engineering
+                  - row "Level Intermediate / Advanced" [ref=f18e120]:
+                    - rowheader "Level" [ref=f18e121]
+                    - cell "Intermediate / Advanced" [ref=f18e122]:
+                      - paragraph [ref=f18e123]: Intermediate / Advanced
+                  - row "Language English" [ref=f18e124]:
+                    - rowheader "Language" [ref=f18e125]
+                    - cell "English" [ref=f18e126]:
+                      - paragraph [ref=f18e127]: English
+                  - 'row "Learning Objective 1: Learn fast first-time commit and automation process with GitHub and Azure." [ref=f18e128]':
+                    - rowheader "Learning Objective 1:" [ref=f18e129]
+                    - cell "Learn fast first-time commit and automation process with GitHub and Azure." [ref=f18e130]:
+                      - paragraph [ref=f18e131]: Learn fast first-time commit and automation process with GitHub and Azure.
+                  - 'row "Learning Objective 2: Familiarize with legacy code using CodeSpaces and Co-Pilot." [ref=f18e132]':
+                    - rowheader "Learning Objective 2:" [ref=f18e133]
+                    - cell "Familiarize with legacy code using CodeSpaces and Co-Pilot." [ref=f18e134]:
+                      - paragraph [ref=f18e135]: Familiarize with legacy code using CodeSpaces and Co-Pilot.
+                  - 'row "Learning Objective 3: Understand secure development practices and deploy application to Azure with GitHub integration" [ref=f18e136]':
+                    - rowheader "Learning Objective 3:" [ref=f18e137]
+                    - cell "Understand secure development practices and deploy application to Azure with GitHub integration" [ref=f18e138]:
+                      - paragraph [ref=f18e139]: Understand secure development practices and deploy application to Azure with GitHub integration
+              - heading "Additional notes" [level=4] [ref=f18e140]
+              - paragraph [ref=f18e141]:
+                - text: This is with a co-speaker Marcel de vries
+                - link "vriesmarcel@hotmail.com" [ref=f18e142] [cursor=pointer]:
+                  - /url: mailto:vriesmarcel@hotmail.com
+                - text: or roy cornelissen
+                - link "roy_cornelissen@hotmail.com" [ref=f18e143] [cursor=pointer]:
+                  - /url: mailto:roy_cornelissen@hotmail.com
+              - heading "Submitted" [level=4] [ref=f18e144]
+              - paragraph [ref=f18e145]: 29 Aug 2023 7:48 am
+          - generic [ref=f18e149]:
+            - generic [ref=f18e150]: SESSION OWNER
+            - heading "René van Osnabrugge" [level=3] [ref=f18e151]:
+              - strong [ref=f18e152]: René van Osnabrugge
+            - paragraph [ref=f18e153]: CTO @ Xpirit
+            - generic [ref=f18e154]:
+              - text: As CTO of Xpirit Netherlands, Rene helps organizations and leadership teams build an engineering culture that allows them to build, deliver, and operate software in a secure and compliant way. With a focus on both the technical and cultural aspects of a company, Rene helps clients transform their work processes, operating model, and culture to become high-speed, innovative, and productive.
+              - text: Rene is passionate about learning new technologies and exploring the cultural and people aspects of companies. He believes that by focusing on both technical implementation and cultural development, we can drive our industry forward. He loves sharing his knowledge and insights at conferences and training events.
+              - text: As a frequently asked speaker at well-known industry events like Microsoft TechDays, Techorama, AllDayDevOps, NDC, and Visual Studio Live!, Rene is known for his expertise in Microsoft Azure, DevOps and DevOps Culture. In addition to being a Microsoft MVP since 2012, he is also the founder of the popular community event Global DevOps Bootcamp.
+            - paragraph [ref=f18e155]:
+              - generic [ref=f18e156]: 
+              - link "rvanosnabrugge@live.com" [ref=f18e157] [cursor=pointer]:
+                - /url: mailto:rvanosnabrugge@live.com
+  - text:   
+  - generic [ref=f18e161]:
+    - generic [ref=f18e162] [cursor=pointer]: ✖
+    - generic [ref=f18e163]:
+      - text: We use cookies to improve your browsing experience.
+      - link "Details" [ref=f18e164] [cursor=pointer]:
+        - /url: /privacy-policy/

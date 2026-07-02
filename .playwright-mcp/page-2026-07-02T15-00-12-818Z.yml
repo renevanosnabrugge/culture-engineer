@@ -1,0 +1,226 @@
+- generic [active] [ref=f10e1]:
+  - generic [ref=f10e2]:
+    - navigation [ref=f10e3]:
+      - list [ref=f10e6]:
+        - listitem [ref=f10e7]:
+          - link [ref=f10e9] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f10e10]:
+          - generic [ref=f10e11]:
+            - group [ref=f10e12]:
+              - link " Organizer" [ref=f10e13] [cursor=pointer]:
+                - /url: /app/organizer
+                - generic [ref=f10e14]: 
+                - text: Organizer
+              - link " Speaker" [ref=f10e15] [cursor=pointer]:
+                - /url: /app/speaker
+                - generic [ref=f10e16]: 
+                - text: Speaker
+            - text:  
+        - listitem [ref=f10e17]:
+          - generic [ref=f10e19]: René van Osnabrugge
+        - listitem [ref=f10e20]:
+          - link " Overview" [ref=f10e21] [cursor=pointer]:
+            - /url: /app/speaker
+            - generic [ref=f10e22]: 
+            - text: Overview
+        - listitem [ref=f10e23]:
+          - link " Edit Profile" [ref=f10e24] [cursor=pointer]:
+            - /url: /app/speaker/profile
+            - generic [ref=f10e25]: 
+            - text: Edit Profile
+        - listitem [ref=f10e26]:
+          - link " Events" [ref=f10e27] [cursor=pointer]:
+            - /url: /app/speaker/events
+            - generic [ref=f10e28]: 
+            - text: Events
+        - listitem [ref=f10e29]:
+          - link " Sessions" [ref=f10e30] [cursor=pointer]:
+            - /url: /app/speaker/sessions
+            - generic [ref=f10e31]: 
+            - text: Sessions
+        - listitem [ref=f10e32]:
+          - link " Inbox" [ref=f10e33] [cursor=pointer]:
+            - /url: /app/speaker/inbox
+            - generic [ref=f10e34]: 
+            - text: Inbox
+        - listitem [ref=f10e35]:
+          - link "襤 Discover events" [ref=f10e36] [cursor=pointer]:
+            - /url: /app/speaker/discover
+            - generic [ref=f10e37]: 襤
+            - text: Discover events
+        - listitem [ref=f10e38]:
+          - link " Embed on your Blog" [ref=f10e39] [cursor=pointer]:
+            - /url: /app/speaker/embed
+            - generic [ref=f10e40]: 
+            - text: Embed on your Blog
+        - listitem [ref=f10e41]
+        - listitem [ref=f10e42]:
+          - link " My Public Profile" [ref=f10e43] [cursor=pointer]:
+            - /url: /ReneVanOsnabrugge/
+            - generic [ref=f10e44]: 
+            - text: My Public Profile
+        - listitem [ref=f10e45]:
+          - link " Speakers Directory " [ref=f10e46] [cursor=pointer]:
+            - /url: /speakers-directory
+            - generic [ref=f10e47]: 
+            - text: Speakers Directory
+            - generic [ref=f10e49]: 
+    - generic [ref=f10e51]:
+      - navigation [ref=f10e53]:
+        - link "" [ref=f10e55] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f10e56]: 
+        - list [ref=f10e57]:
+          - listitem [ref=f10e58]:
+            - button " Help & Support" [ref=f10e59] [cursor=pointer]:
+              - generic [ref=f10e60]: 
+              - text: Help & Support
+            - text:  
+          - listitem [ref=f10e62]:
+            - generic [ref=f10e63]:
+              - button "René van Osnabrugge (rvanosnabrugge@live.com)" [ref=f10e64] [cursor=pointer]: René van Osnabrugge (rvanosnabrugge@live.com)
+              - text: 
+      - generic [ref=f10e67]:
+        - generic [ref=f10e68]:
+          - heading "René van Osnabrugge" [level=2] [ref=f10e69]
+          - list [ref=f10e70]:
+            - listitem [ref=f10e71]:
+              - link "My Events" [ref=f10e72] [cursor=pointer]:
+                - /url: /app/speaker/events
+            - listitem [ref=f10e73]:
+              - text: /
+              - link "Techorama 2024 Belgium" [ref=f10e74] [cursor=pointer]:
+                - /url: /app/speaker/event/details/13545
+            - listitem [ref=f10e75]:
+              - text: /
+              - strong [ref=f10e76]: "The Fin-tastic Way to Boost Your Cloud ROI: An Introduction to FinOps on Azure"
+        - link " Public Profile" [ref=f10e79] [cursor=pointer]:
+          - /url: /ReneVanOsnabrugge/
+          - generic [ref=f10e80]: 
+          - text: Public Profile
+      - generic [ref=f10e81]:
+        - generic [ref=f10e85]:
+          - generic [ref=f10e86]:
+            - link " Event Dashboard" [ref=f10e87] [cursor=pointer]:
+              - /url: /app/speaker/event/details/13545
+              - generic [ref=f10e88]: 
+              - text: Event Dashboard
+            - button " Contact Organizer" [ref=f10e89] [cursor=pointer]:
+              - generic [ref=f10e90]: 
+              - text: Contact Organizer
+          - heading "Techorama 2024 Belgium finished 2 years ago" [level=2] [ref=f10e91]:
+            - text: Techorama 2024 Belgium
+            - generic [ref=f10e92]: finished 2 years ago
+        - generic [ref=f10e95]:
+          - paragraph [ref=f10e96]:
+            - text: Congratulations! Your
+            - strong [ref=f10e97]: session has been accepted
+            - text: "!"
+          - generic [ref=f10e98]: You have confirmed your participation on 12 Feb 2024.
+          - paragraph
+        - generic [ref=f10e99]:
+          - generic [ref=f10e100]:
+            - generic [ref=f10e101]:
+              - generic [ref=f10e102]:
+                - link " Edit session" [ref=f10e104] [cursor=pointer]:
+                  - /url: /app/speaker/session/edit/605422
+                  - generic [ref=f10e105]: 
+                  - text: Edit session
+                - 'heading "The Fin-tastic Way to Boost Your Cloud ROI: An Introduction to FinOps on Azure" [level=3] [ref=f10e106]'
+              - generic [ref=f10e107]:
+                - generic [ref=f10e108]:
+                  - generic [ref=f10e109]:
+                    - generic [ref=f10e110]: 
+                    - generic [ref=f10e111]:
+                      - text: Tuesday, 7 May 2024 9:45 am - 10:45 am (60 minutes)
+                      - generic [ref=f10e112]: in Romance Daylight Time (UTC+02:00)
+                  - text: 
+                  - generic [ref=f10e113]:
+                    - generic [ref=f10e114]: 
+                    - generic [ref=f10e115]: Room 14
+                - heading "Description" [level=4] [ref=f10e116]
+                - paragraph [ref=f10e117]:
+                  - text: Are you tired of overspending on cloud costs? Want to optimize your Azure spending and boost your ROI? Look no further than FinOps! In this session, we'll dive into the basics of FinOps and why it's becoming increasingly important for organizations of all sizes. We'll also explore the specific tools and features available on the Azure platform that can help you implement FinOps successfully, including cost management, budgeting, and optimization tools.
+                  - text: Whether you're new to FinOps or have experience in the field, this session will provide valuable insights and practical tips for maximizing your cloud savings. So join me in this session and learn how to become a FinOps pro on Azure!
+                - table [ref=f10e118]:
+                  - rowgroup [ref=f10e119]:
+                    - row "Session format Session" [ref=f10e120]:
+                      - rowheader "Session format" [ref=f10e121]
+                      - cell "Session" [ref=f10e122]:
+                        - paragraph [ref=f10e123]: Session
+                    - row "Level 300" [ref=f10e124]:
+                      - rowheader "Level" [ref=f10e125]
+                      - cell "300" [ref=f10e126]:
+                        - paragraph [ref=f10e127]: "300"
+                    - row "Tags finops,cloud,azure" [ref=f10e128]:
+                      - rowheader "Tags" [ref=f10e129]
+                      - cell "finops,cloud,azure" [ref=f10e130]:
+                        - paragraph [ref=f10e131]: finops,cloud,azure
+                    - row "Track Cloud Services" [ref=f10e132]:
+                      - rowheader "Track" [ref=f10e133]
+                      - cell "Cloud Services" [ref=f10e134]:
+                        - paragraph [ref=f10e135]: Cloud Services
+                - heading "Submitted" [level=4] [ref=f10e136]
+                - paragraph [ref=f10e137]: 12 Jan 2024 2:08 pm
+            - generic [ref=f10e141]:
+              - generic [ref=f10e142]: SESSION OWNER
+              - heading "René van Osnabrugge" [level=3] [ref=f10e143]:
+                - strong [ref=f10e144]: René van Osnabrugge
+              - paragraph [ref=f10e145]: Chief Consulting Excellence @ Xebia
+              - generic [ref=f10e146]:
+                - text: As CCE of Xebia Microsoft Services, Rene enables consultants to help organizations and leadership teams to build an engineering culture that allows them to build, deliver, and operate software in a secure and compliant way. With a focus on both the technical and cultural aspects of a company, Rene helps clients transform their work processes, operating model, and culture to become high-speed, innovative, and productive.
+                - text: Rene is passionate about learning new technologies and exploring the cultural and people aspects of companies. He believes that by focusing on both technical implementation and cultural development, we can drive our industry forward. He loves sharing his knowledge and insights at conferences and training events.
+                - text: As a frequently asked speaker at well-known industry events like GitHub Universe, NDC, Techorama, AllDayDevOps, NDC, and Visual Studio Live!, Rene is known for his expertise in Microsoft Azure, DevOps and DevOps Culture. In addition to being a Microsoft MVP since 2012, he is also the founder of the popular community event Global DevOps Bootcamp.
+              - paragraph [ref=f10e147]:
+                - generic [ref=f10e148]: 
+                - link "rvanosnabrugge@live.com" [ref=f10e149] [cursor=pointer]:
+                  - /url: mailto:rvanosnabrugge@live.com
+              - table [ref=f10e150]:
+                - rowgroup [ref=f10e151]:
+                  - row "Where are you travelling from? Netherlands" [ref=f10e152]:
+                    - rowheader "Where are you travelling from?" [ref=f10e153]
+                    - cell "Netherlands" [ref=f10e154]:
+                      - paragraph [ref=f10e155]: Netherlands
+              - paragraph [ref=f10e156]:
+                - link " Edit speaker" [ref=f10e157] [cursor=pointer]:
+                  - /url: /app/speaker/events/speaker/edit/13545/1762de2b-6694-473d-aa06-4c53a9368c8c
+                  - generic [ref=f10e158]: 
+                  - text: Edit speaker
+          - generic [ref=f10e160]:
+            - generic [ref=f10e161]:
+              - heading "Feedback" [level=3] [ref=f10e163]
+              - generic [ref=f10e165]:
+                - generic [ref=f10e166]:
+                  - paragraph [ref=f10e167]: Show a QR code at the end of your session (on the last slide or during Q&A). Attendees can scan it to give feedback to you and the event organizers.
+                  - link " More details on Feedback" [ref=f10e168] [cursor=pointer]:
+                    - /url: /playbook/feedback-as-speaker/
+                    - generic [ref=f10e170]: 
+                    - text: More details on Feedback
+                - button " Download session QR code" [ref=f10e172] [cursor=pointer]:
+                  - generic [ref=f10e173]: 
+                  - text: Download session QR code
+            - generic [ref=f10e174]:
+              - heading "Share that you're speaking!" [level=3] [ref=f10e176]
+              - generic [ref=f10e178]:
+                - iframe [ref=f10e180]:
+                  - iframe [ref=f11e4]:
+                    - generic [ref=f13e3]:
+                      - generic [ref=f13e4]:
+                        - 'heading "The Fin-tastic Way to Boost Your Cloud ROI: An Introduction to FinOps on Azure" [level=2] [ref=f13e5]'
+                        - paragraph [ref=f13e6]: Tue, 07/05/2024 09:45 — Antwerpen, Belgium
+                      - heading "René van Osnabrugge" [level=3] [ref=f13e10]
+                - generic [ref=f10e181]:
+                  - paragraph [ref=f10e182]: Organizers have prepared a banner you can share on social media!
+                  - paragraph [ref=f10e183]: Download the image and show that you're proud to be part of Techorama 2024 Belgium!
+                  - link " Generate and download" [ref=f10e184] [cursor=pointer]:
+                    - /url: /app/banner-download/13545/605422?sig=qcay-tfet-nujl-nabheuf-sq-zawten-ptal-hxewja
+                    - generic [ref=f10e185]: 
+                    - text: Generate and download
+  - text:   
+  - generic [ref=f10e187]:
+    - generic [ref=f10e188] [cursor=pointer]: ✖
+    - generic [ref=f10e189]:
+      - text: We use cookies to improve your browsing experience.
+      - link "Details" [ref=f10e190] [cursor=pointer]:
+        - /url: /privacy-policy/
