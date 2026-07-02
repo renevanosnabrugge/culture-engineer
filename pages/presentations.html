@@ -12,46 +12,12 @@ permalink: /presentations/
   <div class="page-body">
     <div class="tab-container">
       <div class="tabs" role="tablist">
-        <button class="tab-btn active" data-tab="past" role="tab" aria-selected="true">Past Talks</button>
-        <button class="tab-btn" data-tab="upcoming" role="tab" aria-selected="false">Upcoming Events</button>
-      </div>
-
-      <!-- PAST TALKS -->
-      <div id="tab-past" class="tab-panel active">
-        {% assign past = site.data.presentations | where: "upcoming", false | sort: "date" | reverse %}
-        {% if past.size > 0 %}
-        {% for talk in past %}
-        <div class="pres-item">
-          <div class="pres-date">
-            <span class="day">{{ talk.date | date: "%-d" }}</span>
-            <span class="month">{{ talk.date | date: "%b" }}</span>
-            <span class="year">{{ talk.date | date: "%Y" }}</span>
-          </div>
-          <div class="pres-info">
-            <h3>{{ talk.event }}</h3>
-            <p class="pres-event">📍 {{ talk.location }}</p>
-            <p class="pres-talk">{{ talk.title }}</p>
-          </div>
-          <div class="pres-actions">
-            {% if talk.slides %}
-            <a href="{{ talk.slides }}" class="btn btn-outline-blue btn--sm" target="_blank" rel="noopener noreferrer">Slides</a>
-            {% endif %}
-            {% if talk.video %}
-            <a href="{{ talk.video }}" class="btn btn-outline-blue btn--sm" target="_blank" rel="noopener noreferrer">Video</a>
-            {% endif %}
-            {% unless talk.slides or talk.video %}
-            <span class="btn btn-outline btn--sm" style="opacity:.4;cursor:default">Details &rarr;</span>
-            {% endunless %}
-          </div>
-        </div>
-        {% endfor %}
-        {% else %}
-        <p style="color:var(--slate-400)">No past talks recorded yet.</p>
-        {% endif %}
+        <button class="tab-btn active" data-tab="upcoming" role="tab" aria-selected="true">Upcoming Events</button>
+        <button class="tab-btn" data-tab="past" role="tab" aria-selected="false">Past Talks</button>
       </div>
 
       <!-- UPCOMING EVENTS -->
-      <div id="tab-upcoming" class="tab-panel">
+      <div id="tab-upcoming" class="tab-panel active">
         {% assign upcoming = site.data.presentations | where: "upcoming", true | sort: "date" %}
         {% if upcoming.size > 0 %}
         {% for talk in upcoming %}
@@ -79,69 +45,46 @@ permalink: /presentations/
         <p style="color:var(--slate-400)">No upcoming talks scheduled. Check back soon!</p>
         {% endif %}
       </div>
-    </div>
-  </div>
-</article>
-  <header class="page-header">
-    <h1 class="page-title">Presentations &amp; Conferences</h1>
-    <p class="page-subtitle">A selection of talks, workshops, and keynotes delivered at conferences around the world.</p>
-  </header>
 
-  <div class="page-body">
-
-    <!-- UPCOMING TALKS -->
-    {% assign upcoming = site.data.presentations | where: "upcoming", true | sort: "date" %}
-    {% if upcoming.size > 0 %}
-    <section class="presentations-year-section">
-      <h2 class="year-heading">📅 Upcoming</h2>
-      {% for talk in upcoming %}
-      <div class="presentation-item">
-        <div class="presentation-date-badge">{{ talk.date | date: "%b %d" }}<br>{{ talk.date | date: "%Y" }}</div>
-        <div class="presentation-info">
-          <h3 class="presentation-title">{{ talk.title }}</h3>
-          <p class="presentation-event">{{ talk.event }} — {{ talk.location }}</p>
-          <div class="presentation-links">
-            {% if talk.registration %}
-            <a href="{{ talk.registration }}" class="btn btn-primary btn--sm" target="_blank" rel="noopener noreferrer">Register</a>
-            {% endif %}
+      <!-- PAST TALKS -->
+      <div id="tab-past" class="tab-panel">
+        {% assign past = site.data.presentations | where: "upcoming", false | sort: "date" | reverse %}
+        {% if past.size > 0 %}
+        {% for talk in past %}
+        <div class="pres-item">
+          <div class="pres-date">
+            <span class="day">{{ talk.date | date: "%-d" }}</span>
+            <span class="month">{{ talk.date | date: "%b" }}</span>
+            <span class="year">{{ talk.date | date: "%Y" }}</span>
           </div>
-        </div>
-        <span class="upcoming-badge">Upcoming</span>
-      </div>
-      {% endfor %}
-    </section>
-    {% endif %}
-
-    <!-- PAST TALKS GROUPED BY YEAR -->
-    {% assign past = site.data.presentations | where: "upcoming", false | sort: "date" | reverse %}
-    {% assign years = past | map: "year" | uniq %}
-
-    {% for year in years %}
-    <section class="presentations-year-section">
-      <h2 class="year-heading">{{ year }}</h2>
-      {% assign year_talks = past | where: "year", year %}
-      {% for talk in year_talks %}
-      <div class="presentation-item">
-        <div class="presentation-date-badge">{{ talk.date | date: "%b %d" }}<br>{{ talk.date | date: "%Y" }}</div>
-        <div class="presentation-info">
-          <h3 class="presentation-title">{{ talk.title }}</h3>
-          <p class="presentation-event">{{ talk.event }} — {{ talk.location }}</p>
-          {% if talk.description %}
-          <p class="presentation-event">{{ talk.description }}</p>
-          {% endif %}
-          <div class="presentation-links">
+          <div class="pres-info">
+            <h3>
+              {{ talk.event }}
+              {% if talk.slides or talk.download %}<span class="attachment-chip" title="Slides available">📎</span>{% endif %}
+            </h3>
+            <p class="pres-event">📍 {{ talk.location }}</p>
+            <p class="pres-talk">{{ talk.title }}</p>
+          </div>
+          <div class="pres-actions">
             {% if talk.slides %}
-            <a href="{{ talk.slides }}" class="btn btn-outline btn--sm presentation-link" target="_blank" rel="noopener noreferrer">Slides</a>
+            <a href="{{ talk.slides }}" class="btn btn-outline-blue btn--sm" target="_blank" rel="noopener noreferrer">📎 Slides</a>
+            {% endif %}
+            {% if talk.download %}
+            <a href="{{ talk.download }}" class="btn btn-outline-blue btn--sm" target="_blank" rel="noopener noreferrer">📎 Download</a>
             {% endif %}
             {% if talk.video %}
-            <a href="{{ talk.video }}" class="btn btn-outline btn--sm presentation-link" target="_blank" rel="noopener noreferrer">Video</a>
+            <a href="{{ talk.video }}" class="btn btn-outline-blue btn--sm" target="_blank" rel="noopener noreferrer">▶ Video</a>
             {% endif %}
+            {% unless talk.slides or talk.download or talk.video %}
+            <span class="btn btn-outline btn--sm" style="opacity:.4;cursor:default">No materials yet</span>
+            {% endunless %}
           </div>
         </div>
+        {% endfor %}
+        {% else %}
+        <p style="color:var(--slate-400)">No past talks recorded yet.</p>
+        {% endif %}
       </div>
-      {% endfor %}
-    </section>
-    {% endfor %}
-
+    </div>
   </div>
 </article>

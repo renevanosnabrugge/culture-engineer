@@ -3,6 +3,7 @@
   publication: "InfoQ"
   date: "2026-03-15"
   url: "https://www.infoq.com/articles/dora-metrics-software-delivery"
+  download: "/assets/downloads/dora-metrics-measuring-what-matters.pdf"
   summary: >
     A deep dive into the four key DORA metrics — deployment frequency, lead time for changes,
     change failure rate, and time to restore service — and how teams can use them to drive
@@ -41,6 +42,7 @@
   publication: "Microsoft Tech Community"
   date: "2026-01-10"
   url: "https://techcommunity.microsoft.com/platform-engineering-whitepaper"
+  download: "/assets/downloads/platform-engineering-next-wave-devops.pdf"
   summary: >
     A comprehensive whitepaper exploring the evolution from DevOps to Platform Engineering,
     including reference architectures, toolchain recommendations, and adoption patterns.

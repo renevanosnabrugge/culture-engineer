@@ -13,6 +13,7 @@
   year: 2026
   upcoming: false
   url: "https://devnetnoord.nl/"
+  slides: "https://speakerdeck.com/renevanosnabrugge/rebuild-or-refactor-devcampnoord-2026"
   description: >
     Sooner or later, you will encounter the question: Rebuild or Refactor? Software
     that has been in use for several years will inevitably cause issues. Maybe the
@@ -33,6 +34,7 @@
   year: 2024
   upcoming: false
   url: "https://techorama.nl/"
+  slides: "https://speakerdeck.com/renevanosnabrugge/rebuild-or-refactor-techorama-nl-2024"
   description: >
     Sooner or later, you will encounter the question: Rebuild or Refactor? Software
     that has been in use for several years will inevitably cause issues. Maybe the
@@ -51,6 +53,7 @@
   year: 2024
   upcoming: false
   url: "https://techorama.be/"
+  slides: "https://speakerdeck.com/renevanosnabrugge/fintastic-finops-azure-techorama-be-2024"
   description: >
     Are you tired of overspending on cloud costs? Want to optimize your Azure spending
     and boost your ROI? Look no further than FinOps! In this session, we dive into the
@@ -182,6 +185,7 @@
   year: 2023
   upcoming: false
   url: "https://techorama.be/"
+  slides: "https://speakerdeck.com/renevanosnabrugge/mind-matters-devops-mindset-techorama-2023"
   description: >
     While hard skills like continuous delivery and automated testing are important for
     practicing DevOps successfully, they are not the only factors that determine success.

@@ -19,12 +19,15 @@ permalink: /publications/
     <div class="pub-list" style="margin-bottom:3rem;">
       {% for pub in articles %}
       <div class="pub-item">
-        <div class="pub-thumb">📄</div>
+        <div class="pub-thumb">{% if pub.download %}📎{% else %}📄{% endif %}</div>
         <div>
           <p class="pub-type-date">Article &mdash; {{ pub.date | date: "%B %Y" }}</p>
           <h3 class="pub-title">{% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
           <p class="pub-summary">{{ pub.summary }}</p>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem;">
           {% if pub.url %}<a href="{{ pub.url }}" class="read-more" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>{% endif %}
+          {% if pub.download %}<a href="{{ pub.download }}" class="read-more" target="_blank" rel="noopener noreferrer">📎 Download PDF</a>{% endif %}
+          </div>
         </div>
       </div>
       {% endfor %}
@@ -36,12 +39,15 @@ permalink: /publications/
     <div class="pub-list" style="margin-bottom:3rem;">
       {% for pub in whitepapers %}
       <div class="pub-item">
-        <div class="pub-thumb">📋</div>
+        <div class="pub-thumb">{% if pub.download %}📎{% else %}📋{% endif %}</div>
         <div>
           <p class="pub-type-date">Whitepaper &mdash; {{ pub.date | date: "%B %Y" }}</p>
           <h3 class="pub-title">{% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
           <p class="pub-summary">{{ pub.summary }}</p>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.5rem;">
           {% if pub.url %}<a href="{{ pub.url }}" class="read-more" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>{% endif %}
+          {% if pub.download %}<a href="{{ pub.download }}" class="read-more" target="_blank" rel="noopener noreferrer">📎 Download PDF</a>{% endif %}
+          </div>
         </div>
       </div>
       {% endfor %}
@@ -66,8 +72,6 @@ permalink: /publications/
     {% endif %}
   </div>
 </article>
-  <header class="page-header">
-    <h1 class="page-title">Publications</h1>
     <p class="page-subtitle">Articles, whitepapers, and other written work on software architecture, DevOps, and engineering culture.</p>
   </header>
 
