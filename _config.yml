@@ -1,0 +1,61 @@
+title: Culture Engineers
+description: Architect | Speaker | Author — Building better engineering cultures
+url: ""
+baseurl: ""
+
+author:
+  name: Rene van Osnabrugge
+  title: Enterprise Architect | Speaker | Author
+  email: info@cultureengineers.io
+  linkedin: https://www.linkedin.com/in/renevanosnabrugge
+  twitter: https://twitter.com/renevanosnabrugge
+  github: https://github.com/renevanosnabrugge
+  bio: >
+    Passionate software architect and culture engineer, helping teams build
+    better products and healthier engineering cultures through continuous
+    improvement, DevOps practices, and people-first leadership.
+  photo: /assets/images/profile.jpg
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Pagination
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Collections
+collections:
+  presentations:
+    output: false
+  publications:
+    output: false
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: "pages"
+    values:
+      layout: "page"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .jekyll-cache
+  - README.md

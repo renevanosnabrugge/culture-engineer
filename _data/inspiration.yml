@@ -1,0 +1,98 @@
+- title: "Team Topologies"
+  author: "Matthew Skelton & Manuel Pais"
+  type: book
+  rating: 5
+  url: "https://teamtopologies.com/book"
+  review: >
+    The most influential book on software team organisation I have read. Skelton and Pais
+    provide a clear vocabulary and set of patterns for structuring teams to minimise cognitive
+    load and maximise flow. Essential reading for any engineering leader.
+
+- title: "Accelerate"
+  author: "Nicole Forsgren, Jez Humble & Gene Kim"
+  type: book
+  rating: 5
+  url: "https://itrevolution.com/accelerate-book/"
+  review: >
+    The data-driven case for DevOps. This book distilled years of research into the DORA
+    metrics and proves that speed and stability are not in tension — they reinforce each other.
+
+- title: "The Phoenix Project"
+  author: "Gene Kim, Kevin Behr & George Spafford"
+  type: book
+  rating: 5
+  url: "https://itrevolution.com/the-phoenix-project/"
+  review: >
+    A business novel that captures the chaos of IT operations and the transformation to
+    DevOps principles better than any textbook could. I recommend it to every new engineer
+    I mentor.
+
+- title: "An Elegant Puzzle"
+  author: "Will Larson"
+  type: book
+  rating: 4
+  url: "https://lethain.com/elegant-puzzle/"
+  review: >
+    Larson's approach to engineering management is practical, humane, and refreshingly
+    honest about the inherent messiness of organisations. The chapter on system design
+    for organisations alone is worth the read.
+
+- title: "The DevOps Handbook"
+  author: "Gene Kim, Jez Humble, Patrick Debois & John Willis"
+  type: book
+  rating: 5
+  url: "https://itrevolution.com/the-devops-handbook/"
+  review: >
+    The comprehensive companion to Accelerate. If you want practical how-to guidance
+    on implementing DevOps, this is your reference manual.
+
+- title: "Martin Fowler's Blog"
+  author: "Martin Fowler"
+  type: blog
+  url: "https://martinfowler.com"
+  review: >
+    Timeless writing on software design, architecture, and process. Fowler's articles on
+    microservices, CI/CD, and refactoring have shaped how an entire generation of developers
+    thinks about building software.
+
+- title: "LeadDev"
+  author: "Various Contributors"
+  type: blog
+  url: "https://leaddev.com"
+  review: >
+    The best resource I know for engineering leadership content. Covers people management,
+    technical strategy, career development, and engineering culture in equal measure.
+
+- title: "The New Stack"
+  author: "Various Contributors"
+  type: blog
+  url: "https://thenewstack.io"
+  review: >
+    Excellent coverage of cloud-native technologies, platform engineering, and the evolving
+    infrastructure landscape. A reliable source for staying current on industry trends.
+
+- title: "How Great Leaders Inspire Action"
+  author: "Simon Sinek"
+  type: video
+  url: "https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action"
+  review: >
+    The famous 'Start With Why' TED Talk. Sinek's Golden Circle model applies just as well
+    to building engineering teams and products as it does to marketing. A must-watch for
+    anyone in a leadership role.
+
+- title: "The Power of Vulnerability"
+  author: "Brené Brown"
+  type: video
+  url: "https://www.ted.com/talks/brene_brown_the_power_of_vulnerability"
+  review: >
+    Brown's research on vulnerability and shame underpins much of what I believe about
+    psychological safety in teams. If you want engineers to take risks and learn, you first
+    need to build an environment where vulnerability is safe.
+
+- title: "Continuous Delivery with Dave Farley"
+  author: "Dave Farley"
+  type: video
+  url: "https://www.youtube.com/@ContinuousDelivery"
+  review: >
+    Farley's YouTube channel is an outstanding free resource on Continuous Delivery,
+    software engineering, and the technical practices that enable rapid, reliable releases.

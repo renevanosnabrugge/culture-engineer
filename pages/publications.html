@@ -1,0 +1,137 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+---
+<article class="page-content">
+  <header class="page-header">
+    <h1 class="page-title">Publications</h1>
+    <p class="page-subtitle">Articles, whitepapers, and written work on software architecture, DevOps, and engineering culture.</p>
+  </header>
+
+  <div class="page-body">
+    {% assign articles = site.data.publications | where: "type", "article" %}
+    {% assign whitepapers = site.data.publications | where: "type", "whitepaper" %}
+    {% assign others = site.data.publications | where: "type", "other" %}
+
+    {% if articles.size > 0 %}
+    <h2>Articles</h2>
+    <div class="pub-list" style="margin-bottom:3rem;">
+      {% for pub in articles %}
+      <div class="pub-item">
+        <div class="pub-thumb">📄</div>
+        <div>
+          <p class="pub-type-date">Article &mdash; {{ pub.date | date: "%B %Y" }}</p>
+          <h3 class="pub-title">{% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
+          <p class="pub-summary">{{ pub.summary }}</p>
+          {% if pub.url %}<a href="{{ pub.url }}" class="read-more" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if whitepapers.size > 0 %}
+    <h2>Whitepapers</h2>
+    <div class="pub-list" style="margin-bottom:3rem;">
+      {% for pub in whitepapers %}
+      <div class="pub-item">
+        <div class="pub-thumb">📋</div>
+        <div>
+          <p class="pub-type-date">Whitepaper &mdash; {{ pub.date | date: "%B %Y" }}</p>
+          <h3 class="pub-title">{% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
+          <p class="pub-summary">{{ pub.summary }}</p>
+          {% if pub.url %}<a href="{{ pub.url }}" class="read-more" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if others.size > 0 %}
+    <h2>Other</h2>
+    <div class="pub-list">
+      {% for pub in others %}
+      <div class="pub-item">
+        <div class="pub-thumb">🔗</div>
+        <div>
+          <p class="pub-type-date">{{ pub.type | capitalize }} &mdash; {{ pub.date | date: "%B %Y" }}</p>
+          <h3 class="pub-title">{% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
+          <p class="pub-summary">{{ pub.summary }}</p>
+          {% if pub.url %}<a href="{{ pub.url }}" class="read-more" target="_blank" rel="noopener noreferrer">View &rarr;</a>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</article>
+  <header class="page-header">
+    <h1 class="page-title">Publications</h1>
+    <p class="page-subtitle">Articles, whitepapers, and other written work on software architecture, DevOps, and engineering culture.</p>
+  </header>
+
+  <div class="page-body">
+
+    <!-- ARTICLES -->
+    {% assign articles = site.data.publications | where: "type", "article" %}
+    {% if articles.size > 0 %}
+    <h2>Articles</h2>
+    {% for pub in articles %}
+    <div class="publication-item">
+      <div class="publication-type">{{ pub.type }}</div>
+      <h3 class="publication-title">
+        {% if pub.url %}
+        <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>
+        {% else %}
+        {{ pub.title }}
+        {% endif %}
+      </h3>
+      <p class="publication-meta">{{ pub.publication }} &mdash; {{ pub.date | date: "%B %Y" }}</p>
+      <p class="publication-summary">{{ pub.summary }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <!-- WHITEPAPERS -->
+    {% assign whitepapers = site.data.publications | where: "type", "whitepaper" %}
+    {% if whitepapers.size > 0 %}
+    <h2 style="margin-top: 3rem;">Whitepapers</h2>
+    {% for pub in whitepapers %}
+    <div class="publication-item">
+      <div class="publication-type">{{ pub.type }}</div>
+      <h3 class="publication-title">
+        {% if pub.url %}
+        <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>
+        {% else %}
+        {{ pub.title }}
+        {% endif %}
+      </h3>
+      <p class="publication-meta">{{ pub.publication }} &mdash; {{ pub.date | date: "%B %Y" }}</p>
+      <p class="publication-summary">{{ pub.summary }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <!-- OTHER -->
+    {% assign others = site.data.publications | where: "type", "other" %}
+    {% if others.size > 0 %}
+    <h2 style="margin-top: 3rem;">Other</h2>
+    {% for pub in others %}
+    <div class="publication-item">
+      <div class="publication-type">{{ pub.type }}</div>
+      <h3 class="publication-title">
+        {% if pub.url %}
+        <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>
+        {% else %}
+        {{ pub.title }}
+        {% endif %}
+      </h3>
+      <p class="publication-meta">{{ pub.publication }} &mdash; {{ pub.date | date: "%B %Y" }}</p>
+      <p class="publication-summary">{{ pub.summary }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+  </div>
+</article>

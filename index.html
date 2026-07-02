@@ -1,0 +1,162 @@
+---
+layout: home
+title: Home
+---
+
+<!-- ═══ HERO ═══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-left-inner">
+      <span class="eyebrow">Welcome</span>
+      <h1 class="hero-title">Bridging Strategy,<br>Architecture &amp; Impact</h1>
+      <p class="hero-lead">
+        I help organizations design resilient architectures, align technology with
+        business goals, and drive meaningful change through people, process, and culture.
+      </p>
+      <div class="hero-actions">
+        <a href="{{ '/about/' | relative_url }}" class="btn btn-dark btn--lg">About Me</a>
+        <a href="{{ '/presentations/' | relative_url }}" class="btn btn-outline-dark btn--lg">View Next Talk &nbsp;&rarr;</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    {% if site.author.photo %}
+    <img src="{{ site.author.photo | relative_url }}" alt="{{ site.author.name }}" class="hero-photo">
+    {% else %}
+    <div class="hero-photo-placeholder">
+      <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity=".4">
+        <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+      </svg>
+      <span>Add your photo to<br><code>assets/images/profile.jpg</code></span>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- ═══ STATS ════════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-number">50<span>+</span></span>
+        <span class="stat-label">Talks Given</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">15<span>+</span></span>
+        <span class="stat-label">Countries</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">20<span>+</span></span>
+        <span class="stat-label">Publications</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FEATURES ═════════════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎤</div>
+        <h3>Speaking</h3>
+        <p>I speak at conferences around the world about architecture, leadership and technology.</p>
+        <a href="{{ '/presentations/' | relative_url }}" class="card-link">See all talks &rarr;</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✍️</div>
+        <h3>Writing</h3>
+        <p>Articles, whitepapers and insights on architecture, strategy and innovation.</p>
+        <a href="{{ '/publications/' | relative_url }}" class="card-link">View publications &rarr;</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Sharing Knowledge</h3>
+        <p>Books, blogs and videos that inspire me and shape the way I think and work.</p>
+        <a href="{{ '/inspiration/' | relative_url }}" class="card-link">Explore inspiration &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEXT SPEAKING ENGAGEMENT ════════════════════════════ -->
+{% assign next_talk = site.data.presentations | where: "upcoming", true | sort: "date" | first %}
+{% if next_talk %}
+<section class="section section--gray">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:2.5rem;">
+      <span class="eyebrow">On the Road</span>
+      <h2>Next Speaking Engagement</h2>
+    </div>
+    <div class="speaking-engagement">
+      <div>
+        <div class="engagement-meta">
+          <span class="engagement-date">{{ next_talk.date | date: "%b %d, %Y" }}</span>
+          📍 {{ next_talk.location }}
+        </div>
+        <h3 class="engagement-title">{{ next_talk.event }}</h3>
+        <p class="engagement-talk">{{ next_talk.title }}</p>
+        <div class="engagement-actions">
+          {% if next_talk.registration %}
+          <a href="{{ next_talk.registration }}" class="btn btn-dark" target="_blank" rel="noopener noreferrer">View Details &rarr;</a>
+          {% endif %}
+          <a href="{{ '/presentations/' | relative_url }}" class="btn btn-outline-dark">View all upcoming events &rarr;</a>
+        </div>
+      </div>
+      <div class="engagement-photo">
+        <span>📸 Add a conference photo here</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ═══ RECENT BLOG POSTS ════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;text-align:left;margin-bottom:2rem;">
+      <div>
+        <span class="eyebrow">From the Blog</span>
+        <h2 style="margin:0;">Recent Posts</h2>
+      </div>
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline-dark">View all posts &rarr;</a>
+    </div>
+    <div class="post-grid">
+      {% for post in site.posts limit:3 %}
+      <article class="post-card">
+        <div class="post-card-img"></div>
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+            {% if post.tags.first %}<span class="badge badge-blue">{{ post.tags.first }}</span>{% endif %}
+          </div>
+          <h3 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          <a href="{{ post.url | relative_url }}" class="read-more">Read more &rarr;</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+<!-- RECENT BLOG POSTS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">From the Blog</span>
+      <h2 class="section-title">Recent Posts</h2>
+      <p class="section-subtitle">Thoughts on engineering culture, DevOps, software architecture, and continuous improvement.</p>
+    </div>
+
+    <div class="post-list" style="display:none"><!-- removed, replaced by post-grid above --></div>
+
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="/blog/" class="btn btn-outline" style="display:none"></a>
+    </div>
+  </div>
+</section>
+

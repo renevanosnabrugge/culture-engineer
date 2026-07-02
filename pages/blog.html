@@ -1,0 +1,60 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+<article class="page-content">
+  <header class="page-header">
+    <h1 class="page-title">Blog</h1>
+    <p class="page-subtitle">Thoughts, ideas, and lessons from the field of engineering culture and software delivery.</p>
+  </header>
+
+  <div class="page-body">
+    <div class="post-list">
+      {% for post in paginator.posts %}
+      <article class="post-card">
+        <div class="post-card-image-placeholder"></div>
+        <div class="post-card-body">
+          <div class="post-card-meta">
+            <time class="post-card-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+            {% if post.tags.size > 0 %}
+            <div class="post-card-tags">
+              {% for tag in post.tags limit:2 %}
+              <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          <h2 class="post-card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h2>
+          <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    {% if paginator.total_pages > 1 %}
+    <nav class="pagination" aria-label="Blog pagination">
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous page">&larr;</a>
+      {% endif %}
+
+      {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+        <span class="current">{{ page }}</span>
+        {% elsif page == 1 %}
+        <a href="{{ '/blog/' | relative_url }}">{{ page }}</a>
+        {% else %}
+        <a href="{{ '/blog/page' | append: page | relative_url }}">{{ page }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" aria-label="Next page">&rarr;</a>
+      {% endif %}
+    </nav>
+    {% endif %}
+  </div>
+</article>

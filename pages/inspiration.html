@@ -1,0 +1,141 @@
+---
+layout: default
+title: Inspiration
+permalink: /inspiration/
+---
+<article class="page-content">
+  <header class="page-header">
+    <h1 class="page-title">Inspiration</h1>
+    <p class="page-subtitle">Books, blogs, videos, and people that have shaped my thinking on software, culture, and leadership.</p>
+  </header>
+
+  <div class="page-body">
+    <div class="tab-container">
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" data-tab="books" role="tab">Books</button>
+        <button class="tab-btn" data-tab="blogs" role="tab">Blogs</button>
+        <button class="tab-btn" data-tab="videos" role="tab">Videos</button>
+      </div>
+
+      <div id="tab-books" class="tab-panel active">
+        {% assign books = site.data.inspiration | where: "type", "book" %}
+        <div class="insp-grid">
+          {% for item in books %}
+          <div class="insp-card">
+            <div class="insp-thumb">📖</div>
+            <div class="insp-type">Book</div>
+            <h3 class="insp-title">{{ item.title }}</h3>
+            <p class="insp-author">by {{ item.author }}</p>
+            {% if item.rating %}
+            <div class="insp-rating">
+              {% for i in (1..5) %}{% if i <= item.rating %}★{% else %}☆{% endif %}{% endfor %}
+            </div>
+            {% endif %}
+            <p class="insp-review">{{ item.review | truncate: 140 }}</p>
+            {% if item.url %}<a href="{{ item.url }}" class="read-more" target="_blank" rel="noopener noreferrer">Learn more &rarr;</a>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div id="tab-blogs" class="tab-panel">
+        {% assign blogs = site.data.inspiration | where: "type", "blog" %}
+        <div class="insp-grid">
+          {% for item in blogs %}
+          <div class="insp-card">
+            <div class="insp-thumb">🌐</div>
+            <div class="insp-type">Blog</div>
+            <h3 class="insp-title">{{ item.title }}</h3>
+            <p class="insp-author">{{ item.author }}</p>
+            <p class="insp-review">{{ item.review | truncate: 140 }}</p>
+            {% if item.url %}<a href="{{ item.url }}" class="read-more" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div id="tab-videos" class="tab-panel">
+        {% assign videos = site.data.inspiration | where: "type", "video" %}
+        <div class="insp-grid">
+          {% for item in videos %}
+          <div class="insp-card">
+            <div class="insp-thumb">🎥</div>
+            <div class="insp-type">Video</div>
+            <h3 class="insp-title">{{ item.title }}</h3>
+            <p class="insp-author">by {{ item.author }}</p>
+            <p class="insp-review">{{ item.review | truncate: 140 }}</p>
+            {% if item.url %}<a href="{{ item.url }}" class="read-more" target="_blank" rel="noopener noreferrer">Watch &rarr;</a>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+  <header class="page-header">
+    <h1 class="page-title">Inspiration</h1>
+    <p class="page-subtitle">Books, blogs, videos, and people that have shaped my thinking on software, culture, and leadership.</p>
+  </header>
+
+  <div class="page-body">
+
+    <!-- BOOKS -->
+    {% assign books = site.data.inspiration | where: "type", "book" %}
+    {% if books.size > 0 %}
+    <h2 style="margin-bottom: 1.5rem;">📚 Books</h2>
+    <div class="inspiration-grid" style="margin-bottom: 3rem;">
+      {% for item in books %}
+      <div class="inspiration-card">
+        <div class="inspiration-type">Book</div>
+        <h3 class="inspiration-title">{{ item.title }}</h3>
+        <p class="inspiration-author">by {{ item.author }}</p>
+        <p class="inspiration-review">{{ item.review }}</p>
+        {% if item.url %}
+        <a href="{{ item.url }}" class="card-link" target="_blank" rel="noopener noreferrer">Learn more &rarr;</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- BLOGS & WEBSITES -->
+    {% assign blogs = site.data.inspiration | where: "type", "blog" %}
+    {% if blogs.size > 0 %}
+    <h2 style="margin-bottom: 1.5rem;">🌐 Blogs &amp; Websites</h2>
+    <div class="inspiration-grid" style="margin-bottom: 3rem;">
+      {% for item in blogs %}
+      <div class="inspiration-card">
+        <div class="inspiration-type">Blog</div>
+        <h3 class="inspiration-title">{{ item.title }}</h3>
+        <p class="inspiration-author">{{ item.author }}</p>
+        <p class="inspiration-review">{{ item.review }}</p>
+        {% if item.url %}
+        <a href="{{ item.url }}" class="card-link" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- VIDEOS -->
+    {% assign videos = site.data.inspiration | where: "type", "video" %}
+    {% if videos.size > 0 %}
+    <h2 style="margin-bottom: 1.5rem;">🎥 Videos &amp; Talks</h2>
+    <div class="inspiration-grid">
+      {% for item in videos %}
+      <div class="inspiration-card">
+        <div class="inspiration-type">Video</div>
+        <h3 class="inspiration-title">{{ item.title }}</h3>
+        <p class="inspiration-author">by {{ item.author }}</p>
+        <p class="inspiration-review">{{ item.review }}</p>
+        {% if item.url %}
+        <a href="{{ item.url }}" class="card-link" target="_blank" rel="noopener noreferrer">Watch &rarr;</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </div>
+</article>

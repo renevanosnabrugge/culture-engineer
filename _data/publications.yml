@@ -1,0 +1,65 @@
+- title: "DORA Metrics: Measuring What Matters in Software Delivery"
+  type: article
+  publication: "InfoQ"
+  date: "2026-03-15"
+  url: "https://www.infoq.com/articles/dora-metrics-software-delivery"
+  summary: >
+    A deep dive into the four key DORA metrics — deployment frequency, lead time for changes,
+    change failure rate, and time to restore service — and how teams can use them to drive
+    meaningful improvement.
+
+- title: "Building a Culture of Continuous Improvement"
+  type: article
+  publication: "DZone DevOps Zone"
+  date: "2025-11-20"
+  url: "https://dzone.com/articles/culture-of-continuous-improvement"
+  summary: >
+    Practical advice on creating feedback loops, running effective retrospectives, and
+    embedding a learning mindset across your engineering organisation.
+
+- title: "The Anatomy of an Internal Developer Platform"
+  type: article
+  publication: "The New Stack"
+  date: "2025-08-05"
+  url: "https://thenewstack.io/anatomy-internal-developer-platform"
+  summary: >
+    An architectural walkthrough of what makes a great Internal Developer Platform,
+    covering the golden paths, self-service capabilities, and observability features
+    that elevate developer experience.
+
+- title: "Psychological Safety in Engineering Teams"
+  type: article
+  publication: "LeadDev"
+  date: "2025-05-12"
+  url: "https://leaddev.com/psychological-safety-engineering-teams"
+  summary: >
+    Why psychological safety is the single most important factor in high-performing teams,
+    and concrete practices you can adopt as a tech lead or manager today.
+
+- title: "Platform Engineering: The Next Wave of DevOps"
+  type: whitepaper
+  publication: "Microsoft Tech Community"
+  date: "2026-01-10"
+  url: "https://techcommunity.microsoft.com/platform-engineering-whitepaper"
+  summary: >
+    A comprehensive whitepaper exploring the evolution from DevOps to Platform Engineering,
+    including reference architectures, toolchain recommendations, and adoption patterns.
+
+- title: "Modernising Legacy .NET Applications for the Cloud"
+  type: whitepaper
+  publication: "Self-published"
+  date: "2025-02-28"
+  url: "/assets/downloads/modernising-legacy-dotnet.pdf"
+  summary: >
+    Practical guidance for architects and developers tasked with migrating large .NET
+    applications to Azure, covering strangler fig patterns, containerisation strategies,
+    and data migration approaches.
+
+- title: "Rene van Osnabrugge — Speaker Profile"
+  type: other
+  publication: "Sessionize"
+  date: "2024-01-01"
+  url: "https://sessionize.com/renevanosnabrugge"
+  summary: >
+    Full speaker profile including abstract library and session ratings from conferences
+    across Europe and North America.

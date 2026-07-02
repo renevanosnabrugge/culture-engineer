@@ -1,0 +1,50 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="{{ '/' | relative_url }}" class="site-logo">
+        <span class="site-logo-name">{{ site.author.name }}</span>
+        <span class="site-logo-tagline">{{ site.author.title }}</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" role="navigation">
+        <ul class="nav-list">
+          <li class="nav-item {% if page.url == '/' %}active{% endif %}">
+            <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item {% if page.url contains '/about' %}active{% endif %}">
+            <a href="{{ '/about/' | relative_url }}" class="nav-link">About Me</a>
+          </li>
+          <li class="nav-item {% if page.url contains '/presentations' %}active{% endif %}">
+            <a href="{{ '/presentations/' | relative_url }}" class="nav-link">Presentations &amp; Conferences</a>
+          </li>
+          <li class="nav-item {% if page.url contains '/publications' %}active{% endif %}">
+            <a href="{{ '/publications/' | relative_url }}" class="nav-link">Publications</a>
+          </li>
+          <li class="nav-item {% if page.url contains '/inspiration' %}active{% endif %}">
+            <a href="{{ '/inspiration/' | relative_url }}" class="nav-link">Inspiration</a>
+          </li>
+          <li class="nav-item nav-item--dropdown {% if page.url contains '/blog' %}active{% endif %}">
+            <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
+            {% assign recent = site.posts | limit: 3 %}
+            {% if recent.size > 0 %}
+            <ul class="dropdown-menu">
+              <li><a href="{{ '/blog/' | relative_url }}" class="dropdown-item">All Posts</a></li>
+              <li class="dropdown-divider"></li>
+              {% for post in recent %}
+              <li><a href="{{ post.url | relative_url }}" class="dropdown-item">{{ post.title }}</a></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          <li class="nav-item {% if page.url contains '/contact' %}active{% endif %}">
+            <a href="{{ '/contact/' | relative_url }}" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
