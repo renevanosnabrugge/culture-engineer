@@ -37,12 +37,12 @@ if (-not (Test-Path "$repoRoot\Gemfile.lock")) {
 if ($Production) {
     $env:JEKYLL_ENV = "production"
     Write-Host "  Mode: production" -ForegroundColor Yellow
+    bundle exec jekyll build --config "_config.yml"
 } else {
     $env:JEKYLL_ENV = "development"
     Write-Host "  Mode: development" -ForegroundColor Green
+    bundle exec jekyll build --config "_config.yml,_config.development.yml"
 }
-
-bundle exec jekyll build --config "_config.yml"
 
 $siteDir = Join-Path $repoRoot "_site"
 Write-Host ""

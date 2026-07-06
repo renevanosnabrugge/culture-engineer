@@ -54,4 +54,4 @@ bundle exec jekyll serve `
     --livereload `
     --host $BindHost `
     --port $Port `
-    --config "_config.yml"
+    --config "_config.yml,_config.development.yml"

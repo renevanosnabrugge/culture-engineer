@@ -1,0 +1,4 @@
+# Local development overrides — layered on top of _config.yml by scripts/serve.ps1
+# and by scripts/build.ps1 (non-production builds).
+# Never used by the GitHub Actions deploy workflow.
+url: "http://localhost:4000"
