@@ -41,6 +41,8 @@ gem install bundler
 The script installs gems automatically on first run, then starts Jekyll at  
 **http://localhost:4000** with live-reload. The browser refreshes automatically when you save a file.
 
+The serve script layers `_config.development.yml` on top of `_config.yml`, so `site.url` is set to `http://localhost:4000` locally while `_config.yml` keeps the production value `https://culture-engineers.nl`.
+
 Custom port if 4000 is taken:
 
 ```powershell

@@ -61,3 +61,4 @@ exclude:
   - .bundle
   - .jekyll-cache
   - README.md
+  - _config.development.yml
