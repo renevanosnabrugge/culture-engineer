@@ -71,7 +71,7 @@ Output goes to `_site/` (gitignored).
 2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
 3. Save.
 
-That's it. The workflow at [.github/workflows/pages.yml](.github/workflows/pages.yml) handles everything else.
+That's it. The workflow at [.github/workflows/deploy.yml](.github/workflows/deploy.yml) handles everything else.
 
 ### How it works
 
@@ -88,15 +88,19 @@ push to main
 
 Every push to `main` triggers a new deploy. You can also trigger manually from the **Actions** tab → **Deploy to GitHub Pages** → **Run workflow**.
 
+### Custom domain
+
+This repository is served at **https://culture-engineers.nl** via the `CNAME` file in the repository root. GitHub Pages reads the `CNAME` file from the deployed artifact and configures the custom domain automatically.
+
+If you need to change the custom domain, update the `CNAME` file and the `url` field in `_config.yml`.
+
 ### Verify the deployment
 
 After the workflow completes (≈ 1–2 min), your site is live at:
 
 ```
-https://<your-github-username>.github.io/culture-engineer/
+https://culture-engineers.nl
 ```
-
-For this repo: **https://renevanosnabrugge.github.io/culture-engineer/**
 
 ---
 
