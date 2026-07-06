@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-subtitle: Enterprise Architect | Speaker | Author
+subtitle: Technology & Transformation Executive | Speaker | Microsoft MVP
 permalink: /about/
 ---
 
@@ -10,19 +10,26 @@ permalink: /about/
     <h2 class="about-name">{{ site.author.name }}</h2>
     <p class="about-role">{{ site.author.title }}</p>
     <p class="about-bio">
-      I am an enterprise architect and culture engineer with over 15 years of experience
-      helping organizations design future-proof solutions, navigate complexity with clarity,
-      and build the bridge between business strategy and technology.
+      A technology executive with 25+ years of experience helping complex organizations become
+      sharper, faster and more effective — while moving the people inside them along the way.
+      Currently Global Consulting Director at Xebia &middot; Microsoft Services (Xpirit), leading
+      consulting strategy, delivery and talent across four international entities with a primary
+      focus on the Benelux region.
     </p>
     <p class="about-bio">
-      I love sharing knowledge — on stage, in writing, and in conversations that inspire
-      growth and innovation. My work spans architecture consulting, organizational design,
-      DevOps transformation, and cultivating high-performance engineering cultures.
+      I operate where strategy, execution and people leadership come together, turning ambition
+      into real change instead of slideware. Regulated, high-continuity environments are
+      familiar territory — places where standing still isn’t an option but neither is breaking things.
     </p>
     <p class="about-bio">
-      Whether advising a CTO, keynoting a conference, or embedding with an engineering team,
-      my goal is always the same: make complex things clear, and make good ideas stick.
+      I have a soft spot for organizations where technology matters to people’s lives: healthcare,
+      government, education. I am known for stepping beyond formal role boundaries to fix what
+      is systemically broken and for being consistently drawn into the strategic and creative
+      work that moves organizations forward.
     </p>
+    <blockquote style="border-left:3px solid var(--accent,#e85d04);padding-left:1rem;margin:1.5rem 0;font-style:italic;color:var(--slate-600)">
+      &ldquo;Most technology problems are culture problems in disguise.&rdquo;
+    </blockquote>
     <div class="about-actions">
       <a href="{{ site.author.linkedin }}" class="btn btn-dark" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
       <a href="mailto:{{ site.author.email }}" class="btn btn-outline-dark">Email Me</a>
@@ -30,12 +37,16 @@ permalink: /about/
   </div>
   <div>
     <div class="about-photo-wrap">
+      {% if site.author.photo %}
+      <img src="{{ site.author.photo | relative_url }}" alt="{{ site.author.name }}" class="about-photo">
+      {% else %}
       <div class="about-photo-placeholder">
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity=".4">
           <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
         </svg>
         <span>Add profile photo to<br><code>assets/images/profile.jpg</code></span>
       </div>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -43,69 +54,56 @@ permalink: /about/
 ## Areas of Expertise
 
 <div class="expertise-list">
-  <span class="expertise-tag">Software Architecture</span>
-  <span class="expertise-tag">Enterprise Architecture</span>
-  <span class="expertise-tag">DevOps &amp; CI/CD</span>
-  <span class="expertise-tag">Cloud &amp; Azure</span>
-  <span class="expertise-tag">Platform Engineering</span>
-  <span class="expertise-tag">Team Culture</span>
-  <span class="expertise-tag">Agile &amp; Lean</span>
-  <span class="expertise-tag">DORA Metrics</span>
+  <span class="expertise-tag">Strategy &amp; Direction</span>
+  <span class="expertise-tag">Transformation at Scale</span>
+  <span class="expertise-tag">Engineering Culture</span>
+  <span class="expertise-tag">DevOps &amp; Cloud</span>
+  <span class="expertise-tag">Operating Models</span>
+  <span class="expertise-tag">People &amp; Leadership</span>
+  <span class="expertise-tag">Governance &amp; Compliance</span>
+  <span class="expertise-tag">Azure &amp; Microsoft Stack</span>
   <span class="expertise-tag">Organizational Design</span>
   <span class="expertise-tag">Public Speaking</span>
+  <span class="expertise-tag">FinOps</span>
+  <span class="expertise-tag">Site Reliability Engineering</span>
 </div>
 
 ## Conference Experience
 
-I have had the privilege of speaking at numerous international conferences, including:
+International speaker on 50+ stages, including:
 
-- **DevOpsDays** — Amsterdam, London, Copenhagen, and more
-- **NDC Conferences** — Oslo, London, Sydney
-- **Microsoft Build** &amp; **Microsoft Ignite**
-- **Techorama** — Belgium &amp; Netherlands
-- **GOTO Conferences** — Copenhagen, Amsterdam
-- **dotNed Saturday** &amp; **SDN Event** — Netherlands
+- **Techorama** — Belgium &amp; Netherlands (multiple years)
+- **NDC Conferences** — Porto, Oslo, London
+- **Visual Studio Live!** — Las Vegas, San Diego
+- **Live! 360 Tech Con** — Orlando, FL
+- **All Day DevOps** — Online (multiple years)
+- **devCampNoord** — Groningen, Netherlands
+- **CloudBrew** — Mechelen, Belgium
+- **GitHub Universe** — San Francisco
 
-Topics range from enterprise architecture and platform engineering to organizational design,
-psychological safety, and the human side of digital transformation.
+Topics include DevOps transformation, engineering culture, cloud strategy, FinOps,
+Site Reliability Engineering, and the people side of technology change.
 
 ## Background
 
-Before focusing on architecture and culture, I spent years building enterprise software across
-sectors including banking, insurance, logistics, and government. That breadth shapes my thinking:
-every technical decision carries a human cost or benefit, and the best technical solutions are
-the ones people can actually use and maintain.
+With 25+ years in the industry, my career has grown from hands-on software development
+through ALM and DevOps consulting to executive leadership:
+**Programming → ALM → DevOps → DevOps Strategy → CTO**.
+
+I served as **Interim CTO at Wigo4IT** (2020–2022), the shared IT organization for
+Amsterdam, Rotterdam, The Hague and Utrecht, where I led a full technology transformation
+and reduced platform costs by approximately 50% while maintaining service continuity.
+I also advised **Maersk** on establishing their Cloud Centre of Excellence.
+
+Previously, as Senior DevOps &amp; Cloud Consultant at Xebia/Xpirit (2009–2020),
+I worked with organizations including Rabobank, Philips Healthcare, ABN AMRO, ONVZ,
+Gasunie, and Glencore.
+
+I am the **Founder of the Global DevOps Bootcamp &amp; Experience** — a community event
+running across 30+ countries with 10,000+ participants. I hold the **Microsoft MVP** award
+continuously since 2012.
 
 ---
 
 *Interested in having me speak at your event or work with your team?*
-[Get in touch &rarr;](mailto:{{ site.author.email }}){: .btn .btn-dark}
-
-
-## Conference Experience
-
-I have had the privilege of speaking at numerous international conferences, including:
-
-- **DevOpsDays** — Amsterdam, London, Copenhagen, and more
-- **NDC Conferences** — Oslo, London, Sydney
-- **Microsoft Build** & **Microsoft Ignite**
-- **Techorama** — Belgium & Netherlands
-- **GOTO Conferences** — Copenhagen, Amsterdam
-- **dotNed Saturday** & **SDN Event** — Netherlands
-
-Topics I regularly speak on range from DevOps transformation and platform engineering to
-engineering culture, psychological safety, and the human side of software delivery.
-
-## Background
-
-Before focusing on culture and architecture, I spent years building enterprise software across
-sectors including banking, insurance, logistics, and government. That breadth of experience
-shapes how I think about software: every technical decision carries a human cost or benefit.
-
-I hold certifications in Microsoft Azure, am a regular contributor to open-source projects,
-and occasionally write for industry publications.
-
----
-
-*Interested in having me speak at your event or consult for your team?*
-[Get in touch &rarr;](mailto:{{ site.author.email }}){: .btn .btn-primary}
+[Get in touch →](mailto:{{ site.author.email }}){: .btn .btn-dark}

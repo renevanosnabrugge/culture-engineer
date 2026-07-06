@@ -1,0 +1,231 @@
+- generic [active] [ref=f24e1]:
+  - generic [ref=f24e2]:
+    - navigation [ref=f24e3]:
+      - list [ref=f24e6]:
+        - listitem [ref=f24e7]:
+          - link [ref=f24e9] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f24e10]:
+          - generic [ref=f24e11]:
+            - group [ref=f24e12]:
+              - link " Organizer" [ref=f24e13] [cursor=pointer]:
+                - /url: /app/organizer
+                - generic [ref=f24e14]: 
+                - text: Organizer
+              - link " Speaker" [ref=f24e15] [cursor=pointer]:
+                - /url: /app/speaker
+                - generic [ref=f24e16]: 
+                - text: Speaker
+            - text:  
+        - listitem [ref=f24e17]:
+          - generic [ref=f24e19]: René van Osnabrugge
+        - listitem [ref=f24e20]:
+          - link " Overview" [ref=f24e21] [cursor=pointer]:
+            - /url: /app/speaker
+            - generic [ref=f24e22]: 
+            - text: Overview
+        - listitem [ref=f24e23]:
+          - link " Edit Profile" [ref=f24e24] [cursor=pointer]:
+            - /url: /app/speaker/profile
+            - generic [ref=f24e25]: 
+            - text: Edit Profile
+        - listitem [ref=f24e26]:
+          - link " Events" [ref=f24e27] [cursor=pointer]:
+            - /url: /app/speaker/events
+            - generic [ref=f24e28]: 
+            - text: Events
+        - listitem [ref=f24e29]:
+          - link " Sessions" [ref=f24e30] [cursor=pointer]:
+            - /url: /app/speaker/sessions
+            - generic [ref=f24e31]: 
+            - text: Sessions
+        - listitem [ref=f24e32]:
+          - link " Inbox" [ref=f24e33] [cursor=pointer]:
+            - /url: /app/speaker/inbox
+            - generic [ref=f24e34]: 
+            - text: Inbox
+        - listitem [ref=f24e35]:
+          - link "襤 Discover events" [ref=f24e36] [cursor=pointer]:
+            - /url: /app/speaker/discover
+            - generic [ref=f24e37]: 襤
+            - text: Discover events
+        - listitem [ref=f24e38]:
+          - link " Embed on your Blog" [ref=f24e39] [cursor=pointer]:
+            - /url: /app/speaker/embed
+            - generic [ref=f24e40]: 
+            - text: Embed on your Blog
+        - listitem [ref=f24e41]
+        - listitem [ref=f24e42]:
+          - link " My Public Profile" [ref=f24e43] [cursor=pointer]:
+            - /url: /ReneVanOsnabrugge/
+            - generic [ref=f24e44]: 
+            - text: My Public Profile
+        - listitem [ref=f24e45]:
+          - link " Speakers Directory " [ref=f24e46] [cursor=pointer]:
+            - /url: /speakers-directory
+            - generic [ref=f24e47]: 
+            - text: Speakers Directory
+            - generic [ref=f24e49]: 
+    - generic [ref=f24e51]:
+      - navigation [ref=f24e53]:
+        - link "" [ref=f24e55] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f24e56]: 
+        - list [ref=f24e57]:
+          - listitem [ref=f24e58]:
+            - button " Help & Support" [ref=f24e59] [cursor=pointer]:
+              - generic [ref=f24e60]: 
+              - text: Help & Support
+            - text:  
+          - listitem [ref=f24e62]:
+            - generic [ref=f24e63]:
+              - button "René van Osnabrugge (rvanosnabrugge@live.com)" [ref=f24e64] [cursor=pointer]: René van Osnabrugge (rvanosnabrugge@live.com)
+              - text: 
+      - generic [ref=f24e67]:
+        - generic [ref=f24e68]:
+          - heading "René van Osnabrugge" [level=2] [ref=f24e69]
+          - list [ref=f24e70]:
+            - listitem [ref=f24e71]:
+              - link "My Events" [ref=f24e72] [cursor=pointer]:
+                - /url: /app/speaker/events
+            - listitem [ref=f24e73]:
+              - text: /
+              - link "CloudBrew 2022 - A two-day Microsoft Azure event" [ref=f24e74] [cursor=pointer]:
+                - /url: /app/speaker/event/details/8117
+            - listitem [ref=f24e75]:
+              - text: /
+              - strong [ref=f24e76]: When "We are down" is not good enough. Site Reliability Engineering (SRE) in Azure
+        - link " Public Profile" [ref=f24e79] [cursor=pointer]:
+          - /url: /ReneVanOsnabrugge/
+          - generic [ref=f24e80]: 
+          - text: Public Profile
+      - generic [ref=f24e81]:
+        - generic [ref=f24e85]:
+          - generic [ref=f24e86]:
+            - link " Event Dashboard" [ref=f24e87] [cursor=pointer]:
+              - /url: /app/speaker/event/details/8117
+              - generic [ref=f24e88]: 
+              - text: Event Dashboard
+            - button " Contact Organizer" [ref=f24e89] [cursor=pointer]:
+              - generic [ref=f24e90]: 
+              - text: Contact Organizer
+          - heading "CloudBrew 2022 - A two-day Microsoft Azure event finished 4 years ago" [level=2] [ref=f24e91]:
+            - text: CloudBrew 2022 - A two-day Microsoft Azure event
+            - generic [ref=f24e92]: finished 4 years ago
+        - generic [ref=f24e95]:
+          - paragraph [ref=f24e96]:
+            - text: Congratulations! Your
+            - strong [ref=f24e97]: session has been accepted
+            - text: "!"
+          - link "Confirm participation" [ref=f24e99] [cursor=pointer]:
+            - /url: /app/speaker/session/confirmStatus/348386/iwkafio
+          - paragraph
+        - generic [ref=f24e100]:
+          - generic [ref=f24e101]:
+            - generic [ref=f24e102]:
+              - generic [ref=f24e103]:
+                - generic "Editing not allowed. Contact the event organizer." [ref=f24e105]:
+                  - link " Edit session":
+                    - /url: /app/speaker/session/348386
+                    - generic: 
+                    - text: Edit session
+                - heading "When \"We are down\" is not good enough. Site Reliability Engineering (SRE) in Azure" [level=3] [ref=f24e106]
+              - generic [ref=f24e107]:
+                - heading "Description" [level=4] [ref=f24e108]
+                - paragraph [ref=f24e109]:
+                  - text: The more we are connected and the more others are connected to us, the more important reliability of your sites becomes.
+                  - text: Site Reliability Engineering is an engineering discipline devoted to helping an organization sustainably achieve the appropriate level of reliability in their systems, services, and products. But what does this mean, and how do get started with this?
+                  - text: In this session I will talk about the concepts of Site Reliability Engineering and use Microsoft Azure to implement some of the concepts and practices
+                - table [ref=f24e110]:
+                  - rowgroup [ref=f24e111]:
+                    - row "What are the key takeaways from your talk? * What is SRE and why should you use that * What is aSLA, SLO and SLI * Difference between DevOps & SRE" [ref=f24e112]:
+                      - rowheader "What are the key takeaways from your talk?" [ref=f24e113]
+                      - cell "* What is SRE and why should you use that * What is aSLA, SLO and SLI * Difference between DevOps & SRE" [ref=f24e114]:
+                        - paragraph [ref=f24e115]:
+                          - text: "* What is SRE and why should you use that"
+                          - text: "* What is aSLA, SLO and SLI"
+                          - text: "* Difference between DevOps & SRE"
+                    - row "Session format Session (60min)" [ref=f24e116]:
+                      - rowheader "Session format" [ref=f24e117]
+                      - cell "Session (60min)" [ref=f24e118]:
+                        - paragraph [ref=f24e119]: Session (60min)
+                    - row "Track IT Pro" [ref=f24e120]:
+                      - rowheader "Track" [ref=f24e121]
+                      - cell "IT Pro" [ref=f24e122]:
+                        - paragraph [ref=f24e123]: IT Pro
+                    - row "Level Intermediate" [ref=f24e124]:
+                      - rowheader "Level" [ref=f24e125]
+                      - cell "Intermediate" [ref=f24e126]:
+                        - paragraph [ref=f24e127]: Intermediate
+                    - row "Language English" [ref=f24e128]:
+                      - rowheader "Language" [ref=f24e129]
+                      - cell "English" [ref=f24e130]:
+                        - paragraph [ref=f24e131]: English
+                    - row "Did you present this talk before? Yes" [ref=f24e132]:
+                      - rowheader "Did you present this talk before?" [ref=f24e133]
+                      - cell "Yes" [ref=f24e134]:
+                        - paragraph [ref=f24e135]: "Yes"
+                - heading "Submitted" [level=4] [ref=f24e136]
+                - paragraph [ref=f24e137]: 27 May 2022 2:41 pm
+            - generic [ref=f24e141]:
+              - generic [ref=f24e142]: SESSION OWNER
+              - heading "René van Osnabrugge" [level=3] [ref=f24e143]:
+                - strong [ref=f24e144]: René van Osnabrugge
+              - paragraph [ref=f24e145]: DevOps Strategy Consultant @ Xpirit
+              - generic [ref=f24e146]: "René is a DevOps Strategy Consultant working for Xpirit in the Netherlands. Using modern technologies, implementing Continuous Delivery, DevOps practices and coaching in the domain of Scrum and Agile, he helps companies improve their software delivery process. René is an active blogger and speaker at both national and international conferences where he shares his knowledge of his passion: DevOps and Application Lifecycle Management. René is a Microsoft MVP since 2012 and founder of the popular community event Global DevOps Bootcamp."
+              - paragraph [ref=f24e147]:
+                - generic [ref=f24e148]: 
+                - link "rvanosnabrugge@live.com" [ref=f24e149] [cursor=pointer]:
+                  - /url: mailto:rvanosnabrugge@live.com
+              - table [ref=f24e150]:
+                - rowgroup [ref=f24e151]:
+                  - row "Link to previous talk recording(s) https://www.youtube.com/watch?v=IOERJWNJk4g&ab_channel=FinlandAzureUserGroup (Start @ 5:24) https://www.youtube.com/watch?v=lZTMkEA7jws&ab_channel=ADDOChannel2 (Start at 59:34) https://www.youtube.com/watch?v=DexfpnbBFn8&ab_channel=ADDOChannel3 (start @ 1:56)" [ref=f24e152]:
+                    - rowheader "Link to previous talk recording(s)" [ref=f24e153]
+                    - cell "https://www.youtube.com/watch?v=IOERJWNJk4g&ab_channel=FinlandAzureUserGroup (Start @ 5:24) https://www.youtube.com/watch?v=lZTMkEA7jws&ab_channel=ADDOChannel2 (Start at 59:34) https://www.youtube.com/watch?v=DexfpnbBFn8&ab_channel=ADDOChannel3 (start @ 1:56)" [ref=f24e154]:
+                      - paragraph [ref=f24e155]:
+                        - link "https://www.youtube.com/watch?v=IOERJWNJk4g&ab_channel=FinlandAzureUserGroup" [ref=f24e156] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=IOERJWNJk4g&ab_channel=FinlandAzureUserGroup
+                        - text: (Start @ 5:24)
+                        - link "https://www.youtube.com/watch?v=lZTMkEA7jws&ab_channel=ADDOChannel2" [ref=f24e157] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=lZTMkEA7jws&ab_channel=ADDOChannel2
+                        - text: (Start at 59:34)
+                        - link "https://www.youtube.com/watch?v=DexfpnbBFn8&ab_channel=ADDOChannel3" [ref=f24e158] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=DexfpnbBFn8&ab_channel=ADDOChannel3
+                        - text: (start @ 1:56)
+                  - row "Will you be traveling by car/train/air? Car" [ref=f24e159]:
+                    - rowheader "Will you be traveling by car/train/air?" [ref=f24e160]
+                    - cell "Car" [ref=f24e161]:
+                      - paragraph [ref=f24e162]: Car
+                  - row "Will you be needing hotel? Yes" [ref=f24e163]:
+                    - rowheader "Will you be needing hotel?" [ref=f24e164]
+                    - cell "Yes" [ref=f24e165]:
+                      - paragraph [ref=f24e166]: "Yes"
+                  - row "Will you need us to book travel for you? No" [ref=f24e167]:
+                    - rowheader "Will you need us to book travel for you?" [ref=f24e168]
+                    - cell "No" [ref=f24e169]:
+                      - paragraph [ref=f24e170]: "No"
+          - generic [ref=f24e173]:
+            - heading "Share that you're speaking!" [level=3] [ref=f24e175]
+            - generic [ref=f24e177]:
+              - iframe [ref=f24e179]:
+                - iframe [ref=f25e4]:
+                  - generic [ref=f27e3]:
+                    - heading "Join us at CloudBrew 2022!" [level=1] [ref=f27e5]
+                    - generic [ref=f27e6]:
+                      - heading "When \"We are down\" is not good enough. Site Reliability Engineering (SRE) in Azure" [level=2] [ref=f27e7]
+                      - paragraph [ref=f27e8]: 18/Nov - 19/Nov/2022 — Mechelen, Belgium
+                    - heading "René van Osnabrugge" [level=3] [ref=f27e12]
+              - generic [ref=f24e180]:
+                - paragraph [ref=f24e181]: Organizers have prepared a banner you can share on social media!
+                - paragraph [ref=f24e182]: Download the image and show that you're proud to be part of CloudBrew 2022 - A two-day Microsoft Azure event!
+                - link " Generate and download" [ref=f24e183] [cursor=pointer]:
+                  - /url: /app/banner-download/8117/348386?sig=gtaj-cpeb-swayib-zkeuh-skay-tveg-hig-motla
+                  - generic [ref=f24e184]: 
+                  - text: Generate and download
+  - text:   
+  - generic [ref=f24e186]:
+    - generic [ref=f24e187] [cursor=pointer]: ✖
+    - generic [ref=f24e188]:
+      - text: We use cookies to improve your browsing experience.
+      - link "Details" [ref=f24e189] [cursor=pointer]:
+        - /url: /privacy-policy/

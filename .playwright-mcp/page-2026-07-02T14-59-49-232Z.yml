@@ -1,0 +1,182 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e2]:
+    - navigation [ref=f8e3]:
+      - list [ref=f8e6]:
+        - listitem [ref=f8e7]:
+          - link [ref=f8e9] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f8e10]:
+          - generic [ref=f8e11]:
+            - group [ref=f8e12]:
+              - link " Organizer" [ref=f8e13] [cursor=pointer]:
+                - /url: /app/organizer
+                - generic [ref=f8e14]: 
+                - text: Organizer
+              - link " Speaker" [ref=f8e15] [cursor=pointer]:
+                - /url: /app/speaker
+                - generic [ref=f8e16]: 
+                - text: Speaker
+            - text:  
+        - listitem [ref=f8e17]:
+          - generic [ref=f8e19]: René van Osnabrugge
+        - listitem [ref=f8e20]:
+          - link " Overview" [ref=f8e21] [cursor=pointer]:
+            - /url: /app/speaker
+            - generic [ref=f8e22]: 
+            - text: Overview
+        - listitem [ref=f8e23]:
+          - link " Edit Profile" [ref=f8e24] [cursor=pointer]:
+            - /url: /app/speaker/profile
+            - generic [ref=f8e25]: 
+            - text: Edit Profile
+        - listitem [ref=f8e26]:
+          - link " Events" [ref=f8e27] [cursor=pointer]:
+            - /url: /app/speaker/events
+            - generic [ref=f8e28]: 
+            - text: Events
+        - listitem [ref=f8e29]:
+          - link " Sessions" [ref=f8e30] [cursor=pointer]:
+            - /url: /app/speaker/sessions
+            - generic [ref=f8e31]: 
+            - text: Sessions
+        - listitem [ref=f8e32]:
+          - link " Inbox" [ref=f8e33] [cursor=pointer]:
+            - /url: /app/speaker/inbox
+            - generic [ref=f8e34]: 
+            - text: Inbox
+        - listitem [ref=f8e35]:
+          - link "襤 Discover events" [ref=f8e36] [cursor=pointer]:
+            - /url: /app/speaker/discover
+            - generic [ref=f8e37]: 襤
+            - text: Discover events
+        - listitem [ref=f8e38]:
+          - link " Embed on your Blog" [ref=f8e39] [cursor=pointer]:
+            - /url: /app/speaker/embed
+            - generic [ref=f8e40]: 
+            - text: Embed on your Blog
+        - listitem [ref=f8e41]
+        - listitem [ref=f8e42]:
+          - link " My Public Profile" [ref=f8e43] [cursor=pointer]:
+            - /url: /ReneVanOsnabrugge/
+            - generic [ref=f8e44]: 
+            - text: My Public Profile
+        - listitem [ref=f8e45]:
+          - link " Speakers Directory " [ref=f8e46] [cursor=pointer]:
+            - /url: /speakers-directory
+            - generic [ref=f8e47]: 
+            - text: Speakers Directory
+            - generic [ref=f8e49]: 
+    - generic [ref=f8e51]:
+      - navigation [ref=f8e53]:
+        - link "" [ref=f8e55] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f8e56]: 
+        - list [ref=f8e57]:
+          - listitem [ref=f8e58]:
+            - button " Help & Support" [ref=f8e59] [cursor=pointer]:
+              - generic [ref=f8e60]: 
+              - text: Help & Support
+            - text:  
+          - listitem [ref=f8e62]:
+            - generic [ref=f8e63]:
+              - button "René van Osnabrugge (rvanosnabrugge@live.com)" [ref=f8e64] [cursor=pointer]: René van Osnabrugge (rvanosnabrugge@live.com)
+              - text: 
+      - generic [ref=f8e67]:
+        - generic [ref=f8e68]:
+          - heading "René van Osnabrugge" [level=2] [ref=f8e69]
+          - list [ref=f8e70]:
+            - listitem [ref=f8e71]:
+              - link "My Events" [ref=f8e72] [cursor=pointer]:
+                - /url: /app/speaker/events
+            - listitem [ref=f8e73]:
+              - text: /
+              - link "devCampNoord 2026" [ref=f8e74] [cursor=pointer]:
+                - /url: /app/speaker/event/details/21628
+            - listitem [ref=f8e75]:
+              - text: /
+              - strong [ref=f8e76]: Rebuild or Refactor?‎ That is the question!
+        - link " Public Profile" [ref=f8e79] [cursor=pointer]:
+          - /url: /ReneVanOsnabrugge/
+          - generic [ref=f8e80]: 
+          - text: Public Profile
+      - generic [ref=f8e81]:
+        - generic [ref=f8e85]:
+          - generic [ref=f8e86]:
+            - link " Event Dashboard" [ref=f8e87] [cursor=pointer]:
+              - /url: /app/speaker/event/details/21628
+              - generic [ref=f8e88]: 
+              - text: Event Dashboard
+            - button " Contact Organizer" [ref=f8e89] [cursor=pointer]:
+              - generic [ref=f8e90]: 
+              - text: Contact Organizer
+          - heading "devCampNoord 2026 finished 3 months ago" [level=2] [ref=f8e91]:
+            - text: devCampNoord 2026
+            - generic [ref=f8e92]: finished 3 months ago
+        - generic [ref=f8e95]:
+          - paragraph [ref=f8e96]:
+            - text: Congratulations! Your
+            - strong [ref=f8e97]: session has been accepted
+            - text: "!"
+          - generic [ref=f8e98]: You have confirmed your participation on 3 Feb 2026.
+          - paragraph
+        - generic [ref=f8e99]:
+          - generic [ref=f8e100]:
+            - generic [ref=f8e101]:
+              - generic [ref=f8e102]:
+                - generic "Editing not allowed. Contact the event organizer." [ref=f8e104]:
+                  - link " Edit session":
+                    - /url: /app/speaker/session/1079513
+                    - generic: 
+                    - text: Edit session
+                - heading "Rebuild or Refactor?‎ That is the question!" [level=3] [ref=f8e105]
+              - generic [ref=f8e106]:
+                - generic [ref=f8e107]:
+                  - generic [ref=f8e108]:
+                    - generic [ref=f8e109]: 
+                    - generic [ref=f8e110]:
+                      - text: Thursday, 9 Apr 2026 2:00 pm - 2:45 pm (45 minutes)
+                      - generic [ref=f8e111]: in W. Europe Daylight Time (UTC+02:00)
+                  - text: 
+                  - generic [ref=f8e112]:
+                    - generic [ref=f8e113]: 
+                    - generic [ref=f8e114]: Zaal 8
+                - heading "Description" [level=4] [ref=f8e115]
+                - paragraph [ref=f8e116]:
+                  - text: "Sooner or later, you will encounter the question: Rebuild or Refactor? Software that has been in use for several years will inevitably cause issues. Maybe the software is hard to maintain, or perhaps it is difficult to add new features, which slows down development. Your development teams might spend more time fixing issues than adding new features, making changes both hard and expensive. Developers may suggest starting over because the software is unmaintainable, while the business pushes back to maintain velocity."
+                  - text: "Regardless of the reason, the question will arise: Should we rebuild the software? How long will it take? And how much will it cost?"
+                  - text: These are important and seemingly straightforward questions, but the answers are not always simple or concrete. There is more to consider than just time and resources.
+                  - text: In this session, we will explore this question in more detail. We will discuss some challenges and considerations involved in making the business decision to rebuild or refactor an application. Furthermore, we will explore how to proceed once the decision has been made.
+                - heading "Submitted" [level=4] [ref=f8e117]
+                - paragraph [ref=f8e118]: 18 Nov 2025 2:34 pm
+            - generic [ref=f8e122]:
+              - generic [ref=f8e123]: SESSION OWNER
+              - heading "René van Osnabrugge" [level=3] [ref=f8e124]:
+                - strong [ref=f8e125]: René van Osnabrugge
+              - paragraph [ref=f8e126]: Global Consulting Director @ Xebia
+              - generic [ref=f8e127]:
+                - text: As GCD of Xebia Microsoft Services, Rene enables consultants to help organizations and leadership teams to build an engineering culture that allows them to build, deliver, and operate software in a secure and compliant way. With a focus on both the technical and cultural aspects of a company, Rene helps clients transform their work processes, operating model, and culture to become high-speed, innovative, and productive.
+                - text: Rene is passionate about learning new technologies and exploring the cultural and people aspects of companies. He believes that by focusing on both technical implementation and cultural development, we can drive our industry forward. He loves sharing his knowledge and insights at conferences and training events.
+                - text: As a frequently asked speaker at well-known industry events like GitHub Universe, NDC, Techorama, AllDayDevOps, NDC, and Visual Studio Live!, Rene is known for his expertise in Microsoft Azure, DevOps and DevOps Culture. In addition to being a Microsoft MVP since 2012, he is also the founder of the popular community event Global DevOps Bootcamp.
+              - paragraph [ref=f8e128]:
+                - generic [ref=f8e129]: 
+                - link "rvanosnabrugge@live.com" [ref=f8e130] [cursor=pointer]:
+                  - /url: mailto:rvanosnabrugge@live.com
+          - generic [ref=f8e133]:
+            - heading "Feedback" [level=3] [ref=f8e135]
+            - generic [ref=f8e137]:
+              - generic [ref=f8e138]:
+                - paragraph [ref=f8e139]: Show a QR code at the end of your session (on the last slide or during Q&A). Attendees can scan it to give feedback to you and the event organizers.
+                - link " More details on Feedback" [ref=f8e140] [cursor=pointer]:
+                  - /url: /playbook/feedback-as-speaker/
+                  - generic [ref=f8e142]: 
+                  - text: More details on Feedback
+              - button " Download session QR code" [ref=f8e144] [cursor=pointer]:
+                - generic [ref=f8e145]: 
+                - text: Download session QR code
+  - text:   
+  - generic [ref=f8e147]:
+    - generic [ref=f8e148] [cursor=pointer]: ✖
+    - generic [ref=f8e149]:
+      - text: We use cookies to improve your browsing experience.
+      - link "Details" [ref=f8e150] [cursor=pointer]:
+        - /url: /privacy-policy/

@@ -1,0 +1,189 @@
+- generic [active] [ref=f16e1]:
+  - generic [ref=f16e2]:
+    - navigation [ref=f16e3]:
+      - list [ref=f16e6]:
+        - listitem [ref=f16e7]:
+          - link [ref=f16e9] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f16e10]:
+          - generic [ref=f16e11]:
+            - group [ref=f16e12]:
+              - link " Organizer" [ref=f16e13] [cursor=pointer]:
+                - /url: /app/organizer
+                - generic [ref=f16e14]: 
+                - text: Organizer
+              - link " Speaker" [ref=f16e15] [cursor=pointer]:
+                - /url: /app/speaker
+                - generic [ref=f16e16]: 
+                - text: Speaker
+            - text:  
+        - listitem [ref=f16e17]:
+          - generic [ref=f16e19]: René van Osnabrugge
+        - listitem [ref=f16e20]:
+          - link " Overview" [ref=f16e21] [cursor=pointer]:
+            - /url: /app/speaker
+            - generic [ref=f16e22]: 
+            - text: Overview
+        - listitem [ref=f16e23]:
+          - link " Edit Profile" [ref=f16e24] [cursor=pointer]:
+            - /url: /app/speaker/profile
+            - generic [ref=f16e25]: 
+            - text: Edit Profile
+        - listitem [ref=f16e26]:
+          - link " Events" [ref=f16e27] [cursor=pointer]:
+            - /url: /app/speaker/events
+            - generic [ref=f16e28]: 
+            - text: Events
+        - listitem [ref=f16e29]:
+          - link " Sessions" [ref=f16e30] [cursor=pointer]:
+            - /url: /app/speaker/sessions
+            - generic [ref=f16e31]: 
+            - text: Sessions
+        - listitem [ref=f16e32]:
+          - link " Inbox" [ref=f16e33] [cursor=pointer]:
+            - /url: /app/speaker/inbox
+            - generic [ref=f16e34]: 
+            - text: Inbox
+        - listitem [ref=f16e35]:
+          - link "襤 Discover events" [ref=f16e36] [cursor=pointer]:
+            - /url: /app/speaker/discover
+            - generic [ref=f16e37]: 襤
+            - text: Discover events
+        - listitem [ref=f16e38]:
+          - link " Embed on your Blog" [ref=f16e39] [cursor=pointer]:
+            - /url: /app/speaker/embed
+            - generic [ref=f16e40]: 
+            - text: Embed on your Blog
+        - listitem [ref=f16e41]
+        - listitem [ref=f16e42]:
+          - link " My Public Profile" [ref=f16e43] [cursor=pointer]:
+            - /url: /ReneVanOsnabrugge/
+            - generic [ref=f16e44]: 
+            - text: My Public Profile
+        - listitem [ref=f16e45]:
+          - link " Speakers Directory " [ref=f16e46] [cursor=pointer]:
+            - /url: /speakers-directory
+            - generic [ref=f16e47]: 
+            - text: Speakers Directory
+            - generic [ref=f16e49]: 
+    - generic [ref=f16e51]:
+      - navigation [ref=f16e53]:
+        - link "" [ref=f16e55] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f16e56]: 
+        - list [ref=f16e57]:
+          - listitem [ref=f16e58]:
+            - button " Help & Support" [ref=f16e59] [cursor=pointer]:
+              - generic [ref=f16e60]: 
+              - text: Help & Support
+            - text:  
+          - listitem [ref=f16e62]:
+            - generic [ref=f16e63]:
+              - button "René van Osnabrugge (rvanosnabrugge@live.com)" [ref=f16e64] [cursor=pointer]: René van Osnabrugge (rvanosnabrugge@live.com)
+              - text: 
+      - generic [ref=f16e67]:
+        - generic [ref=f16e68]:
+          - heading "René van Osnabrugge" [level=2] [ref=f16e69]
+          - list [ref=f16e70]:
+            - listitem [ref=f16e71]:
+              - link "My Events" [ref=f16e72] [cursor=pointer]:
+                - /url: /app/speaker/events
+            - listitem [ref=f16e73]:
+              - text: /
+              - link "Techorama 2023 Belgium" [ref=f16e74] [cursor=pointer]:
+                - /url: /app/speaker/event/details/9799
+            - listitem [ref=f16e75]:
+              - text: /
+              - strong [ref=f16e76]: "Mind Matters: The Importance of Cultivating a DevOps Mindset"
+        - link " Public Profile" [ref=f16e79] [cursor=pointer]:
+          - /url: /ReneVanOsnabrugge/
+          - generic [ref=f16e80]: 
+          - text: Public Profile
+      - generic [ref=f16e81]:
+        - generic [ref=f16e85]:
+          - generic [ref=f16e86]:
+            - link " Event Dashboard" [ref=f16e87] [cursor=pointer]:
+              - /url: /app/speaker/event/details/9799
+              - generic [ref=f16e88]: 
+              - text: Event Dashboard
+            - button " Contact Organizer" [ref=f16e89] [cursor=pointer]:
+              - generic [ref=f16e90]: 
+              - text: Contact Organizer
+          - heading "Techorama 2023 Belgium finished 3 years ago" [level=2] [ref=f16e91]:
+            - text: Techorama 2023 Belgium
+            - generic [ref=f16e92]: finished 3 years ago
+        - generic [ref=f16e95]:
+          - paragraph [ref=f16e96]:
+            - text: Congratulations! Your
+            - strong [ref=f16e97]: session has been accepted
+            - text: "!"
+          - link "Confirm participation" [ref=f16e99] [cursor=pointer]:
+            - /url: /app/speaker/session/confirmStatus/480639/oyowra
+          - paragraph
+        - generic [ref=f16e101]:
+          - generic [ref=f16e102]:
+            - generic [ref=f16e103]:
+              - link " Edit session" [ref=f16e105] [cursor=pointer]:
+                - /url: /app/speaker/session/edit/480639
+                - generic [ref=f16e106]: 
+                - text: Edit session
+              - 'heading "Mind Matters: The Importance of Cultivating a DevOps Mindset" [level=3] [ref=f16e107]'
+            - generic [ref=f16e108]:
+              - generic [ref=f16e109]:
+                - generic [ref=f16e110]:
+                  - generic [ref=f16e111]: 
+                  - generic [ref=f16e112]:
+                    - text: Tuesday, 16 May 2023 5:15 pm - 6:15 pm (60 minutes)
+                    - generic [ref=f16e113]: in Romance Daylight Time (UTC+02:00)
+                - text: 
+                - generic [ref=f16e114]:
+                  - generic [ref=f16e115]: 
+                  - generic [ref=f16e116]: Room 9
+              - heading "Description" [level=4] [ref=f16e117]
+              - paragraph [ref=f16e118]:
+                - text: While hard skills like continuous delivery and automated testing are important for practicing DevOps successfully, they are not the only factors that determine success. In many cases, people's mindset and willingness to embrace new practices and tools can also play a critical role. Fear of failure, fear of speaking up, motivation, and drive are all factors that can impact a team's ability to practice DevOps effectively.
+                - text: In this session, we'll explore the concept of a DevOps mindset and how to cultivate it within yourself and your team. We'll discuss how to recognize fears and counter-productive behavior, and provide tips and insights on how to foster a culture of courage, teamwork, DevOps leadership, and continuous improvement. Join me and learn how to cultivate a DevOps mindset that drives success!
+              - table [ref=f16e119]:
+                - rowgroup [ref=f16e120]:
+                  - row "Session format Session" [ref=f16e121]:
+                    - rowheader "Session format" [ref=f16e122]
+                    - cell "Session" [ref=f16e123]:
+                      - paragraph [ref=f16e124]: Session
+                  - row "Level 200" [ref=f16e125]:
+                    - rowheader "Level" [ref=f16e126]
+                    - cell "200" [ref=f16e127]:
+                      - paragraph [ref=f16e128]: "200"
+                  - row "Track Motivational & self-improvement" [ref=f16e129]:
+                    - rowheader "Track" [ref=f16e130]
+                    - cell "Motivational & self-improvement" [ref=f16e131]:
+                      - paragraph [ref=f16e132]: Motivational & self-improvement
+              - heading "Submitted" [level=4] [ref=f16e133]
+              - paragraph [ref=f16e134]: 19 Apr 2023 8:07 am
+          - generic [ref=f16e138]:
+            - generic [ref=f16e139]: SESSION OWNER
+            - heading "René van Osnabrugge" [level=3] [ref=f16e140]:
+              - strong [ref=f16e141]: René van Osnabrugge
+            - paragraph [ref=f16e142]: DevOps Strategy Consultant @ Xpirit
+            - generic [ref=f16e143]: "René is a DevOps Strategy Consultant working for Xpirit in the Netherlands. Using modern technologies, implementing Continuous Delivery, DevOps practices and coaching in the domain of Scrum and Agile, he helps companies improve their software delivery process. René is an active blogger and speaker at both national and international conferences where he shares his knowledge of his passion: DevOps and Application Lifecycle Management. René is a Microsoft MVP since 2012 and founder of the popular community event Global DevOps Bootcamp."
+            - paragraph [ref=f16e144]:
+              - generic [ref=f16e145]: 
+              - link "rvanosnabrugge@live.com" [ref=f16e146] [cursor=pointer]:
+                - /url: mailto:rvanosnabrugge@live.com
+            - table [ref=f16e147]:
+              - rowgroup [ref=f16e148]:
+                - row "Where are you travelling from? Hendrik-Ido-Ambacht, Netherlands" [ref=f16e149]:
+                  - rowheader "Where are you travelling from?" [ref=f16e150]
+                  - cell "Hendrik-Ido-Ambacht, Netherlands" [ref=f16e151]:
+                    - paragraph [ref=f16e152]: Hendrik-Ido-Ambacht, Netherlands
+            - paragraph [ref=f16e153]:
+              - link " Edit speaker" [ref=f16e154] [cursor=pointer]:
+                - /url: /app/speaker/events/speaker/edit/9799/1762de2b-6694-473d-aa06-4c53a9368c8c
+                - generic [ref=f16e155]: 
+                - text: Edit speaker
+  - text:   
+  - generic [ref=f16e159]:
+    - generic [ref=f16e160] [cursor=pointer]: ✖
+    - generic [ref=f16e161]:
+      - text: We use cookies to improve your browsing experience.
+      - link "Details" [ref=f16e162] [cursor=pointer]:
+        - /url: /privacy-policy/

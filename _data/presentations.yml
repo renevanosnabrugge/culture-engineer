@@ -1,87 +1,358 @@
-- title: "The Future of Platform Engineering"
-  event: "DevOpsDays Amsterdam"
-  location: "Amsterdam, Netherlands"
-  date: "2026-09-18"
+# ============================================================
+# Presentations & Conferences — René van Osnabrugge
+# Source: Sessionize speaker profile (accepted sessions only)
+# Last updated: 2026-07-06
+# ============================================================
+
+# ── Upcoming ──────────────────────────────────────────────
+
+- title: "The Silent Question: What If Technology Disrupts My Role?"
+  event: "Visual Studio Live! San Diego 2026"
+  location: "San Diego, CA, USA"
+  date: "2026-09-14"
   year: 2026
   upcoming: true
-  registration: "https://devopsdays.org/events/2026-amsterdam"
+  image: "/assets/images/sandiego.png"
+  registration: "https://vslive.com/events/san-diego-2026/home.aspx"
+  description: >-
+    Technology is changing roles faster than most organizations can adapt. This session
+    explores how to navigate disruption with confidence, keep your skills relevant,
+    and lead yourself and your team through uncertainty.
 
-- title: "Culture as Code: Building High-Performing Engineering Teams"
-  event: "Techorama Netherlands"
+- title: "The AI-Powered Software Development Lifecycle"
+  event: "Visual Studio Live! San Diego 2026"
+  location: "San Diego, CA, USA"
+  date: "2026-09-14"
+  year: 2026
+  upcoming: true
+  image: "/assets/images/sandiego.png"
+  registration: "https://vslive.com/events/san-diego-2026/home.aspx"
+  description: >-
+    A practical look at how AI is reshaping every phase of software delivery — from
+    requirements and design to coding, testing, and operations — and what it means
+    for the way engineering teams work together.
+
+- title: "Unlock the Potential of AI in Your Applications with Microsoft Agent Framework"
+  event: "Visual Studio Live! San Diego 2026"
+  location: "San Diego, CA, USA"
+  date: "2026-09-14"
+  year: 2026
+  upcoming: true
+  workshop: true
+  image: "/assets/images/sandiego.png"
+  registration: "https://vslive.com/events/san-diego-2026/home.aspx"
+  description: >-
+    A full-day hands-on workshop. Learn to build intelligent, multi-step AI agents
+    using the Microsoft Agent Framework — from first prompt to production-ready,
+    tool-calling agents grounded in your own data and APIs.
+
+- title: "The Silent Question: What If Technology Disrupts My Role?"
+  event: "Live! 360 Tech Con Orlando 2026"
+  location: "Orlando, FL, USA"
+  date: "2026-11-15"
+  year: 2026
+  upcoming: true
+  registration: "https://live360events.com/events/orlando-2026/home.aspx"
+  description: >-
+    Technology is changing roles faster than most organizations can adapt. This session
+    explores how to navigate disruption with confidence, keep your skills relevant,
+    and lead yourself and your team through uncertainty.
+
+- title: "The AI-Powered Software Development Lifecycle"
+  event: "Live! 360 Tech Con Orlando 2026"
+  location: "Orlando, FL, USA"
+  date: "2026-11-15"
+  year: 2026
+  upcoming: true
+  registration: "https://live360events.com/events/orlando-2026/home.aspx"
+  description: >-
+    A practical look at how AI is reshaping every phase of software delivery — from
+    requirements and design to coding, testing, and operations — and what it means
+    for the way engineering teams work together.
+# ── 2026 (past) ───────────────────────────────────────────
+
+- title: "Rebuild or Refactor? That is the question!"
+  event: "devCampNoord 2026"
+  location: "Groningen, Netherlands"
+  date: "2026-04-09"
+  year: 2026
+  upcoming: false
+  url: "https://devnetnoord.nl/"
+  slides: "https://speakerdeck.com/renevanosnabrugge/rebuild-or-refactor-devcampnoord-2026"
+  description: >
+    Sooner or later, you will encounter the question: Rebuild or Refactor? Software
+    that has been in use for several years will inevitably cause issues. Maybe the
+    software is hard to maintain, or perhaps it is difficult to add new features,
+    which slows down development. Your development teams might spend more time fixing
+    issues than adding new features, making changes both hard and expensive. Developers
+    may suggest starting over because the software is unmaintainable, while the business
+    pushes back to maintain velocity. In this session, we explore the challenges and
+    considerations involved in making the business decision to rebuild or refactor an
+    application, and how to proceed once the decision has been made.
+
+# ── 2024 ──────────────────────────────────────────────────
+
+- title: "Rebuild or Refactor? That is the question!"
+  event: "Techorama Netherlands 2024"
   location: "Utrecht, Netherlands"
-  date: "2026-10-07"
-  year: 2026
-  upcoming: true
-  registration: "https://techorama.nl"
-
-- title: "DORA Metrics in Practice"
-  event: "NDC Oslo"
-  location: "Oslo, Norway"
-  date: "2026-06-05"
-  year: 2026
+  date: "2024-10-09"
+  year: 2024
   upcoming: false
-  slides: "https://speakerdeck.com/renevanosnabrugge/dora-metrics-in-practice"
-  video: "https://www.youtube.com/watch?v=example1"
+  url: "https://techorama.nl/"
+  slides: "https://speakerdeck.com/renevanosnabrugge/rebuild-or-refactor-techorama-nl-2024"
+  description: >
+    Sooner or later, you will encounter the question: Rebuild or Refactor? Software
+    that has been in use for several years will inevitably cause issues. Maybe the
+    software is hard to maintain, or perhaps it is difficult to add new features,
+    which slows down development. Your development teams might spend more time fixing
+    issues than adding new features, making changes both hard and expensive. Developers
+    may suggest starting over because the software is unmaintainable, while the business
+    pushes back to maintain velocity. In this session, we explore the challenges and
+    considerations involved in making the business decision to rebuild or refactor an
+    application, and how to proceed once the decision has been made.
 
-- title: "Psychological Safety: The Foundation of Every Great Engineering Team"
-  event: "GOTO Amsterdam"
-  location: "Amsterdam, Netherlands"
-  date: "2026-04-22"
-  year: 2026
-  upcoming: false
-  slides: "https://speakerdeck.com/renevanosnabrugge/psychological-safety"
-  description: "Exploring how psychological safety enables teams to take risks, learn faster, and ship better software."
-
-- title: "From Monolith to Microservices Without Losing Your Mind"
-  event: "Techorama Belgium"
+- title: "The Fin-tastic Way to Boost Your Cloud ROI: An Introduction to FinOps on Azure"
+  event: "Techorama Belgium 2024"
   location: "Antwerp, Belgium"
-  date: "2025-05-14"
-  year: 2025
-  upcoming: false
-  slides: "https://speakerdeck.com/renevanosnabrugge/monolith-to-microservices"
-  video: "https://www.youtube.com/watch?v=example2"
-  description: "Practical patterns and anti-patterns for incrementally modernising a legacy monolithic application."
-
-- title: "Azure DevOps Pipelines Deep Dive"
-  event: "NDC London"
-  location: "London, UK"
-  date: "2025-01-30"
-  year: 2025
-  upcoming: false
-  slides: "https://speakerdeck.com/renevanosnabrugge/azure-devops-pipelines"
-  video: "https://www.youtube.com/watch?v=example3"
-
-- title: "Engineering Culture: Why Culture Eats Strategy for Breakfast"
-  event: "DevOpsDays Copenhagen"
-  location: "Copenhagen, Denmark"
-  date: "2025-03-11"
-  year: 2025
-  upcoming: false
-  slides: "https://speakerdeck.com/renevanosnabrugge/engineering-culture"
-
-- title: "Continuous Delivery with GitHub Actions"
-  event: "dotNed Saturday"
-  location: "Nieuwegein, Netherlands"
-  date: "2024-11-09"
+  date: "2024-05-07"
   year: 2024
   upcoming: false
-  slides: "https://speakerdeck.com/renevanosnabrugge/cd-github-actions"
+  url: "https://techorama.be/"
+  slides: "https://speakerdeck.com/renevanosnabrugge/fintastic-finops-azure-techorama-be-2024"
+  description: >
+    Are you tired of overspending on cloud costs? Want to optimize your Azure spending
+    and boost your ROI? Look no further than FinOps! In this session, we dive into the
+    basics of FinOps and why it is becoming increasingly important for organizations of
+    all sizes. We explore the specific tools and features available on the Azure platform
+    that can help you implement FinOps successfully, including cost management, budgeting,
+    and optimization tools. Whether you are new to FinOps or have experience in the field,
+    this session will provide valuable insights and practical tips for maximizing your
+    cloud savings.
 
-- title: "Shift-Left Security: Making Security Everyone's Responsibility"
-  event: "SDN Event"
-  location: "Zeist, Netherlands"
-  date: "2024-09-28"
+- title: "The Fin-tastic Way to Boost Your Cloud ROI: An Introduction to FinOps on Azure"
+  event: "Visual Studio Live! Las Vegas 2024"
+  location: "Las Vegas, NV, USA"
+  date: "2024-03-03"
   year: 2024
   upcoming: false
-  slides: "https://speakerdeck.com/renevanosnabrugge/shift-left-security"
-  video: "https://www.youtube.com/watch?v=example4"
+  url: "https://vslive.com/"
+  description: >
+    Are you tired of overspending on cloud costs? Want to optimize your Azure spending
+    and boost your ROI? Look no further than FinOps! In this session, we dive into the
+    basics of FinOps and why it is becoming increasingly important for organizations of
+    all sizes. We explore Azure cost management, budgeting, and optimization tools to
+    help you become a FinOps pro on Azure.
 
-- title: "Platform Engineering: Building Internal Developer Platforms"
-  event: "Microsoft Build"
-  location: "Seattle, WA, USA"
-  date: "2024-05-21"
+- title: "Culture Club: Building a Strong Engineering Culture from the Ground Up"
+  event: "Visual Studio Live! Las Vegas 2024"
+  location: "Las Vegas, NV, USA"
+  date: "2024-03-03"
   year: 2024
   upcoming: false
-  slides: "https://speakerdeck.com/renevanosnabrugge/platform-engineering"
-  video: "https://www.youtube.com/watch?v=example5"
-  description: "Keynote session on how to design and implement an Internal Developer Platform that delights your engineers."
+  url: "https://vslive.com/"
+  description: >
+    Every company is essentially a software company in today's digital world. However,
+    building and delivering great software is not enough to ensure success. To truly
+    thrive, companies must embrace an engineering culture that goes beyond technical
+    solutions. In this session, we explore the 8 pillars of an engineering culture and
+    show you how to build and nurture one that drives business success — from state-of-the-art
+    software and smooth delivery, to appropriate continuity, the power of platforms, and
+    empowering leadership.
+
+- title: "Code to Cloud with GitHub"
+  event: "Visual Studio Live! Las Vegas 2024"
+  location: "Las Vegas, NV, USA"
+  date: "2024-03-03"
+  year: 2024
+  upcoming: false
+  url: "https://vslive.com/"
+  description: >
+    A full-day hands-on workshop exploring the exciting world of GitHub and Azure. Learn
+    fast first-time commit and automation processes with GitHub and Azure, familiarize
+    yourself with legacy code using CodeSpaces and Copilot, and understand secure
+    development practices to deploy applications to Azure with GitHub integration.
+
+# ── 2023 ──────────────────────────────────────────────────
+
+- title: "Mind Matters: The Importance of Cultivating a DevOps Mindset"
+  event: "Live! 360 Tech Con Orlando 2023"
+  location: "Orlando, FL, USA"
+  date: "2023-11-12"
+  year: 2023
+  upcoming: false
+  url: "https://live360events.com/"
+  description: >
+    While hard skills like continuous delivery and automated testing are important for
+    practicing DevOps successfully, they are not the only factors that determine success.
+    People's mindset and willingness to embrace new practices and tools can also play a
+    critical role. In this session, we explore the concept of a DevOps mindset and how to
+    cultivate it within yourself and your team, discussing how to recognize fears and
+    counter-productive behavior, and how to foster a culture of courage, teamwork,
+    DevOps leadership, and continuous improvement.
+
+- title: "The Fin-tastic Way to Boost Your Cloud ROI: An Introduction to FinOps on Azure"
+  event: "Live! 360 Tech Con Orlando 2023"
+  location: "Orlando, FL, USA"
+  date: "2023-11-12"
+  year: 2023
+  upcoming: false
+  url: "https://live360events.com/"
+  description: >
+    Are you tired of overspending on cloud costs? Want to optimize your Azure spending
+    and boost your ROI? Look no further than FinOps! In this session, we dive into the
+    basics of FinOps and why it is becoming increasingly important for organizations of
+    all sizes. We explore Azure cost management, budgeting, and optimization tools to
+    help you become a FinOps pro on Azure.
+
+- title: "Culture Club: Building a Strong Engineering Culture from the Ground Up"
+  event: "Live! 360 Tech Con Orlando 2023"
+  location: "Orlando, FL, USA"
+  date: "2023-11-12"
+  year: 2023
+  upcoming: false
+  url: "https://live360events.com/"
+  description: >
+    Every company is essentially a software company in today's digital world. In this
+    session, we explore the 8 pillars of an engineering culture and show you how to
+    build and nurture one that drives business success, covering software, delivery,
+    continuity, platforms, empowering operating models, and leadership.
+
+- title: "Culture Club: Building a Strong Engineering Culture from the Ground Up"
+  event: "All Day DevOps 2023"
+  location: "Online"
+  date: "2023-10-26"
+  year: 2023
+  upcoming: false
+  url: "https://www.alldaydevops.com/"
+  description: >
+    Every company is essentially a software company in today's digital world. In this
+    session, we explore the 8 pillars of an engineering culture and show you how to
+    build and nurture one that drives business success, covering software, delivery,
+    continuity, platforms, empowering operating models, and leadership.
+
+- title: "The Fin-tastic Way to Boost Your Cloud ROI: An Introduction to FinOps on Azure"
+  event: "Techorama Netherlands 2023"
+  location: "Utrecht, Netherlands"
+  date: "2023-10-10"
+  year: 2023
+  upcoming: false
+  url: "https://techorama.nl/"
+  description: >
+    Are you tired of overspending on cloud costs? Want to optimize your Azure spending
+    and boost your ROI? Look no further than FinOps! In this session, we dive into the
+    basics of FinOps and explore Azure cost management, budgeting, and optimization tools
+    to help you become a FinOps pro on Azure.
+
+- title: "Mind Matters: The Importance of Cultivating a DevOps Mindset"
+  event: "Techorama Belgium 2023"
+  location: "Antwerp, Belgium"
+  date: "2023-05-16"
+  year: 2023
+  upcoming: false
+  url: "https://techorama.be/"
+  slides: "https://speakerdeck.com/renevanosnabrugge/mind-matters-devops-mindset-techorama-2023"
+  description: >
+    While hard skills like continuous delivery and automated testing are important for
+    practicing DevOps successfully, they are not the only factors that determine success.
+    In this session, we explore the concept of a DevOps mindset and how to cultivate it
+    within yourself and your team, discussing how to recognize fears and counter-productive
+    behavior, and how to foster a culture of courage, teamwork, and continuous improvement.
+
+- title: "Mind Matters: The Importance of Cultivating a DevOps Mindset"
+  event: "devCampNoord 2023"
+  location: "Groningen, Netherlands"
+  date: "2023-04-06"
+  year: 2023
+  upcoming: false
+  url: "https://devnetnoord.nl/"
+  description: >
+    While hard skills like continuous delivery and automated testing are important for
+    practicing DevOps successfully, they are not the only factors that determine success.
+    In this session, we explore the concept of a DevOps mindset and how to cultivate it
+    within yourself and your team, discussing how to recognize fears and counter-productive
+    behavior, and how to foster a culture of courage, teamwork, and continuous improvement.
+
+# ── 2022 ──────────────────────────────────────────────────
+
+- title: "When 'We are down' is not good enough. Site Reliability Engineering (SRE) in Azure"
+  event: "CloudBrew 2022"
+  location: "Mechelen, Belgium"
+  date: "2022-11-18"
+  year: 2022
+  upcoming: false
+  url: "https://www.cloudbrew.be/"
+  description: >
+    The more we are connected and the more others are connected to us, the more important
+    reliability of your sites becomes. Site Reliability Engineering is an engineering
+    discipline devoted to helping an organization sustainably achieve the appropriate level
+    of reliability in their systems, services, and products. In this session we cover the
+    concepts of SRE and use Microsoft Azure to implement some of the concepts and practices.
+    Key takeaways: what SRE is and why you should use it, what an SLA, SLO and SLI are,
+    and the difference between DevOps and SRE.
+
+- title: "Embrace chaos to achieve stability"
+  event: "All Day DevOps 2022"
+  location: "Online"
+  date: "2022-11-10"
+  year: 2022
+  upcoming: false
+  url: "https://www.alldaydevops.com/"
+  description: >
+    What do you do in case of a cyber attack, natural disaster, or critical person
+    absence? Chaos engineering is a practice that helps you prepare for these scenarios.
+    In this session we cover the principles of chaos engineering and demonstrate tools
+    that can help you overcome a crisis before it strikes.
+
+- title: "Embrace chaos to achieve stability"
+  event: "Techorama Netherlands 2022"
+  location: "Utrecht, Netherlands"
+  date: "2022-10-12"
+  year: 2022
+  upcoming: false
+  url: "https://techorama.nl/"
+  description: >
+    What do you do in case of a cyber attack, natural disaster, or critical person
+    absence? Chaos engineering is a practice that helps you prepare for these scenarios.
+    In this session we cover the principles of chaos engineering and demonstrate tools
+    that can help you overcome a crisis before it strikes.
+
+- title: "Embrace chaos to achieve stability"
+  event: "Techorama Belgium 2022"
+  location: "Antwerp, Belgium"
+  date: "2022-05-25"
+  year: 2022
+  upcoming: false
+  url: "https://techorama.be/"
+  description: >
+    What do you do in case of a cyber attack, natural disaster, or critical person
+    absence? Chaos engineering is a practice that helps you prepare for these scenarios.
+    In this session we cover the principles of chaos engineering and demonstrate tools
+    that can help you overcome a crisis before it strikes.
+
+- title: "Learning Experience - DevOps Engineer for a Day"
+  event: "Techorama Belgium 2022"
+  location: "Antwerp, Belgium"
+  date: "2022-05-25"
+  year: 2022
+  upcoming: false
+  url: "https://techorama.be/"
+  description: >
+    A full-day gamified workshop where you and your team are responsible for keeping a
+    webshop up and running. In a simulation you face challenges that disrupt your site:
+    detect the disruption, respond with a quick fix, then implement a permanent solution.
+    You get a fully provisioned Azure infrastructure, Azure DevOps pipelines, and a
+    functional application. Apply tool-agnostic DevOps and SRE practices regardless of
+    language or platform.
+
+- title: "Embrace chaos to achieve stability"
+  event: "NDC Porto 2022"
+  location: "Porto, Portugal"
+  date: "2022-04-29"
+  year: 2022
+  upcoming: false
+  url: "https://ndcporto.com/"
+  description: >
+    What do you do in case of a cyber attack, natural disaster, or critical person
+    absence? Chaos engineering is a practice that helps you prepare for these scenarios.
+    In this session we cover the principles of chaos engineering and demonstrate tools
+    that can help you overcome a crisis before it strikes.

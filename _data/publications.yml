@@ -1,65 +1,113 @@
-- title: "DORA Metrics: Measuring What Matters in Software Delivery"
-  type: article
-  publication: "InfoQ"
-  date: "2026-03-15"
-  url: "https://www.infoq.com/articles/dora-metrics-software-delivery"
-  summary: >
-    A deep dive into the four key DORA metrics — deployment frequency, lead time for changes,
-    change failure rate, and time to restore service — and how teams can use them to drive
-    meaningful improvement.
+# ── eBooks / Whitepapers ───────────────────────────────────
 
-- title: "Building a Culture of Continuous Improvement"
-  type: article
-  publication: "DZone DevOps Zone"
-  date: "2025-11-20"
-  url: "https://dzone.com/articles/culture-of-continuous-improvement"
-  summary: >
-    Practical advice on creating feedback loops, running effective retrospectives, and
-    embedding a learning mindset across your engineering organisation.
-
-- title: "The Anatomy of an Internal Developer Platform"
-  type: article
-  publication: "The New Stack"
-  date: "2025-08-05"
-  url: "https://thenewstack.io/anatomy-internal-developer-platform"
-  summary: >
-    An architectural walkthrough of what makes a great Internal Developer Platform,
-    covering the golden paths, self-service capabilities, and observability features
-    that elevate developer experience.
-
-- title: "Psychological Safety in Engineering Teams"
-  type: article
-  publication: "LeadDev"
-  date: "2025-05-12"
-  url: "https://leaddev.com/psychological-safety-engineering-teams"
-  summary: >
-    Why psychological safety is the single most important factor in high-performing teams,
-    and concrete practices you can adopt as a tech lead or manager today.
-
-- title: "Platform Engineering: The Next Wave of DevOps"
+- title: "Building Engineering Cultures"
   type: whitepaper
-  publication: "Microsoft Tech Community"
-  date: "2026-01-10"
-  url: "https://techcommunity.microsoft.com/platform-engineering-whitepaper"
+  publication: "Xebia"
+  date: "2023-01-01"
+  url: "https://pages.xebia.com/engineering-culture-ebook"
   summary: >
-    A comprehensive whitepaper exploring the evolution from DevOps to Platform Engineering,
-    including reference architectures, toolchain recommendations, and adoption patterns.
+    A practical framework for creating high-performing engineering organizations through eight
+    pillars covering technology, leadership, operating models, knowledge sharing, developer
+    experience and organizational transformation. Lead author.
 
-- title: "Modernising Legacy .NET Applications for the Cloud"
+- title: "6 Misconceptions About Engineering Culture"
   type: whitepaper
-  publication: "Self-published"
-  date: "2025-02-28"
-  url: "/assets/downloads/modernising-legacy-dotnet.pdf"
+  publication: "Xebia"
+  date: "2023-06-01"
+  url: "https://pages.xebia.com/misconceptions-about-engineering-culture-ebook"
   summary: >
-    Practical guidance for architects and developers tasked with migrating large .NET
-    applications to Azure, covering strangler fig patterns, containerisation strategies,
-    and data migration approaches.
+    Addresses the most common misconceptions around engineering culture and explains why
+    culture is critical for innovation, competitive advantage and attracting top talent.
+    Contributor.
 
-- title: "Rene van Osnabrugge — Speaker Profile"
+# ── Articles ───────────────────────────────────────────────
+
+- title: "Together We Build an Engineering Culture"
+  type: article
+  publication: "Xebia"
+  date: "2023-03-01"
+  url: "https://xebia.com/blog/together-we-build-an-engineering-culture/"
+  summary: >
+    Foundational article co-authored with Marcel de Vries introducing the Engineering Culture
+    model, explaining why every organization is becoming an IT company and how culture,
+    technology and leadership must evolve together.
+
+- title: "The SPACE Framework: Our View on Satisfaction and Well-Being"
+  type: article
+  publication: "Xebia"
+  date: "2022-11-01"
+  url: "https://xebia.com/blog/the-space-framework-our-view-on-satisfaction-and-well-being/"
+  summary: >
+    Explores developer productivity through the SPACE framework and challenges traditional
+    productivity metrics by emphasizing satisfaction, well-being and flow as key indicators
+    of a healthy engineering organization.
+
+- title: "Balancing In-House Strengths with Expert Support: A Strategic Approach to Sourcing"
+  type: article
+  publication: "Xebia"
+  date: "2023-09-01"
+  url: "https://xebia.com/articles/balancing-in-house-strengths-with-expert-support-a-strategic-approach-to-sourcing/"
+  summary: >
+    Discusses strategic sourcing, operating models and how organizations can balance internal
+    capabilities with external expertise while building sustainable technology organizations.
+
+- title: "8 Tips voor het Implementeren van Nieuwe Technologie"
+  type: article
+  publication: "Consultancy.nl"
+  date: "2022-05-01"
+  url: "https://www.consultancy.nl/nieuws/48247/8-tips-voor-het-implementeren-van-nieuwe-technologie"
+  summary: >
+    Practical lessons on technology adoption, organizational change and transformation
+    leadership — drawing from hands-on experience leading large-scale cloud and DevOps
+    transformation programs.
+
+- title: "Innovatie & Cultuur"
+  type: article
+  publication: "BlogIT.nl"
+  date: "2022-01-01"
+  url: "https://www.blogit.nl/innovatie-cultuur/"
+  summary: >
+    Perspectives on innovation, culture and creating high-performing organizations in
+    a world where technology is increasingly central to business survival.
+
+# ── Other ──────────────────────────────────────────────────
+
+- title: "XPRT Magazine — Microsoft & Engineering Culture Editions"
   type: other
-  publication: "Sessionize"
-  date: "2024-01-01"
-  url: "https://sessionize.com/renevanosnabrugge"
+  publication: "Xebia XPRT Magazine"
+  date: "2023-01-01"
+  url: "https://xebia.com/partners/microsoft/microsoft-library/"
   summary: >
-    Full speaker profile including abstract library and session ratings from conferences
-    across Europe and North America.
+    Contributor to multiple editions of XPRT Magazine covering Engineering Culture,
+    Cloud Transformation, DevOps, Developer Productivity, Leadership and Modern Software
+    Delivery.
+
+- title: "Wigo4it – To the Cloud: The Complete Story"
+  type: other
+  publication: "Wigo4it"
+  date: "2022-06-01"
+  url: "https://www.wigo4it.nl/nieuws/wigo4it-naar-de-cloud/"
+  summary: >
+    Case study of the full transformation of Wigo4it — the shared IT organization for
+    Amsterdam, Rotterdam, The Hague and Utrecht — into a cloud-native organization through
+    Azure adoption, DevOps, organizational redesign and cultural transformation.
+
+- title: "Ready to Flip the Switch"
+  type: other
+  publication: "Wigo4it"
+  date: "2022-09-01"
+  url: "https://www.wigo4it.nl/nieuws/ready-to-flip-the-switch/"
+  summary: >
+    Describes the final stage of Wigo4it's multi-year transformation journey, including
+    cloud migration completion, DevOps adoption, SaaS transformation and operating model
+    redesign. Featured as transformation leader.
+
+- title: "Engineering Culture & Technology Podcast"
+  type: other
+  publication: "Spotify / LEAD Podcast"
+  date: "2024-01-01"
+  url: "https://open.spotify.com/show/1tQE4IAwK2sCgHY4HEBdVl"
+  summary: >
+    Co-host and contributor to the LEAD podcast series covering Engineering Culture, DevOps,
+    Digital Transformation, Leadership, Cloud Adoption and Organizational Change — created
+    with Geert van der Cruijsen.

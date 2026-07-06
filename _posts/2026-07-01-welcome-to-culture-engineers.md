@@ -4,6 +4,7 @@ title: "Welcome to Culture Engineers"
 subtitle: "Why I started this site and what you can expect"
 date: 2026-07-01 09:00:00 +0200
 tags: [culture, introduction, engineering]
+image_prompt: "Professional editorial illustration of a diverse engineering team gathered around a glowing campfire made of circuit board traces, dark navy background, warm orange light, minimal geometric style, no text, 16:9 landscape"
 excerpt: >
   After years of speaking at conferences, writing articles, and advising teams, I finally
   have a home for all of it. Here's why I built this site and what you'll find here.

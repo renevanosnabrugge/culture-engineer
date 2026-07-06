@@ -1,19 +1,21 @@
-title: Culture Engineers
-description: Architect | Speaker | Author — Building better engineering cultures
+title: René van Osnabrugge
+description: Technology & Transformation Executive | Speaker | Microsoft MVP — Most technology problems are culture problems in disguise
 url: ""
 baseurl: ""
 
 author:
-  name: Rene van Osnabrugge
-  title: Enterprise Architect | Speaker | Author
-  email: info@cultureengineers.io
+  name: René van Osnabrugge
+  title: Technology & Transformation Executive
+  email: rvanosnabrugge@live.com
   linkedin: https://www.linkedin.com/in/renevanosnabrugge
   twitter: https://twitter.com/renevanosnabrugge
   github: https://github.com/renevanosnabrugge
   bio: >
-    Passionate software architect and culture engineer, helping teams build
-    better products and healthier engineering cultures through continuous
-    improvement, DevOps practices, and people-first leadership.
+    A technology executive with 25+ years of experience helping complex organizations
+    become sharper, faster and more effective, while moving the people inside them
+    along the way. Global Consulting Director at Xebia · Microsoft Services (Xpirit),
+    Microsoft MVP since 2012, founder of the Global DevOps Bootcamp, and international
+    speaker on 50+ stages.
   photo: /assets/images/profile.jpg
 
 # Build settings
