@@ -29,7 +29,7 @@ permalink: /publications/
               <p class="pub-type-date">Article &mdash; {{ pub.date | date: "%B %Y" }}{% if pub.publication %} &middot; {{ pub.publication }}{% endif %}</p>
               <h3 class="pub-title">{% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
               <p class="pub-summary">{{ pub.summary }}</p>
-              <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.5rem;">
+              <div class="pub-links">
                 {% if pub.url %}<a href="{{ pub.url }}" class="read-more" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>{% endif %}
                 {% if pub.download %}<a href="{{ pub.download }}" class="read-more" target="_blank" rel="noopener noreferrer">📎 Download PDF</a>{% endif %}
               </div>
@@ -38,7 +38,7 @@ permalink: /publications/
           {% endfor %}
         </div>
         {% else %}
-        <p style="color:var(--slate-400)">No articles yet.</p>
+        <p class="empty-state">No articles yet.</p>
         {% endif %}
       </div>
 
@@ -54,7 +54,7 @@ permalink: /publications/
               <p class="pub-type-date">Whitepaper &mdash; {{ pub.date | date: "%B %Y" }}{% if pub.publication %} &middot; {{ pub.publication }}{% endif %}</p>
               <h3 class="pub-title">{% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
               <p class="pub-summary">{{ pub.summary }}</p>
-              <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.5rem;">
+              <div class="pub-links">
                 {% if pub.url %}<a href="{{ pub.url }}" class="read-more" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>{% endif %}
                 {% if pub.download %}<a href="{{ pub.download }}" class="read-more" target="_blank" rel="noopener noreferrer">📎 Download PDF</a>{% endif %}
               </div>
@@ -63,7 +63,7 @@ permalink: /publications/
           {% endfor %}
         </div>
         {% else %}
-        <p style="color:var(--slate-400)">No whitepapers yet.</p>
+        <p class="empty-state">No whitepapers yet.</p>
         {% endif %}
       </div>
 
@@ -85,7 +85,7 @@ permalink: /publications/
           {% endfor %}
         </div>
         {% else %}
-        <p style="color:var(--slate-400)">No other publications yet.</p>
+        <p class="empty-state">No other publications yet.</p>
         {% endif %}
       </div>
 

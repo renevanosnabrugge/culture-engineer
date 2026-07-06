@@ -86,7 +86,7 @@ title: Home
 {% if next_talk %}
 <section class="section section--gray">
   <div class="container">
-    <div class="section-header" style="margin-bottom:2.5rem;">
+    <div class="section-header section-header--spaced">
       <span class="eyebrow">On the Road</span>
       <h2>Next Speaking Engagement</h2>
     </div>
@@ -116,10 +116,10 @@ title: Home
 <!-- ═══ RECENT BLOG POSTS ════════════════════════════════════ -->
 <section class="section">
   <div class="container">
-    <div class="section-header" style="display:flex;align-items:flex-end;justify-content:space-between;text-align:left;margin-bottom:2rem;">
+    <div class="section-header section-header--blog">
       <div>
         <span class="eyebrow">From the Blog</span>
-        <h2 style="margin:0;">Recent Posts</h2>
+        <h2>Recent Posts</h2>
       </div>
       <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline-dark">View all posts &rarr;</a>
     </div>
@@ -144,21 +144,4 @@ title: Home
   </div>
 </section>
 
-
-<!-- RECENT BLOG POSTS -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">From the Blog</span>
-      <h2 class="section-title">Recent Posts</h2>
-      <p class="section-subtitle">Thoughts on engineering culture, DevOps, software architecture, and continuous improvement.</p>
-    </div>
-
-    <div class="post-list" style="display:none"><!-- removed, replaced by post-grid above --></div>
-
-    <div style="text-align: center; margin-top: 2.5rem;">
-      <a href="/blog/" class="btn btn-outline" style="display:none"></a>
-    </div>
-  </div>
-</section>
 

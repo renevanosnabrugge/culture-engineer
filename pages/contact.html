@@ -13,7 +13,7 @@ permalink: /contact/
     <div class="contact-grid">
       <div>
         <h2>Get in Touch</h2>
-        <p style="color:var(--slate-600);margin-bottom:2rem;">
+        <p class="contact-intro">
           I'm always open to speaking invitations, consulting conversations, and connecting with
           fellow practitioners who care about building great engineering organizations.
         </p>
@@ -57,8 +57,8 @@ permalink: /contact/
         {% endif %}
       </div>
 
-      <div style="background:var(--slate-50);border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:2.5rem;">
-        <h3 style="margin-bottom:1.5rem;">Topics I speak about</h3>
+      <div class="contact-topics-box">
+        <h3>Topics I speak about</h3>
         <div class="expertise-list">
           <span class="expertise-tag">Enterprise Architecture</span>
           <span class="expertise-tag">Platform Engineering</span>
@@ -71,8 +71,8 @@ permalink: /contact/
           <span class="expertise-tag">Technical Leadership</span>
         </div>
 
-        <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--slate-200);">
-          <p style="color:var(--slate-600);font-size:.9rem;margin-bottom:1.25rem;">
+        <div class="contact-topics-footer">
+          <p>
             Ready to book a talk or start a conversation?
           </p>
           <a href="mailto:{{ site.author.email }}" class="btn btn-dark">Send me a message</a>

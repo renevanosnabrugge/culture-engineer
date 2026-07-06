@@ -36,13 +36,13 @@ permalink: /presentations/
             {% if talk.registration %}
             <a href="{{ talk.registration }}" class="btn btn-dark btn--sm" target="_blank" rel="noopener noreferrer">Details &rarr;</a>
             {% else %}
-            <span class="btn btn-outline btn--sm" style="opacity:.4;cursor:default">Coming Soon</span>
+            <span class="btn btn-outline btn--sm btn--muted">Coming Soon</span>
             {% endif %}
           </div>
         </div>
         {% endfor %}
         {% else %}
-        <p style="color:var(--slate-400)">No upcoming talks scheduled. Check back soon!</p>
+        <p class="empty-state">No upcoming talks scheduled. Check back soon!</p>
         {% endif %}
       </div>
 
@@ -76,13 +76,13 @@ permalink: /presentations/
             <a href="{{ talk.video }}" class="btn btn-outline-blue btn--sm" target="_blank" rel="noopener noreferrer">▶ Video</a>
             {% endif %}
             {% unless talk.slides or talk.download or talk.video %}
-            <span class="btn btn-outline btn--sm" style="opacity:.4;cursor:default">No materials yet</span>
+            <span class="btn btn-outline btn--sm btn--muted">No materials yet</span>
             {% endunless %}
           </div>
         </div>
         {% endfor %}
         {% else %}
-        <p style="color:var(--slate-400)">No past talks recorded yet.</p>
+        <p class="empty-state">No past talks recorded yet.</p>
         {% endif %}
       </div>
     </div>
