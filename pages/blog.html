@@ -11,9 +11,11 @@ permalink: /blog/
 
   <div class="page-body">
     <div class="post-list">
-      {% for post in paginator.posts %}
+      {% for post in site.posts %}
       <article class="post-card">
-        <div class="post-card-image-placeholder"></div>
+        <div class="post-card-img">
+          {% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.title }}">{% endif %}
+        </div>
         <div class="post-card-body">
           <div class="post-card-meta">
             <time class="post-card-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
@@ -33,28 +35,5 @@ permalink: /blog/
       </article>
       {% endfor %}
     </div>
-
-    <!-- Pagination -->
-    {% if paginator.total_pages > 1 %}
-    <nav class="pagination" aria-label="Blog pagination">
-      {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | relative_url }}" aria-label="Previous page">&larr;</a>
-      {% endif %}
-
-      {% for page in (1..paginator.total_pages) %}
-        {% if page == paginator.page %}
-        <span class="current">{{ page }}</span>
-        {% elsif page == 1 %}
-        <a href="{{ '/blog/' | relative_url }}">{{ page }}</a>
-        {% else %}
-        <a href="{{ '/blog/page' | append: page | relative_url }}">{{ page }}</a>
-        {% endif %}
-      {% endfor %}
-
-      {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | relative_url }}" aria-label="Next page">&rarr;</a>
-      {% endif %}
-    </nav>
-    {% endif %}
   </div>
 </article>

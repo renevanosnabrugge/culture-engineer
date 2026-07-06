@@ -126,7 +126,9 @@ title: Home
     <div class="post-grid">
       {% for post in site.posts limit:3 %}
       <article class="post-card">
-        <div class="post-card-img"></div>
+        <div class="post-card-img">
+          {% if post.image %}<img src="{{ post.image | relative_url }}" alt="{{ post.title }}">{% endif %}
+        </div>
         <div class="post-card-body">
           <div class="post-card-meta">
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>

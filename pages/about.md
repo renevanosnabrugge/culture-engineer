@@ -37,12 +37,16 @@ permalink: /about/
   </div>
   <div>
     <div class="about-photo-wrap">
+      {% if site.author.photo %}
+      <img src="{{ site.author.photo | relative_url }}" alt="{{ site.author.name }}" class="about-photo">
+      {% else %}
       <div class="about-photo-placeholder">
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity=".4">
           <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
         </svg>
         <span>Add profile photo to<br><code>assets/images/profile.jpg</code></span>
       </div>
+      {% endif %}
     </div>
   </div>
 </div>

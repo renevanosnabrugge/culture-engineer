@@ -1261,11 +1261,46 @@ p:last-child { margin-bottom: 0; }
 .post-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
 .post-card-img {
   height: 180px;
-  background: linear-gradient(135deg, var(--slate-100), var(--slate-200));
+  background: linear-gradient(135deg, var(--navy) 0%, #1e3a5f 60%, #e85d04 100%);
+  overflow: hidden; position: relative;
 }
 .post-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.post-card-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(15,23,42,.85) 0%, rgba(232,93,4,.18) 100%);
+  pointer-events: none;
+}
+.post-card-img:has(img)::after { opacity: .35; }
 .read-more { font-size: .85rem; font-weight: 600; color: var(--blue); }
 .read-more:hover { color: var(--blue-dark); }
+
+/* ─── Image prompt card ───────────────────────────────── */
+.image-prompt-card {
+  margin: 2.5rem 0 1rem;
+  background: var(--slate-50); border: 1px solid var(--slate-200);
+  border-left: 3px solid #e85d04;
+  border-radius: var(--radius-lg); padding: 1.25rem 1.5rem;
+}
+.image-prompt-header {
+  display: flex; align-items: baseline; gap: 1rem; margin-bottom: .75rem; flex-wrap: wrap;
+}
+.image-prompt-label { font-weight: 700; font-size: .9rem; color: var(--navy); }
+.image-prompt-hint { font-size: .78rem; color: var(--slate-400); }
+.image-prompt-text {
+  display: block;
+  font-family: var(--font-mono, monospace); font-size: .82rem;
+  color: var(--slate-700); line-height: 1.6;
+  background: var(--white); border: 1px solid var(--slate-200);
+  border-radius: var(--radius); padding: .75rem 1rem;
+  white-space: pre-wrap; word-break: break-word; margin-bottom: .75rem;
+}
+.copy-prompt-btn {
+  font-size: .78rem; font-weight: 600; padding: .35rem .85rem;
+  background: var(--navy); color: var(--white); border: none;
+  border-radius: var(--radius); cursor: pointer;
+  transition: background var(--transition);
+}
+.copy-prompt-btn:hover { background: #e85d04; }
 
 /* ─── Tabs ────────────────────────────────────────────── */
 .tabs {

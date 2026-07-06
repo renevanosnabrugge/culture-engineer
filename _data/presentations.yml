@@ -1,10 +1,53 @@
 # ============================================================
 # Presentations & Conferences — René van Osnabrugge
 # Source: Sessionize speaker profile (accepted sessions only)
-# Last updated: 2026-07-02
+# Last updated: 2026-07-03
 # ============================================================
 
-# ── 2026 ──────────────────────────────────────────────────
+# ── Upcoming ──────────────────────────────────────────────
+
+- title: "The Silent Question: What If Technology Disrupts My Role?"
+  event: "Visual Studio Live! San Diego 2026"
+  location: "San Diego, CA, USA"
+  date: "2026-09-14"
+  year: 2026
+  upcoming: true
+  registration: "https://vslive.com/events/san-diego-2026/home.aspx"
+
+- title: "The AI-Powered Software Development Lifecycle"
+  event: "Visual Studio Live! San Diego 2026"
+  location: "San Diego, CA, USA"
+  date: "2026-09-14"
+  year: 2026
+  upcoming: true
+  registration: "https://vslive.com/events/san-diego-2026/home.aspx"
+
+- title: "Unlock the Potential of AI in Your Applications with Microsoft Agent Framework"
+  event: "Visual Studio Live! San Diego 2026"
+  location: "San Diego, CA, USA"
+  date: "2026-09-14"
+  year: 2026
+  upcoming: true
+  workshop: true
+  registration: "https://vslive.com/events/san-diego-2026/home.aspx"
+
+- title: "The Silent Question: What If Technology Disrupts My Role?"
+  event: "Live! 360 Tech Con Orlando 2026"
+  location: "Orlando, FL, USA"
+  date: "2026-11-15"
+  year: 2026
+  upcoming: true
+  registration: "https://live360events.com/events/orlando-2026/home.aspx"
+
+- title: "The AI-Powered Software Development Lifecycle"
+  event: "Live! 360 Tech Con Orlando 2026"
+  location: "Orlando, FL, USA"
+  date: "2026-11-15"
+  year: 2026
+  upcoming: true
+  registration: "https://live360events.com/events/orlando-2026/home.aspx"
+
+# ── 2026 (past) ───────────────────────────────────────────
 
 - title: "Rebuild or Refactor? That is the question!"
   event: "devCampNoord 2026"

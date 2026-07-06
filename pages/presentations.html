@@ -28,7 +28,7 @@ permalink: /presentations/
             <span class="year">{{ talk.date | date: "%Y" }}</span>
           </div>
           <div class="pres-info">
-            <h3>{{ talk.event }} <span class="upcoming-chip">Upcoming</span></h3>
+            <h3>{{ talk.event }} <span class="upcoming-chip">Upcoming</span>{% if talk.workshop %} <span class="upcoming-chip" style="background:var(--blue-600,#2563eb)">Workshop</span>{% endif %}</h3>
             <p class="pres-event">📍 {{ talk.location }}</p>
             <p class="pres-talk">{{ talk.title }}</p>
           </div>
