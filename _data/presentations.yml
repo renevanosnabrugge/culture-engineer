@@ -1,7 +1,7 @@
 # ============================================================
 # Presentations & Conferences — René van Osnabrugge
 # Source: Sessionize speaker profile (accepted sessions only)
-# Last updated: 2026-07-03
+# Last updated: 2026-07-06
 # ============================================================
 
 # ── Upcoming ──────────────────────────────────────────────
@@ -12,7 +12,12 @@
   date: "2026-09-14"
   year: 2026
   upcoming: true
+  image: "/assets/images/sandiego.png"
   registration: "https://vslive.com/events/san-diego-2026/home.aspx"
+  description: >-
+    Technology is changing roles faster than most organizations can adapt. This session
+    explores how to navigate disruption with confidence, keep your skills relevant,
+    and lead yourself and your team through uncertainty.
 
 - title: "The AI-Powered Software Development Lifecycle"
   event: "Visual Studio Live! San Diego 2026"
@@ -20,7 +25,12 @@
   date: "2026-09-14"
   year: 2026
   upcoming: true
+  image: "/assets/images/sandiego.png"
   registration: "https://vslive.com/events/san-diego-2026/home.aspx"
+  description: >-
+    A practical look at how AI is reshaping every phase of software delivery — from
+    requirements and design to coding, testing, and operations — and what it means
+    for the way engineering teams work together.
 
 - title: "Unlock the Potential of AI in Your Applications with Microsoft Agent Framework"
   event: "Visual Studio Live! San Diego 2026"
@@ -29,7 +39,12 @@
   year: 2026
   upcoming: true
   workshop: true
+  image: "/assets/images/sandiego.png"
   registration: "https://vslive.com/events/san-diego-2026/home.aspx"
+  description: >-
+    A full-day hands-on workshop. Learn to build intelligent, multi-step AI agents
+    using the Microsoft Agent Framework — from first prompt to production-ready,
+    tool-calling agents grounded in your own data and APIs.
 
 - title: "The Silent Question: What If Technology Disrupts My Role?"
   event: "Live! 360 Tech Con Orlando 2026"
@@ -38,6 +53,10 @@
   year: 2026
   upcoming: true
   registration: "https://live360events.com/events/orlando-2026/home.aspx"
+  description: >-
+    Technology is changing roles faster than most organizations can adapt. This session
+    explores how to navigate disruption with confidence, keep your skills relevant,
+    and lead yourself and your team through uncertainty.
 
 - title: "The AI-Powered Software Development Lifecycle"
   event: "Live! 360 Tech Con Orlando 2026"
@@ -46,7 +65,10 @@
   year: 2026
   upcoming: true
   registration: "https://live360events.com/events/orlando-2026/home.aspx"
-
+  description: >-
+    A practical look at how AI is reshaping every phase of software delivery — from
+    requirements and design to coding, testing, and operations — and what it means
+    for the way engineering teams work together.
 # ── 2026 (past) ───────────────────────────────────────────
 
 - title: "Rebuild or Refactor? That is the question!"

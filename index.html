@@ -106,7 +106,11 @@ title: Home
         </div>
       </div>
       <div class="engagement-photo">
+        {% if next_talk.image %}
+        <img src="{{ next_talk.image | relative_url }}" alt="{{ next_talk.event }}">
+        {% else %}
         <span>📸 Add a conference photo here</span>
+        {% endif %}
       </div>
     </div>
   </div>

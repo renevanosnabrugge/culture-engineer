@@ -28,9 +28,9 @@ permalink: /presentations/
             <span class="year">{{ talk.date | date: "%Y" }}</span>
           </div>
           <div class="pres-info">
-            <h3>{{ talk.event }} <span class="upcoming-chip">Upcoming</span>{% if talk.workshop %} <span class="upcoming-chip" style="background:var(--blue-600,#2563eb)">Workshop</span>{% endif %}</h3>
-            <p class="pres-event">📍 {{ talk.location }}</p>
-            <p class="pres-talk">{{ talk.title }}</p>
+            <h3 class="pres-title">{{ talk.title }}{% if talk.workshop %} <span class="upcoming-chip upcoming-chip--workshop">Workshop</span>{% endif %} <span class="upcoming-chip">Upcoming</span></h3>
+            <p class="pres-event">📍 {{ talk.event }} &mdash; {{ talk.location }}</p>
+            {% if talk.description %}<p class="pres-abstract">{{ talk.description | truncate: 140 }}</p>{% endif %}
           </div>
           <div class="pres-actions">
             {% if talk.registration %}
@@ -58,12 +58,11 @@ permalink: /presentations/
             <span class="year">{{ talk.date | date: "%Y" }}</span>
           </div>
           <div class="pres-info">
-            <h3>
-              {{ talk.event }}
+            <h3 class="pres-title">
+              {{ talk.title }}
               {% if talk.slides or talk.download %}<span class="attachment-chip" title="Slides available">📎</span>{% endif %}
             </h3>
-            <p class="pres-event">📍 {{ talk.location }}</p>
-            <p class="pres-talk">{{ talk.title }}</p>
+            <p class="pres-event">📍 {{ talk.event }} &mdash; {{ talk.location }}</p>
           </div>
           <div class="pres-actions">
             {% if talk.slides %}
