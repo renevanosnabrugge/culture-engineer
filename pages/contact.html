@@ -1,8 +1,17 @@
 ---
-layout: default
-title: Contact
+layout: null
 permalink: /contact/
 ---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url={{ '/about/' | relative_url }}">
+    <link rel="canonical" href="{{ '/about/' | relative_url }}">
+  </head>
+  <body>
+    <p>Redirecting to <a href="{{ '/about/' | relative_url }}">About Me</a>…</p>
+  </body>
+</html>
 <article class="page-content">
   <header class="page-header">
     <h1 class="page-title">Contact</h1>
@@ -17,14 +26,6 @@ permalink: /contact/
           I'm always open to speaking invitations, consulting conversations, and connecting with
           fellow practitioners who care about building great engineering organizations.
         </p>
-
-        <div class="contact-item">
-          <div class="contact-icon">✉️</div>
-          <div>
-            <h4>Email</h4>
-            <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
-          </div>
-        </div>
 
         <div class="contact-item">
           <div class="contact-icon">in</div>
@@ -75,7 +76,7 @@ permalink: /contact/
           <p>
             Ready to book a talk or start a conversation?
           </p>
-          <a href="mailto:{{ site.author.email }}" class="btn btn-dark">Send me a message</a>
+          <a href="{{ site.author.linkedin }}" class="btn btn-dark" target="_blank" rel="noopener noreferrer">Send me a message</a>
         </div>
       </div>
     </div>

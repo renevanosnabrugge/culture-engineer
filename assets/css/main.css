@@ -720,6 +720,7 @@ p:last-child { margin-bottom: 0; }
 .page-body p { margin-bottom: 1.2rem; }
 .page-body ul, .page-body ol { margin-bottom: 1.2rem; padding-left: 1.5rem; }
 .page-body li { margin-bottom: 0.5rem; }
+.page-body hr { clear: both; margin: 2.5rem 0; border: none; border-top: 1px solid var(--color-border); }
 
 /* =========================================================
    ABOUT PAGE
@@ -1026,9 +1027,9 @@ p:last-child { margin-bottom: 0; }
 .contact-intro { color: var(--slate-600); margin-bottom: 2rem; }
 .contact-topics-box {
   background: var(--slate-50); border: 1px solid var(--slate-200);
-  border-radius: var(--radius-lg); padding: 2.5rem;
+  border-radius: var(--radius-lg); padding: 0 2.5rem 2.5rem;
 }
-.contact-topics-box h3 { margin-bottom: 1.5rem; }
+.contact-topics-box h3 { margin-top: 0; margin-bottom: 1.5rem; }
 .contact-topics-footer { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--slate-200); }
 .contact-topics-footer p { color: var(--slate-600); font-size: .9rem; margin-bottom: 1.25rem; }
 
@@ -1486,12 +1487,13 @@ p:last-child { margin-bottom: 0; }
   display: grid; grid-template-columns: 1fr 360px;
   gap: 5rem; align-items: start; margin-bottom: 3rem;
 }
+.about-grid > div:last-child { align-self: stretch; }
 .about-name { font-size: 2.2rem; margin-bottom: .3rem; letter-spacing: -.03em; }
 .about-role { color: var(--blue); font-size: .95rem; font-weight: 600; margin-bottom: 1.5rem; }
 .about-bio { color: var(--slate-600); line-height: 1.8; margin-bottom: 1.25rem; }
 .about-actions { display: flex; gap: .75rem; margin-top: 1.5rem; }
-.about-photo-wrap { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
-.about-photo { width: 100%; display: block; }
+.about-photo-wrap { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); height: 100%; min-height: 420px; }
+.about-photo { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top; }
 .about-photo-placeholder {
   aspect-ratio: 3/4;
   background: linear-gradient(160deg, var(--slate-100), var(--slate-200));
@@ -1509,7 +1511,26 @@ p:last-child { margin-bottom: 0; }
 .expertise-tag:hover { background: var(--blue-bg); border-color: var(--blue); color: var(--blue); }
 
 /* ─── Contact page ────────────────────────────────────── */
-.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+.contact-grid .contact-section-heading { margin: 0 0 1rem; font-size: 1.75rem; }
+
+/* ─── Responsive video embed ──────────────────────────── */
+.video-embed {
+  float: left;
+  width: 42%;
+  margin: 0.25rem 2rem 1.5rem 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+.video-embed + * { clear: none; }
+.page-body::after { content: ''; display: table; clear: both; }
 .contact-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
 .contact-icon {
   width: 44px; height: 44px; background: var(--blue-bg); color: var(--blue);

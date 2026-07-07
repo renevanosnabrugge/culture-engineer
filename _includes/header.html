@@ -15,8 +15,8 @@
           <li class="nav-item {% if page.url == '/' %}active{% endif %}">
             <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
           </li>
-          <li class="nav-item {% if page.url contains '/about' %}active{% endif %}">
-            <a href="{{ '/about/' | relative_url }}" class="nav-link">About Me</a>
+          <li class="nav-item {% if page.url contains '/blog' %}active{% endif %}">
+            <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
           </li>
           <li class="nav-item {% if page.url contains '/presentations' %}active{% endif %}">
             <a href="{{ '/presentations/' | relative_url }}" class="nav-link">Presentations &amp; Conferences</a>
@@ -27,11 +27,8 @@
           <li class="nav-item {% if page.url contains '/inspiration' %}active{% endif %}">
             <a href="{{ '/inspiration/' | relative_url }}" class="nav-link">Inspiration</a>
           </li>
-          <li class="nav-item {% if page.url contains '/blog' %}active{% endif %}">
-            <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
-          </li>
-          <li class="nav-item {% if page.url contains '/contact' %}active{% endif %}">
-            <a href="{{ '/contact/' | relative_url }}" class="nav-link">Contact</a>
+          <li class="nav-item {% if page.url contains '/about' %}active{% endif %}">
+            <a href="{{ '/about/' | relative_url }}" class="nav-link">About Me</a>
           </li>
         </ul>
       </nav>
