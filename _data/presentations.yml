@@ -78,7 +78,7 @@
   year: 2026
   upcoming: false
   url: "https://devnetnoord.nl/"
-  slides: "https://speakerdeck.com/renevanosnabrugge/rebuild-or-refactor-devcampnoord-2026"
+  slides: "https://speakerdeck.com/renevanosnabrugge/rebuild-or-refactor-that-is-the-question"
   description: >
     Sooner or later, you will encounter the question: Rebuild or Refactor? Software
     that has been in use for several years will inevitably cause issues. Maybe the
@@ -90,7 +90,81 @@
     considerations involved in making the business decision to rebuild or refactor an
     application, and how to proceed once the decision has been made.
 
-# ── 2024 ──────────────────────────────────────────────────
+# ── 2025 (past) ───────────────────────────────────────────
+
+- title: "Unlock the Potential of AI in Your Applications with Semantic Kernel"
+  event: "Live! 360 Tech Con Orlando 2025"
+  location: "Orlando, FL, USA"
+  date: "2025-11-16"
+  year: 2025
+  upcoming: false
+  workshop: true
+  url: "https://live360events.com/events/orlando-2025/home.aspx"
+  sessionize: "https://sessionize.com/app/speaker/session/892267"
+  description: >-
+    Semantic Kernel is an open-source SDK by Microsoft that helps you build AI-infused
+    applications and agents in C#. It enables developers to seamlessly integrate existing
+    code and applications with AI models from OpenAI, Azure OpenAI, and Hugging Face.
+    Enterprises use Semantic Kernel for its flexibility, modularity, and observability.
+    It offers security features like telemetry support, hooks, and filters, ensuring
+    responsible AI at scale. In this workshop, you will explore how Semantic Kernel can
+    help you integrate AI capabilities into your applications, build full-fledged agents,
+    and change the way your customers and users interact with your systems.
+
+- title: "The AI-Powered Software Development Lifecycle"
+  event: "Live! 360 Tech Con Orlando 2025"
+  location: "Orlando, FL, USA"
+  date: "2025-11-16"
+  year: 2025
+  upcoming: false
+  url: "https://live360events.com/events/orlando-2025/home.aspx"
+  sessionize: "https://sessionize.com/app/speaker/session/891789"
+  slides: "https://speakerdeck.com/renevanosnabrugge/the-ai-powered-software-development-lifecycle"
+  description: >-
+    A practical look at how AI is reshaping every phase of software delivery — from
+    requirements and design to coding, testing, and operations — and what it means
+    for the way engineering teams work together.
+
+- title: "Rebuild or Refactor? That is the question!"
+  event: "Live! 360 Tech Con Orlando 2025"
+  location: "Orlando, FL, USA"
+  date: "2025-11-16"
+  year: 2025
+  upcoming: false
+  url: "https://live360events.com/events/orlando-2025/home.aspx"
+  sessionize: "https://sessionize.com/app/speaker/session/887581"
+  slides: "https://speakerdeck.com/renevanosnabrugge/rebuild-or-refactor-that-is-the-question"
+  description: >-
+    Sooner or later, you will encounter the question: Rebuild or Refactor? Software
+    that has been in use for several years will inevitably cause issues. In this session,
+    we explore the challenges and considerations involved in making the business decision
+    to rebuild or refactor an application, and how to proceed once the decision has been made.
+
+- title: "GitHub Copilot: The Influence of Generative AI Assistants and Agents on Software Development"
+  event: "Microsoft Roundtable"
+  location: "Abu Dhabi, UAE"
+  date: "2025-07-03"
+  year: 2025
+  upcoming: false
+  url: "https://events.xebia.com/microsoft-services-the-influence-of-generative-ai-assistants-and-agents-on-software-development-event-july-abu-dhabi"
+  description: >-
+    An exclusive in-person roundtable at W Hotel Yas Island, Abu Dhabi, exploring how
+    Generative AI assistants and AI agents are transforming the software development
+    lifecycle. Presented a session on increasing developer productivity with GenAI,
+    GitHub Copilot, and Copilot Agents.
+
+- title: "The Influence of Generative AI Assistants and Agents on Software Development"
+  event: "Microsoft Roundtable"
+  location: "Dubai, UAE"
+  date: "2025-06-02"
+  year: 2025
+  upcoming: false
+  url: "https://events.xebia.com/microsoft-services-the-influence-of-generative-ai-assistants-and-agents-on-software-development-event-june-dubai"
+  description: >-
+    An exclusive in-person roundtable at Microsoft Office Dubai exploring how Generative
+    AI assistants and AI agents are transforming the software development lifecycle.
+    Covered how tools like GitHub Copilot and Copilot Agents help developers write code
+    faster, automate repetitive tasks, and focus on high-value work.
 
 - title: "Rebuild or Refactor? That is the question!"
   event: "Techorama Netherlands 2024"
@@ -99,7 +173,7 @@
   year: 2024
   upcoming: false
   url: "https://techorama.nl/"
-  slides: "https://speakerdeck.com/renevanosnabrugge/rebuild-or-refactor-techorama-nl-2024"
+  slides: "https://speakerdeck.com/renevanosnabrugge/rebuild-or-refactor-that-is-the-question-techorama"
   description: >
     Sooner or later, you will encounter the question: Rebuild or Refactor? Software
     that has been in use for several years will inevitably cause issues. Maybe the
@@ -118,7 +192,7 @@
   year: 2024
   upcoming: false
   url: "https://techorama.be/"
-  slides: "https://speakerdeck.com/renevanosnabrugge/fintastic-finops-azure-techorama-be-2024"
+  slides: "https://speakerdeck.com/renevanosnabrugge/the-fin-tastic-way-to-boost-your-cloud-roi-an-introduction-to-finops-on-azure"
   description: >
     Are you tired of overspending on cloud costs? Want to optimize your Azure spending
     and boost your ROI? Look no further than FinOps! In this session, we dive into the
