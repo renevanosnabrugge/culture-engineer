@@ -61,3 +61,6 @@ exclude:
   - .jekyll-cache
   - README.md
   - _config.development.yml
+  # Clarity analytics — never build into the public site
+  - local-dashboard
+  - data/clarity-history

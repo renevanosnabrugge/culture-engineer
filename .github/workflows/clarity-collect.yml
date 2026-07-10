@@ -1,0 +1,47 @@
+name: Collect Clarity Analytics
+
+on:
+  # Run once per day at 06:00 UTC (after Clarity has processed the previous day)
+  schedule:
+    - cron: "0 6 * * *"
+
+  # Allow manual trigger from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  collect:
+    name: Fetch Clarity data and commit
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # needed to push the data file back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Clarity data
+        shell: pwsh
+        env:
+          CLARITY_API_TOKEN: ${{ secrets.CLARITY_API_TOKEN }}
+          CLARITY_PROJECT_ID: ${{ secrets.CLARITY_PROJECT_ID }}
+        run: scripts/fetch_clarity_data.ps1
+
+      # Only commit if the script actually wrote or updated a file
+      - name: Commit new data (if any)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Stage only the clarity-history folder
+          git add data/clarity-history/
+
+          # Check whether there is anything staged to commit
+          if git diff --cached --quiet; then
+            echo "No new Clarity data — nothing to commit."
+          else
+            # [skip ci] tells GitHub Actions to ignore this commit so the
+            # data check-in doesn't re-trigger this (or any other) workflow.
+            git commit -m "chore: add Clarity data for $(date -u +%Y-%m-%d) [skip ci]"
+            git push
+          fi
