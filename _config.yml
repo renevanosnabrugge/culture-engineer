@@ -27,6 +27,12 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-seo-tag
+
+# jekyll-seo-tag: used for canonical URLs, Open Graph, Twitter Cards, JSON-LD
+# Falls back to this photo as the shared social-preview image (og:image) for
+# any page/post that doesn't set its own `image:` front matter.
+logo: /assets/images/culture-engineers-ph.png
 
 # Pagination
 paginate: 5
@@ -46,10 +52,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      image: /assets/images/culture-engineers-ph.png
   - scope:
       path: "pages"
     values:
       layout: "page"
+      image: /assets/images/culture-engineers-ph.png
 
 # Exclude from processing
 exclude:
