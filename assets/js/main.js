@@ -67,3 +67,39 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     }
   });
 });
+
+// Cookie consent banner -> Microsoft Clarity Consent Mode (consentv2 API).
+// Shown only until the visitor makes a choice; decision is remembered in
+// localStorage so it isn't asked again. See _includes/cookie-consent.html
+// and the inline script in _layouts/default.html for the initial page-load
+// consent replay.
+(function () {
+  var banner = document.getElementById('cookie-consent-banner');
+  if (!banner) return;
+
+  var key = 'ce_cookie_consent';
+  var stored = null;
+  try { stored = localStorage.getItem(key); } catch (e) { /* ignore */ }
+
+  // No decision yet -> show the banner
+  if (!stored) {
+    banner.hidden = false;
+  }
+
+  function respond(granted) {
+    try { localStorage.setItem(key, granted ? 'granted' : 'denied'); } catch (e) { /* ignore */ }
+    if (window.clarity) {
+      window.clarity('consentv2', {
+        ad_Storage: granted ? 'granted' : 'denied',
+        analytics_Storage: granted ? 'granted' : 'denied'
+      });
+    }
+    banner.hidden = true;
+  }
+
+  var acceptBtn = document.getElementById('cookie-consent-accept');
+  var declineBtn = document.getElementById('cookie-consent-decline');
+  if (acceptBtn) acceptBtn.addEventListener('click', function () { respond(true); });
+  if (declineBtn) declineBtn.addEventListener('click', function () { respond(false); });
+})();
+

@@ -1,0 +1,29 @@
+<!--
+  Minimal cookie consent banner for Microsoft Clarity.
+
+  Why this exists: since Oct 2025, Clarity enforces Consent Mode for EEA/UK/CH
+  visitors and refuses to set its own tracking cookies (_clck/_clsk) until it
+  receives an explicit consent signal. Without this banner, every visit from
+  those regions looked like a brand-new anonymous user, even for repeat
+  visitors — which is the "1 user counted as many" issue this fixes.
+
+  Behavior:
+  - First visit: banner shown, Clarity's own cookies are NOT set yet.
+  - Accept  -> localStorage 'ce_cookie_consent' = 'granted', tells Clarity via
+               consentv2, cookies get set from then on.
+  - Decline -> localStorage 'ce_cookie_consent' = 'denied', tells Clarity via
+               consentv2, Clarity stays in cookie-less, per-page-view mode.
+  - Returning visitor: no banner, stored decision is replayed to Clarity on
+    every page load (Clarity's consent state does not persist across script
+    loads on its own).
+-->
+<div id="cookie-consent-banner" class="cookie-consent" hidden>
+  <p class="cookie-consent-text">
+    This site uses a small amount of analytics (Microsoft Clarity) to understand
+    how visitors use it. No ads, no personal data sold. You can accept or decline.
+  </p>
+  <div class="cookie-consent-actions">
+    <button type="button" class="btn btn-outline btn--sm" id="cookie-consent-decline">Decline</button>
+    <button type="button" class="btn btn-primary btn--sm" id="cookie-consent-accept">Accept</button>
+  </div>
+</div>

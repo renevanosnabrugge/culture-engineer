@@ -28,6 +28,34 @@
     })(window, document, "clarity", "script", "xk5gdi38n4");
   </script>
 
+  <!-- Cookie consent -> Clarity Consent Mode (consentv2 API).
+       Since Oct 2025, Clarity requires an explicit consent signal for EEA/UK/CH
+       visitors before it will set its own tracking cookies. Without this,
+       every visit from those regions looks like a new anonymous user.
+       Replays the stored decision on every page load, since Clarity's consent
+       state resets with each fresh script load and does not persist on its own. -->
+  <script>
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('ce_cookie_consent'); } catch (e) { /* ignore */ }
+
+      function sendConsent(granted) {
+        window.clarity('consentv2', {
+          ad_Storage: granted ? 'granted' : 'denied',
+          analytics_Storage: granted ? 'granted' : 'denied'
+        });
+      }
+
+      if (stored === 'granted') {
+        sendConsent(true);
+      } else if (stored === 'denied') {
+        sendConsent(false);
+      }
+      // If no stored decision yet, Clarity defaults to denied until the
+      // banner buttons (wired in main.js) call sendConsent via a click.
+    })();
+  </script>
+
   <!-- Stable anonymous user ID for Clarity.
        Clarity's _clck cookie is frequently blocked by browser privacy settings
        (Safari ITP, Firefox ETP), which causes a new user ID on every page load.
@@ -59,6 +87,7 @@
   </main>
 
   {% include footer.html %}
+  {% include cookie-consent.html %}
 
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
