@@ -22,6 +22,29 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xk5gdi38n4");
   </script>
+
+  <!-- Stable anonymous user ID for Clarity.
+       Clarity's _clck cookie is frequently blocked by browser privacy settings
+       (Safari ITP, Firefox ETP), which causes a new user ID on every page load.
+       Using localStorage gives each browser a durable anonymous ID that survives
+       page navigations without relying on cookies. The Identify API queues the
+       call internally, so calling it right after the snippet is safe. -->
+  <script>
+    (function () {
+      try {
+        var key = 'ce_clarity_uid';
+        var uid = localStorage.getItem(key);
+        if (!uid) {
+          // Generate a random ID once and persist it for this browser
+          uid = 'anon-' + Math.random().toString(36).slice(2) + Date.now().toString(36);
+          localStorage.setItem(key, uid);
+        }
+        window.clarity('identify', uid);
+      } catch (e) {
+        // Fail silently — localStorage may be blocked in private browsing
+      }
+    })();
+  </script>
 </head>
 <body>
   {% include header.html %}
