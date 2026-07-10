@@ -10,6 +10,7 @@ if: contains(github.event.issue.labels.*.name, 'blogpost:needs-topic')
 permissions:
   contents: read
   issues: read
+  pull-requests: read
 engine: copilot
 tools:
   edit:

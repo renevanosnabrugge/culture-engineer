@@ -10,6 +10,7 @@ if: github.event.label.name == 'blogpost'
 permissions:
   contents: read
   issues: read
+  pull-requests: read
 engine: copilot
 tools:
   edit:
