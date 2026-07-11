@@ -1,0 +1,278 @@
+{
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "30",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "30",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "30",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "30",
+          "sessionsWithMetricPercentage": 3.33,
+          "sessionsWithoutMetricPercentage": 96.67,
+          "pagesViews": "5",
+          "subTotal": "5"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "30",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "30",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 51.38
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "30",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "32",
+          "pagesPerSessionPercentage": 1.21875
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "114",
+          "activeTime": "45"
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Edge",
+          "sessionsCount": "30"
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "PC",
+          "sessionsCount": "30"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "Windows",
+          "sessionsCount": "30"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": "30"
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "About Me | René van Osnabrugge",
+          "sessionsCount": "7"
+        },
+        {
+          "name": "Publications | René van Osnabrugge",
+          "sessionsCount": "6"
+        },
+        {
+          "name": "Home | René van Osnabrugge",
+          "sessionsCount": "6"
+        },
+        {
+          "name": "Presentations & Conferences | René van Osnabrugge",
+          "sessionsCount": "5"
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "Inspiration | René van Osnabrugge",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "The Software Crisis Never Ended, It Just Evolved | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Don’t Let AI Optimize the Wrong 30% | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Welcome to Culture Engineers | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Your New Rubber Duck is an AI | René van Osnabrugge",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": "https://culture-engineers.nl/presentations/",
+          "sessionsCount": "5"
+        },
+        {
+          "name": "https://culture-engineers.nl/",
+          "sessionsCount": "4"
+        },
+        {
+          "name": null,
+          "sessionsCount": "4"
+        },
+        {
+          "name": "http://localhost:4000/about/",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "https://culture-engineers.nl/publications/",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "https://culture-engineers.nl/about/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "http://localhost:4000/presentations/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "http://localhost:4000/blog/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/",
+          "visitsCount": "6"
+        },
+        {
+          "url": "https://culture-engineers.nl/publications/",
+          "visitsCount": "5"
+        },
+        {
+          "url": "https://culture-engineers.nl/presentations/",
+          "visitsCount": "4"
+        },
+        {
+          "url": "http://localhost:4000/about/",
+          "visitsCount": "4"
+        },
+        {
+          "url": "https://culture-engineers.nl/about/",
+          "visitsCount": "3"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/",
+          "visitsCount": "3"
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "http://localhost:4000/presentations/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "http://localhost:4000/blog/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2025/12/01/the-software-crisis-never-ended-it-just-evolved/",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ],
+  "collectedAt": "2026-07-11T06:40:21.9044915Z",
+  "projectId": "xk5gdi38n4",
+  "targetDate": "2026-07-10"
+}
