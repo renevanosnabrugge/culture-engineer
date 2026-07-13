@@ -3,6 +3,7 @@ layout: post
 title: "Engineering Culture Is a Board-Level Risk, Not an HR Topic"
 date: 2026-07-13 09:00:00 +0200
 tags: [engineering-culture, leadership, risk, strategy, transformation]
+image: "/assets/images/engineering-culture-board-level-risk.png"
 image_prompt: "Editorial illustration of a glass boardroom table reflected in a cracked mirror, one side showing a polished organisational chart, the other side showing tangled code branches and depleted sprint boards, dark navy and amber palette, no text, 16:9 wide format, abstract-conceptual style"
 excerpt: >
   When boards talk about digital transformation risk, they reach for budgets, timelines

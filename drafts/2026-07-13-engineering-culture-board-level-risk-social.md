@@ -60,10 +60,18 @@ The risk is already on your balance sheet. The question is whether you can see i
 
 ---
 
-## Image Prompt
+## Image
+
+![Engineering Culture Is a Board-Level Risk](/assets/images/engineering-culture-board-level-risk.png)
+
+**File:** `assets/images/engineering-culture-board-level-risk.png`
+
+Use this image when publishing each LinkedIn variant.
+
+### Image Prompt (original brief)
 
 Editorial illustration of a glass boardroom table reflected in a cracked mirror, one side showing a polished organisational chart, the other side showing tangled code branches and depleted sprint boards, dark navy and amber palette, no text, 16:9 wide format, abstract-conceptual style.
 
 ---
 
-*Note: Image generation and LinkedIn publishing are manual next steps. This file contains the prompt text and post variants only.*
+*Note: LinkedIn publishing is a manual next step. Post variants are ready above.*
