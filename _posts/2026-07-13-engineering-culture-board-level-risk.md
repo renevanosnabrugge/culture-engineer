@@ -9,6 +9,7 @@ excerpt: >
   When boards talk about digital transformation risk, they reach for budgets, timelines
   and vendor contracts. They rarely reach for the one variable that determines whether
   any of it works: the engineering culture underneath it all. 
+published: false
 ---
 
 Every now and then, I encounter customers that moved on from another vendor. They implemented a platform, did a cloud migration, or moved to another technical solution. They did a lot of due diligence, approved budgets, selected vendors and Gantt-charted the roadmap to the month.

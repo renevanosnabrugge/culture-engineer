@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article class="page-content model-detail">
+  <header class="page-header">
+    <a href="/inspiration/" class="back-link">← Back to Inspiration</a>
+    <div class="model-header">
+      <div class="model-icon-wrap">
+        <img class="model-thumb-img"
+             src="{% if page.image %}{{ page.image }}{% else %}/assets/images/culture-engineers-ph.png{% endif %}"
+             alt="{{ page.title }}">
+      </div>
+      <div class="model-meta">
+        <span class="insp-type">Model</span>
+        <h1 class="page-title">{{ page.title }}</h1>
+        {% if page.origin %}<p class="model-origin">by {{ page.origin }}</p>{% endif %}
+        {% if page.tags %}
+        <div class="book-tags">
+          {% for tag in page.tags %}<span class="book-tag">{{ tag }}</span>{% endfor %}
+        </div>
+        {% endif %}
+        {% if page.learn_more %}<a href="{{ page.learn_more }}" class="btn-buy" target="_blank" rel="noopener noreferrer">Learn more →</a>{% endif %}
+      </div>
+    </div>
+  </header>
+  <div class="page-body model-body">
+    {{ content }}
+  </div>
+</article>

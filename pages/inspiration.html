@@ -6,69 +6,70 @@ permalink: /inspiration/
 <article class="page-content">
   <header class="page-header">
     <h1 class="page-title">Inspiration</h1>
-    <p class="page-subtitle">Books, blogs, videos, and people that have shaped my thinking on software, culture, and leadership.</p>
+    <p class="page-subtitle">Books and models that have shaped my thinking on software, culture, and leadership.</p>
   </header>
 
   <div class="page-body">
     <div class="tab-container">
       <div class="tabs" role="tablist">
         <button class="tab-btn active" data-tab="books" role="tab">Books</button>
-        <button class="tab-btn" data-tab="blogs" role="tab">Blogs</button>
-        <button class="tab-btn" data-tab="videos" role="tab">Videos</button>
+        <button class="tab-btn" data-tab="models" role="tab">Models</button>
       </div>
 
       <div id="tab-books" class="tab-panel active">
-        {% assign books = site.data.inspiration | where: "type", "book" %}
+        {% assign books = site.books | sort: "title" %}
         <div class="insp-grid">
-          {% for item in books %}
-          <div class="insp-card">
-            <div class="insp-thumb">📖</div>
+          {% for book in books %}{% if book.published != false %}
+          <a href="{{ book.url | relative_url }}" class="insp-card insp-card-link">
+            <div class="insp-thumb">
+              {% if book.isbn %}
+              <img class="insp-cover"
+                   src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg"
+                   alt="{{ book.title }}"
+                   loading="lazy"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <span class="insp-cover-fallback" style="display:none;">📖</span>
+              {% else %}
+              <span>📖</span>
+              {% endif %}
+            </div>
             <div class="insp-type">Book</div>
-            <h3 class="insp-title">{{ item.title }}</h3>
-            <p class="insp-author">by {{ item.author }}</p>
-            {% if item.rating %}
+            <h3 class="insp-title">{{ book.title }}</h3>
+            <p class="insp-author">by {{ book.author }}</p>
+            {% if book.rating %}
             <div class="insp-rating">
-              {% for i in (1..5) %}{% if i <= item.rating %}★{% else %}☆{% endif %}{% endfor %}
+              {% for i in (1..5) %}{% if i <= book.rating %}★{% else %}☆{% endif %}{% endfor %}
             </div>
             {% endif %}
-            <p class="insp-review">{{ item.review | truncate: 140 }}</p>
-            {% if item.url %}<a href="{{ item.url }}" class="read-more" target="_blank" rel="noopener noreferrer">Learn more &rarr;</a>{% endif %}
-          </div>
-          {% endfor %}
+            <p class="insp-review">{{ book.excerpt }}</p>
+            <span class="read-more">Read more &rarr;</span>
+          </a>
+          {% endif %}{% endfor %}
         </div>
       </div>
 
-      <div id="tab-blogs" class="tab-panel">
-        {% assign blogs = site.data.inspiration | where: "type", "blog" %}
+      <div id="tab-models" class="tab-panel">
+        {% assign models = site.models | sort: "title" %}
         <div class="insp-grid">
-          {% for item in blogs %}
-          <div class="insp-card">
-            <div class="insp-thumb">🌐</div>
-            <div class="insp-type">Blog</div>
-            <h3 class="insp-title">{{ item.title }}</h3>
-            <p class="insp-author">{{ item.author }}</p>
-            <p class="insp-review">{{ item.review | truncate: 140 }}</p>
-            {% if item.url %}<a href="{{ item.url }}" class="read-more" target="_blank" rel="noopener noreferrer">Visit &rarr;</a>{% endif %}
-          </div>
-          {% endfor %}
+          {% for model in models %}{% if model.published != false %}
+          <a href="{{ model.url | relative_url }}" class="insp-card insp-card-link">
+            <div class="insp-thumb">
+              <img class="insp-cover"
+                   src="{% if model.image %}{{ model.image }}{% else %}/assets/images/culture-engineers-ph.png{% endif %}"
+                   alt="{{ model.title }}"
+                   loading="lazy">
+            </div>
+            <div class="insp-type">Model</div>
+            <h3 class="insp-title">{{ model.title }}</h3>
+            {% if model.origin %}<p class="insp-author">{{ model.origin }}</p>{% endif %}
+            <p class="insp-review">{{ model.excerpt }}</p>
+            <span class="read-more">Read more &rarr;</span>
+          </a>
+          {% endif %}{% endfor %}
         </div>
       </div>
 
-      <div id="tab-videos" class="tab-panel">
-        {% assign videos = site.data.inspiration | where: "type", "video" %}
-        <div class="insp-grid">
-          {% for item in videos %}
-          <div class="insp-card">
-            <div class="insp-thumb">🎥</div>
-            <div class="insp-type">Video</div>
-            <h3 class="insp-title">{{ item.title }}</h3>
-            <p class="insp-author">by {{ item.author }}</p>
-            <p class="insp-review">{{ item.review | truncate: 140 }}</p>
-            {% if item.url %}<a href="{{ item.url }}" class="read-more" target="_blank" rel="noopener noreferrer">Watch &rarr;</a>{% endif %}
-          </div>
-          {% endfor %}
-        </div>
-      </div>
     </div>
   </div>
 </article>
+

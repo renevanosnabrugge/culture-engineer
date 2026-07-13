@@ -14,7 +14,7 @@ permalink: /publications/
       <div class="tabs" role="tablist">
         <button class="tab-btn active" data-tab="articles" role="tab">Articles</button>
         <button class="tab-btn" data-tab="whitepapers" role="tab">Whitepapers</button>
-        <button class="tab-btn" data-tab="other" role="tab">Other</button>
+        <button class="tab-btn" data-tab="podcast" role="tab">LEAD Podcast</button>
       </div>
 
       <!-- ARTICLES -->
@@ -67,25 +67,37 @@ permalink: /publications/
         {% endif %}
       </div>
 
-      <!-- OTHER -->
-      <div id="tab-other" class="tab-panel">
-        {% assign others = site.data.publications | where: "type", "other" | sort: "date" | reverse %}
-        {% if others.size > 0 %}
-        <div class="pub-list">
-          {% for pub in others %}
-          <div class="pub-item">
-            <div class="pub-thumb">🔗</div>
-            <div>
-              <p class="pub-type-date">{{ pub.type | capitalize }} &mdash; {{ pub.date | date: "%B %Y" }}{% if pub.publication %} &middot; {{ pub.publication }}{% endif %}</p>
-              <h3 class="pub-title">{% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
-              <p class="pub-summary">{{ pub.summary }}</p>
-              {% if pub.url %}<a href="{{ pub.url }}" class="read-more" target="_blank" rel="noopener noreferrer">View &rarr;</a>{% endif %}
-            </div>
+      <!-- LEAD PODCAST -->
+      <div id="tab-podcast" class="tab-panel">
+        {% assign episodes = site.data.publications | where: "type", "podcast" | sort: "date" | reverse %}
+        {% if episodes.size > 0 %}
+        <div class="podcast-header">
+          <img src="/assets/images/culture-engineers-ph.png" alt="LEAD Podcast" class="podcast-logo">
+          <div>
+            <h2 class="podcast-title">LEAD Podcast</h2>
+            <p class="podcast-desc">A show by René van Osnabrugge and Geert van der Cruijsen on building great engineering cultures.</p>
+            <a href="https://www.youtube.com/@LEADpodcast" class="read-more" target="_blank" rel="noopener noreferrer">All episodes on YouTube →</a>
           </div>
+        </div>
+        <div class="insp-grid">
+          {% for ep in episodes %}
+          <a href="{{ ep.url }}" class="insp-card insp-card-link" target="_blank" rel="noopener noreferrer">
+            <div class="insp-thumb">
+              <img class="insp-cover"
+                   src="https://img.youtube.com/vi/{{ ep.youtube_id }}/mqdefault.jpg"
+                   alt="{{ ep.title }}"
+                   loading="lazy"
+                   onerror="this.src='/assets/images/culture-engineers-ph.png';this.onerror=null;">
+            </div>
+            <div class="insp-type">Episode</div>
+            <h3 class="insp-title">{{ ep.title }}</h3>
+            <p class="insp-review">{{ ep.summary | truncate: 120 }}</p>
+            <span class="read-more">Watch →</span>
+          </a>
           {% endfor %}
         </div>
         {% else %}
-        <p class="empty-state">No other publications yet.</p>
+        <p class="empty-state">No episodes yet.</p>
         {% endif %}
       </div>
 

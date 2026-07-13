@@ -1460,6 +1460,15 @@ p:last-child { margin-bottom: 0; }
   transition: box-shadow var(--transition), transform var(--transition);
 }
 .insp-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+
+/* Clickable card variant */
+.insp-card-link {
+  display: block; text-decoration: none; color: inherit; cursor: pointer;
+}
+.insp-card-link:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.insp-card-link .insp-title { color: var(--navy); }
+.insp-card-link:hover .insp-title { color: var(--blue); }
+
 .insp-thumb {
   width: 100%; height: 120px; border-radius: var(--radius);
   background: linear-gradient(135deg, var(--slate-100), var(--slate-200));
@@ -1468,11 +1477,98 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
 }
 .insp-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.insp-cover { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius); }
 .insp-type { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: var(--slate-400); margin-bottom: .3rem; }
 .insp-title { font-size: 1rem; font-weight: 700; margin-bottom: .2rem; line-height: 1.3; letter-spacing: -.01em; }
 .insp-author { font-size: .8rem; color: var(--slate-400); margin-bottom: .4rem; }
 .insp-rating { color: #f59e0b; font-size: .85rem; letter-spacing: .05em; margin-bottom: .5rem; }
 .insp-review { font-size: .85rem; color: var(--slate-600); line-height: 1.6; margin-bottom: .75rem; }
+
+/* ─── Book / Model detail pages ───────────────────────── */
+.back-link {
+  display: inline-block; font-size: .85rem; color: var(--slate-400);
+  margin-bottom: 1.5rem; transition: color var(--transition);
+}
+.back-link:hover { color: var(--blue); }
+
+.book-header, .model-header {
+  display: flex; gap: 2rem; align-items: flex-start; margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.book-cover-wrap {
+  flex: 0 0 160px; width: 160px;
+}
+.book-cover-img {
+  width: 160px; border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+}
+.book-cover-placeholder {
+  width: 160px; height: 220px;
+  background: linear-gradient(135deg, var(--slate-100), var(--slate-200));
+  border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem;
+}
+.model-icon-wrap { flex: 0 0 160px; width: 160px; }
+.model-thumb-img {
+  width: 160px; height: 160px; object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+}
+.book-meta, .model-meta { flex: 1; min-width: 200px; }
+.book-author, .model-origin { font-size: .95rem; color: var(--slate-500); margin-bottom: .5rem; }
+.book-rating { color: #f59e0b; font-size: 1rem; letter-spacing: .05em; margin-bottom: .75rem; }
+.book-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+.book-tag {
+  font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .07em;
+  background: var(--slate-100); color: var(--slate-500);
+  padding: .2rem .6rem; border-radius: 999px;
+}
+.btn-buy {
+  display: inline-block; padding: .55rem 1.25rem;
+  background: var(--navy); color: var(--white);
+  border-radius: var(--radius); font-size: .85rem; font-weight: 600;
+  transition: background var(--transition);
+}
+.btn-buy:hover { background: var(--blue); color: var(--white); }
+
+.book-body, .model-body {
+  max-width: 680px;
+  font-size: 1rem; line-height: 1.75; color: var(--slate-700);
+}
+.book-body h2, .model-body h2 {
+  font-size: 1.2rem; font-weight: 700; margin: 2rem 0 .75rem;
+  color: var(--navy); letter-spacing: -.02em;
+}
+.book-body table, .model-body table {
+  width: 100%; border-collapse: collapse; margin: 1.25rem 0;
+  font-size: .9rem;
+}
+.book-body th, .model-body th {
+  text-align: left; padding: .5rem .75rem;
+  background: var(--slate-50); border-bottom: 2px solid var(--slate-200);
+  font-weight: 700; color: var(--navy);
+}
+.book-body td, .model-body td {
+  padding: .5rem .75rem; border-bottom: 1px solid var(--slate-100);
+}
+.book-body pre, .model-body pre {
+  background: var(--slate-50); border: 1px solid var(--slate-200);
+  border-radius: var(--radius); padding: 1rem; overflow-x: auto;
+  font-size: .85rem;
+}
+
+/* ─── Podcast header ──────────────────────────────────────── */
+.podcast-header {
+  display: flex; gap: 1.5rem; align-items: flex-start;
+  margin-bottom: 2rem; flex-wrap: wrap;
+}
+.podcast-logo {
+  width: 80px; height: 80px; border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(0,0,0,.12); flex-shrink: 0;
+}
+.podcast-title { font-size: 1.4rem; font-weight: 700; margin-bottom: .25rem; letter-spacing: -.02em; }
+.podcast-desc { font-size: .9rem; color: var(--slate-600); margin-bottom: .5rem; }
 
 /* ─── Subscribe section ───────────────────────────────── */
 .subscribe-section {

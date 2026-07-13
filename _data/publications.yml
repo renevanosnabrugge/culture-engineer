@@ -111,3 +111,276 @@
     Co-host and contributor to the LEAD podcast series covering Engineering Culture, DevOps,
     Digital Transformation, Leadership, Cloud Adoption and Organizational Change — created
     with Geert van der Cruijsen.
+
+# ── LEAD Podcast Episodes ─────────────────────────────────
+
+- title: "#32 - Endings are just new beginnings (but also endings)"
+  type: podcast
+  date: "2025-08-01"
+  youtube_id: "myO7N9YhTyE"
+  url: "https://www.youtube.com/watch?v=myO7N9YhTyE"
+  summary: >
+    René and Geert reflect on the journey of the LEAD Podcast, what they've learned, and why
+    every ending is also the start of something new.
+
+- title: "#31 - Core vs. Context: Focus on What Really Matters"
+  type: podcast
+  date: "2025-07-01"
+  youtube_id: "7A2pU3gAOoA"
+  url: "https://www.youtube.com/watch?v=7A2pU3gAOoA"
+  summary: >
+    A conversation about strategic focus — how engineering leaders can distinguish the work
+    that truly differentiates from the work that just needs to be done well enough.
+
+- title: "#30 - Future of Software Development in the AI Era"
+  type: podcast
+  date: "2025-06-01"
+  youtube_id: "8cZRu5QxBhU"
+  url: "https://www.youtube.com/watch?v=8cZRu5QxBhU"
+  summary: >
+    What does AI mean for the software developer's role, the engineering team, and the
+    delivery pipeline? René and Geert explore the near-term future of building software.
+
+- title: "#29 - Dark Clouds or Bright Horizons for the Dutch government?"
+  type: podcast
+  date: "2025-05-01"
+  youtube_id: "T4sEaj6EDi8"
+  url: "https://www.youtube.com/watch?v=T4sEaj6EDi8"
+  summary: >
+    A candid discussion about digital transformation in the Dutch public sector —
+    the challenges, the progress, and what still needs to change.
+
+- title: "#28 - Future of IT Leadership with Marcel de Vries from Xebia"
+  type: podcast
+  date: "2025-04-01"
+  youtube_id: "zwcfgwNWfd0"
+  url: "https://www.youtube.com/watch?v=zwcfgwNWfd0"
+  summary: >
+    Marcel de Vries joins René and Geert to discuss what IT leadership will require in the
+    next decade — and how the role of the CTO and CIO is fundamentally changing.
+
+- title: "#27 - Looking back at 1 year of LEAD Podcast and 2025 predictions"
+  type: podcast
+  date: "2025-03-01"
+  youtube_id: "fWmN5oY8O5Q"
+  url: "https://www.youtube.com/watch?v=fWmN5oY8O5Q"
+  summary: >
+    One year of LEAD Podcast: what we learned, what surprised us, and what we think
+    2025 holds for engineering culture and technology leadership.
+
+- title: "#26 - A look under the hood of Toyota's Connected Platform Engineering Journey"
+  type: podcast
+  date: "2025-02-01"
+  youtube_id: "AN9S7BD3zV0"
+  url: "https://www.youtube.com/watch?v=AN9S7BD3zV0"
+  summary: >
+    How one of the world's largest manufacturers is building a connected platform engineering
+    capability — the culture, the technology, and the leadership required.
+
+- title: "#25 - Reviewing the State of DevOps"
+  type: podcast
+  date: "2025-01-01"
+  youtube_id: "lRiHmhAHAS0"
+  url: "https://www.youtube.com/watch?v=lRiHmhAHAS0"
+  summary: >
+    An annual tradition: reviewing the State of DevOps report and discussing what the
+    data means for engineering leaders and their organisations.
+
+- title: "#24 - Kubernetes: From running containers to a Cloud Native OS (with Chris van Sluijsveld)"
+  type: podcast
+  date: "2024-12-01"
+  youtube_id: "G2riZvW-cZc"
+  url: "https://www.youtube.com/watch?v=G2riZvW-cZc"
+  summary: >
+    Chris van Sluijsveld joins to discuss the evolution of Kubernetes from container
+    orchestrator to full cloud native operating system — and what that means for platform teams.
+
+- title: "#23 - Crafting a culture that makes vision happen"
+  type: podcast
+  date: "2024-11-01"
+  youtube_id: "1pbBWynDhL0"
+  url: "https://www.youtube.com/watch?v=1pbBWynDhL0"
+  summary: >
+    Strategy is easy. Execution requires culture. How do engineering leaders build the
+    culture that actually converts vision into delivered value?
+
+- title: "#22 - Learn today and lead tomorrow with a learning organization"
+  type: podcast
+  date: "2024-10-01"
+  youtube_id: "8KRfjH7vDlw"
+  url: "https://www.youtube.com/watch?v=8KRfjH7vDlw"
+  summary: >
+    Building a learning organisation is not a training programme. René and Geert discuss
+    what it really takes to build a team that improves faster than the competition.
+
+- title: "#21 - The difference between speaking and being understood"
+  type: podcast
+  date: "2024-10-01"
+  youtube_id: "mZ2aFtAOj1o"
+  url: "https://www.youtube.com/watch?v=mZ2aFtAOj1o"
+  summary: >
+    Communication in engineering organisations: why technical leaders consistently
+    struggle to translate their thinking into decisions their stakeholders can act on.
+
+- title: "#20 - Rebuild or Refactor? - That is the question!"
+  type: podcast
+  date: "2024-09-01"
+  youtube_id: "7pSXhB32634"
+  url: "https://www.youtube.com/watch?v=7pSXhB32634"
+  summary: >
+    One of the most consequential decisions in software: do you rebuild from scratch or
+    refactor incrementally? René and Geert work through the frameworks and failure modes.
+
+- title: "#19 - The Uniform Tech Stack Fallacy: Embracing Diversity for Success"
+  type: podcast
+  date: "2024-09-01"
+  youtube_id: "eafomZUfuY0"
+  url: "https://www.youtube.com/watch?v=eafomZUfuY0"
+  summary: >
+    The argument for standardising on a single tech stack sounds compelling. But does
+    uniformity actually deliver the benefits organisations expect?
+
+- title: "#18 - High Performing Engineering Teams"
+  type: podcast
+  date: "2024-08-01"
+  youtube_id: "LWB5ZNA-xBU"
+  url: "https://www.youtube.com/watch?v=LWB5ZNA-xBU"
+  summary: >
+    What separates engineering teams that consistently outperform from those that
+    struggle? René and Geert break down the patterns they see across organisations.
+
+- title: "#17 - Quantum Leap with Hanna Engel"
+  type: podcast
+  date: "2024-08-01"
+  youtube_id: "_z4Y9aCXDxM"
+  url: "https://www.youtube.com/watch?v=_z4Y9aCXDxM"
+  summary: >
+    Hanna Engel joins to discuss quantum computing: what it actually is, when it becomes
+    relevant for enterprise engineering, and what leaders should be thinking about now.
+
+- title: "#16 - Architecture without architects"
+  type: podcast
+  date: "2024-07-01"
+  youtube_id: "ROrD-1aXHHc"
+  url: "https://www.youtube.com/watch?v=ROrD-1aXHHc"
+  summary: >
+    What happens when you distribute architectural responsibility to the teams that
+    actually build and run the systems? The case for enabling architecture over controlling it.
+
+- title: "#15 - The role of UX in Software Development with Dean Schuster"
+  type: podcast
+  date: "2024-07-01"
+  youtube_id: "eZRT7hJGe-w"
+  url: "https://www.youtube.com/watch?v=eZRT7hJGe-w"
+  summary: >
+    Dean Schuster joins to discuss why user experience is not a handoff at the end of
+    the development process — and how engineering teams can build it in from the start.
+
+- title: "#14 - Measuring what matters"
+  type: podcast
+  date: "2024-06-01"
+  youtube_id: "2e18tLZyqy8"
+  url: "https://www.youtube.com/watch?v=2e18tLZyqy8"
+  summary: >
+    Metrics are only useful if you're measuring the right things. A conversation about
+    engineering metrics, vanity measures, and what genuinely predicts delivery health.
+
+- title: "#13 - The importance of an engineering culture with Jennifer Wadella"
+  type: podcast
+  date: "2024-06-01"
+  youtube_id: "AxJ8GQbDaVs"
+  url: "https://www.youtube.com/watch?v=AxJ8GQbDaVs"
+  summary: >
+    Jennifer Wadella on why engineering culture is not a soft topic, what organisations
+    get wrong about it, and what leaders can do to build cultures that attract and retain talent.
+
+- title: "#12 - Decisions, Decisions: The Art of Thinking Critically with Laïla Bougriâ"
+  type: podcast
+  date: "2024-05-01"
+  youtube_id: "i-t8iV3jbU4"
+  url: "https://www.youtube.com/watch?v=i-t8iV3jbU4"
+  summary: >
+    Laïla Bougriâ on critical thinking, decision-making under uncertainty, and how
+    engineering leaders can improve the quality of the decisions their teams make.
+
+- title: "#11 - Debugging the Human Factor with Arthur Doler"
+  type: podcast
+  date: "2024-05-01"
+  youtube_id: "v3Xrbdp_eEQ"
+  url: "https://www.youtube.com/watch?v=v3Xrbdp_eEQ"
+  summary: >
+    Arthur Doler on the human factors in software engineering — the psychological and
+    social dynamics that determine whether technical teams succeed or struggle.
+
+- title: "#10 - A message about choosing the right architecture from Adam Ralph"
+  type: podcast
+  date: "2024-04-01"
+  youtube_id: "Oa80YmXFHxM"
+  url: "https://www.youtube.com/watch?v=Oa80YmXFHxM"
+  summary: >
+    Adam Ralph on architectural decision-making: how to choose the right architecture
+    for your context, and why the wrong choice is harder to recover from than most teams expect.
+
+- title: "#09 - FinOps: Controlling the price of progress"
+  type: podcast
+  date: "2024-04-01"
+  youtube_id: "5dfLiFgMQUo"
+  url: "https://www.youtube.com/watch?v=5dfLiFgMQUo"
+  summary: >
+    Cloud costs out of control are a symptom of something deeper. A conversation about
+    FinOps as a cultural and organisational practice, not just a cost-cutting exercise.
+
+- title: "#08 - Enabling a new generation of developers @ GitHub (with April Edwards)"
+  type: podcast
+  date: "2024-03-01"
+  youtube_id: "qwlJW8C_-zA"
+  url: "https://www.youtube.com/watch?v=qwlJW8C_-zA"
+  summary: >
+    April Edwards from GitHub on developer productivity, the tools and practices that
+    genuinely help engineering teams ship better and faster, and what comes next.
+
+- title: "#07 - Growing a DevOps Mindset"
+  type: podcast
+  date: "2024-03-01"
+  youtube_id: "TenjrM3CdME"
+  url: "https://www.youtube.com/watch?v=TenjrM3CdME"
+  summary: >
+    DevOps is not a toolchain. It is a way of thinking about the relationship between
+    building and running software. A conversation about what it actually takes to grow it.
+
+- title: "#06 - (Em)Powering Startup Engineering Culture @ Atlas"
+  type: podcast
+  date: "2024-02-01"
+  youtube_id: "MYaJ4uGlPlw"
+  url: "https://www.youtube.com/watch?v=MYaJ4uGlPlw"
+  summary: >
+    How do you build an engineering culture from scratch in a high-growth startup? A
+    conversation with the team at Atlas about the choices they made and why.
+
+- title: "#05 - Ops we did it again: A discussion about SRE"
+  type: podcast
+  date: "2024-02-01"
+  youtube_id: "6WYU-x_7f0U"
+  url: "https://www.youtube.com/watch?v=6WYU-x_7f0U"
+  summary: >
+    Site Reliability Engineering: what it actually means, how it differs from DevOps,
+    and whether it is the right model for organisations that are not Google.
+
+- title: "#04 - Stacking success with Developer Experience @ LEGO"
+  type: podcast
+  date: "2024-02-01"
+  youtube_id: "_bSGWDRvt0c"
+  url: "https://www.youtube.com/watch?v=_bSGWDRvt0c"
+  summary: >
+    How LEGO built a developer experience programme that made their engineering teams
+    measurably more productive — and what other organisations can learn from their approach.
+
+- title: "#03 - Is DevOps dead or evolving with Platform Engineering?"
+  type: podcast
+  date: "2024-01-01"
+  youtube_id: "o-hHYrrA5H0"
+  url: "https://www.youtube.com/watch?v=o-hHYrrA5H0"
+  summary: >
+    Platform Engineering is the new DevOps — or is it? René and Geert debate whether
+    Platform Engineering is a meaningful evolution or just a rebrand of familiar ideas.
+

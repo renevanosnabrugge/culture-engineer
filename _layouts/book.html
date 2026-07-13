@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<article class="page-content book-detail">
+  <header class="page-header">
+    <a href="/inspiration/" class="back-link">← Back to Inspiration</a>
+    <div class="book-header">
+      <div class="book-cover-wrap">
+        {% if page.isbn %}
+        <img class="book-cover-img"
+             src="https://covers.openlibrary.org/b/isbn/{{ page.isbn }}-L.jpg"
+             alt="{{ page.title }} cover"
+             onerror="this.src='/assets/images/book-placeholder.png'; this.onerror=null;">
+        {% else %}
+        <div class="book-cover-placeholder">📖</div>
+        {% endif %}
+      </div>
+      <div class="book-meta">
+        <span class="insp-type">Book</span>
+        <h1 class="page-title">{{ page.title }}</h1>
+        <p class="book-author">by {{ page.author }}</p>
+        {% if page.rating %}
+        <div class="book-rating">
+          {% for i in (1..5) %}{% if i <= page.rating %}<span class="star filled">★</span>{% else %}<span class="star">☆</span>{% endif %}{% endfor %}
+        </div>
+        {% endif %}
+        {% if page.tags %}
+        <div class="book-tags">
+          {% for tag in page.tags %}<span class="book-tag">{{ tag }}</span>{% endfor %}
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </header>
+  <div class="page-body book-body">
+    {{ content }}
+  </div>
+</article>
