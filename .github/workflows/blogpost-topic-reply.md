@@ -15,12 +15,16 @@ permissions:
 engine: copilot
 tools:
   edit:
-  bash: ["git", "bundle exec jekyll build"]
+  bash: true
   github:
     toolsets: [default]
+secrets:
+  AZURE_IMAGE_GEN_KEY:
+    value: ${{ secrets.AZURE_IMAGE_GEN_KEY }}
 network:
   allowed:
     - defaults
+    - culture-engineer-ai.services.ai.azure.com
 safe-outputs:
   create-pull-request:
     title-prefix: "[blogpost] "
