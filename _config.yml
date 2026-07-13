@@ -44,6 +44,12 @@ collections:
     output: false
   publications:
     output: false
+  books:
+    output: true
+    permalink: /inspiration/books/:name/
+  models:
+    output: true
+    permalink: /inspiration/models/:name/
 
 # Defaults
 defaults:
@@ -53,10 +59,19 @@ defaults:
     values:
       layout: "post"
       image: /assets/images/culture-engineers-ph.png
+      published: true
   - scope:
       path: "pages"
     values:
       layout: "page"
+  - scope:
+      type: "books"
+    values:
+      published: true
+  - scope:
+      type: "models"
+    values:
+      published: true
       image: /assets/images/culture-engineers-ph.png
 
 # Exclude from processing

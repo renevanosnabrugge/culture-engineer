@@ -1,0 +1,583 @@
+- generic [ref=f5e2]:
+  - banner [ref=f5e4]:
+    - generic [ref=f5e6]:
+      - generic [ref=f5e7]:
+        - button "Guide" [pressed] [ref=f5e9] [cursor=pointer]
+        - generic [ref=f5e11]:
+          - link "YouTube Home" [ref=f5e12] [cursor=pointer]:
+            - /url: /
+          - generic [ref=f5e16]: NL
+        - button "Skip navigation" [ref=f5e20] [cursor=pointer]
+      - generic [ref=f5e24]:
+        - search [ref=f5e25]:
+          - generic [ref=f5e27]:
+            - combobox "Search" [expanded] [ref=f5e30]
+            - button "Search" [ref=f5e31] [cursor=pointer]
+        - generic [ref=f5e34]:
+          - button "Search with your voice" [ref=f5e36] [cursor=pointer]
+          - tooltip "tooltip"
+      - generic [ref=f5e41]:
+        - button "Settings" [ref=f5e46] [cursor=pointer]
+        - link "Sign in" [ref=f5e50] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252F%2540LEADpodcast%252Fvideos&hl=en&ec=65620
+  - navigation [ref=f5e54]:
+    - generic [ref=f5e60]:
+      - generic [ref=f5e61]:
+        - generic [ref=f5e63]:
+          - link [ref=f5e65] [cursor=pointer]:
+            - /url: /
+            - link "Home" [ref=f5e66]
+          - link [ref=f5e70] [cursor=pointer]:
+            - link "Shorts" [ref=f5e71]
+          - link [ref=f5e75] [cursor=pointer]:
+            - /url: /feed/subscriptions
+            - link "Subscriptions" [ref=f5e76]
+          - link [ref=f5e80] [cursor=pointer]:
+            - /url: /feed/you
+            - link "You" [ref=f5e81]
+          - link [ref=f5e85] [cursor=pointer]:
+            - /url: /feed/history
+            - link "History" [ref=f5e86]
+        - generic [ref=f5e89]:
+          - generic [ref=f5e90]: Sign in to like videos, comment, and subscribe.
+          - link "Sign in" [ref=f5e93] [cursor=pointer]:
+            - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252F%2540LEADpodcast%252Fvideos&hl=en
+        - generic [ref=f5e97]:
+          - heading "Explore" [level=3] [ref=f5e98]
+          - generic [ref=f5e100]:
+            - link [ref=f5e102] [cursor=pointer]:
+              - /url: /channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ
+              - link "Music" [ref=f5e103]
+            - link [ref=f5e107] [cursor=pointer]:
+              - /url: /feed/storefront?bp=ogUCKAU%3D
+              - link "Movies" [ref=f5e108]
+            - link [ref=f5e112] [cursor=pointer]:
+              - /url: /gaming
+              - link "Gaming" [ref=f5e113]
+            - button [ref=f5e117]:
+              - link [ref=f5e118] [cursor=pointer]:
+                - link "Show more" [ref=f5e119]
+        - generic [ref=f5e122]:
+          - heading "More from YouTube" [level=3] [ref=f5e123]
+          - generic [ref=f5e125]:
+            - link [ref=f5e127] [cursor=pointer]:
+              - /url: /premium
+              - link "Try Premium for $0" [ref=f5e128]
+            - link [ref=f5e132] [cursor=pointer]:
+              - /url: https://music.youtube.com/
+              - link "YouTube Music" [ref=f5e133]
+            - link [ref=f5e137] [cursor=pointer]:
+              - /url: https://www.youtubekids.com/?source=youtube_web
+              - link "YouTube Kids" [ref=f5e138]
+        - link [ref=f5e144] [cursor=pointer]:
+          - /url: /reporthistory
+          - link "Report history" [ref=f5e145]
+      - generic [ref=f5e148]:
+        - generic [ref=f5e149]:
+          - link "About" [ref=f5e150] [cursor=pointer]:
+            - /url: https://www.youtube.com/about/
+          - link "Press" [ref=f5e151] [cursor=pointer]:
+            - /url: https://www.youtube.com/about/press/
+          - link "Copyright" [ref=f5e152] [cursor=pointer]:
+            - /url: https://www.youtube.com/about/copyright/
+          - link "Contact us" [ref=f5e153] [cursor=pointer]:
+            - /url: /t/contact_us/
+          - link "Creators" [ref=f5e154] [cursor=pointer]:
+            - /url: https://www.youtube.com/creators/
+          - link "Advertise" [ref=f5e155] [cursor=pointer]:
+            - /url: https://www.youtube.com/ads/
+          - link "Developers" [ref=f5e156] [cursor=pointer]:
+            - /url: https://developers.google.com/youtube
+        - generic [ref=f5e157]:
+          - link "Terms" [ref=f5e158] [cursor=pointer]:
+            - /url: /t/terms
+          - link "Privacy" [ref=f5e159] [cursor=pointer]:
+            - /url: /t/privacy
+          - link "Policy & Safety" [ref=f5e160] [cursor=pointer]:
+            - /url: https://www.youtube.com/about/policies/
+          - link "How YouTube works" [ref=f5e161] [cursor=pointer]:
+            - /url: https://www.youtube.com/howyoutubeworks?utm_campaign=ytgen&utm_source=ythp&utm_medium=LeftNav&utm_content=txt&u=https%3A%2F%2Fwww.youtube.com%2Fhowyoutubeworks%3Futm_source%3Dythp%26utm_medium%3DLeftNav%26utm_campaign%3Dytgen
+          - link "Test new features" [ref=f5e162] [cursor=pointer]:
+            - /url: /new
+        - generic [ref=f5e163]: © 2026 Google LLC YouTube, a Google company
+  - main [ref=f5e165]:
+    - generic [ref=f5e172]:
+      - generic [ref=f5e188]:
+        - heading "LEAD Podcast" [level=1] [ref=f5e190]
+        - generic [ref=f5e191]:
+          - group [ref=f5e192]:
+            - generic [ref=f5e193]: "@LEADpodcast"
+          - generic [ref=f5e194]: •
+          - group [ref=f5e195]:
+            - generic "11 subscribers" [ref=f5e196]
+            - generic [ref=f5e197]: •
+            - generic [ref=f5e198]: 34 videos
+        - generic [ref=f5e200] [cursor=pointer]:
+          - generic [ref=f5e201]: the LEAD Podcast is a show by Rene van Osnabrugge and Geert van der Cruijsen where they talk about building great Engineering cultures.
+          - button "Description. the LEAD Podcast is a show by Rene van Osnabrugge and Geert ...tap for more." [ref=f5e202]:
+            - generic [ref=f5e203]: ...more
+        - button "Subscribe" [ref=f5e207] [cursor=pointer]
+      - tablist [ref=f5e214]:
+        - tablist [ref=f5e218]:
+          - tab "Home" [ref=f5e219] [cursor=pointer]
+          - tab "Videos" [selected] [ref=f5e221] [cursor=pointer]
+          - tab "Shorts" [ref=f5e223] [cursor=pointer]
+          - tab "Podcasts" [ref=f5e225] [cursor=pointer]
+          - tab "Playlists" [ref=f5e227] [cursor=pointer]
+          - button "Search" [ref=f5e232] [cursor=pointer]
+    - generic [ref=f5e239]:
+      - tablist [ref=f5e242]:
+        - tab "Latest" [selected] [ref=f5e245] [cursor=pointer]
+        - tab "Popular" [ref=f5e253] [cursor=pointer]
+        - tab "Oldest" [ref=f5e261] [cursor=pointer]
+      - generic [ref=f5e267]:
+        - generic [ref=f5e271] [cursor=pointer]:
+          - link [ref=f5e272]:
+            - /url: /watch?v=myO7N9YhTyE
+            - generic [ref=f5e273]: 12:09
+          - generic [ref=f5e281]:
+            - generic [ref=f5e282]:
+              - heading "#32 - Endings are just new beginnings (but also endings)" [level=3] [ref=f5e283]:
+                - link "#32 - Endings are just new beginnings (but also endings) 12 minutes, 9 seconds" [ref=f5e284]:
+                  - /url: /watch?v=myO7N9YhTyE
+                  - text: "#32 - Endings are just new beginnings (but also endings)"
+              - group [ref=f5e287]:
+                - generic [ref=f5e288]: 4 views
+                - generic [ref=f5e289]: •
+                - generic "1 year ago" [ref=f5e290]
+            - button "More actions" [ref=f5e293]
+        - generic [ref=f5e300] [cursor=pointer]:
+          - link [ref=f5e301]:
+            - /url: /watch?v=7A2pU3gAOoA
+            - generic [ref=f5e302]: 30:09
+          - generic [ref=f5e310]:
+            - generic [ref=f5e311]:
+              - 'heading "#31 - Core vs. Context: Focus on What Really Matters" [level=3] [ref=f5e312]':
+                - 'link "#31 - Core vs. Context: Focus on What Really Matters 30 minutes" [ref=f5e313]':
+                  - /url: /watch?v=7A2pU3gAOoA
+                  - text: "#31 - Core vs. Context: Focus on What Really Matters"
+              - group [ref=f5e316]:
+                - generic [ref=f5e317]: 17 views
+                - generic [ref=f5e318]: •
+                - generic "1 year ago" [ref=f5e319]
+            - button "More actions" [ref=f5e322]
+        - generic [ref=f5e329] [cursor=pointer]:
+          - link [ref=f5e330]:
+            - /url: /watch?v=8cZRu5QxBhU
+            - generic [ref=f5e331]: 30:46
+          - generic [ref=f5e339]:
+            - generic [ref=f5e340]:
+              - heading "#30 - Future of Software Development in the AI Era" [level=3] [ref=f5e341]:
+                - link "#30 - Future of Software Development in the AI Era 30 minutes" [ref=f5e342]:
+                  - /url: /watch?v=8cZRu5QxBhU
+                  - text: "#30 - Future of Software Development in the AI Era"
+              - group [ref=f5e345]:
+                - generic [ref=f5e346]: 6 views
+                - generic [ref=f5e347]: •
+                - generic "1 year ago" [ref=f5e348]
+            - button "More actions" [ref=f5e351]
+        - generic [ref=f5e358] [cursor=pointer]:
+          - link [ref=f5e359]:
+            - /url: /watch?v=T4sEaj6EDi8
+            - generic [ref=f5e360]: 36:35
+          - generic [ref=f5e368]:
+            - generic [ref=f5e369]:
+              - heading "#29 - Dark Clouds or Bright Horizons for the Dutch government?" [level=3] [ref=f5e370]:
+                - link "#29 - Dark Clouds or Bright Horizons for the Dutch government? 36 minutes" [ref=f5e371]:
+                  - /url: /watch?v=T4sEaj6EDi8
+                  - text: "#29 - Dark Clouds or Bright Horizons for the Dutch government?"
+              - group [ref=f5e374]:
+                - generic [ref=f5e375]: 1 view
+                - generic [ref=f5e376]: •
+                - generic "1 year ago" [ref=f5e377]
+            - button "More actions" [ref=f5e380]
+        - generic [ref=f5e387] [cursor=pointer]:
+          - link [ref=f5e388]:
+            - /url: /watch?v=zwcfgwNWfd0
+            - generic [ref=f5e389]: 32:55
+          - generic [ref=f5e397]:
+            - generic [ref=f5e398]:
+              - heading "#28 - Future of IT Leadership with Marcel de Vries from Xebia" [level=3] [ref=f5e399]:
+                - link "#28 - Future of IT Leadership with Marcel de Vries from Xebia 32 minutes" [ref=f5e400]:
+                  - /url: /watch?v=zwcfgwNWfd0
+                  - text: "#28 - Future of IT Leadership with Marcel de Vries from Xebia"
+              - group [ref=f5e403]:
+                - generic [ref=f5e404]: 21 views
+                - generic [ref=f5e405]: •
+                - generic "1 year ago" [ref=f5e406]
+            - button "More actions" [ref=f5e409]
+        - generic [ref=f5e416] [cursor=pointer]:
+          - link [ref=f5e417]:
+            - /url: /watch?v=fWmN5oY8O5Q
+            - generic [ref=f5e418]: 24:36
+          - generic [ref=f5e426]:
+            - generic [ref=f5e427]:
+              - heading "#27 - Looking back at 1 year of LEAD Podcast and 2025 predictions" [level=3] [ref=f5e428]:
+                - link "#27 - Looking back at 1 year of LEAD Podcast and 2025 predictions 24 minutes" [ref=f5e429]:
+                  - /url: /watch?v=fWmN5oY8O5Q
+                  - text: "#27 - Looking back at 1 year of LEAD Podcast and 2025 predictions"
+              - group [ref=f5e432]:
+                - generic [ref=f5e433]: 5 views
+                - generic [ref=f5e434]: •
+                - generic "1 year ago" [ref=f5e435]
+            - button "More actions" [ref=f5e438]
+        - generic [ref=f5e445] [cursor=pointer]:
+          - link [ref=f5e446]:
+            - /url: /watch?v=AN9S7BD3zV0
+            - generic [ref=f5e447]: 35:40
+          - generic [ref=f5e455]:
+            - generic [ref=f5e456]:
+              - heading "#26 - A look under the hood of Toyota's Connected Platform Engineering Journey" [level=3] [ref=f5e457]:
+                - link "#26 - A look under the hood of Toyota's Connected Platform Engineering Journey 35 minutes" [ref=f5e458]:
+                  - /url: /watch?v=AN9S7BD3zV0
+                  - text: "#26 - A look under the hood of Toyota's Connected Platform Engineering Journey"
+              - group [ref=f5e461]:
+                - generic [ref=f5e462]: 14 views
+                - generic [ref=f5e463]: •
+                - generic "1 year ago" [ref=f5e464]
+            - button "More actions" [ref=f5e467]
+        - generic [ref=f5e474] [cursor=pointer]:
+          - link [ref=f5e475]:
+            - /url: /watch?v=lRiHmhAHAS0
+            - generic [ref=f5e476]: 39:49
+          - generic [ref=f5e484]:
+            - generic [ref=f5e485]:
+              - heading "#25 - Reviewing the State of DevOps" [level=3] [ref=f5e486]:
+                - link "#25 - Reviewing the State of DevOps 39 minutes" [ref=f5e487]:
+                  - /url: /watch?v=lRiHmhAHAS0
+                  - text: "#25 - Reviewing the State of DevOps"
+              - group [ref=f5e490]:
+                - generic [ref=f5e491]: 11 views
+                - generic [ref=f5e492]: •
+                - generic "1 year ago" [ref=f5e493]
+            - button "More actions" [ref=f5e496]
+        - generic [ref=f5e503] [cursor=pointer]:
+          - link [ref=f5e504]:
+            - /url: /watch?v=G2riZvW-cZc
+            - generic [ref=f5e505]: 31:14
+          - generic [ref=f5e513]:
+            - generic [ref=f5e514]:
+              - 'heading "#24 - Kubernetes: From running containers to a Cloud Native OS (with Chris van Sluijsveld)" [level=3] [ref=f5e515]':
+                - 'link "#24 - Kubernetes: From running containers to a Cloud Native OS (with Chris van Sluijsveld) 31 minutes" [ref=f5e516]':
+                  - /url: /watch?v=G2riZvW-cZc
+                  - text: "#24 - Kubernetes: From running containers to a Cloud Native OS (with Chris van Sluijsveld)"
+              - group [ref=f5e519]:
+                - generic [ref=f5e520]: 4 views
+                - generic [ref=f5e521]: •
+                - generic "1 year ago" [ref=f5e522]
+            - button "More actions" [ref=f5e525]
+        - generic [ref=f5e532] [cursor=pointer]:
+          - link [ref=f5e533]:
+            - /url: /watch?v=1pbBWynDhL0
+            - generic [ref=f5e534]: 30:06
+          - generic [ref=f5e542]:
+            - generic [ref=f5e543]:
+              - heading "#23 - Crafting a culture that makes vision happen" [level=3] [ref=f5e544]:
+                - link "#23 - Crafting a culture that makes vision happen 30 minutes" [ref=f5e545]:
+                  - /url: /watch?v=1pbBWynDhL0
+                  - text: "#23 - Crafting a culture that makes vision happen"
+              - group [ref=f5e548]:
+                - generic [ref=f5e549]: 5 views
+                - generic [ref=f5e550]: •
+                - generic "1 year ago" [ref=f5e551]
+            - button "More actions" [ref=f5e554]
+        - generic [ref=f5e561] [cursor=pointer]:
+          - link [ref=f5e562]:
+            - /url: /watch?v=8KRfjH7vDlw
+            - generic [ref=f5e563]: 34:17
+          - generic [ref=f5e571]:
+            - generic [ref=f5e572]:
+              - heading "#22 - Learn today and lead tomorrow with a learning organization" [level=3] [ref=f5e573]:
+                - link "#22 - Learn today and lead tomorrow with a learning organization 34 minutes" [ref=f5e574]:
+                  - /url: /watch?v=8KRfjH7vDlw
+                  - text: "#22 - Learn today and lead tomorrow with a learning organization"
+              - group [ref=f5e577]:
+                - generic [ref=f5e578]: 2 views
+                - generic [ref=f5e579]: •
+                - generic "1 year ago" [ref=f5e580]
+            - button "More actions" [ref=f5e583]
+        - generic [ref=f5e590] [cursor=pointer]:
+          - link [ref=f5e591]:
+            - /url: /watch?v=mZ2aFtAOj1o
+            - generic [ref=f5e592]: 34:25
+          - generic [ref=f5e600]:
+            - generic [ref=f5e601]:
+              - heading "#21 - The difference between speaking and being understood" [level=3] [ref=f5e602]:
+                - link "#21 - The difference between speaking and being understood 34 minutes" [ref=f5e603]:
+                  - /url: /watch?v=mZ2aFtAOj1o
+                  - text: "#21 - The difference between speaking and being understood"
+              - group [ref=f5e606]:
+                - generic [ref=f5e607]: 2 views
+                - generic [ref=f5e608]: •
+                - generic "1 year ago" [ref=f5e609]
+            - button "More actions" [ref=f5e612]
+        - generic [ref=f5e619] [cursor=pointer]:
+          - link [ref=f5e620]:
+            - /url: /watch?v=7pSXhB32634
+            - generic [ref=f5e621]: 35:32
+          - generic [ref=f5e629]:
+            - generic [ref=f5e630]:
+              - heading "#20 - Rebuild or Refactor? - That is the question!" [level=3] [ref=f5e631]:
+                - link "#20 - Rebuild or Refactor? - That is the question! 35 minutes" [ref=f5e632]:
+                  - /url: /watch?v=7pSXhB32634
+                  - text: "#20 - Rebuild or Refactor? - That is the question!"
+              - group [ref=f5e635]:
+                - generic [ref=f5e636]: 28 views
+                - generic [ref=f5e637]: •
+                - generic "1 year ago" [ref=f5e638]
+            - button "More actions" [ref=f5e641]
+        - generic [ref=f5e648] [cursor=pointer]:
+          - link [ref=f5e649]:
+            - /url: /watch?v=eafomZUfuY0
+            - generic [ref=f5e650]: 33:35
+          - generic [ref=f5e658]:
+            - generic [ref=f5e659]:
+              - 'heading "#19 - The Uniform Tech Stack Fallacy: Embracing Diversity for Success" [level=3] [ref=f5e660]':
+                - 'link "#19 - The Uniform Tech Stack Fallacy: Embracing Diversity for Success 33 minutes" [ref=f5e661]':
+                  - /url: /watch?v=eafomZUfuY0
+                  - text: "#19 - The Uniform Tech Stack Fallacy: Embracing Diversity for Success"
+              - group [ref=f5e664]:
+                - generic [ref=f5e665]: 8 views
+                - generic [ref=f5e666]: •
+                - generic "1 year ago" [ref=f5e667]
+            - button "More actions" [ref=f5e670]
+        - generic [ref=f5e677] [cursor=pointer]:
+          - link [ref=f5e678]:
+            - /url: /watch?v=LWB5ZNA-xBU
+            - generic [ref=f5e679]: 33:28
+          - generic [ref=f5e687]:
+            - generic [ref=f5e688]:
+              - heading "#18 - High Performing Engineering Teams" [level=3] [ref=f5e689]:
+                - link "#18 - High Performing Engineering Teams 33 minutes" [ref=f5e690]:
+                  - /url: /watch?v=LWB5ZNA-xBU
+                  - text: "#18 - High Performing Engineering Teams"
+              - group [ref=f5e693]:
+                - generic [ref=f5e694]: 10 views
+                - generic [ref=f5e695]: •
+                - generic "1 year ago" [ref=f5e696]
+            - button "More actions" [ref=f5e699]
+        - generic [ref=f5e706] [cursor=pointer]:
+          - link [ref=f5e707]:
+            - /url: /watch?v=_z4Y9aCXDxM
+            - generic [ref=f5e708]: 30:46
+          - generic [ref=f5e716]:
+            - generic [ref=f5e717]:
+              - heading "#17 - Quantum Leap with Hanna Engel" [level=3] [ref=f5e718]:
+                - link "#17 - Quantum Leap with Hanna Engel 30 minutes" [ref=f5e719]:
+                  - /url: /watch?v=_z4Y9aCXDxM
+                  - text: "#17 - Quantum Leap with Hanna Engel"
+              - group [ref=f5e722]:
+                - generic [ref=f5e723]: 24 views
+                - generic [ref=f5e724]: •
+                - generic "1 year ago" [ref=f5e725]
+            - button "More actions" [ref=f5e728]
+        - generic [ref=f5e735] [cursor=pointer]:
+          - link [ref=f5e736]:
+            - /url: /watch?v=ROrD-1aXHHc
+            - generic [ref=f5e737]: 34:07
+          - generic [ref=f5e745]:
+            - generic [ref=f5e746]:
+              - heading "#16 - Architecture without architects" [level=3] [ref=f5e747]:
+                - link "#16 - Architecture without architects 34 minutes" [ref=f5e748]:
+                  - /url: /watch?v=ROrD-1aXHHc
+                  - text: "#16 - Architecture without architects"
+              - group [ref=f5e751]:
+                - generic [ref=f5e752]: 10 views
+                - generic [ref=f5e753]: •
+                - generic "1 year ago" [ref=f5e754]
+            - button "More actions" [ref=f5e757]
+        - generic [ref=f5e764] [cursor=pointer]:
+          - link [ref=f5e765]:
+            - /url: /watch?v=eZRT7hJGe-w
+            - generic [ref=f5e766]: 32:29
+          - generic [ref=f5e774]:
+            - generic [ref=f5e775]:
+              - heading "#15 - The role of UX in Software Development with Dean Schuster" [level=3] [ref=f5e776]:
+                - link "#15 - The role of UX in Software Development with Dean Schuster 32 minutes" [ref=f5e777]:
+                  - /url: /watch?v=eZRT7hJGe-w
+                  - text: "#15 - The role of UX in Software Development with Dean Schuster"
+              - group [ref=f5e780]:
+                - generic [ref=f5e781]: 11 views
+                - generic [ref=f5e782]: •
+                - generic "1 year ago" [ref=f5e783]
+            - button "More actions" [ref=f5e786]
+        - generic [ref=f5e793] [cursor=pointer]:
+          - link [ref=f5e794]:
+            - /url: /watch?v=2e18tLZyqy8
+            - generic [ref=f5e795]: 28:55
+          - generic [ref=f5e803]:
+            - generic [ref=f5e804]:
+              - heading "#14 - Measuring what matters" [level=3] [ref=f5e805]:
+                - link "#14 - Measuring what matters 28 minutes" [ref=f5e806]:
+                  - /url: /watch?v=2e18tLZyqy8
+                  - text: "#14 - Measuring what matters"
+              - group [ref=f5e809]:
+                - generic [ref=f5e810]: 4 views
+                - generic [ref=f5e811]: •
+                - generic "2 years ago" [ref=f5e812]
+            - button "More actions" [ref=f5e815]
+        - generic [ref=f5e822] [cursor=pointer]:
+          - link [ref=f5e823]:
+            - /url: /watch?v=AxJ8GQbDaVs&pp=0gcJCVELAYcqIYzv
+            - generic [ref=f5e824]: 29:27
+          - generic [ref=f5e832]:
+            - generic [ref=f5e833]:
+              - heading "#13 - The importance of an engineering culture with Jennifer Wadella" [level=3] [ref=f5e834]:
+                - link "#13 - The importance of an engineering culture with Jennifer Wadella 29 minutes" [ref=f5e835]:
+                  - /url: /watch?v=AxJ8GQbDaVs&pp=0gcJCVELAYcqIYzv
+                  - text: "#13 - The importance of an engineering culture with Jennifer Wadella"
+              - group [ref=f5e838]:
+                - generic [ref=f5e839]: 5 views
+                - generic [ref=f5e840]: •
+                - generic "2 years ago" [ref=f5e841]
+            - button "More actions" [ref=f5e844]
+        - generic [ref=f5e851] [cursor=pointer]:
+          - link [ref=f5e852]:
+            - /url: /watch?v=i-t8iV3jbU4
+            - generic [ref=f5e853]: 29:56
+          - generic [ref=f5e861]:
+            - generic [ref=f5e862]:
+              - 'heading "#12 - Decisions, Decisions: The Art of Thinking Critically with Laïla Bougriâ" [level=3] [ref=f5e863]':
+                - 'link "#12 - Decisions, Decisions: The Art of Thinking Critically with Laïla Bougriâ 29 minutes" [ref=f5e864]':
+                  - /url: /watch?v=i-t8iV3jbU4
+                  - text: "#12 - Decisions, Decisions: The Art of Thinking Critically with Laïla Bougriâ"
+              - group [ref=f5e867]:
+                - generic [ref=f5e868]: 8 views
+                - generic [ref=f5e869]: •
+                - generic "2 years ago" [ref=f5e870]
+            - button "More actions" [ref=f5e873]
+        - generic [ref=f5e880] [cursor=pointer]:
+          - link [ref=f5e881]:
+            - /url: /watch?v=v3Xrbdp_eEQ
+            - generic [ref=f5e882]: 35:04
+          - generic [ref=f5e890]:
+            - generic [ref=f5e891]:
+              - heading "#11 - Debugging the Human Factor with Arthur Doler" [level=3] [ref=f5e892]:
+                - link "#11 - Debugging the Human Factor with Arthur Doler 35 minutes" [ref=f5e893]:
+                  - /url: /watch?v=v3Xrbdp_eEQ
+                  - text: "#11 - Debugging the Human Factor with Arthur Doler"
+              - group [ref=f5e896]:
+                - generic [ref=f5e897]: No views
+                - generic [ref=f5e898]: •
+                - generic "2 years ago" [ref=f5e899]
+            - button "More actions" [ref=f5e902]
+        - generic [ref=f5e909] [cursor=pointer]:
+          - link [ref=f5e910]:
+            - /url: /watch?v=Oa80YmXFHxM
+            - generic [ref=f5e911]: 29:15
+          - generic [ref=f5e919]:
+            - generic [ref=f5e920]:
+              - heading "#10 - A message about choosing the right architecture from Adam Ralph" [level=3] [ref=f5e921]:
+                - link "#10 - A message about choosing the right architecture from Adam Ralph 29 minutes" [ref=f5e922]:
+                  - /url: /watch?v=Oa80YmXFHxM
+                  - text: "#10 - A message about choosing the right architecture from Adam Ralph"
+              - group [ref=f5e925]:
+                - generic [ref=f5e926]: 6 views
+                - generic [ref=f5e927]: •
+                - generic "2 years ago" [ref=f5e928]
+            - button "More actions" [ref=f5e931]
+        - generic [ref=f5e938] [cursor=pointer]:
+          - link [ref=f5e939]:
+            - /url: /watch?v=5dfLiFgMQUo&pp=0gcJCVELAYcqIYzv
+            - generic [ref=f5e940]: 30:58
+          - generic [ref=f5e948]:
+            - generic [ref=f5e949]:
+              - 'heading "#09 - FinOps: Controlling the price of progress" [level=3] [ref=f5e950]':
+                - 'link "#09 - FinOps: Controlling the price of progress 30 minutes" [ref=f5e951]':
+                  - /url: /watch?v=5dfLiFgMQUo&pp=0gcJCVELAYcqIYzv
+                  - text: "#09 - FinOps: Controlling the price of progress"
+              - group [ref=f5e954]:
+                - generic [ref=f5e955]: 2 views
+                - generic [ref=f5e956]: •
+                - generic "2 years ago" [ref=f5e957]
+            - button "More actions" [ref=f5e960]
+        - generic [ref=f5e967] [cursor=pointer]:
+          - link [ref=f5e968]:
+            - /url: /watch?v=qwlJW8C_-zA
+            - generic [ref=f5e969]: 33:19
+          - generic [ref=f5e977]:
+            - generic [ref=f5e978]:
+              - heading "#08 - Enabling a new generation of developers @ GitHub (with April Edwards)" [level=3] [ref=f5e979]:
+                - link "#08 - Enabling a new generation of developers @ GitHub (with April Edwards) 33 minutes" [ref=f5e980]:
+                  - /url: /watch?v=qwlJW8C_-zA
+                  - text: "#08 - Enabling a new generation of developers @ GitHub (with April Edwards)"
+              - group [ref=f5e983]:
+                - generic [ref=f5e984]: 12 views
+                - generic [ref=f5e985]: •
+                - generic "2 years ago" [ref=f5e986]
+            - button "More actions" [ref=f5e989]
+        - generic [ref=f5e996] [cursor=pointer]:
+          - link [ref=f5e997]:
+            - /url: /watch?v=TenjrM3CdME
+            - generic [ref=f5e998]: 33:11
+          - generic [ref=f5e1006]:
+            - generic [ref=f5e1007]:
+              - heading "#07 - Growing a DevOps Mindset" [level=3] [ref=f5e1008]:
+                - link "#07 - Growing a DevOps Mindset 33 minutes" [ref=f5e1009]:
+                  - /url: /watch?v=TenjrM3CdME
+                  - text: "#07 - Growing a DevOps Mindset"
+              - group [ref=f5e1012]:
+                - generic [ref=f5e1013]: 10 views
+                - generic [ref=f5e1014]: •
+                - generic "2 years ago" [ref=f5e1015]
+            - button "More actions" [ref=f5e1018]
+        - generic [ref=f5e1025] [cursor=pointer]:
+          - link [ref=f5e1026]:
+            - /url: /watch?v=MYaJ4uGlPlw
+            - generic [ref=f5e1027]: 26:00
+          - generic [ref=f5e1035]:
+            - generic [ref=f5e1036]:
+              - heading "#06 - (Em)Powering Startup Engineering Culture @ Atlas" [level=3] [ref=f5e1037]:
+                - link "#06 - (Em)Powering Startup Engineering Culture @ Atlas 26 minutes" [ref=f5e1038]:
+                  - /url: /watch?v=MYaJ4uGlPlw
+                  - text: "#06 - (Em)Powering Startup Engineering Culture @ Atlas"
+              - group [ref=f5e1041]:
+                - generic [ref=f5e1042]: 5 views
+                - generic [ref=f5e1043]: •
+                - generic "2 years ago" [ref=f5e1044]
+            - button "More actions" [ref=f5e1047]
+        - generic [ref=f5e1054] [cursor=pointer]:
+          - link [ref=f5e1055]:
+            - /url: /watch?v=6WYU-x_7f0U
+            - generic [ref=f5e1056]: 28:47
+          - generic [ref=f5e1064]:
+            - generic [ref=f5e1065]:
+              - 'heading "#05 - Ops we did it again: A discussion about SRE" [level=3] [ref=f5e1066]':
+                - 'link "#05 - Ops we did it again: A discussion about SRE 28 minutes" [ref=f5e1067]':
+                  - /url: /watch?v=6WYU-x_7f0U
+                  - text: "#05 - Ops we did it again: A discussion about SRE"
+              - group [ref=f5e1070]:
+                - generic [ref=f5e1071]: 5 views
+                - generic [ref=f5e1072]: •
+                - generic "2 years ago" [ref=f5e1073]
+            - button "More actions" [ref=f5e1076]
+        - generic [ref=f5e1083] [cursor=pointer]:
+          - link [ref=f5e1084]:
+            - /url: /watch?v=_bSGWDRvt0c
+            - generic [ref=f5e1085]: 32:19
+          - generic [ref=f5e1093]:
+            - generic [ref=f5e1094]:
+              - heading "#04 - Stacking success with Developer Experience @ LEGO" [level=3] [ref=f5e1095]:
+                - link "#04 - Stacking success with Developer Experience @ LEGO 32 minutes" [ref=f5e1096]:
+                  - /url: /watch?v=_bSGWDRvt0c
+                  - text: "#04 - Stacking success with Developer Experience @ LEGO"
+              - group [ref=f5e1099]:
+                - generic [ref=f5e1100]: 11 views
+                - generic [ref=f5e1101]: •
+                - generic "2 years ago" [ref=f5e1102]
+            - button "More actions" [ref=f5e1105]
+        - generic [ref=f5e1112] [cursor=pointer]:
+          - link [ref=f5e1113]:
+            - /url: /watch?v=o-hHYrrA5H0
+            - generic [ref=f5e1114]: 27:59
+          - generic [ref=f5e1122]:
+            - generic [ref=f5e1123]:
+              - heading "#03 - Is DevOps dead or evolving with Platform Engineering?" [level=3] [ref=f5e1124]:
+                - link "#03 - Is DevOps dead or evolving with Platform Engineering? 27 minutes" [ref=f5e1125]:
+                  - /url: /watch?v=o-hHYrrA5H0
+                  - text: "#03 - Is DevOps dead or evolving with Platform Engineering?"
+              - group [ref=f5e1128]:
+                - generic [ref=f5e1129]: 11 views
+                - generic [ref=f5e1130]: •
+                - generic "2 years ago" [ref=f5e1131]
+            - button "More actions" [ref=f5e1134]

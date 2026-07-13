@@ -15,9 +15,9 @@ Output:
    - "Story format" — leads with a concrete scene (Wigo4it, a client
      conversation, a personal moment)
    - "Question format" — opens with a direct question to the reader
-2. One image prompt suitable for an AI image generator (16:9, professional,
-   abstract/metaphorical rather than literal — avoid stock-photo clichés
-   like handshakes or lightbulbs). Note: this skill only produces the
-   PROMPT TEXT. Generating and downloading the actual image, and posting to
-   LinkedIn, are manual steps outside this skill.
+2. One image prompt suitable for an AI image generator (portrait 1024×1536,
+   professional, abstract/metaphorical rather than literal — avoid stock-photo
+   clichés like handshakes or lightbulbs). The prompt will be passed directly
+   to the Image Generator agent (`image-generator`) to produce the actual PNG
+   file — so write it as a complete, self-contained generation prompt.
 3. Suggested posting day per the Mon/Wed/Fri rhythm already agreed.

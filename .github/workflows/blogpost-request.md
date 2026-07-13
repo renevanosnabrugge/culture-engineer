@@ -15,12 +15,16 @@ permissions:
 engine: copilot
 tools:
   edit:
-  bash: ["git", "bundle exec jekyll build"]
+  bash: true
   github:
     toolsets: [default]
+secrets:
+  AZURE_IMAGE_GEN_KEY:
+    value: ${{ secrets.AZURE_IMAGE_GEN_KEY }}
 network:
   allowed:
     - defaults
+    - culture-engineer-ai.services.ai.azure.com
 safe-outputs:
   create-pull-request:
     title-prefix: "[blogpost] "
@@ -60,7 +64,20 @@ already state a clear topic.
    the safe-outputs PR mechanism handles that.
 
 6. Run `.github/skills/social-pack/SKILL.md` against the finished post,
-   saving output as `drafts/<post-slug>-social.md`.
+   saving output as `drafts/social-<post-slug>.md`.
+
+6.5. Generate the hero image by running the image generation script using
+   the image prompt from step 6 and the post slug:
+   ```
+   pwsh scripts/generate-image.ps1 -Prompt "<image prompt>" -Slug "<slug>"
+   ```
+   The script reads `AZURE_IMAGE_GEN_KEY` from the environment (injected via
+   repository secret). If the script fails, log the error in the PR description
+   under `## ⚠️ Image Generation Error` but do NOT abort the pipeline — the
+   PR should still be opened without the image.
+   If the script succeeds, note the saved path in the PR description under
+   `## 🖼️ Hero Image` and add the image to the post's front matter as
+   `image: /<saved-path>`.
 
 7. Open a pull request (via safe-outputs) containing the new post file and
    the social pack file. The PR **description must include the full
@@ -82,5 +99,6 @@ already state a clear topic.
 
 8. Comment on the original issue linking to the PR.
 
-Never push directly to `main`. Never call any LinkedIn or image-generation
-API — out of scope for this workflow.
+Never push directly to `main`. Never call the LinkedIn API — posting to
+LinkedIn is a manual step. Image generation via `scripts/generate-image.py`
+is in scope and follows step 6.5 above.
