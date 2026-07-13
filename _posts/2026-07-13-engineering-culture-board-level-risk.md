@@ -8,31 +8,21 @@ image_prompt: "Editorial illustration of a glass boardroom table reflected in a 
 excerpt: >
   When boards talk about digital transformation risk, they reach for budgets, timelines
   and vendor contracts. They rarely reach for the one variable that determines whether
-  any of it works: the engineering culture underneath it all. That silence is expensive.
+  any of it works: the engineering culture underneath it all. 
 ---
 
-A few years ago, a large Dutch public-sector organisation launched what the board called a
-strategic platform modernisation. The budget was approved. The vendors were selected. The
-roadmap was Gantt-charted to the month.
+Every now and then, I encounter customers that moved on from another vendor. They implemented a platform, did a cloud migration, or moved to another technical solution. They did a lot of due diligence, approved budgets, selected vendors and Gantt-charted the roadmap to the month.
 
-Eighteen months later, the platform was technically delivered. And almost nobody used it.
+But, usually, after quite a while they found out that the platform was technically delivered but almost nobody used it.
 
-Not because the technology was wrong. Because the teams that built it had learned, over years,
-that shipping fast was penalised. That raising a concern in a review meeting was career risk.
-That experimentation meant blame when something broke. The culture had calcified, quietly,
-long before any board resolution was passed.
+Not because the technology was wrong, but because the vendors did not spend any time educating the end-users of the platform. The platform, as technologically advanced as it was, was so hard to understand, and so far from the daily reality of the teams, that people reverted to the old ways of working. Besides that, the culture of this organisation was not one of experimentation and learning. The teams were rewarded for delivering on time, not for learning from failure.
 
-The platform failed at the culture level. The board never saw it coming, because boards
-rarely have a vocabulary for culture as a risk vector.
+Many implementations fail at the culture level. And the board never see this coming, because boards rarely have a vocabulary for culture as a risk vector.
 
-## Culture is not a soft topic. It is a delivery variable.
+## Culture as a delivery variable.
 
-The Xebia Engineering Culture research makes this concrete. Teams that score high on
-psychological safety, learning orientation, and shared ownership consistently outperform
-on the metrics boards actually care about: time to market, defect rates, staff retention,
+The Engineering Culture Model makes this concrete. Teams that score high on psychological safety, learning orientation, and shared ownership consistently outperform on the metrics boards actually care about: time to market, defect rates, staff retention,
 and recovery speed after an incident.
-
-That is not a coincidence. It is a mechanism.
 
 When engineers feel safe to surface problems early, defects are caught before they become
 outages. When teams own their systems end to end, handover latency disappears. When failure
@@ -43,13 +33,11 @@ It is a core input to delivery quality.
 If your board is worried about delivery predictability, and every board should be, then
 engineering culture belongs on the risk register. Not in the HR quarterly review.
 
-## Where boards currently look, and what they miss
+## Not every risk is measurable
 
 Most organisations manage technology risk through three lenses: vendor risk, security risk,
 and project risk. These are legitimate. But they share a blind spot: they all assume that
-the humans executing the work are an interchangeable, stable input.
-
-They are not.
+the humans executing the work are an interchangeable, stable input. Surprise surprise, they are not.
 
 An engineering team that has been rewarded for heroics rather than sustainability will
 consistently underestimate effort, hide complexity, and burn out at critical moments.
@@ -63,7 +51,7 @@ in the post-mortem after the launch delay, in the resignation letter of the seni
 who was "tired of fighting the system," in the audit finding that no one owned the
 configuration that caused the breach.
 
-The Lencioni model for team dysfunction maps almost perfectly onto what happens in
+The [Lencioni model for team dysfunction](/inspiration/) maps almost perfectly onto what happens in
 engineering organisations under strategic pressure: absence of trust leads to fear of
 conflict, which leads to lack of commitment, which leads to avoidance of accountability,
 which ends in inattention to results. The board sees only the last part. The culture

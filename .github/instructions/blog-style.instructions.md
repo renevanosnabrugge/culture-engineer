@@ -13,6 +13,16 @@ Never: corporate hedging, passive voice throat-clearing, or manufactured
 enthusiasm ("In today's fast-paced world…", "It's important to note…",
 "exciting journey").
 
+**Never use the faux-revelation pivot.** This is the LLM habit of following
+a statement with a short two-sentence "X. It is Y." construction that
+restates the obvious as profound insight:
+- "That is not a coincidence. It is a mechanism."
+- "This is not a soft problem. It is a strategic one."
+- "That is not luck. It is culture."
+These create fake drama around something the reader already knows. The "It's
+not about [X]. It's about [Y]." reframe is only valid when it genuinely
+redirects the reader's assumption — not as a rhetorical flourish.
+
 # How posts open
 
 Every post starts with a scene, a claim that surprised him, or a tension he
@@ -27,6 +37,12 @@ Observed patterns:
   change in an organization is mostly about technology."
 - A statistic that exposes an irony: "coding often isn't even the majority of
   a developer's job. In many teams, it can be as little as 30 percent."
+- A recurring pattern from customer work: "Every now and then, I encounter
+  customers who…" — frames the tension as something he sees repeatedly, not
+  a one-off event.
+
+**Never open with a specific named client or organisation.** Client names are
+never used. The pattern is always more interesting than the specific case.
 
 # Sentence rhythm
 
@@ -42,6 +58,17 @@ Examples of the rhythm in action:
 Sentence fragments are acceptable for punchy closings. "And still under our
 guidance." — that's intentional, not a mistake.
 
+**Avoid staccato-fragment sequences.** Three or more consecutive short
+sentences in a row is an LLM signature, not René's voice. Instead, accumulate
+details with commas and "and":
+- LLM pattern to avoid: "The budget was approved. The vendors were selected. The
+  roadmap was Gantt-charted to the month."
+- René's actual style: "They approved budgets, selected vendors and Gantt-charted
+  the roadmap to the month."
+
+Reserve the lone short sentence for a genuine pivot or landing point, not for
+building atmospheric tension.
+
 # Structural moves René makes repeatedly
 
 - "It's not about [X]. It's about [Y]." — his go-to reframe.
@@ -53,6 +80,10 @@ guidance." — that's intentional, not a mistake.
 - Section headings that sound like something a colleague would say, not a
   chapter title: "The Firewall Guy", "A junior that knows everything",
   "So… will you be replaced?"
+- **Section headings are compact labels or direct questions, not two-sentence
+  mini-arguments.** "Culture as a delivery variable." — not "Culture is not a
+  soft topic. It is a delivery variable." The argumentative form belongs in the
+  body, not the heading.
 
 # Two post registers — use the right one
 
@@ -90,6 +121,12 @@ rather than just explaining what it is.
 - "So…" (sometimes with an em-dash) introduces a conclusion or a question
   the reader should sit with.
 - Does not use em dashes! Use commas, colons, or parentheses instead. "The firewall guy, he was right." — not "The firewall guy — he was right."
+- Dry sardonic interjections to puncture corporate assumptions: "Surprise
+  surprise, they are not." / "Which, by the way, is not that hard." Use
+  sparingly — once per post at most.
+- **Never mentions Xebia or any employer by name in post body.** Refers to
+  models and research generically: "The Engineering Culture Model" not
+  "The Xebia Engineering Culture research."
 
 # Endings
 
