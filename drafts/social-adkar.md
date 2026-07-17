@@ -23,6 +23,8 @@ So they sat through the training and went back to their habits.
 
 The fix isn't more training. It's diagnosing which stage is the real constraint, then addressing that — not whatever stage is most comfortable to deliver.
 
+I wrote a full summary on my blog: https://culture-engineers.nl/inspiration/books/adkar/
+
 ---
 
 ## Variant 2: Story Format
@@ -38,6 +40,8 @@ ADKAR names the stage that was skipped: Desire. Not motivation in the fuzzy sens
 Until that question has a satisfying answer, you can deliver all the training in the world. You are solving the wrong problem.
 
 And honestly, that's a simple diagnostic. It costs nothing to ask.
+
+I wrote a full summary on my blog: https://culture-engineers.nl/inspiration/books/adkar/
 
 ---
 
@@ -56,6 +60,8 @@ Awareness and Desire come before Knowledge in the model, and that sequence matte
 The useful thing about ADKAR is that it makes failure diagnosable. If adoption is stalling, you can usually identify the exact stage that's the constraint and address that specifically, instead of throwing more workshops at a problem that was never about Knowledge in the first place.
 
 What stage is your current initiative stuck on?
+
+I wrote a full summary on my blog: https://culture-engineers.nl/inspiration/books/adkar/
 
 ---
 
