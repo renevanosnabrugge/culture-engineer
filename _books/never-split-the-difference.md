@@ -7,6 +7,7 @@ isbn: "0062407805"
 url: "https://www.amazon.com/dp/0062407805"
 tags: [negotiation, communication, influence]
 excerpt: "Real negotiation is about emotion, not logic."
+published: false
 ---
 
 Former FBI hostage negotiator Chris Voss argues that the rational-actor model of negotiation — find common ground, reach logical compromise — misses the fundamental truth: every negotiation is a conversation about feelings.

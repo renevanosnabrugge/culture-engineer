@@ -7,6 +7,7 @@ isbn: "1250066115"
 url: "https://www.amazon.com/dp/1250066115"
 tags: [health, nutrition, longevity]
 excerpt: "The leading causes of death in the developed world are largely preventable."
+published: false
 ---
 
 The leading causes of death in the developed world — heart disease, cancer, type 2 diabetes, high blood pressure — are largely preventable and, in many cases, reversible through diet and lifestyle. Greger's evidence-based case is that whole plant foods, daily movement, and good sleep address the vast majority of chronic disease risk.

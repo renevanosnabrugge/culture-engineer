@@ -5,6 +5,7 @@ origin: "Patrick Lencioni"
 tags: [teams, culture, trust]
 excerpt: "A diagnostic pyramid for why capable teams still underdeliver."
 learn_more: "https://www.tablegroup.com/topics-and-tools/teamwork/"
+published: false
 ---
 
 Lencioni's five-layer pyramid explains why technically capable teams fail to deliver, and why fixing the symptom (poor results) without addressing the root (lack of trust) never works.

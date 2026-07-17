@@ -7,6 +7,7 @@ isbn: "0743582853"
 url: "https://www.amazon.com/dp/0743582853"
 tags: [change, mindset]
 excerpt: "Clinging to what was is far more dangerous than moving toward what could be."
+published: false
 ---
 
 A short parable about four characters — two mice (Sniff and Scurry) and two Littlepeople (Hem and Haw) — living in a maze and searching for cheese. When the cheese disappears, their reactions differ dramatically.

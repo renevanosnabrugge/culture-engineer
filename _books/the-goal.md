@@ -7,6 +7,7 @@ isbn: "0884271951"
 url: "https://www.amazon.com/dp/0884271951"
 tags: [operations, constraints, flow]
 excerpt: "Every system has exactly one constraint. Everything else is noise."
+published: false
 ---
 
 Every system has exactly one constraint that limits its total output. Improving anything other than that constraint is waste — you make it better but the output doesn't change.

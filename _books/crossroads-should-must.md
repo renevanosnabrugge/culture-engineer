@@ -7,6 +7,7 @@ isbn: "1523303581"
 url: "https://www.amazon.com/dp/1523303581"
 tags: [purpose, career, creativity]
 excerpt: "Should is the life we feel obligated to live. Must is the one we are called to."
+published: false
 ---
 
 Should is the life we feel obligated to live — the career others expect, the role that makes sense on paper, the choices that keep everyone comfortable. Must is the life we feel genuinely called to live, the work that expresses who we are.
@@ -20,3 +21,6 @@ Somewhere in the arc of a long career, most thoughtful people ask whether the wo
 I recommend this book less for its practical tools (it is more meditative than prescriptive) and more for what it asks you to sit with. The questions it raises are ones worth spending time on, especially at moments of transition.
 
 The book is also beautifully designed — the visual dimension matters.
+
+## What I got out of this book
+To be honest, there is not a lot of new things in the book. But it is a good reminder. Almost a wake-up call. It is a reminder that you always should realize what it is you do and why you do it. The simple fill-in page. Things you do when procrastinating, Fantasies, Things you liked as a kid and more of these little questions are nice reminders that there is more than work alone. 

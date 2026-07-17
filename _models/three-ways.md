@@ -5,6 +5,7 @@ origin: "Gene Kim, Jez Humble, Patrick Debois, John Willis"
 tags: [devops, flow, feedback, learning]
 excerpt: "Three principles that underpin every high-performing technology organisation."
 learn_more: "https://itrevolution.com/articles/the-three-ways-the-principles-underpinning-devops/"
+published: false
 ---
 
 The Three Ways are the foundational principles of the DevOps movement, introduced in The Phoenix Project and expanded in The DevOps Handbook. They describe how work should flow, how feedback should travel, and how organisations should learn.

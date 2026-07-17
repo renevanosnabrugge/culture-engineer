@@ -1,0 +1,32 @@
+name: LinkedIn Poster
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # daily 07:00 UTC (09:00 CEST)
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Specific issue number to post (optional — posts all due if empty)'
+        required: false
+      variant:
+        description: 'Variant to post: 1, 2, or 3 (optional — posts all due variants if empty)'
+        required: false
+
+permissions:
+  issues: write
+
+jobs:
+  post-linkedin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Post LinkedIn variants
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+          FORCE_ISSUE: ${{ inputs.issue_number }}
+          FORCE_VARIANT: ${{ inputs.variant }}
+        run: pwsh .github/scripts/post-to-linkedin.ps1

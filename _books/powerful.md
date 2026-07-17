@@ -7,6 +7,7 @@ isbn: "1939714095"
 url: "https://www.amazon.com/dp/1939714095"
 tags: [culture, hr, leadership]
 excerpt: "Treat people like capable adults. It's more radical than it sounds."
+published: false
 ---
 
 Most HR practices were built to manage compliance, not build great teams. Patty McCord, who co-created the Netflix Culture Deck, argues for a radically simpler approach: treat employees like fully capable adults, tell them the truth, give them real responsibility, and let go.

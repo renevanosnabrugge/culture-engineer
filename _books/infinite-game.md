@@ -7,6 +7,7 @@ isbn: "073521350X"
 url: "https://www.amazon.com/dp/073521350X"
 tags: [leadership, strategy, purpose]
 excerpt: "Business is an infinite game. Most leaders play it like a finite one."
+published: false
 ---
 
 Business has no final whistle, no declared winner, no agreed-upon rulebook. Yet most organisations compete as though it does — optimising for quarterly results, reacting to what competitors do, treating leadership as a tournament to be won.

@@ -42,6 +42,7 @@ Triggered by a new comment on an issue labeled `blogpost:needs-topic`.
 Treat the comment body as René's chosen topic (it may reference one of the
 shortlist options by number, or state a new topic entirely).
 
-Remove the `blogpost:needs-topic` label, then run steps 3-8 exactly as
+Remove the `blogpost:needs-topic` label, then run steps 3-9 exactly as
 described in `blogpost-request.md` (write draft → style review → move to
-`_posts/` → social pack → open PR → comment with PR link).
+`_posts/` → social pack → open PR → comment with PR link → create content
+calendar tracking issues and add them to the GitHub Project).

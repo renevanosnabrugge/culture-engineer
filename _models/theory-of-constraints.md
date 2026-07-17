@@ -5,6 +5,7 @@ origin: "Eliyahu M. Goldratt"
 tags: [operations, flow, systems-thinking]
 excerpt: "Every system has exactly one constraint. Improve anything else and output doesn't change."
 learn_more: "https://www.toc-goldratt.com/en/theory-of-constraints"
+published: false
 ---
 
 Every system has exactly one constraint — the single factor that limits its total throughput. Improving any other part of the system does not increase output; it only increases work queued in front of the constraint.

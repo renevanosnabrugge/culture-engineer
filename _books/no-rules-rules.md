@@ -7,6 +7,7 @@ isbn: "1984877860"
 url: "https://www.amazon.com/dp/1984877860"
 tags: [culture, leadership, freedom]
 excerpt: "What happens when you remove rules and replace them with context and judgment."
+published: false
 ---
 
 Netflix removed rules rather than adding them. The logic is counterintuitive but internally consistent: hire only exceptional people, build radical transparency, then extend extraordinary freedom. The result is a culture of high-performing adults who don't need to be managed, just trusted.

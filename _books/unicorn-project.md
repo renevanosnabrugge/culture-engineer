@@ -7,6 +7,7 @@ isbn: "1942788762"
 url: "https://www.amazon.com/dp/1942788762"
 tags: [devops, engineering, culture]
 excerpt: "What great software engineering actually feels like from the inside."
+published: false
 ---
 
 The companion to The Phoenix Project, told from the developer's perspective. Maxine, a senior developer exiled to a failing project, discovers what separates organisations that ship great software from those that don't.

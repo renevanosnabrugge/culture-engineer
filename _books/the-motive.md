@@ -7,6 +7,7 @@ isbn: "1119600243"
 url: "https://www.amazon.com/dp/1119600243"
 tags: [leadership, motivation]
 excerpt: "Why do you want to lead? The answer matters more than you think."
+published: false
 ---
 
 There are two reasons people want to lead: the rewards it brings, or the responsibility it carries. Leaders driven by reward treat leadership as a prize — and quietly abdicate the hard, unglamorous work of serving their people. Leaders driven by responsibility do the opposite.

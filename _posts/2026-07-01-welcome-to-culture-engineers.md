@@ -8,6 +8,7 @@ image_prompt: "Professional editorial illustration of a diverse engineering team
 excerpt: >
   After years of speaking at conferences, writing articles, and advising teams, I finally
   have a home for all of it. Here's why I built this site and what you'll find here.
+published: false
 ---
 
 After years of speaking at conferences, writing articles scattered across various platforms,

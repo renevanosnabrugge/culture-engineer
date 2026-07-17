@@ -7,6 +7,7 @@ isbn: "1591846447"
 url: "https://www.amazon.com/dp/1591846447"
 tags: [leadership, purpose, communication]
 excerpt: "People don't buy what you do; they buy why you do it."
+published: false
 ---
 
 Great leaders and great organisations communicate from the inside out — starting with why, then how, then what. Most communicate from the outside in: here's what we do, here's how we do it, and if you're still listening, here's why.

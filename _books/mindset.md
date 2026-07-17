@@ -7,6 +7,7 @@ isbn: "0345472322"
 url: "https://www.amazon.com/dp/0345472322"
 tags: [mindset, psychology, growth]
 excerpt: "The single belief that shapes nearly everything about how you learn and lead."
+published: false
 ---
 
 The single belief you hold about whether your abilities are fixed or capable of growth shapes nearly everything — how you handle setbacks, whether you seek challenge, how you respond to criticism, and ultimately how much you achieve.

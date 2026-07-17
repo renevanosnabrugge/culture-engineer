@@ -21,6 +21,7 @@ Martin Rooney — best known for his work with elite athletes and coaches — ar
 
 **The leader is the thermostat** — the team's culture is set by the leader's behaviour. Not the mission statement. Not the values poster. The behaviour.
 
-## Why I find this valuable
+## What I got out of this book
+I really liked the story of this one. Of how simple things. simple rituals, can already make a team. I like it because Engineering managers or leaders are coaches too. Whether they use the word or not. The habits Rooney describes, showing genuine interest in the person, giving feedback with care, holding people to high standards while supporting them through failure, are exactly what distinguishes engineering leaders who retain great people from those who don't.
 
-It is the most practically actionable book I know on building team culture. It does not get lost in theory. It gives you specific things to do starting tomorrow. The sports context is a feature, not a limitation — elite athletic teams have had to solve the culture problem in very visible, measurable ways, and the patterns that emerge are directly transferable.
+It is a actionable book on building team culture. It does not get lost in theory. It gives you specific things to do starting tomorrow. The sports context is a feature, not a limitation — elite athletic teams have had to solve the culture problem in very visible, measurable ways, and the patterns that emerge are directly transferable.

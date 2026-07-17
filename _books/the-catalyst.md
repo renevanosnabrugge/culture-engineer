@@ -7,6 +7,7 @@ isbn: "1982147704"
 url: "https://www.amazon.com/dp/1982147704"
 tags: [change, influence, psychology]
 excerpt: "Pushing harder rarely changes minds. Remove the barriers instead."
+published: false
 ---
 
 Pushing harder rarely changes minds. Catalysts remove the barriers preventing people from changing themselves.

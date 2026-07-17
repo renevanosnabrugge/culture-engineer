@@ -99,6 +99,74 @@ already state a clear topic.
 
 8. Comment on the original issue linking to the PR.
 
+9. After the PR is created and commented on (step 8), create the content
+   calendar tracking structure. Use the GitHub MCP tools (or bash `gh` CLI)
+   to perform each of these actions:
+
+   a. **Ensure labels exist** in the repo (create if missing):
+      `content`, `content-calendar`, `content-type:blog`, `content-type:book`,
+      `content-type:model`, `scheduled`
+
+   b. **Determine content type** from the issue title / body:
+      - `blog`  — regular blog post (default)
+      - `book`  — book summary (file in `_books/`)
+      - `model` — model page (file in `_models/`)
+
+   c. **Create a main tracking issue** (this is the content calendar card):
+      - Title: `[Content] <Post Title>`
+      - Labels: `content`, `content-type:<type>`
+      - Body (exact format — do NOT deviate):
+        ```
+        ## Content Tracking
+
+        | Field | Value |
+        |-------|-------|
+        | Trigger issue | #<original issue number> |
+        | Pull Request  | <PR URL> |
+        | Draft file    | `<file path>` |
+        | Content type  | <blog \| book \| model> |
+
+        ## Schedule
+
+        <!-- publish-date: YYYY-MM-DD -->
+
+        > Set the publish date above, then add the label `scheduled` to
+        > trigger automatic date distribution to all sub-issues.
+        ```
+
+   d. **Create 4 sub-issues** and link each to the main issue (use the
+      GitHub sub-issue API or `gh api` to set the parent relationship):
+      - Title: `[Post] <Post Title>`         — label: `content-calendar`
+      - Title: `[Social 1] <Post Title>`     — label: `content-calendar`
+      - Title: `[Social 2] <Post Title>`     — label: `content-calendar`
+      - Title: `[Social 3] <Post Title>`     — label: `content-calendar`
+
+      Body for the Post sub-issue: link to the PR and the file path.
+      Body for each Social sub-issue: paste the matching LinkedIn variant
+      (Contrarian hook / Story format / Question format).
+
+   e. **Add all 5 issues to the GitHub Project** #9 (owner: renevanosnabrugge,
+      project: "Content Calendar · Culture Engineers") and set their
+      status to "Draft Posts". Run the helper script:
+      ```bash
+      pwsh .github/scripts/add-to-project.ps1 <issue-url-1> <issue-url-2> ...
+      ```
+      Pass all 5 issue URLs as separate arguments.
+
+   f. **Comment on the main tracking issue** with a checklist summary:
+      ```
+      ## Content Calendar Entry Created
+
+      Sub-issues:
+      - [ ] Post: #<post-issue-number>
+      - [ ] Social 1: #<social1-number>
+      - [ ] Social 2: #<social2-number>
+      - [ ] Social 3: #<social3-number>
+
+      **Next step:** Edit the `<!-- publish-date: YYYY-MM-DD -->` line
+      above, then add the `scheduled` label to set all dates automatically.
+      ```
+
 Never push directly to `main`. Never call the LinkedIn API — posting to
 LinkedIn is a manual step. Image generation via `scripts/generate-image.py`
 is in scope and follows step 6.5 above.

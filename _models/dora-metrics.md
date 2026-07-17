@@ -5,6 +5,7 @@ origin: "DevOps Research and Assessment (Google)"
 tags: [devops, measurement, performance]
 excerpt: "Four metrics that predict software delivery performance — and organisational outcomes."
 learn_more: "https://dora.dev/guides/dora-metrics-four-keys/"
+published: false
 ---
 
 DORA Metrics are four measures of software delivery performance, backed by six years of research across thousands of organisations. They are the most widely validated leading indicators of technology team health available.

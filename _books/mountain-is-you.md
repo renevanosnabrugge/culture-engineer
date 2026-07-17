@@ -7,6 +7,7 @@ isbn: "1949759229"
 url: "https://www.amazon.com/dp/1949759229"
 tags: [mindset, self-awareness, growth]
 excerpt: "Self-sabotage isn't self-destruction. It's self-protection."
+published: false
 ---
 
 Self-sabotage is not irrational. It is a protection strategy — an attempt to prevent an outcome that some part of you fears more than the current discomfort. The mountain you keep failing to climb is not external. It is you.

@@ -7,6 +7,7 @@ isbn: "1942788290"
 url: "https://www.amazon.com/dp/1942788290"
 tags: [devops, operations, flow]
 excerpt: "IT work is a factory floor. Once you see the bottlenecks, you can't unsee them."
+published: false
 ---
 
 IT work behaves exactly like a factory floor. It has flow, bottlenecks, work-in-process, and invisible queues. Once you see it that way, everything about how most IT departments are run looks obviously broken.
