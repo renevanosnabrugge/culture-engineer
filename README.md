@@ -108,31 +108,65 @@ https://culture-engineers.nl
 
 ## Content Management
 
+### Site data files
+
 | Content type | File |
 |---|---|
 | Site metadata & author info | `_config.yml` |
 | Presentations & conference talks | `_data/presentations.yml` |
 | Publications | `_data/publications.yml` |
 | Inspiration (books / blogs / videos) | `_data/inspiration.yml` |
-| Blog posts | `_posts/YYYY-MM-DD-title.md` |
 
-### Adding a blog post
+### Content workflows
 
-Create a file in `_posts/` following the naming convention `YYYY-MM-DD-post-title.md` with this front matter:
+All content (blog posts, book summaries, model pages) is driven by GitHub Issues and GitHub Actions. See **[CONTENT-CALENDAR.md](CONTENT-CALENDAR.md)** for the full reference.
 
-```yaml
----
-layout: post
-title: "Your Post Title"
-subtitle: "Optional subtitle"
-date: 2026-01-01 09:00:00 +0200
-tags: [devops, culture]
-excerpt: >
-  A short description shown in post listings.
----
+#### Write a new post
 
-Your content here in Markdown.
-```
+1. Create a GitHub Issue — body contains the topic or writing brief
+2. Add label **`blogpost`**
+3. The agent writes the draft, reviews it, generates a hero image, creates a social pack, opens a PR, and creates the full content calendar issue structure automatically
+
+#### Schedule an existing post
+
+For content already written with `published: false`:
+
+1. Create a GitHub Issue with this body:
+   ```
+   file: _posts/YYYY-MM-DD-slug.md
+   ```
+2. Add label **`schedule-content`**
+3. The agent generates the social pack and hero image, then creates the content calendar issues without touching the post content
+
+You can also trigger this from VS Code Copilot using the **`/schedule-existing`** prompt.
+
+#### Set the publish date
+
+Once the content calendar issues exist (either flow above):
+
+1. Open the `[Content] <Title>` tracking issue
+2. Edit the body — set `<!-- publish-date: YYYY-MM-DD -->`
+3. Add label **`scheduled`**
+
+The `content-schedule-dates` action distributes dates to all sub-issues, adds `approve`, and moves all cards to **To Be Published** in the project.
+
+#### Automated publishing (daily at 09:00 CEST)
+
+| Workflow | What it does |
+|---|---|
+| `content-scheduler` | Sets `published: true` on the content file when `publish-date` matches today |
+| `linkedin-poster` | Posts the matching LinkedIn variant on each social date |
+
+#### Labels at a glance
+
+| Label | Purpose |
+|---|---|
+| `blogpost` | Triggers the full write + schedule pipeline |
+| `schedule-content` | Triggers schedule-only pipeline (existing content) |
+| `scheduled` | Triggers date distribution across sub-issues |
+| `content` | Main tracking issue |
+| `content-calendar` | Sub-issues picked up by the automation |
+| `approve` | Activates automation for a sub-issue |
 
 ### Adding a presentation
 
@@ -150,9 +184,16 @@ Add an entry to `_data/presentations.yml`:
   description: "Optional description."
 ```
 
-## Deployment
+## Required Secrets
 
-The site is configured for GitHub Pages. Push to the `main` branch and enable GitHub Pages in repository settings (source: `/(root)` or `gh-pages` branch).
+Go to **Settings → Secrets and variables → Actions** and add:
+
+| Secret | Purpose |
+|---|---|
+| `GH_PROJECT_TOKEN` | PAT with `project` scope — for Projects v2 date/status updates |
+| `LINKEDIN_ACCESS_TOKEN` | OAuth 2.0 token with `w_member_social` scope |
+| `LINKEDIN_PERSON_URN` | Your LinkedIn URN: `urn:li:person:XXXXXXXXX` |
+| `AZURE_IMAGE_GEN_KEY` | Azure AI Foundry key for hero image generation |
 
 ## License
 
