@@ -1,0 +1,67 @@
+name: Create and Schedule Social Posts
+
+on:
+  # Primary: fires when any project item field is edited
+  projects_v2_item:
+    types: [edited]
+
+  # Fallback: daily scan at 08:00 UTC in case the event is missed
+  schedule:
+    - cron: '0 8 * * *'
+
+  # Manual: target a specific issue or re-scan all "To be published" items
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Content issue number (leave empty to scan all "To be published" items)'
+        required: false
+        type: string
+      force:
+        description: 'Re-process even if social sub-issues already exist'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  schedule-social-posts:
+    runs-on: ubuntu-latest
+    # For project_v2_item events: only act when Status is changed to
+    # "To be published" (option id 47fc9ee4) on an ISSUE item.
+    # For schedule / workflow_dispatch: always run.
+    if: |
+      github.event_name != 'projects_v2_item' ||
+      (
+        github.event.action == 'edited' &&
+        github.event.projects_v2_item.content_type == 'ISSUE' &&
+        (
+          github.event.changes.field_value.to.id == '47fc9ee4' ||
+          github.event.changes.field_value.to.name == 'To be published'
+        )
+      )
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Schedule social sub-issues
+        shell: pwsh
+        env:
+          GH_TOKEN:          ${{ secrets.GITHUB_TOKEN }}
+          GH_PROJECT_TOKEN:  ${{ secrets.GH_PROJECT_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          # Set by workflow_dispatch input
+          ISSUE_NUMBER:      ${{ inputs.issue_number }}
+          # Set from the project event payload so the script can resolve the issue
+          CONTENT_NODE_ID:   ${{ github.event_name == 'projects_v2_item' && github.event.projects_v2_item.content_node_id || '' }}
+          FORCE_SOCIAL:      ${{ inputs.force }}
+        run: |
+          $scriptArgs = @()
+          if ($env:ISSUE_NUMBER -and $env:ISSUE_NUMBER -match '^\d+$') {
+            $scriptArgs += '-IssueNumber'
+            $scriptArgs += [int]$env:ISSUE_NUMBER
+          }
+          if ($env:FORCE_SOCIAL -eq 'true') { $scriptArgs += '-Force' }
+          pwsh .github/scripts/New-SocialSubIssues.ps1 @scriptArgs

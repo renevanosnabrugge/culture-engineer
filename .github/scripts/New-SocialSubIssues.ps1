@@ -357,15 +357,27 @@ function Find-SocialPackFile {
 
 function Get-SocialVariants {
     param([string]$FilePath)
-    $text     = Get-Content $FilePath -Raw -Encoding UTF8
+    $text     = (Get-Content $FilePath -Raw -Encoding UTF8) -replace '\r\n', "`n"
     $variants = @{}
 
-    # Match: ## Variant N: Title   or   ## LinkedIn — Variant N ...
-    $pattern = '(?s)##\s+(?:Variant|LinkedIn[^\n]*Variant)\s*(\d)[^\n]*\n\n(.*?)(?=\n---\n|\n##\s|\z)'
-    foreach ($m in [regex]::Matches($text, $pattern)) {
+    # Format A: ## Variant N: Title   or   ## LinkedIn — Variant N ...
+    $patternA = '(?s)##\s+(?:Variant|LinkedIn[^\n]*Variant)\s*(\d)[^\n]*\n\n(.*?)(?=\n---\n|\n##\s|\z)'
+    foreach ($m in [regex]::Matches($text, $patternA)) {
         $n              = $m.Groups[1].Value
         $variants["$n"] = $m.Groups[2].Value.Trim()
     }
+
+    # Format B: un-numbered ## sections in order (Contrarian hook / Story format / Question format)
+    if ($variants.Count -eq 0) {
+        $patternB = '(?s)##\s+[^\n]+\n\n(.*?)(?=\n---\n|\n##\s|\z)'
+        $n = 1
+        foreach ($m in [regex]::Matches($text, $patternB)) {
+            $variants["$n"] = $m.Groups[1].Value.Trim()
+            $n++
+            if ($n -gt 3) { break }
+        }
+    }
+
     return $variants
 }
 
