@@ -119,9 +119,26 @@ safe-outputs:
             $item = $data.items | Where-Object type -eq 'create_calendar_card' | Select-Object -First 1
             if (-not $item) { Write-Host "No create-calendar-card payload found."; exit 0 }
 
+            # Ensure all labels exist before creating the issue
             $ghArgs = @('issue','create','--title',$item.title,'--body',$item.body)
-            if ($item.labels) { $ghArgs += '--label'; $ghArgs += $item.labels }
-            $issueUrl = gh @ghArgs
+            if ($item.labels) {
+              $labelList = $item.labels -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ }
+              foreach ($lbl in $labelList) {
+                $exists = gh label list --json name | ConvertFrom-Json | Where-Object name -eq $lbl
+                if (-not $exists) {
+                  Write-Host "Creating missing label: $lbl"
+                  gh label create $lbl --color '#0075ca' | Out-Null
+                }
+                $ghArgs += '--label'
+                $ghArgs += $lbl
+              }
+            }
+
+            $issueUrl = (gh @ghArgs 2>&1 | Select-String 'https://').ToString().Trim()
+            if (-not $issueUrl) {
+              Write-Host "::error::gh issue create returned no URL — aborting."
+              exit 1
+            }
             Write-Host "Issue created: $issueUrl"
 
             pwsh .github/scripts/add-to-project.ps1 $issueUrl
