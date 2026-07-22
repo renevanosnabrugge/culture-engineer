@@ -6,7 +6,7 @@ on:
     types: [labeled]
   reaction: "eyes"
   status-comment: true
-if: contains(['blogpost', 'book', 'model'], github.event.label.name)
+if: github.event.label.name == 'blogpost' || github.event.label.name == 'book' || github.event.label.name == 'model'
 permissions:
   contents: read
   issues: read
