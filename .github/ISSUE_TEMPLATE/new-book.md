@@ -1,7 +1,7 @@
 ---
 name: "📚 New Book Summary"
 about: "Add a book summary to the _books/ collection"
-labels: content-request, book
+labels: blogpost,book
 ---
 
 <!--

@@ -6,7 +6,7 @@ on:
     types: [labeled]
   reaction: "eyes"
   status-comment: true
-if: github.event.label.name == 'blogpost'
+if: contains(['blogpost', 'book', 'model'], github.event.label.name)
 permissions:
   contents: read
   issues: read
@@ -38,7 +38,7 @@ tracker-id: blogpost-pipeline
 
 # Blog Post Pipeline — entry point
 
-Triggered by an issue labeled `blogpost`. The issue body may or may not
+Triggered by an issue labeled `blogpost`, `book` or `model`. The issue body may or may not
 already state a clear topic.
 
 1. Read `.github/copilot-instructions.md` and

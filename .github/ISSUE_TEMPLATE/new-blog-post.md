@@ -1,7 +1,7 @@
 ---
 name: "✍️ New Blog Post"
 about: "Plan and request a new blog post for culture-engineers.nl"
-labels: content-request, blog-post
+labels: blogpost
 ---
 
 <!--

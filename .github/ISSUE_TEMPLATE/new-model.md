@@ -1,7 +1,7 @@
 ---
 name: "🧩 New Model / Framework"
 about: "Add a mental model or framework to the _models/ collection"
-labels: content-request, model
+labels: blogpost, model
 ---
 
 <!--
