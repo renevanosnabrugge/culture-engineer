@@ -176,6 +176,37 @@ function Get-ProjectItem {
     $projItem = $allNodes | Where-Object { $_.project.number -eq $PROJECT_NUMBER } | Select-Object -First 1
     # Deep-clone via JSON to materialise all arrays and prevent lazy-enumerator consumption
     if ($projItem) { $projItem = $projItem | ConvertTo-Json -Depth 10 | ConvertFrom-Json }
+
+    # If issue.projectItems returned the item but with empty field values, re-fetch via the
+    # item's own PVTI node ID — that path reliably returns all field values.
+    if ($projItem -and -not ($projItem.fieldValues.nodes | Where-Object { $_.field.name })) {
+        $fvData   = Invoke-GHGraphQL -Query @'
+          query($id: ID!) {
+            node(id: $id) {
+              ... on ProjectV2Item {
+                fieldValues(first: 20) {
+                  nodes {
+                    ... on ProjectV2ItemFieldSingleSelectValue {
+                      field { ... on ProjectV2SingleSelectField { id name } }
+                      name optionId
+                    }
+                    ... on ProjectV2ItemFieldDateValue {
+                      field { ... on ProjectV2Field { id name } }
+                      date
+                    }
+                    ... on ProjectV2ItemFieldTextValue {
+                      field { ... on ProjectV2Field { id name } }
+                      text
+                    }
+                  }
+                }
+              }
+            }
+          }
+'@ -Variables @{ id = $projItem.id }
+        $projItem.fieldValues = $fvData.data.node.fieldValues
+    }
+
     return $projItem
 }
 
@@ -289,12 +320,15 @@ function Get-SubIssues {
 function Get-FilePath {
     param($ProjectItem, [string]$PostFileFieldId, [string]$IssueBody)
 
-    # Priority 1: Project "Post File" TEXT field
-    if ($PostFileFieldId) {
-        $val = $ProjectItem?.fieldValues.nodes |
-               Where-Object { $_.field.id -eq $PostFileFieldId } |
+    # Priority 1: Project "Post File" TEXT field (match by ID then by name)
+    if ($ProjectItem) {
+        $val = $ProjectItem.fieldValues.nodes |
+               Where-Object { $_.text -and (
+                   ($PostFileFieldId -and $_.field.id -eq $PostFileFieldId) -or
+                   ($_.field.name -match '(?i)post.?file|file.?path')
+               )} |
                Select-Object -First 1
-        if ($val?.text) { return $val.text }
+        if ($val.text) { return $val.text }
     }
 
     # Priority 2: <!-- POST-FILE: path --> comment in body (New-DraftCard.ps1 format)
@@ -302,7 +336,12 @@ function Get-FilePath {
         return $Matches[1].Trim()
     }
 
-    # Priority 3: file: path in old CONTENT CALENDAR METADATA block
+    # Priority 3: | Draft file | `path` | table row (blogpost-request workflow format)
+    if ($IssueBody -match '\|\s*Draft file\s*\|\s*`([^`]+)`') {
+        return $Matches[1].Trim()
+    }
+
+    # Priority 4: file: path in old CONTENT CALENDAR METADATA block
     if ($IssueBody -match '(?m)^file:\s*([^\r\n]+)') {
         return $Matches[1].Trim()
     }
@@ -315,12 +354,15 @@ function Get-FilePath {
 function Get-PublishDate {
     param($ProjectItem, [string]$DateFieldId, [string]$IssueBody)
 
-    # Priority 1: Project "Publish Date" DATE field
-    if ($DateFieldId) {
-        $val = $ProjectItem?.fieldValues.nodes |
-               Where-Object { $_.field.id -eq $DateFieldId } |
+    # Priority 1: Project "Publish Date" DATE field (match by ID then by name)
+    if ($ProjectItem) {
+        $val = $ProjectItem.fieldValues.nodes |
+               Where-Object { $_.date -and (
+                   ($DateFieldId -and $_.field.id -eq $DateFieldId) -or
+                   ($_.field.name -match '(?i)publish.?date')
+               )} |
                Select-Object -First 1
-        if ($val?.date) {
+        if ($val.date) {
             return [datetime]::ParseExact($val.date.Substring(0,10), 'yyyy-MM-dd', $null)
         }
     }
@@ -666,7 +708,8 @@ $postItems = $items | Where-Object { $_.content.title -notmatch '^\[Social' }
 Write-Host "Found $($postItems.Count) post item(s) in 'To Be Published'."
 
 foreach ($item in $postItems) {
-    Invoke-ProcessIssue -Number $item.content.number -Meta $meta -ForceRun:$Force
+    # Status already verified by Get-ToBePublishedItems — pass $true to skip redundant re-check
+    Invoke-ProcessIssue -Number $item.content.number -Meta $meta -ForceRun:$true
 }
 
 Write-Host "`nScan complete."
