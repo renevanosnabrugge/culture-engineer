@@ -27,11 +27,18 @@ $ErrorActionPreference = 'Stop'
 $PROJECT_NUMBER = 9
 $OWNER          = 'renevanosnabrugge'
 
+# Hardcoded constants — avoids a flaky runtime metadata lookup.
+# Re-run `gh project field-list 9 --owner renevanosnabrugge --format json` to refresh.
+$PROJECT_ID      = 'PVT_kwHOAFx9Ws4Bdpjc'
+$STATUS_FIELD_ID = 'PVTSSF_lAHOAFx9Ws4BdpjczhYJnrk'
+$DRAFT_OPTION_ID = 'f75ad846'   # "Draft Posts"
+
 function Invoke-GHGraphQL {
     param([string]$Query, [hashtable]$Variables = @{})
     $body = [System.Text.Encoding]::UTF8.GetBytes(
         (@{ query = $Query; variables = $Variables } | ConvertTo-Json -Depth 15)
     )
+    # Always use the project-scoped token for GraphQL; fall back gracefully
     $token = $env:GH_PROJECT_TOKEN ?? $env:GH_TOKEN ?? $env:GITHUB_TOKEN
     $resp = Invoke-RestMethod -Uri 'https://api.github.com/graphql' `
         -Method POST `
@@ -47,83 +54,48 @@ function Invoke-GHGraphQL {
     return $resp
 }
 
-# ── 1. Get project ID and Status field metadata ───────────────────────────────
+Write-Host "Project ID   : $PROJECT_ID"
+Write-Host "Status field : $STATUS_FIELD_ID"
+Write-Host "Draft option : $DRAFT_OPTION_ID"
 
-Write-Host "Fetching project #$PROJECT_NUMBER metadata..."
-$projData = Invoke-GHGraphQL -Query @'
-  query($owner: String!, $number: Int!) {
-    user(login: $owner) {
-      projectV2(number: $number) {
-        id
-        fields(first: 20) {
-          nodes {
-            ... on ProjectV2SingleSelectField {
-              id name options { id name }
-            }
-          }
-        }
-      }
-    }
-  }
-'@ -Variables @{ owner = $OWNER; number = $PROJECT_NUMBER }
-
-$proj           = $projData.data.user.projectV2
-$projectId      = $proj.id
-$statusField    = $proj.fields.nodes | Where-Object { $_.name -and $_.name.ToLower() -eq 'status' } | Select-Object -First 1
-$statusFieldId  = $statusField?.id
-$draftOption    = $statusField?.options | Where-Object { $_.name -match 'draft' } | Select-Object -First 1
-$draftOptionId  = $draftOption?.id
-
-if (-not $projectId -or -not $statusFieldId -or -not $draftOptionId) {
-    Write-Error "Could not resolve project, Status field, or 'Draft Posts' option.`nProject data: $($projData | ConvertTo-Json -Depth 5)"
-}
-
-Write-Host "Project ID   : $projectId"
-Write-Host "Status field : $statusFieldId"
-Write-Host "Draft option : $draftOptionId ($($draftOption.name))"
-
-# ── 2. Add each issue to the project and set status ───────────────────────────
+# ── Add each issue to the project and set status ──────────────────────────────
 
 foreach ($issueUrl in $IssueUrls) {
     Write-Host ""
     Write-Host "Adding: $issueUrl"
 
-    # gh project item-add returns JSON with the item id
-    $addOutput = & gh project item-add $PROJECT_NUMBER `
-        --owner $OWNER --url $issueUrl --format json 2>&1
-    $itemId = $null
-
-    try {
-        $itemId = ($addOutput | ConvertFrom-Json).id
-    } catch {
-        # item-add succeeded but output not JSON — query for the item id
-        Write-Host "  Resolving item id via GraphQL..."
-        $issueNumber = [int]($issueUrl -replace '.+/issues/(\d+)', '$1')
-
-        $itemsData = Invoke-GHGraphQL -Query @'
-          query($owner: String!, $number: Int!) {
-            user(login: $owner) {
-              projectV2(number: $number) {
-                items(first: 100) {
-                  nodes { id content { ... on Issue { number } } }
-                }
-              }
-            }
-          }
-'@ -Variables @{ owner = $OWNER; number = $PROJECT_NUMBER }
-
-        $match  = $itemsData.data.user.projectV2.items.nodes |
-                  Where-Object { $_.content.number -eq $issueNumber } |
-                  Select-Object -First 1
-        $itemId = $match?.id
-    }
-
-    if (-not $itemId) {
-        Write-Warning "Could not get item ID for $issueUrl — skipping status update"
+    # Resolve the issue's global node ID from its URL
+    $issueNumber = [int]($issueUrl -replace '.+/issues/(\d+)$', '$1')
+    $nodeData = Invoke-GHGraphQL -Query @'
+      query($owner: String!, $repo: String!, $number: Int!) {
+        repository(owner: $owner, name: $repo) {
+          issue(number: $number) { id }
+        }
+      }
+'@ -Variables @{ owner = $OWNER; repo = 'culture-engineer'; number = $issueNumber }
+    $issueNodeId = $nodeData.data.repository.issue.id
+    if (-not $issueNodeId) {
+        Write-Warning "Could not resolve node ID for $issueUrl — skipping"
         continue
     }
+    Write-Host "  Issue node ID: $issueNodeId"
 
-    Write-Host "  Item ID: $itemId — setting status to 'Draft Posts'..."
+    # Add the issue to the project
+    $addResp = Invoke-GHGraphQL -Query @'
+      mutation($project: ID!, $contentId: ID!) {
+        addProjectV2ItemById(input: { projectId: $project contentId: $contentId }) {
+          item { id }
+        }
+      }
+'@ -Variables @{ project = $PROJECT_ID; contentId = $issueNodeId }
+    $itemId = $addResp.data.addProjectV2ItemById.item.id
+    if (-not $itemId) {
+        Write-Warning "addProjectV2ItemById returned no item ID — skipping status update"
+        continue
+    }
+    Write-Host "  Project item ID: $itemId"
+
+    # Set status to "Draft Posts"
     Invoke-GHGraphQL -Query @'
       mutation($project: ID!, $item: ID!, $field: ID!, $value: ProjectV2FieldValue!) {
         updateProjectV2ItemFieldValue(input: {
@@ -131,10 +103,10 @@ foreach ($issueUrl in $IssueUrls) {
         }) { projectV2Item { id } }
       }
 '@ -Variables @{
-        project = $projectId
+        project = $PROJECT_ID
         item    = $itemId
-        field   = $statusFieldId
-        value   = @{ singleSelectOptionId = $draftOptionId }
+        field   = $STATUS_FIELD_ID
+        value   = @{ singleSelectOptionId = $DRAFT_OPTION_ID }
     } | Out-Null
     Write-Host "  Status set to 'Draft Posts'"
 }
