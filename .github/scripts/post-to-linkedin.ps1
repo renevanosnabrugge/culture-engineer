@@ -12,15 +12,33 @@ Handles two issue formats:
 Manual override via env vars FORCE_ISSUE and FORCE_VARIANT (set by workflow_dispatch).
 #>
 
-param()
+param(
+    [switch]$DryRun = $false,
+    [string]$ForceIssue,
+    [string]$ForceVariant
+)
 $ErrorActionPreference = 'Stop'
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding           = [System.Text.Encoding]::UTF8
+
+# ── dry-run guard ─────────────────────────────────────────────────────────────
+# Accept -DryRun switch OR DRY_RUN=1 env var (used by CI / workflow_dispatch)
+if ($DryRun -or $env:DRY_RUN -eq '1') {
+    $DryRun = $true
+    Write-Host ''
+    Write-Host '╔══════════════════════════════════════════════╗' -ForegroundColor Yellow
+    Write-Host '║  DRY RUN — no posts will be made to LinkedIn ║' -ForegroundColor Yellow
+    Write-Host '╚══════════════════════════════════════════════╝' -ForegroundColor Yellow
+    Write-Host ''
+}
 
 $TODAY         = (Get-Date).ToString('yyyy-MM-dd')
 $REPO          = $env:GITHUB_REPOSITORY
 $TOKEN         = $env:LINKEDIN_ACCESS_TOKEN
 $PERSON_URN    = $env:LINKEDIN_PERSON_URN
-$FORCE_ISSUE   = $env:FORCE_ISSUE?.Trim()
-$FORCE_VARIANT = $env:FORCE_VARIANT?.Trim()
+$FORCE_ISSUE   = if ($ForceIssue)   { $ForceIssue.Trim() }   else { ([string]$env:FORCE_ISSUE).Trim() }
+$FORCE_VARIANT = if ($ForceVariant) { $ForceVariant.Trim() } else { ([string]$env:FORCE_VARIANT).Trim() }
+$PROJECT_TOKEN = if ($env:GH_PROJECT_TOKEN) { $env:GH_PROJECT_TOKEN } else { $env:GH_TOKEN }
 
 $LI_HEADERS = @{
     Authorization                   = "Bearer $TOKEN"
@@ -36,6 +54,63 @@ function Invoke-Gh {
     $out = & gh @Arguments 2>&1
     if ($LASTEXITCODE -ne 0) { Write-Warning "gh: $out" }
     return $out -join "`n"
+}
+
+function Get-ParentPublishDate {
+    # When a [Social N] sub-issue has no metadata block, fall back to the
+    # publish date stored on the parent [Content] issue in the GitHub Project.
+    param([string]$SubIssueTitle, [int]$VariantN)
+
+    # Strip "[Social N] " prefix to find the parent issue title
+    $parentTitle = $SubIssueTitle -replace '^\[Social \d\]\s*', ''
+
+    # Find parent content tracking issue by matching title
+    $raw = & gh issue list --repo $REPO --label 'content-calendar' --state 'open' `
+        --json 'number,title' --limit 100 2>$null
+    if (-not $raw) { return $null }
+    $parent = ($raw | ConvertFrom-Json) | Where-Object { $_.title -eq $parentTitle } | Select-Object -First 1
+    if (-not $parent) {
+        Write-Host "  No parent issue found for: $parentTitle"
+        return $null
+    }
+    Write-Host "  Found parent issue #$($parent.number): $parentTitle"
+
+    # Query GitHub Project for the publish date field
+    $owner  = ($REPO -split '/')[0]
+    $repo   = ($REPO -split '/')[1]
+    $issNum = $parent.number
+    $query  = @"
+{ repository(owner: "$owner", name: "$repo") {
+    issue(number: $issNum) {
+      projectItems(first: 5) { nodes { fieldValues(first: 20) { nodes {
+        ... on ProjectV2ItemFieldDateValue { date field { ... on ProjectV2FieldCommon { name } } }
+      } } } }
+    }
+  }
+}
+"@
+
+    try {
+        $savedToken   = $env:GH_TOKEN
+        $env:GH_TOKEN = $PROJECT_TOKEN
+        $result       = & gh api graphql -f query=$query 2>$null | ConvertFrom-Json
+        $env:GH_TOKEN = $savedToken
+
+        foreach ($item in $result.data.repository.issue.projectItems.nodes) {
+            foreach ($fv in $item.fieldValues.nodes) {
+                if ($fv.field.name -match '(?i)publish' -and $fv.date) {
+                    $base   = [datetime]::Parse($fv.date)
+                    $offset = ($VariantN - 1) * 7
+                    $date   = $base.AddDays($offset).ToString('yyyy-MM-dd')
+                    Write-Host "  Project publish date: $($fv.date) + ${offset}d = $date"
+                    return $date
+                }
+            }
+        }
+    } catch {
+        Write-Host "  Could not read project publish date: $_"
+    }
+    return $null
 }
 
 function ConvertFrom-Metadata {
@@ -107,6 +182,18 @@ function Invoke-ImageUpload {
 function Invoke-LinkedInPost {
     param([string]$Text, [string]$ImagePath, [string]$PostUrl)
 
+    $fullText = $Text.Trim()
+    if ($PostUrl) { $fullText += "`n`n$PostUrl" }
+
+    if ($DryRun) {
+        Write-Host '  [DRY RUN] Would post the following text:'
+        Write-Host ('─' * 60)
+        Write-Host $fullText
+        Write-Host ('─' * 60)
+        if ($ImagePath) { Write-Host "  [DRY RUN] Image: $ImagePath" }
+        return $true, 'dry-run'
+    }
+
     if (-not $TOKEN -or $TOKEN -in @('', 'your-token-here')) {
         Write-Host '  LINKEDIN_ACCESS_TOKEN not configured — skipping'
         return $false, 'Token not configured'
@@ -115,9 +202,6 @@ function Invoke-LinkedInPost {
         Write-Host '  LINKEDIN_PERSON_URN not configured — skipping'
         return $false, 'URN not configured'
     }
-
-    $fullText = $Text.Trim()
-    if ($PostUrl) { $fullText += "`n`n$PostUrl" }
 
     $asset = Invoke-ImageUpload -ImagePath $ImagePath
 
@@ -135,11 +219,22 @@ function Invoke-LinkedInPost {
     } | ConvertTo-Json -Depth 8
 
     try {
+        Write-Host "  Author URN : $PERSON_URN"
+        Write-Host "  Text length: $($fullText.Length) chars"
+        Write-Host "  Payload    :"
+        Write-Host $payload
+
         $resp = Invoke-RestMethod -Uri 'https://api.linkedin.com/v2/ugcPosts' `
-                    -Method POST -Headers $LI_HEADERS -Body $payload
+                    -Method POST -Headers $LI_HEADERS -Body $payload `
+                    -ResponseHeadersVariable respHeaders -StatusCodeVariable statusCode
+        Write-Host "  HTTP $statusCode"
+        Write-Host "  Response: $($resp | ConvertTo-Json -Compress)"
         return $true, ($resp | ConvertTo-Json -Compress)
     } catch {
-        return $false, $_.Exception.Message
+        $errBody = $_.ErrorDetails.Message
+        Write-Host "  HTTP ERROR: $($_.Exception.Message)"
+        Write-Host "  Body: $errBody"
+        return $false, $errBody
     }
 }
 
@@ -161,6 +256,11 @@ function Invoke-IssuePost {
         $dateKey    = "social-$N-date"
         $postedKey  = "social-$N-posted"
         $targetDate = $meta[$dateKey]
+
+        # Fallback: read publish date from the project card if not in metadata
+        if (-not $targetDate) {
+            $targetDate = Get-ParentPublishDate -SubIssueTitle $Issue.title -VariantN $N
+        }
 
         if (-not $ForceVariant -and $targetDate -ne $TODAY) { return }
         if ($postedKey -in $labels) { return }
@@ -209,9 +309,9 @@ function Invoke-IssuePost {
 
     foreach ($v in $variantsToPost) {
         $text = Get-VariantText -Body $body -N $v
-        if (-not $text) { Write-Host "  Variant $v: no text — skipping"; continue }
+        if (-not $text) { Write-Host "  Variant ${v}: no text — skipping"; continue }
 
-        Write-Host "  Posting variant $v..."
+        Write-Host "  Posting variant ${v}..."
         $ok, $resp = Invoke-LinkedInPost -Text $text -ImagePath $meta['image'] -PostUrl $meta['post-url']
 
         if ($ok) {
