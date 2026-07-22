@@ -134,39 +134,18 @@ already state a clear topic.
         > trigger automatic date distribution to all sub-issues.
         ```
 
-   d. **Create 4 sub-issues** and link each to the main issue (use the
-      GitHub sub-issue API or `gh api` to set the parent relationship):
-      - Title: `[Post] <Post Title>`         — label: `content-calendar`
-      - Title: `[Social 1] <Post Title>`     — label: `content-calendar`
-      - Title: `[Social 2] <Post Title>`     — label: `content-calendar`
-      - Title: `[Social 3] <Post Title>`     — label: `content-calendar`
-
-      Body for the Post sub-issue: link to the PR and the file path.
-      Body for each Social sub-issue: paste the matching LinkedIn variant
-      (Contrarian hook / Story format / Question format).
-
-   e. **Add all 5 issues to the GitHub Project** #9 (owner: renevanosnabrugge,
-      project: "Content Calendar · Culture Engineers") and set their
+   d. **Add main issue to the GitHub Project** #9 (owner: renevanosnabrugge,
+      project: "Content Calendar · Culture Engineers") and set the
       status to "Draft Posts". Run the helper script:
       ```bash
       pwsh .github/scripts/add-to-project.ps1 <issue-url-1> <issue-url-2> ...
       ```
-      Pass all 5 issue URLs as separate arguments.
+      Pass all the main issue URL as separate arguments.
 
    f. **Comment on the main tracking issue** with a checklist summary:
       ```
-      ## Content Calendar Entry Created
-
-      Sub-issues:
-      - [ ] Post: #<post-issue-number>
-      - [ ] Social 1: #<social1-number>
-      - [ ] Social 2: #<social2-number>
-      - [ ] Social 3: #<social3-number>
-
-      **Next step:** Edit the `<!-- publish-date: YYYY-MM-DD -->` line
-      above, then add the `scheduled` label to set all dates automatically.
+      **Next step:** Edit the post date in the issue in the project to set the schedule. Then add the item to the To be published column
       ```
 
 Never push directly to `main`. Never call the LinkedIn API — posting to
-LinkedIn is a manual step. Image generation via `scripts/generate-image.py`
-is in scope and follows step 6.5 above.
+LinkedIn is a manual step.

@@ -14,9 +14,11 @@ adds the 'published' label, and comments with the live URL.
 param()
 $ErrorActionPreference = 'Stop'
 
-$TODAY    = (Get-Date).ToString('yyyy-MM-dd')
-$REPO     = $env:GITHUB_REPOSITORY
-$SITE_URL = 'https://culture-engineers.nl'
+$TODAY          = (Get-Date).ToString('yyyy-MM-dd')
+$REPO           = $env:GITHUB_REPOSITORY
+$SITE_URL       = 'https://culture-engineers.nl'
+$OWNER          = $REPO.Split('/')[0]
+$PROJECT_NUMBER = 9
 
 # ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -25,6 +27,92 @@ function Invoke-Gh {
     $out = & gh @Arguments 2>&1
     if ($LASTEXITCODE -ne 0) { Write-Warning "gh: $out" }
     return $out -join "`n"
+}
+
+function Invoke-GHGraphQL {
+    param([string]$Query, [hashtable]$Variables = @{})
+    $token = $env:GH_PROJECT_TOKEN
+    if (-not $token) { return $null }  # Skip project updates if token not provided
+    $bodyBytes = [System.Text.Encoding]::UTF8.GetBytes(
+        (@{ query = $Query; variables = $Variables } | ConvertTo-Json -Depth 15)
+    )
+    $resp = Invoke-RestMethod -Uri 'https://api.github.com/graphql' `
+        -Method POST `
+        -Headers @{
+            Authorization  = "Bearer $token"
+            'Content-Type' = 'application/json'
+            'User-Agent'   = 'culture-engineer-bot'
+        } `
+        -Body $bodyBytes
+    if ($resp.errors) { Write-Warning "GraphQL: $($resp.errors | ConvertTo-Json -Compress)" }
+    return $resp
+}
+
+# Resolve project metadata (done once, lazily)
+$script:ProjectMeta = $null
+function Get-ProjectMeta {
+    if ($script:ProjectMeta) { return $script:ProjectMeta }
+    $data = Invoke-GHGraphQL -Query @'
+      query($owner: String!, $number: Int!) {
+        user(login: $owner) {
+          projectV2(number: $number) {
+            id
+            fields(first: 20) {
+              nodes {
+                ... on ProjectV2SingleSelectField { __typename id name options { id name } }
+              }
+            }
+          }
+        }
+      }
+'@ -Variables @{ owner = $OWNER; number = $PROJECT_NUMBER }
+    if (-not $data) { return $null }
+    $proj    = $data.data.user.projectV2
+    $status  = $proj.fields.nodes | Where-Object { $_.name -and $_.name.ToLower() -eq 'status' } | Select-Object -First 1
+    $pubOpt  = $status?.options | Where-Object { $_.name -match 'publish' -and $_.name -notmatch 'to.?be' } | Select-Object -First 1
+    $script:ProjectMeta = @{
+        ProjectId        = $proj.id
+        StatusFieldId    = $status?.id
+        PublishedOptId   = $pubOpt?.id
+    }
+    return $script:ProjectMeta
+}
+
+function Set-ProjectItemPublished {
+    param([int]$IssueNumber)
+    $m = Get-ProjectMeta
+    if (-not $m -or -not $m.StatusFieldId -or -not $m.PublishedOptId) { return }
+
+    # Find item in project
+    $data = Invoke-GHGraphQL -Query @'
+      query($owner: String!, $number: Int!) {
+        user(login: $owner) {
+          projectV2(number: $number) {
+            items(first: 100) {
+              nodes { id content { ... on Issue { number } } }
+            }
+          }
+        }
+      }
+'@ -Variables @{ owner = $OWNER; number = $PROJECT_NUMBER }
+    $match = $data?.data.user.projectV2.items.nodes |
+             Where-Object { $_.content.number -eq $IssueNumber } |
+             Select-Object -First 1
+    if (-not $match) { return }
+
+    Invoke-GHGraphQL -Query @'
+      mutation($project: ID!, $item: ID!, $field: ID!, $value: ProjectV2FieldValue!) {
+        updateProjectV2ItemFieldValue(input: {
+          projectId: $project itemId: $item fieldId: $field value: $value
+        }) { projectV2Item { id } }
+      }
+'@ -Variables @{
+        project = $m.ProjectId
+        item    = $match.id
+        field   = $m.StatusFieldId
+        value   = @{ singleSelectOptionId = $m.PublishedOptId }
+    } | Out-Null
+    Write-Host "  Project item #$IssueNumber → Published"
 }
 
 function ConvertFrom-Metadata {
@@ -129,6 +217,9 @@ foreach ($issue in $issues) {
     $postUrl = Get-PostUrl -FilePath $filePath
 
     Invoke-Gh @('issue', 'edit', $issue.number, '--repo', $REPO, '--add-label', 'published')
+
+    # Move project card to Published
+    Set-ProjectItemPublished -IssueNumber $issue.number
 
     if ($postUrl) {
         # Update post-url in issue body metadata

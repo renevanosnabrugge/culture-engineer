@@ -19,6 +19,7 @@ jobs:
 
       - name: Publish due content
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN:          ${{ secrets.GITHUB_TOKEN }}
+          GH_PROJECT_TOKEN:  ${{ secrets.GH_PROJECT_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: pwsh .github/scripts/publish-content.ps1

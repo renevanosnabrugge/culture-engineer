@@ -119,54 +119,72 @@ https://culture-engineers.nl
 
 ### Content workflows
 
-All content (blog posts, book summaries, model pages) is driven by GitHub Issues and GitHub Actions. See **[CONTENT-CALENDAR.md](CONTENT-CALENDAR.md)** for the full reference.
+All content is driven by GitHub Issues + the **Content Calendar project (#9)**. The project is the single source of truth for planning. See **[CONTENT-CALENDAR.md](CONTENT-CALENDAR.md)** for the full reference.
 
-#### Write a new post
+---
 
-1. Create a GitHub Issue — body contains the topic or writing brief
-2. Add label **`blogpost`**
-3. The agent writes the draft, reviews it, generates a hero image, creates a social pack, opens a PR, and creates the full content calendar issue structure automatically
+#### Step 1 — Create a draft card
 
-#### Schedule an existing post
+Every post needs a draft card in the project's **Draft Posts** column. Two ways to create one:
 
-For content already written with `published: false`:
+**A. Via script (existing or new content file):**
+```powershell
+# Creates a [Post] issue, adds it to the project in "Draft Posts", and sets the Post File field
+pwsh .github/scripts/New-DraftCard.ps1 -FilePath "_posts/2026-07-20-my-post.md"
 
-1. Create a GitHub Issue with this body:
-   ```
-   file: _posts/YYYY-MM-DD-slug.md
-   ```
-2. Add label **`schedule-content`**
-3. The agent generates the social pack and hero image, then creates the content calendar issues without touching the post content
+# Optionally set the publish date right away
+pwsh .github/scripts/New-DraftCard.ps1 -FilePath "_posts/2026-07-20-my-post.md" -PublishDate "2026-07-28"
+```
 
-You can also trigger this from VS Code Copilot using the **`/schedule-existing`** prompt.
+**B. Via agentic workflow:**
+The write/schedule agents call `New-DraftCard.ps1` automatically after creating the post file.
 
-#### Set the publish date
+> **Project setup (one-time):** Add a TEXT field named **`Post File`** in the project settings
+> (Project → ⋯ → Settings → Fields → + Add field → Text). The script will warn but still work without it.
 
-Once the content calendar issues exist (either flow above):
+---
 
-1. Open the `[Content] <Title>` tracking issue
-2. Edit the body — set `<!-- publish-date: YYYY-MM-DD -->`
-3. Add label **`scheduled`**
+#### Step 2 — Set publish date + move to "To Be Published"
 
-The `content-schedule-dates` action distributes dates to all sub-issues, adds `approve`, and moves all cards to **To Be Published** in the project.
+1. Open the draft card in the project, set the **Publish Date** field
+2. Drag the card to the **To Be Published** column
 
-#### Automated publishing (daily at 09:00 CEST)
+Within ~1 hour (or immediately on `workflow_dispatch`), `project-transition.yml` will:
+- Read the social pack file from `drafts/` (e.g. `2026-07-20-my-post-social.md`)
+- Create **[Social 1]**, **[Social 2]**, **[Social 3]** sub-issues with variant text + dates
+- Add all items to the project with their dates
+- Add the `approve` label to activate automation
+
+To trigger immediately or re-run for a specific issue:
+```powershell
+# Run locally
+pwsh .github/scripts/New-SocialSubIssues.ps1 -IssueNumber 42
+
+# Or trigger via GitHub Actions → Project Transition → Run workflow
+```
+
+---
+
+#### Step 3 — Automated publishing (daily at 09:00 CEST)
 
 | Workflow | What it does |
 |---|---|
-| `content-scheduler` | Sets `published: true` on the content file when `publish-date` matches today |
-| `linkedin-poster` | Posts the matching LinkedIn variant on each social date |
+| `content-scheduler` | Sets `published: true` on the post file when `publish-date` = today; moves project card to **Published** |
+| `linkedin-poster` | Posts the LinkedIn variant on its scheduled date (publish day, +7 days, +14 days) |
+
+Remove the `approve` label from any sub-issue to pause it without affecting the others.
+
+---
 
 #### Labels at a glance
 
 | Label | Purpose |
 |---|---|
-| `blogpost` | Triggers the full write + schedule pipeline |
+| `blogpost` | Triggers the full write + schedule agent pipeline |
 | `schedule-content` | Triggers schedule-only pipeline (existing content) |
-| `scheduled` | Triggers date distribution across sub-issues |
-| `content` | Main tracking issue |
-| `content-calendar` | Sub-issues picked up by the automation |
-| `approve` | Activates automation for a sub-issue |
+| `content-calendar` | Marks issues managed by the content automation |
+| `approve` | Activates a sub-issue for automated publishing/posting |
+| `published` | Added after a post goes live |
 
 ### Adding a presentation
 
