@@ -18,9 +18,6 @@ tools:
   bash: true
   github:
     toolsets: [default]
-secrets:
-  AZURE_IMAGE_GEN_KEY:
-    value: ${{ secrets.AZURE_IMAGE_GEN_KEY }}
 network:
   allowed:
     - defaults
@@ -32,6 +29,102 @@ safe-outputs:
     max: 1
   add-labels:
     allowed: ["blogpost:needs-topic", "blogpost:in-progress"]
+  jobs:
+    generate-hero-image:
+      description: "Generate a hero image and commit it to the PR branch. Call this after the PR is created."
+      runs-on: ubuntu-latest
+      needs: safe_outputs
+      permissions:
+        contents: write
+        pull-requests: read
+      inputs:
+        prompt:
+          description: "The image generation prompt (from image_prompt in the post front matter)"
+          required: true
+          type: string
+        slug:
+          description: "Post slug used as the image filename (without .png)"
+          required: true
+          type: string
+      steps:
+        - uses: actions/checkout@v4
+          with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            fetch-depth: 0
+        - name: Generate image and commit to PR branch
+          shell: pwsh
+          env:
+            AZURE_IMAGE_GEN_KEY: ${{ secrets.AZURE_IMAGE_GEN_KEY }}
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: |
+            $data = Get-Content $env:GH_AW_AGENT_OUTPUT | ConvertFrom-Json
+            $item = $data.items | Where-Object type -eq 'generate_hero_image' | Select-Object -First 1
+            if (-not $item) { Write-Host "No generate-hero-image request found."; exit 0 }
+            $slug   = $item.slug
+            $prompt = $item.prompt
+
+            # Find the PR created by this workflow run
+            $prs = gh pr list --state open --search '"gh-aw-tracker-id: blogpost-pipeline" in:body' `
+              --json number,headRefName -L 3 | ConvertFrom-Json
+            if (-not $prs) { Write-Host "No matching open PR found, skipping image generation."; exit 0 }
+            $branch = $prs[0].headRefName
+
+            # Checkout the PR branch
+            git fetch origin $branch
+            git checkout $branch
+
+            # Generate image (AZURE_IMAGE_GEN_KEY is in env)
+            pwsh scripts/generate-image.ps1 -Prompt $prompt -Slug $slug
+
+            # Commit and push if the image was created
+            $imagePath = "assets/images/${slug}.png"
+            if (Test-Path $imagePath) {
+              git config user.email "github-actions[bot]@users.noreply.github.com"
+              git config user.name "github-actions[bot]"
+              git add $imagePath
+              git commit -m "chore: add hero image for ${slug} [skip ci]"
+              git push origin $branch
+              Write-Host "Hero image committed to branch $branch"
+            } else {
+              Write-Host "Image file not found at $imagePath after generation, skipping commit."
+            }
+    create-calendar-card:
+      description: "Create a content calendar tracking issue and add it to the GitHub Project in Draft Posts status"
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+        issues: write
+      inputs:
+        title:
+          description: "Issue title, e.g. [Content] My Post Title"
+          required: true
+          type: string
+        body:
+          description: "Issue body with content tracking table and schedule section"
+          required: true
+          type: string
+        labels:
+          description: "Comma-separated labels, e.g. content,content-type:blog"
+          required: false
+          type: string
+      steps:
+        - uses: actions/checkout@v4
+        - name: Create issue and add to project
+          shell: pwsh
+          env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_PROJECT_TOKEN: ${{ secrets.GH_PROJECT_TOKEN }}
+          run: |
+            $data = Get-Content $env:GH_AW_AGENT_OUTPUT | ConvertFrom-Json
+            $item = $data.items | Where-Object type -eq 'create_calendar_card' | Select-Object -First 1
+            if (-not $item) { Write-Host "No create-calendar-card payload found."; exit 0 }
+
+            $ghArgs = @('issue','create','--title',$item.title,'--body',$item.body)
+            if ($item.labels) { $ghArgs += '--label'; $ghArgs += $item.labels }
+            $issueUrl = gh @ghArgs
+            Write-Host "Issue created: $issueUrl"
+
+            pwsh .github/scripts/add-to-project.ps1 $issueUrl
 timeout-minutes: 30
 tracker-id: blogpost-pipeline
 ---
@@ -66,18 +159,15 @@ already state a clear topic.
 6. Run `.github/skills/social-pack/SKILL.md` against the finished post,
    saving output as `drafts/social-<post-slug>.md`.
 
-6.5. Generate the hero image by running the image generation script using
-   the image prompt from step 6 and the post slug:
+6.5. **Trigger hero image generation** by calling the `generate-hero-image` safe-output job with:
+   - `prompt`: the `image_prompt` value from the post's front matter
+   - `slug`: the post slug (filename without date prefix and `.md`)
+
+   Also ensure the post front matter includes:
+   ```yaml
+   image: /assets/images/<slug>.png
    ```
-   pwsh scripts/generate-image.ps1 -Prompt "<image prompt>" -Slug "<slug>"
-   ```
-   The script reads `AZURE_IMAGE_GEN_KEY` from the environment (injected via
-   repository secret). If the script fails, log the error in the PR description
-   under `## ⚠️ Image Generation Error` but do NOT abort the pipeline — the
-   PR should still be opened without the image.
-   If the script succeeds, note the saved path in the PR description under
-   `## 🖼️ Hero Image` and add the image to the post's front matter as
-   `image: /<saved-path>`.
+   (The actual file is generated and committed to the PR branch by the safe-output job — you do not need to run a script yourself.)
 
 7. Open a pull request (via safe-outputs) containing the new post file and
    the social pack file. The PR **description must include the full
@@ -112,10 +202,11 @@ already state a clear topic.
       - `book`  — book summary (file in `_books/`)
       - `model` — model page (file in `_models/`)
 
-   c. **Create a main tracking issue** (this is the content calendar card):
-      - Title: `[Content] <Post Title>`
-      - Labels: `content`, `content-type:<type>`
-      - Body (exact format — do NOT deviate):
+   c. **Create a main tracking issue and add it to the project** by calling
+      the `create-calendar-card` safe-output job with these exact fields:
+      - `title`: `[Content] <Post Title>`
+      - `labels`: `content,content-type:<type>` (e.g. `content,content-type:blog`)
+      - `body` (exact format — do NOT deviate):
         ```
         ## Content Tracking
 
@@ -134,15 +225,11 @@ already state a clear topic.
         > trigger automatic date distribution to all sub-issues.
         ```
 
-   d. **Add main issue to the GitHub Project** #9 (owner: renevanosnabrugge,
-      project: "Content Calendar · Culture Engineers") and set the
-      status to "Draft Posts". Run the helper script:
-      ```bash
-      pwsh .github/scripts/add-to-project.ps1 <issue-url-1> <issue-url-2> ...
-      ```
-      Pass all the main issue URL as separate arguments.
+      The `create-calendar-card` job will create the issue AND add it to
+      the GitHub Project #9 in "Draft Posts" status automatically.
+      Do NOT call `gh issue create` or `add-to-project.ps1` separately.
 
-   f. **Comment on the main tracking issue** with a checklist summary:
+   d. **Comment on the main tracking issue** with:
       ```
       **Next step:** Edit the post date in the issue in the project to set the schedule. Then add the item to the To be published column
       ```
