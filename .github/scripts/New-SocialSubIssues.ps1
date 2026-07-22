@@ -120,7 +120,7 @@ function Get-ProjectMeta {
         if ($n -eq 'status') {
             $result.StatusFieldId = $f.id
             foreach ($opt in $f.options) {
-                if ($opt.name -match 'to.?be|publish') { $result.ToBePublishedOptionId = $opt.id }
+                if ($opt.name -match '(?i)to.?be') { $result.ToBePublishedOptionId = $opt.id }
                 if ($opt.name -match 'draft')           { $result.DraftOptionId         = $opt.id }
             }
         }
@@ -187,7 +187,7 @@ function Get-ToBePublishedItems {
       query($owner: String!, $number: Int!) {
         user(login: $owner) {
           projectV2(number: $number) {
-            items(last: 200) {
+            items(last: 100) {
               nodes {
                 id
                 content {
@@ -459,7 +459,7 @@ function Invoke-ProcessIssue {
         $statusName = ($projItem?.fieldValues.nodes |
             Where-Object { $_.field.name -eq 'Status' } |
             Select-Object -First 1)?.name
-        if ($statusName -notmatch 'to.?be|publish') {
+        if ($statusName -notmatch '(?i)to.?be') {
             Write-Host "  Status is '$statusName' — not 'To Be Published'. Use -Force to override."
             return
         }
