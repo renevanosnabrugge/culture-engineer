@@ -95,12 +95,13 @@ Write-Host "File  : $FilePath"
 $rawFileUrl = "https://github.com/$REPO/blob/main/$FilePath"
 
 $publishDateComment = if ($PublishDate) { "`n<!-- publish-date: $PublishDate -->" } else { '' }
+$metaPublishDate = if ($PublishDate) { $PublishDate } else { 'YYYY-MM-DD' }
 
 $issueBody = @"
 <!-- CONTENT CALENDAR METADATA
 file: $FilePath
 type: blog
-publish-date: YYYY-MM-DD
+publish-date: $metaPublishDate
 image:
 post-url:
 -->
