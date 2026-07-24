@@ -9,19 +9,19 @@ excerpt: >
   After years of speaking at conferences, writing articles, and advising teams, I finally
   have a home for all of it. Here's why I built this site and what you'll find here.
 published: false
+image: "/assets/images/welcome-to-culture-engineers.png"
 ---
 
 After years of speaking at conferences, writing articles scattered across various platforms,
 and sharing ideas with teams I've worked with, I finally have a proper home for all of it.
 
-Welcome to **Culture Engineers** — a space where I'll be exploring the intersection of
+Welcome to **Culture Engineers**, a space where I'll be exploring the intersection of
 technology, people, and the practices that bring the two together.
 
 ## Why "Culture Engineers"?
 
-I've spent the better part of a decade helping software teams improve. Early in my career,
-I thought the problems were mostly technical: pick the right architecture, use the right tools,
-follow the right process.
+I've spent the better part of a decade helping software teams improve their software development lifecycle. That evolved into implementing DevOps practices on both technology teams and management teams. Early in my career,
+I thought the problems were mostly technical: pick the right architecture, use the right tools,follow the right process.
 
 I was wrong.
 

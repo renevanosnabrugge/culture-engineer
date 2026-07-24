@@ -162,21 +162,63 @@ already state a clear topic.
    - If a clear topic IS given: add the label `blogpost:in-progress` and
      continue to step 3.
 
-3. Write a full draft following `.github/agents/writer.agent.md`
-   conventions. Save it to `drafts/`.
+3. **Determine content type and prepare the intro block.**
 
-4. Review the draft against `.github/skills/style-review/SKILL.md` and
+   Inspect the issue label and body:
+
+   - If labeled `book`:
+     - The issue body must name the book (title or slug). Read the matching
+       file from `_books/` to get its title, author, and slug (the filename
+       without `.md`).
+     - Place the following block verbatim at the very top of the post body
+       (after the front matter), formatted as a Markdown blockquote:
+
+       > I have always liked reading, but I did not find the time for it. About 10 years ago, I started to listen to books in the car. I have a lot of travel time and listening to books just works for me. I tend to switch between (science-)fiction and non-fiction.
+       >
+       > When I encounter a problem or a new situation, read or hear something about a new model or framework, I'll find a book and "read" it. Over the years I gathered quite a long list of books that helped me a lot in my daily work. In one on one talks with people, in explaining situations to customers, dealing with problems or just let me grow as an individual. When I talk to people I often hear myself saying. I read a book, where... But no clue in which book this was. That's why I started this list of books. To have a library for myself, the lessons from each book as a quick summary, but also to be able to share it with others. I hope you enjoy it and find it useful. If you want to learn about more books, visit the [Books section](/inspiration/books/) of this site.
+
+     - Somewhere in the post body (naturally, e.g. after the intro or at
+       the first mention of the book title), add a link to the book detail
+       page: `/inspiration/books/<slug>/`
+
+   - If labeled `model`:
+     - The issue body must name the model (title or slug). Read the matching
+       file from `_models/` to get its title and slug (the filename without
+       `.md`).
+     - Place the following block verbatim at the very top of the post body
+       (after the front matter), formatted as a Markdown blockquote:
+
+       > Some colleagues tease me about it. "You probably have a model for that," they say and honestly, they are not wrong.
+       >
+       > Over the years I have developed what you might call a fondness for models and frameworks. Not because I think reality fits neatly into boxes, but because a good model gives me an umbrella. A place to start reasoning, a shared language to explain what I am seeing. Handlebars for situations that would otherwise feel slippery and hard to grip.
+       >
+       > And sometimes a model does something even more useful: it gives words to something I already sensed but could not articulate. That moment of recognition. That YES!, that is exactly what is happening here, is worth a lot when you are trying to get a team or a leadership table aligned.
+       >
+       > This is one of those models. I use it regularly, share it often, and it has served me well. I hope it does the same for you. If you want to learn about more models, visit the [Models section](/inspiration/models/) of this site.
+
+     - Somewhere in the post body (naturally, e.g. after the intro or at
+       the first mention of the model name), add a link to the model detail
+       page: `/inspiration/models/<slug>/`
+
+   - If labeled `blogpost` (no book or model): no intro block needed.
+
+4. Write a full draft following `.github/agents/writer.agent.md`
+   conventions. Save it to `drafts/`. The post should draw from the
+   content in the matched `_books/` or `_models/` file (key lessons,
+   excerpt, tags) when writing a book or model post.
+
+5. Review the draft against `.github/skills/style-review/SKILL.md` and
    apply the suggested edits directly (René reviews the final diff in the
    PR, so don't pause for interactive confirmation here).
 
-5. Move the finished post into `_posts/` with correct Jekyll front matter
+6. Move the finished post into `_posts/` with correct Jekyll front matter
    per `.github/skills/publish-jekyll/SKILL.md` — skip any git push step,
    the safe-outputs PR mechanism handles that.
 
-6. Run `.github/skills/social-pack/SKILL.md` against the finished post,
+7. Run `.github/skills/social-pack/SKILL.md` against the finished post,
    saving output as `drafts/social-<post-slug>.md`.
 
-6.5. **Trigger hero image generation** by calling the `generate-hero-image` safe-output job with:
+7.5. **Trigger hero image generation** by calling the `generate-hero-image` safe-output job with:
    - `prompt`: the `image_prompt` value from the post's front matter
    - `slug`: the post slug (filename without date prefix and `.md`)
 
@@ -186,7 +228,7 @@ already state a clear topic.
    ```
    (The actual file is generated and committed to the PR branch by the safe-output job — you do not need to run a script yourself.)
 
-7. Open a pull request (via safe-outputs) containing the new post file and
+8. Open a pull request (via safe-outputs) containing the new post file and
    the social pack file. The PR **description must include the full
    content inline** — reviewers should be able to read everything without
    opening a single file:
@@ -204,9 +246,9 @@ already state a clear topic.
    the PR body is a readable copy for review convenience, not a
    replacement for the diff.
 
-8. Comment on the original issue linking to the PR.
+9. Comment on the original issue linking to the PR.
 
-9. After the PR is created and commented on (step 8), create the content
+10. After the PR is created and commented on (step 9), create the content
    calendar tracking structure. Use the GitHub MCP tools (or bash `gh` CLI)
    to perform each of these actions:
 
