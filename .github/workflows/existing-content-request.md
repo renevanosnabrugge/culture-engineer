@@ -30,7 +30,7 @@ safe-outputs:
     allowed: ["existingcontent:in-progress"]
   jobs:
     create-calendar-card:
-      description: "Create a content calendar tracking issue and add it to the GitHub Project in Draft Posts status"
+      description: "Create a content calendar tracking issue with social variants in the body, add it to the GitHub Project in To Be Published status"
       runs-on: ubuntu-latest
       permissions:
         contents: read
@@ -41,11 +41,15 @@ safe-outputs:
           required: true
           type: string
         body:
-          description: "Issue body with content tracking table and schedule section"
+          description: "Issue body with metadata block, content tracking table, and LinkedIn variant sections"
           required: true
           type: string
         labels:
-          description: "Comma-separated labels, e.g. content,content-type:blog"
+          description: "Comma-separated labels, e.g. content-calendar,content-type:blog,approve"
+          required: false
+          type: string
+        post_file:
+          description: "Path to the content file, e.g. _posts/2026-08-11-my-post.md"
           required: false
           type: string
       steps:
@@ -76,12 +80,15 @@ safe-outputs:
 
             $issueUrl = (gh @ghArgs 2>&1 | Select-String 'https://').ToString().Trim()
             if (-not $issueUrl) {
-              Write-Host "::error::gh issue create returned no URL — aborting."
+              Write-Host "::error::gh issue create returned no URL -- aborting."
               exit 1
             }
             Write-Host "Issue created: $issueUrl"
 
-            pwsh .github/scripts/add-to-project.ps1 $issueUrl
+            # Add to project in "To Be Published" status with optional file path
+            $addArgs = @()
+            if ($item.post_file) { $addArgs += '-PostFile'; $addArgs += $item.post_file }
+            pwsh .github/scripts/add-to-project.ps1 @addArgs $issueUrl
 timeout-minutes: 20
 tracker-id: existing-content-pipeline
 ---
@@ -137,22 +144,34 @@ posts.
 
 7. **Comment on the original issue** linking to the PR.
 
-8. **Create the content calendar tracking structure**:
+8. **Create the content calendar tracking issue**:
 
    a. Determine content type:
       - `blog`  — file in `_posts/`
       - `book`  — file in `_books/`
       - `model` — file in `_models/`
 
-   b. Ensure these labels exist (create if missing): `content`,
-      `content-calendar`, `content-type:blog`, `content-type:book`,
-      `content-type:model`, `scheduled`
+   b. Ensure these labels exist (create if missing): `content-calendar`,
+      `content-type:blog`, `content-type:book`, `content-type:model`,
+      `approve`
 
-   c. **Call the `create-calendar-card` safe-output job** with:
+   c. **Read the social pack** from `drafts/social-<slug>.md` and extract
+      the three LinkedIn variants.
+
+   d. **Call the `create-calendar-card` safe-output job** with:
       - `title`: `[Content] <Post Title>`
-      - `labels`: `content,content-type:<type>`
+      - `labels`: `content-calendar,content-type:<type>,approve`
+      - `post_file`: the content file path (e.g. `_posts/2026-07-13-my-post.md`)
       - `body` (exact format — do NOT deviate):
         ```
+        <!-- CONTENT CALENDAR METADATA
+        file: <content file path>
+        type: <blog | book | model>
+        publish-date: YYYY-MM-DD
+        image: <image path if known, otherwise leave empty>
+        post-url:
+        -->
+
         ## Content Tracking
 
         | Field | Value |
@@ -160,24 +179,35 @@ posts.
         | Trigger issue | #<original issue number> |
         | Pull Request  | <PR URL> |
         | Draft file    | `<post file path>` |
-        | Content type  | <blog \| book \| model> |
+        | Content type  | <blog | book | model> |
 
-        ## Schedule
+        > Set the **Publish Date** in the project board, then the content
+        > scheduler and LinkedIn poster will handle the rest automatically.
 
-        <!-- publish-date: YYYY-MM-DD -->
+        ## LinkedIn — Variant 1 (Contrarian hook)
 
-        > Set the publish date above, then add the label `scheduled` to
-        > trigger automatic date distribution to all sub-issues.
+        <variant 1 text from social pack>
+
+        ---
+
+        ## LinkedIn — Variant 2 (Story format)
+
+        <variant 2 text from social pack>
+
+        ---
+
+        ## LinkedIn — Variant 3 (Question format)
+
+        <variant 3 text from social pack>
         ```
 
       The `create-calendar-card` job creates the issue AND adds it to
-      GitHub Project #9 in "Draft Posts" status.
+      GitHub Project #9 in "To Be Published" status.
       Do NOT call `gh issue create` or `add-to-project.ps1` separately.
 
-   d. **Comment on the tracking issue**:
+   e. **Comment on the tracking issue**:
       ```
-      **Next step:** Set the publish date on the project card, then move
-      it to "To be published" to automatically create the social sub-issues.
+      **Next step:** Set the publish date in the project board. The content scheduler will publish on that date and LinkedIn variants will be posted automatically.
       ```
 
 Never push directly to `main`. Never call the LinkedIn API.
