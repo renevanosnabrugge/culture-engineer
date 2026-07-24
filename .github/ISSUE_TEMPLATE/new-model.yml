@@ -1,0 +1,94 @@
+name: "🧩 New Model / Framework"
+description: "Add a mental model or framework to the _models/ collection"
+labels: ["blogpost", "model"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The workflow will write a full model page, generate a hero image, create a social pack, and open a PR.
+
+        The model file will be saved to `_models/<slug>.md` and the blog post to `_posts/`.
+
+  - type: input
+    id: name
+    attributes:
+      label: "Model name"
+      placeholder: "Theory of Constraints"
+    validations:
+      required: true
+
+  - type: input
+    id: origin
+    attributes:
+      label: "Origin"
+      description: "Who created it, in what context."
+      placeholder: "Eliyahu Goldratt — The Goal (1984)"
+    validations:
+      required: true
+
+  - type: input
+    id: learn_more
+    attributes:
+      label: "Learn more URL"
+      description: "Canonical reference, book page, or Wikipedia link."
+      placeholder: "https://en.wikipedia.org/wiki/Theory_of_constraints"
+    validations:
+      required: false
+
+  - type: textarea
+    id: excerpt
+    attributes:
+      label: "One-sentence description (excerpt)"
+      description: "The framing that makes this model useful. Shown on the /inspiration page."
+      placeholder: "Every system has one constraint — find it, exploit it, and everything else gets faster."
+    validations:
+      required: true
+
+  - type: textarea
+    id: core_concepts
+    attributes:
+      label: "Core concepts"
+      description: "The 2–5 components, steps, or quadrants the model introduces."
+      placeholder: |
+        - Identify the constraint
+        - Exploit the constraint
+        - Subordinate everything else
+        - Elevate the constraint
+        - Repeat
+    validations:
+      required: false
+
+  - type: textarea
+    id: when_to_use
+    attributes:
+      label: "When to use this model"
+      description: "Situation or decision type where this lens is most valuable to an executive."
+      placeholder: "When a transformation is stalling and no one can agree on what to fix first."
+    validations:
+      required: false
+
+  - type: textarea
+    id: common_misuse
+    attributes:
+      label: "Common misuse or limitation"
+      description: "What this model does NOT explain well. Prevents over-application."
+      placeholder: "Treats the system as predictable — breaks down in environments with high uncertainty or multiple simultaneous constraints."
+    validations:
+      required: false
+
+  - type: input
+    id: tags
+    attributes:
+      label: "Tags"
+      description: "Comma-separated. Choose from: change, adoption, transformation, devops, measurement, performance, teams, culture, trust, operations, flow, systems-thinking, leadership"
+      placeholder: "flow, systems-thinking, operations"
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes"
+      description: "Related books, posts to cross-reference, or real-world examples to include."
+    validations:
+      required: false

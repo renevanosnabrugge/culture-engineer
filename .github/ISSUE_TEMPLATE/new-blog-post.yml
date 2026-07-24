@@ -1,0 +1,113 @@
+name: "✍️ New Blog Post"
+description: "Plan and request a new blog post for culture-engineers.nl"
+labels: ["blogpost"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The workflow will write a full draft, run a style review, generate a hero image, create a social pack, and open a PR — all from this issue.
+
+  - type: input
+    id: title
+    attributes:
+      label: "Working title"
+      placeholder: "Why Most Agile Transformations Fail Before They Start"
+    validations:
+      required: true
+
+  - type: textarea
+    id: hook
+    attributes:
+      label: "Hook / angle"
+      description: "The contrarian take, the surprising insight, or the uncomfortable truth that makes this worth reading. One sentence."
+      placeholder: "Most transformations fail not because of technology, but because no one asked the people doing the work."
+    validations:
+      required: true
+
+  - type: textarea
+    id: why_now
+    attributes:
+      label: "Why now"
+      description: "What makes this relevant at this moment? Trend, client pattern, conference, news?"
+      placeholder: "Seeing this pattern across three clients this quarter..."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: audience
+    attributes:
+      label: "Primary audience"
+      options:
+        - "CIO / CTO"
+        - "CDO / Chief of Transformation"
+        - "Head of Engineering"
+        - "Public sector director"
+        - "Healthcare / education leader"
+        - "Transformation lead"
+        - "Practitioner (developer / engineer)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: takeaway
+    attributes:
+      label: "What the reader walks away with"
+      description: "One concrete insight, reframe, or decision they can act on."
+      placeholder: "A checklist for spotting the three warning signs before a transformation stalls."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: related_content
+    attributes:
+      label: "Based on a book or model? (optional)"
+      description: "Select an existing book or model to base this post on. The workflow will read that file and use it as source material."
+      options:
+        - "None — standalone post"
+        - "📚 Book: ADKAR: A Model for Change in Business, Government and Our Community"
+        - "📚 Book: Coach to Coach"
+        - "📚 Book: Dare to Lead"
+        - "📚 Book: How Not to Die"
+        - "📚 Book: Mindset: The New Psychology of Success"
+        - "📚 Book: Never Split the Difference"
+        - "📚 Book: No Rules Rules: Netflix and the Culture of Reinvention"
+        - "📚 Book: Powerful: Building a Culture of Freedom and Responsibility"
+        - "📚 Book: Start with Why"
+        - "📚 Book: The 6 Types of Working Genius"
+        - "📚 Book: The Catalyst: How to Change Anyone's Mind"
+        - "📚 Book: The Crossroads of Should and Must"
+        - "📚 Book: The Culture Map"
+        - "📚 Book: The Five Dysfunctions of a Team"
+        - "📚 Book: The Goal: A Process of Ongoing Improvement"
+        - "📚 Book: The Infinite Game"
+        - "📚 Book: The Motive"
+        - "📚 Book: The Mountain Is You"
+        - "📚 Book: The Phoenix Project"
+        - "📚 Book: The Unicorn Project"
+        - "📚 Book: High Ten: Building Great Team Culture"
+        - "📚 Book: Who Moved My Cheese?"
+        - "🧩 Model: ADKAR Change Model"
+        - "🧩 Model: DORA Metrics"
+        - "🧩 Model: Engineering Culture Model"
+        - "🧩 Model: The Five Dysfunctions of a Team"
+        - "🧩 Model: The Three Ways — DevOps"
+        - "🧩 Model: Theory of Constraints"
+    validations:
+      required: false
+
+  - type: input
+    id: image_prompt
+    attributes:
+      label: "Image prompt (optional)"
+      description: "DALL-E / AI image prompt, 16:9, no text. Leave blank to auto-generate."
+      placeholder: "A compass on a dark background, pointing in multiple directions, symbolising strategic confusion"
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes"
+      description: "Sources, related posts to reference, examples, client stories (anonymised)."
+    validations:
+      required: false

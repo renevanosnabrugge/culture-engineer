@@ -1,0 +1,103 @@
+name: "📚 New Book Summary"
+description: "Add a book summary to the _books/ collection"
+labels: ["blogpost", "book"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The workflow will write a full book summary post, generate a hero image, create a social pack, and open a PR.
+
+        The book file will be saved to `_books/<slug>.md` and the blog post to `_posts/`.
+
+  - type: input
+    id: title
+    attributes:
+      label: "Book title"
+      placeholder: "The Phoenix Project"
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: "Author(s)"
+      placeholder: "Gene Kim, Kevin Behr & George Spafford"
+    validations:
+      required: true
+
+  - type: input
+    id: isbn
+    attributes:
+      label: "ISBN"
+      description: "10 or 13 digits, no dashes. Used to build the Amazon link."
+      placeholder: "1942788290"
+    validations:
+      required: false
+
+  - type: input
+    id: url
+    attributes:
+      label: "Amazon / buy link"
+      placeholder: "https://www.amazon.com/dp/1942788290"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: rating
+    attributes:
+      label: "Rating"
+      options:
+        - "5 — Essential"
+        - "4 — Highly recommended"
+        - "3 — Worth reading"
+        - "2 — Has some value"
+        - "1 — Skip it"
+    validations:
+      required: false
+
+  - type: textarea
+    id: hook
+    attributes:
+      label: "One-sentence hook (excerpt)"
+      description: "The insight that changes how you see something. This becomes the pull quote on the /inspiration page."
+      placeholder: "IT work behaves exactly like a factory floor — once you see the bottlenecks, you can't unsee them."
+    validations:
+      required: true
+
+  - type: textarea
+    id: key_ideas
+    attributes:
+      label: "Key ideas to cover"
+      description: "Bullet the 2–4 frameworks or arguments the summary should explain."
+      placeholder: |
+        - The Three Ways
+        - Work-in-Progress as the silent killer
+        - The four types of work
+    validations:
+      required: false
+
+  - type: textarea
+    id: executive_relevance
+    attributes:
+      label: "Why this matters to an executive audience"
+      description: "Link it to cost, risk, talent, delivery speed, or org design."
+      placeholder: "Boards can understand throughput and stability as operational risk metrics."
+    validations:
+      required: false
+
+  - type: input
+    id: tags
+    attributes:
+      label: "Tags"
+      description: "Comma-separated. Choose from: devops, culture, leadership, flow, measurement, feedback, learning, change-management, strategy"
+      placeholder: "devops, flow, operations"
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes"
+      description: "Related models, posts to cross-reference, quotes, or reading context."
+    validations:
+      required: false

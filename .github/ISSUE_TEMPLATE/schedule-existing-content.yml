@@ -1,6 +1,6 @@
 name: "📅 Schedule Existing Content"
 description: "Schedule an already-written post, book, or model for publishing and LinkedIn distribution."
-labels: ["schedule"]
+labels: ["schedule", "existingcontent"]
 body:
   - type: markdown
     attributes:
