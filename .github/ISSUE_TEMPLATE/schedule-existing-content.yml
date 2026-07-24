@@ -1,0 +1,54 @@
+name: "📅 Schedule Existing Content"
+description: "Schedule an already-written post, book, or model for publishing and LinkedIn distribution."
+labels: ["schedule"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when the content file already exists in `_posts/`, `_books/`, or `_models/`
+        with `published: false` in its front matter.
+
+        The workflow will:
+        - Generate a social pack (3 LinkedIn variants)
+        - Generate a hero image (if not already present)
+        - Open a PR with the social pack
+        - Create a content calendar tracking issue in the GitHub Project
+
+  - type: input
+    id: file
+    attributes:
+      label: "File path"
+      description: "Path to the existing content file, relative to the repo root."
+      placeholder: "_posts/2026-07-24-my-post.md"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: content_type
+    attributes:
+      label: "Content type"
+      description: "Select the type of content. This is derived from the file path — select to confirm."
+      options:
+        - "blog post (_posts/)"
+        - "book summary (_books/)"
+        - "model page (_models/)"
+    validations:
+      required: true
+
+  - type: input
+    id: publish_date
+    attributes:
+      label: "Desired publish date (optional)"
+      description: "Target publish date in YYYY-MM-DD format. Leave blank to set later in the project board."
+      placeholder: "2026-08-01"
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes (optional)"
+      description: "Anything the social pack or image generation should take into account — target audience, angle, key message."
+      placeholder: "Focus on the executive angle. The main message is..."
+    validations:
+      required: false
