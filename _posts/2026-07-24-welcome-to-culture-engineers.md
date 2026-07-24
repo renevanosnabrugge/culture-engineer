@@ -2,8 +2,9 @@
 layout: post
 title: "Welcome to Culture Engineers"
 subtitle: "Why I started this site and what you can expect"
-date: 2026-07-01 09:00:00 +0200
-tags: [culture, introduction, engineering]
+date: 2026-07-24 09:00:00 +0200
+categories: [culture, introduction]
+tags: [culture, introduction, engineering, engineering-culture]
 image_prompt: "Professional editorial illustration of a diverse engineering team gathered around a glowing campfire made of circuit board traces, dark navy background, warm orange light, minimal geometric style, no text, 16:9 landscape"
 excerpt: >
   After years of speaking at conferences, writing articles, and advising teams, I finally
@@ -12,44 +13,48 @@ published: false
 image: "/assets/images/welcome-to-culture-engineers.png"
 ---
 
-After years of speaking at conferences, writing articles scattered across various platforms,
-and sharing ideas with teams I've worked with, I finally have a proper home for all of it.
+Every now and then, someone walks up to me after a conference talk and asks: "Do you have a blog or something? I want to read more." For years my honest answer was: "Sort of, kind of, spread across too many places."
 
-Welcome to **Culture Engineers**, a space where I'll be exploring the intersection of
-technology, people, and the practices that bring the two together.
+That changes today.
+
+Welcome to **Culture Engineers**, a place where I'll be writing about the intersection of technology, people, and the practices that hold the two together.
 
 ## Why "Culture Engineers"?
 
-I've spent the better part of a decade helping software teams improve their software development lifecycle. That evolved into implementing DevOps practices on both technology teams and management teams. Early in my career,
-I thought the problems were mostly technical: pick the right architecture, use the right tools,follow the right process.
+Early in my career, I was convinced that the problems facing software teams were mostly technical. Pick the right architecture. Use the right tools. Follow the right process. Get the pipeline clean and the delivery will follow.
 
-I was wrong.
+I was wrong about that, and it took me longer than I'd like to admit to figure out why.
 
-The most common blocker I encounter isn't a technology problem. It's a culture problem.
+The most persistent blocker I encounter in teams is rarely a technology problem. It tends to be something quieter and harder to name: a team that cannot have honest conversations about failures, leaders who reward heroics over sustainable practices, organisations that measure the wrong things and genuinely seem surprised when nothing improves.
 
-Teams that can't have honest conversations about failures. Leaders who reward heroics instead
-of sustainable practices. Organisations that measure the wrong things and wonder why nothing
-improves.
+You can give those teams a perfect CI/CD pipeline and they will find ways to work around it. You can hand them a DevOps playbook and they will follow it to the letter while missing every point. The tools never fail on their own. The environment around the tools does.
 
-**Culture engineering** is the practice of intentionally shaping the environment in which
-people do their best work. It's applying the same rigour we give to software systems to the
-human systems that build them.
+**Culture engineering** is the practice of intentionally shaping that environment. Of applying the same rigour we give to software systems to the human systems that build them. It is not soft. It is arguably the hardest problem in the building.
 
-## What You'll Find Here
+## Where this comes from
 
-On this site you'll find:
+I have spent the better part of a decade working with software teams on their engineering practices, their delivery models, and the leadership behaviours that either accelerate or quietly destroy both. That work started in technology and drifted steadily toward organisational design, culture change, and the question of how you actually make things stick.
 
-- **Blog posts** — my thoughts on engineering culture, DevOps, software architecture,
-  and the human side of software delivery
-- **Presentations** — slides and videos from my conference talks, organised by year
-- **Publications** — articles and whitepapers I've written for industry outlets
-- **Inspiration** — books, blogs, and videos that have shaped my thinking
+Along the way I collected a lot of material: conference talks, articles, models I keep returning to, books that reframed how I see things, conversations with people doing interesting work. It all lived in different places. A slide deck here, a Medium post there, a newsletter issue that maybe a hundred people read. 
 
-## Let's Build Better Teams
+This site is where I put it together.
 
-If you're a tech lead, engineering manager, or architect wrestling with the people and process
-side of software delivery — I hope this site gives you something useful.
+## What you will find here
 
-The best software comes from the best teams. The best teams are built intentionally.
+The main thing is the blog, where I write about engineering culture, DevOps, software architecture and the human side of delivery. I try to write things I would actually want to read: grounded in real situations, not consultant generalities.
 
-Let's get to work.
+Beyond posts, the site has a few other sections worth knowing about:
+
+- **Presentations**, with slides and recordings from talks I have given over the years, organised so you can find what is relevant without wading through everything
+- **Publications**, for the longer articles and whitepapers that need more space than a blog post
+- **Inspiration**, a running library of books, models and ideas that have genuinely shaped how I think and work, with short notes on what clicked and why
+
+The Inspiration section is the one I am most personally attached to. Half the time when I am talking with someone about a problem, I find myself saying "I read a book once where..." and then completely blanking on which book. This is where I fix that.
+
+## Who this is for
+
+If you are a tech lead, engineering manager, architect or director wrestling with the people and process side of software delivery, I hope this site gives you something useful. Not a checklist, not a framework to implement wholesale, but a different angle on a familiar problem or a reference you can share in a conversation.
+
+The best software comes from teams that are built intentionally. And building those teams is learnable work.
+
+So, let's get started.
