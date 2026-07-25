@@ -1,0 +1,218 @@
+{
+  "collectedAt": "2026-07-25T06:42:00.9727233Z",
+  "targetDate": "2026-07-24",
+  "projectId": "xk5gdi38n4",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "2",
+          "subTotal": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 61.11
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "3",
+          "pagesPerSessionPercentage": 18.333333333333332
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "1246",
+          "activeTime": "420"
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Edge",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "PC",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "Windows",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "Inspiration | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Home | René van Osnabrugge",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": null,
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://Electron",
+          "visitsCount": "1"
+        },
+        {
+          "url": "http://127.0.0.1:4000/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "http://127.0.0.1:4000/blog/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "http://127.0.0.1:4000/presentations/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "http://127.0.0.1:4000/inspiration/models/engineering-culture-model/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "http://127.0.0.1:4000/inspiration/",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ]
+}
