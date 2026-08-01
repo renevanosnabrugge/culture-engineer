@@ -1,0 +1,342 @@
+{
+  "projectId": "xk5gdi38n4",
+  "collectedAt": "2026-08-01T06:45:19.3817371Z",
+  "targetDate": "2026-07-31",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "66",
+          "sessionsWithMetricPercentage": 4.55,
+          "sessionsWithoutMetricPercentage": 95.45,
+          "pagesViews": "4",
+          "subTotal": "4"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "66",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "66",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "66",
+          "sessionsWithMetricPercentage": 7.58,
+          "sessionsWithoutMetricPercentage": 92.42,
+          "pagesViews": "5",
+          "subTotal": "5"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "66",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "66",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 72.03
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "66",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "65",
+          "pagesPerSessionPercentage": 1.462686567164179
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "120",
+          "activeTime": "49"
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "MobileSafari",
+          "sessionsCount": "32"
+        },
+        {
+          "name": "Chrome",
+          "sessionsCount": "12"
+        },
+        {
+          "name": "ChromeMobile",
+          "sessionsCount": "10"
+        },
+        {
+          "name": "Edge",
+          "sessionsCount": "10"
+        },
+        {
+          "name": "SamsungInternet",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "Mobile",
+          "sessionsCount": "47"
+        },
+        {
+          "name": "PC",
+          "sessionsCount": "19"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "IOS",
+          "sessionsCount": "33"
+        },
+        {
+          "name": "Android",
+          "sessionsCount": "14"
+        },
+        {
+          "name": "MacOSX",
+          "sessionsCount": "12"
+        },
+        {
+          "name": "Windows",
+          "sessionsCount": "6"
+        },
+        {
+          "name": "Linux",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": "47"
+        },
+        {
+          "name": "Canada",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "United States",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "Belgium",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "Albania",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "United Kingdom",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Spain",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Sweden",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Italy",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Denmark",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "Welcome to Culture Engineers | René van Osnabrugge",
+          "sessionsCount": "56"
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": "6"
+        },
+        {
+          "name": "Rebuild or Refactor? That is the question! | René van Osnabrugge",
+          "sessionsCount": "5"
+        },
+        {
+          "name": "About Me | René van Osnabrugge",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "Presentations & Conferences | René van Osnabrugge",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "Inspiration | René van Osnabrugge",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Publications | René van Osnabrugge",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Your New Rubber Duck is an AI | René van Osnabrugge",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Home | René van Osnabrugge",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Don’t Let AI Optimize the Wrong 30% | René van Osnabrugge",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": "https://www.linkedin.com/",
+          "sessionsCount": "41"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "sessionsCount": "18"
+        },
+        {
+          "name": "android-app://com.linkedin.android/",
+          "sessionsCount": "8"
+        },
+        {
+          "name": null,
+          "sessionsCount": "6"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/04/09/rebuild-or-refactor-that-is-the-question/",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "https://culture-engineers.nl/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://culture-engineers.nl/about/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "visitsCount": "57"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/",
+          "visitsCount": "6"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/04/09/rebuild-or-refactor-that-is-the-question/",
+          "visitsCount": "5"
+        },
+        {
+          "url": "https://culture-engineers.nl/about/",
+          "visitsCount": "4"
+        },
+        {
+          "url": "https://culture-engineers.nl/presentations/",
+          "visitsCount": "3"
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2025/07/11/your-new-rubber-duck-is-an-ai/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/publications/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2025/11/26/dont-let-ai-optimize-the-wrong-30/",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ]
+}
