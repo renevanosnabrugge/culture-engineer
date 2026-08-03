@@ -1,0 +1,242 @@
+{
+  "collectedAt": "2026-08-03T06:59:16.9604171Z",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "11",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "11",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "11",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "11",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "11",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "11",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 69.18
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "11",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "10",
+          "pagesPerSessionPercentage": 1
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "34",
+          "activeTime": "34"
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "MobileSafari",
+          "sessionsCount": "11"
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "Mobile",
+          "sessionsCount": "11"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "IOS",
+          "sessionsCount": "11"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": "7"
+        },
+        {
+          "name": "Canada",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "Sweden",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "Welcome to Culture Engineers | René van Osnabrugge",
+          "sessionsCount": "5"
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "English as the New Programming Language | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Don’t Let AI Optimize the Wrong 30% | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Rebuild or Refactor? That is the question! | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "The Software Crisis Never Ended, It Just Evolved | René van Osnabrugge",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": "https://www.linkedin.com/",
+          "sessionsCount": "3"
+        },
+        {
+          "name": null,
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/04/09/rebuild-or-refactor-that-is-the-question/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2025/12/01/the-software-crisis-never-ended-it-just-evolved/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2025/11/28/english-as-the-new-programming-language/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "visitsCount": "5"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/04/09/rebuild-or-refactor-that-is-the-question/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2025/11/26/dont-let-ai-optimize-the-wrong-30/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2025/12/01/the-software-crisis-never-ended-it-just-evolved/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2025/11/28/english-as-the-new-programming-language/",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ],
+  "projectId": "xk5gdi38n4",
+  "targetDate": "2026-08-02"
+}
