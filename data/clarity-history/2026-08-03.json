@@ -1,0 +1,246 @@
+{
+  "projectId": "xk5gdi38n4",
+  "targetDate": "2026-08-03",
+  "collectedAt": "2026-08-04T06:46:40.8432802Z",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 33.33,
+          "sessionsWithoutMetricPercentage": 66.67,
+          "pagesViews": "2",
+          "subTotal": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 72.67
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "3",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "2",
+          "pagesPerSessionPercentage": 4
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "308",
+          "activeTime": "65"
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Chrome",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "MobileSafari",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "PC",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Mobile",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "Windows",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "IOS",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Greece",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Spain",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "Welcome to Culture Engineers | René van Osnabrugge",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "Inspiration | René van Osnabrugge",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "About Me | René van Osnabrugge",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Presentations & Conferences | René van Osnabrugge",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Publications | René van Osnabrugge",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": "https://www.linkedin.com/",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "https://culture-engineers.nl/presentations/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://culture-engineers.nl/about/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://culture-engineers.nl/publications/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://culture-engineers.nl/inspiration/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "visitsCount": "3"
+        },
+        {
+          "url": "https://culture-engineers.nl/presentations/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/about/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/publications/",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ]
+}
