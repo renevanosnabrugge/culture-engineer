@@ -9,7 +9,7 @@ excerpt: >
   Most leaders gave up writing code when they stepped into management. AI coding agents
   make re-engaging with the craft so low-friction that the excuse of "I'm not a developer
   anymore" no longer holds. And the edge it gives you is real.
-published: false
+published: true
 ---
 
 A few months ago, a CTO I know told me he hadn't written a single line of production code in six years. He said it with a hint of pride, the way executives sometimes signal they have successfully made the transition from maker to manager. I understood the logic. His time had moved to strategy, budgets, stakeholder management and hiring. Code was for the team.
