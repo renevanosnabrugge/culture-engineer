@@ -1,0 +1,194 @@
+{
+  "projectId": "xk5gdi38n4",
+  "targetDate": "2026-08-08",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 40
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "2",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "3",
+          "pagesPerSessionPercentage": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "11",
+          "activeTime": "11"
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "MobileSafari",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "Mobile",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "IOS",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "Welcome to Culture Engineers | René van Osnabrugge",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": null,
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://www.linkedin.com/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/presentations/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2023/01/19/aligned-autonomy-in-practice/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2025/07/11/your-new-rubber-duck-is-an-ai/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/about/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2025/12/01/the-software-crisis-never-ended-it-just-evolved/",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ],
+  "collectedAt": "2026-08-09T06:11:22.4353549Z"
+}
