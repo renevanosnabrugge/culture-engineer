@@ -1,0 +1,234 @@
+{
+  "projectId": "xk5gdi38n4",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "3",
+          "subTotal": "4"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 50,
+          "sessionsWithoutMetricPercentage": 50,
+          "pagesViews": "4",
+          "subTotal": "4"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "2",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 68.86
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "2",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "2",
+          "pagesPerSessionPercentage": 3.5
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "60",
+          "activeTime": "59"
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Edge",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "PC",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "Windows",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "You Don’t Have to Choose Between Leadership and Code | René van Osnabrugge",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Inspiration | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Publications | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "About Me | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Presentations & Conferences | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": "https://culture-engineers.nl/presentations/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://www.linkedin.com/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/inspiration/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/about/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/publications/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/07/22/using-ai-coding-agents/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/blog/2026/07/22/using-ai-coding-agents/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/presentations/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/about/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/publications/",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ],
+  "collectedAt": "2026-08-13T06:25:30.2959691Z",
+  "targetDate": "2026-08-12"
+}
