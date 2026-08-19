@@ -3,7 +3,7 @@ layout: post
 title: "If You Want to Become an IT Company, You Need to Behave Like One"
 date: 2026-08-19 09:00:00 +0200
 tags: [engineering-culture, leadership, transformation, AI, strategy]
-image: "/assets/images/explaining-the-engineering-culture-model.png"
+image: "/assets/images/engineering-culture-model.png"
 image_prompt: "Abstract portrait illustration of a compass rose with eight arms rendered as architectural blueprints, each arm transitioning from a rough sketch into a polished structure, deep blue and copper palette, no text, 1024x1536 portrait format, geometric-conceptual style"
 excerpt: >
   A few years ago, a colleague and I spent a day walking through a city, trying to answer one simple question: what do we actually do? The answer turned into a model. And it has never been more relevant than right now.
