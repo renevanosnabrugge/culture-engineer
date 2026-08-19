@@ -7,7 +7,7 @@ image: "/assets/images/explaining-the-engineering-culture-model.png"
 image_prompt: "Abstract portrait illustration of a compass rose with eight arms rendered as architectural blueprints, each arm transitioning from a rough sketch into a polished structure, deep blue and copper palette, no text, 1024x1536 portrait format, geometric-conceptual style"
 excerpt: >
   A few years ago, a colleague and I spent a day walking through a city, trying to answer one simple question: what do we actually do? The answer turned into a model. And it has never been more relevant than right now.
-published: false
+published: true
 ---
 
 > Some colleagues tease me about it. "You probably have a model for that," they say and honestly, they are not wrong.
