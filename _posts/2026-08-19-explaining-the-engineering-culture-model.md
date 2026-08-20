@@ -61,3 +61,10 @@ Then ask: what sequence makes sense? Not all eight at once, not in a rigid order
 That is the move. Not more technology. Not a faster sprint cadence. A clear picture of all eight dimensions, an honest read on where you are, and a deliberate choice about where to start.
 
 You probably have a model for that, they say. And in this case, I do. I hope it is useful.
+
+## Extra links
+I wrote quite a lot about this for my company [Xebia](https://xebia.com/). You can find more about the Engineering Culture Model in these posts:
+
+- https://xebia.com/blog/together-we-build-an-engineering-culture/
+- https://pages.xebia.com/misconceptions-about-engineering-culture-ebook
+- https://pages.xebia.com/engineering-culture-ebook
