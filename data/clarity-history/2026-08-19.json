@@ -1,0 +1,294 @@
+{
+  "projectId": "xk5gdi38n4",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "12",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "12",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "12",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "12",
+          "sessionsWithMetricPercentage": 8.33,
+          "sessionsWithoutMetricPercentage": 91.67,
+          "pagesViews": "9",
+          "subTotal": "9"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "12",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "12",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 51.47
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "12",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "18",
+          "pagesPerSessionPercentage": 3.1666666666666665
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "318",
+          "activeTime": "83"
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Chrome",
+          "sessionsCount": "6"
+        },
+        {
+          "name": "MobileSafari",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "ChromeMobile",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Edge",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "PC",
+          "sessionsCount": 7
+        },
+        {
+          "name": "Mobile",
+          "sessionsCount": 5
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "Windows",
+          "sessionsCount": "7"
+        },
+        {
+          "name": "IOS",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "Android",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": "8"
+        },
+        {
+          "name": "United States",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "Germany",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "If You Want to Become an IT Company, You Need to Behave Like One | René van Osnabrugge",
+          "sessionsCount": "10"
+        },
+        {
+          "name": "Engineering Culture Model | René van Osnabrugge",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Home | René van Osnabrugge",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Inspiration | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Presentations & Conferences | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "You Don’t Have to Choose Between Leadership and Code | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": "https://www.linkedin.com/",
+          "sessionsCount": "6"
+        },
+        {
+          "name": null,
+          "sessionsCount": "4"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/08/19/explaining-the-engineering-culture-model/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "android-app://com.linkedin.android/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://culture-engineers.nl/inspiration/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/inspiration/models/engineering-culture-model/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/07/22/using-ai-coding-agents/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/blog/2026/08/19/explaining-the-engineering-culture-model/",
+          "visitsCount": "11"
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/models/engineering-culture-model/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/07/22/using-ai-coding-agents/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "http://localhost:4000/blog/2026/08/19/explaining-the-engineering-culture-model/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "http://localhost:4000/blog/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://Electron",
+          "visitsCount": "1"
+        },
+        {
+          "url": "http://localhost:4000/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/presentations/",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ],
+  "collectedAt": "2026-08-20T06:04:57.5218709Z",
+  "targetDate": "2026-08-19"
+}
