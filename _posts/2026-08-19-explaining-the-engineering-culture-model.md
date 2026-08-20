@@ -65,6 +65,6 @@ You probably have a model for that, they say. And in this case, I do. I hope it 
 ## Extra links
 I wrote quite a lot about this for my company [Xebia](https://xebia.com/). You can find more about the Engineering Culture Model in these posts:
 
-- https://xebia.com/blog/together-we-build-an-engineering-culture/
-- https://pages.xebia.com/misconceptions-about-engineering-culture-ebook
-- https://pages.xebia.com/engineering-culture-ebook
+- [Together We Build an Engineering Culture](https://xebia.com/blog/together-we-build-an-engineering-culture/)
+- [Misconceptions About Engineering Culture](https://pages.xebia.com/misconceptions-about-engineering-culture-ebook)
+- [Engineering Culture Ebook](https://pages.xebia.com/engineering-culture-ebook)
