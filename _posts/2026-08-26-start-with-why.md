@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The One Question That Changes Every Conversation"
+title: "The One Question That Changes Every Conversation. Why?"
 date: 2026-08-26 09:00:00 +0200
 tags: [leadership, purpose, communication, strategy, books]
 image: /assets/images/start-with-why.png
