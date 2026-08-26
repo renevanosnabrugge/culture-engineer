@@ -148,7 +148,7 @@ function Add-ToProject {
 
 Write-Host "Reading issue #$IssueNumber..."
 $parentRaw = & gh issue view $IssueNumber --repo $REPO --json number,title,body,url 2>&1
-if ($LASTEXITCODE -ne 0) { Write-Error "Could not read issue #$IssueNumber: $parentRaw" }
+if ($LASTEXITCODE -ne 0) { Write-Error "Could not read issue #${IssueNumber}: $parentRaw" }
 $parent      = $parentRaw | ConvertFrom-Json
 $parentTitle = $parent.title -replace '^\[Content\]\s*', ''
 $parentBody  = $parent.body ?? ''
