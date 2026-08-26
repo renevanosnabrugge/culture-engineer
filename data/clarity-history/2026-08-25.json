@@ -1,0 +1,182 @@
+{
+  "targetDate": "2026-08-25",
+  "collectedAt": "2026-08-26T06:06:04.0395347Z",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": 1,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "1",
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": "1",
+          "subTotal": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": 1,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": 1,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 57
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "1",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "1",
+          "pagesPerSessionPercentage": 2
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": 40,
+          "activeTime": 40
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "MobileSafari",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "Mobile",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "IOS",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "Welcome to Culture Engineers | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Rebuild or Refactor? That is the question! | René van Osnabrugge",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": "https://www.linkedin.com/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/blog/2026/04/09/rebuild-or-refactor-that-is-the-question/",
+          "visitsCount": 1
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "visitsCount": 1
+        }
+      ]
+    }
+  ],
+  "projectId": "xk5gdi38n4"
+}
