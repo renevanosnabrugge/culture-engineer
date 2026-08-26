@@ -199,7 +199,7 @@ Write-Host "PostFile   : $(if ($postFileFieldId) { $postFileFieldId } else { '(n
 
 if (-not $projectId)  { Write-Error "Project #$PROJECT_NUMBER not found. Verify GH_PROJECT_TOKEN has 'project' scope." }
 if (-not $statusFieldId) { Write-Error "No 'Status' field found in project." }
-if (-not $draftOptionId) { Write-Error "No 'To Be Published' option found in Status field." }
+if (-not $draftOptionId) { Write-Error "No 'Draft Posts' option found in Status field. Check the project has a status column named 'Draft Posts'." }
 
 # ── 5. Add issue to project via GraphQL (no gh CLI project scope needed) ──────
 

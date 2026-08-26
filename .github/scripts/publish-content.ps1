@@ -3,11 +3,12 @@
 .SYNOPSIS
 Content Scheduler: publishes content by setting published: true on the publish-date.
 
-Reads [Content] issues labeled content-calendar + approve.
-Each issue contains a CONTENT CALENDAR METADATA block with file path and
-publish-date. When publish-date matches today, sets published: true in the
-content file, commits, pushes (triggers deploy), adds the 'published' label,
-comments with the live URL, and moves the project card to Published.
+Reads Content Calendar project items with Status "To Be Published" and
+Publish Date = today from GitHub Projects. Gets the content file path from
+the "Post File" project field (fallback: CONTENT CALENDAR METADATA block).
+Sets published: true in the content file, commits, pushes (triggers deploy),
+adds the 'published' label, comments with the live URL, and moves the project
+card to Published.
 #>
 
 param()
@@ -158,35 +159,97 @@ function Set-PublishedFlag {
     return $true
 }
 
+# ── project helpers ───────────────────────────────────────────────────────────
+
+function Get-AllProjectItems {
+    $data = Invoke-GHGraphQL -Query @'
+      query($owner: String!, $number: Int!) {
+        user(login: $owner) {
+          projectV2(number: $number) {
+            items(first: 100) {
+              nodes {
+                id
+                fieldValues(first: 20) {
+                  nodes {
+                    ... on ProjectV2ItemFieldSingleSelectValue {
+                      field { ... on ProjectV2SingleSelectField { name } }
+                      name
+                    }
+                    ... on ProjectV2ItemFieldDateValue {
+                      field { ... on ProjectV2Field { name } }
+                      date
+                    }
+                    ... on ProjectV2ItemFieldTextValue {
+                      field { ... on ProjectV2Field { name } }
+                      text
+                    }
+                  }
+                }
+                content {
+                  ... on Issue {
+                    number title body
+                    labels { nodes { name } }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+'@ -Variables @{ owner = $OWNER; number = $PROJECT_NUMBER }
+    return $data?.data.user.projectV2.items.nodes ?? @()
+}
+
+function Get-FieldValue {
+    param([array]$FieldValues, [string]$NamePattern)
+    foreach ($fv in ($FieldValues ?? @())) {
+        if (-not $fv -or -not $fv.field) { continue }
+        if ($fv.field.name -match $NamePattern) {
+            return ($fv.name ?? $fv.date ?? $fv.text)
+        }
+    }
+    return $null
+}
+
 # ── main ─────────────────────────────────────────────────────────────────────
 
 Write-Host "Content Scheduler — $TODAY"
 
-$raw = Invoke-Gh @(
-    'issue', 'list', '--repo', $REPO,
-    '--label', 'content-calendar', '--label', 'approve',
-    '--state', 'open',
-    '--json', 'number,title,labels,body',
-    '--limit', '50'
-)
-$issues = if ($raw) { $raw | ConvertFrom-Json } else { @() }
-Write-Host "Found $($issues.Count) approved calendar issue(s)"
+$allItems = Get-AllProjectItems
+Write-Host "Project items found: $($allItems.Count)"
 
-foreach ($issue in $issues) {
-    $labels = $issue.labels | ForEach-Object { $_.name }
+foreach ($item in $allItems) {
+    if (-not $item.content) { continue }
+    $labels = $item.content.labels.nodes | ForEach-Object { $_.name }
 
-    # Skip already published
-    if ('published' -in $labels) { continue }
+    if ('content-calendar' -notin $labels)                                   { continue }
+    if ('social-post' -in $labels -or $item.content.title -like '[Social *') { continue }
+    if ('published' -in $labels)                                             { continue }
 
-    $meta        = ConvertFrom-Metadata -Body ($issue.body ?? '')
-    $publishDate = $meta['publish-date']
-    $filePath    = $meta['file']
+    $fvs         = $item.fieldValues.nodes ?? @()
+    $status      = Get-FieldValue $fvs '(?i)^status$'
+    $publishDate = Get-FieldValue $fvs '(?i)publish.?date'
+    $filePath    = Get-FieldValue $fvs '(?i)post.?file'
 
-    if (-not $publishDate -or -not $filePath) {
-        Write-Host "  #$($issue.number): missing metadata — skipping"
+    if ($status -notmatch '(?i)to.?be') { continue }
+
+    # Fall back to metadata block if Post File project field is not populated
+    if (-not $filePath) {
+        $meta = ConvertFrom-Metadata -Body ($item.content.body ?? '')
+        $filePath = $meta['file']
+    }
+
+    if (-not $publishDate) {
+        Write-Host "  #$($item.content.number): no Publish Date on project card — skipping"
         continue
     }
     if ($publishDate -ne $TODAY) { continue }
+    if (-not $filePath) {
+        Write-Host "  #$($item.content.number): no Post File on project card — skipping"
+        continue
+    }
+
+    $issue = $item.content
 
     Write-Host ""
     Write-Host "Publishing #$($issue.number): $($issue.title)"
@@ -214,17 +277,7 @@ foreach ($issue in $issues) {
     $postUrl = Get-PostUrl -FilePath $filePath
 
     Invoke-Gh @('issue', 'edit', $issue.number, '--repo', $REPO, '--add-label', 'published')
-
-    # Move project card to Published
     Set-ProjectItemPublished -IssueNumber $issue.number
-
-    if ($postUrl) {
-        # Update post-url in issue body metadata
-        $newBody = $issue.body -replace '(?m)(post-url:)\s*$', "post-url: $postUrl"
-        if ($newBody -ne $issue.body) {
-            Invoke-Gh @('issue', 'edit', $issue.number, '--repo', $REPO, '--body', $newBody)
-        }
-    }
 
     $comment = @"
 ✅ **Published:** $postUrl
