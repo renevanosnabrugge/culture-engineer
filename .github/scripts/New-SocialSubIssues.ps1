@@ -19,9 +19,9 @@ EFFECT:
   - Updates social-N-date lines in the parent issue metadata block.
   - Comments on the parent issue with links to the three new issues.
 
-The LinkedIn poster reads social-N-date from the parent metadata block.
-If you change a date on a project card, also update the matching social-N-date
-line in the [Content] issue body so the poster picks up the change.
+The LinkedIn poster reads the Publish Date from each [Social N] project card.
+Social dates default to publish-date, +7, and +14 days from the [Content]
+project card's Publish Date field.
 
 REQUIRES:
   GH_TOKEN (or GITHUB_TOKEN) -- repo scope (issues: write)
@@ -223,7 +223,58 @@ foreach ($f in $proj.fields.nodes) {
 
 if (-not $script:projectId) { Write-Error "Project #$PROJECT_NUMBER not found. Check GH_PROJECT_TOKEN." }
 
-# ── 4. Ensure required labels exist ──────────────────────────────────────────
+# ── 3a. Resolve Publish Date from project card (overrides metadata block) ──────────
+
+$projDateNode = (Invoke-GHGraphQL -Query @'
+  query($owner: String!, $number: Int!) {
+    user(login: $owner) {
+      projectV2(number: $number) {
+        items(first: 100) {
+          nodes {
+            fieldValues(first: 20) {
+              nodes {
+                ... on ProjectV2ItemFieldDateValue {
+                  field { ... on ProjectV2Field { name } }
+                  date
+                }
+              }
+            }
+            content { ... on Issue { number } }
+          }
+        }
+      }
+    }
+  }
+'@ -Variables @{ owner = $OWNER; number = $PROJECT_NUMBER })?.data.user.projectV2.items.nodes |
+    Where-Object { $_.content.number -eq $IssueNumber } |
+    ForEach-Object { $_.fieldValues.nodes | Where-Object { $_.field.name -match '(?i)publish.?date' } | Select-Object -First 1 } |
+    Select-Object -First 1
+
+if ($projDateNode?.date) { $publishDate = $projDateNode.date }
+
+if (-not $publishDate) {
+    Write-Error "Issue #$IssueNumber has no Publish Date set on the project card.`nSet it on the project board, then re-run this script."
+}
+
+$base = [datetime]::ParseExact($publishDate, 'yyyy-MM-dd', $null)
+$socialDates = @{
+    1 = $base.ToString('yyyy-MM-dd')
+    2 = $base.AddDays(7).ToString('yyyy-MM-dd')
+    3 = $base.AddDays(14).ToString('yyyy-MM-dd')
+}
+
+Write-Host ""
+Write-Host "Publish Date: $publishDate (from project card)"
+Write-Host "Planned social schedule:"
+Write-Host "  Variant 1 ($($VARIANT_LABELS[1])): $($socialDates[1])"
+Write-Host "  Variant 2 ($($VARIANT_LABELS[2])): $($socialDates[2])"
+Write-Host "  Variant 3 ($($VARIANT_LABELS[3])): $($socialDates[3])"
+
+if (-not $Force) {
+    Write-Host ""
+    $ans = Read-Host "Create 3 social cards? [Y/n]"
+    if ($ans -match '^[Nn]') { Write-Host "Aborted."; exit 0 }
+}
 
 foreach ($lbl in @('content-calendar', 'social-post')) {
     $exists = & gh label list --repo $REPO --json name | ConvertFrom-Json | Where-Object name -eq $lbl
@@ -298,9 +349,9 @@ $tmpFile = [System.IO.Path]::GetTempFileName()
 Set-Content $tmpFile $newMeta -Encoding UTF8
 & gh issue edit $parent.number --repo $REPO --body-file $tmpFile | Out-Null
 Remove-Item $tmpFile
-Write-Host "  social-1-date .. social-3-date written to metadata block"
+Write-Host "  social dates written to [Social N] project cards"
 
-# ── 7. Comment on the parent issue with links ─────────────────────────────────
+# Metadata block still updated for backward compat with label-based fallback path
 
 $commentLines = @("Social cards created:")
 foreach ($v in 1..3) {
@@ -309,7 +360,7 @@ foreach ($v in 1..3) {
     }
 }
 $commentLines += ""
-$commentLines += "Set the Publish Date on each card in the project board. If you change a date, also update the matching ``social-$v-date`` line in this issue's metadata block so the LinkedIn poster picks it up."
+$commentLines += "Set the Publish Date on each card in the project board to control when each variant goes out."
 
 & gh issue comment $parent.number --repo $REPO --body ($commentLines -join "`n") | Out-Null
 
