@@ -158,23 +158,8 @@ Write-Host "Title: $parentTitle"
 
 # ── 2. Validate and calculate social dates ────────────────────────────────────
 
-$publishDate = $meta['publish-date']
-if (-not $publishDate -or $publishDate -eq 'YYYY-MM-DD') {
-    Write-Error "Issue #$IssueNumber has no publish-date in its metadata block.`nSet it first, then re-run this script."
-}
-
-$base = [datetime]::ParseExact($publishDate, 'yyyy-MM-dd', $null)
-$socialDates = @{
-    1 = if ($meta['social-1-date']) { $meta['social-1-date'] } else { $base.ToString('yyyy-MM-dd') }
-    2 = if ($meta['social-2-date']) { $meta['social-2-date'] } else { $base.AddDays(7).ToString('yyyy-MM-dd') }
-    3 = if ($meta['social-3-date']) { $meta['social-3-date'] } else { $base.AddDays(14).ToString('yyyy-MM-dd') }
-}
-
-Write-Host ""
-Write-Host "Planned social schedule:"
-Write-Host "  Variant 1 ($($VARIANT_LABELS[1])): $($socialDates[1])"
-Write-Host "  Variant 2 ($($VARIANT_LABELS[2])): $($socialDates[2])"
-Write-Host "  Variant 3 ($($VARIANT_LABELS[3])): $($socialDates[3])"
+$publishDate = $null
+$socialDates = @{ 1 = $null; 2 = $null; 3 = $null }
 
 if (-not $Force) {
     Write-Host ""
@@ -222,59 +207,6 @@ foreach ($f in $proj.fields.nodes) {
 }
 
 if (-not $script:projectId) { Write-Error "Project #$PROJECT_NUMBER not found. Check GH_PROJECT_TOKEN." }
-
-# ── 3a. Resolve Publish Date from project card (overrides metadata block) ──────────
-
-$projDateNode = (Invoke-GHGraphQL -Query @'
-  query($owner: String!, $number: Int!) {
-    user(login: $owner) {
-      projectV2(number: $number) {
-        items(first: 100) {
-          nodes {
-            fieldValues(first: 20) {
-              nodes {
-                ... on ProjectV2ItemFieldDateValue {
-                  field { ... on ProjectV2Field { name } }
-                  date
-                }
-              }
-            }
-            content { ... on Issue { number } }
-          }
-        }
-      }
-    }
-  }
-'@ -Variables @{ owner = $OWNER; number = $PROJECT_NUMBER })?.data.user.projectV2.items.nodes |
-    Where-Object { $_.content.number -eq $IssueNumber } |
-    ForEach-Object { $_.fieldValues.nodes | Where-Object { $_.field.name -match '(?i)publish.?date' } | Select-Object -First 1 } |
-    Select-Object -First 1
-
-if ($projDateNode?.date) { $publishDate = $projDateNode.date }
-
-if (-not $publishDate) {
-    Write-Error "Issue #$IssueNumber has no Publish Date set on the project card.`nSet it on the project board, then re-run this script."
-}
-
-$base = [datetime]::ParseExact($publishDate, 'yyyy-MM-dd', $null)
-$socialDates = @{
-    1 = $base.ToString('yyyy-MM-dd')
-    2 = $base.AddDays(7).ToString('yyyy-MM-dd')
-    3 = $base.AddDays(14).ToString('yyyy-MM-dd')
-}
-
-Write-Host ""
-Write-Host "Publish Date: $publishDate (from project card)"
-Write-Host "Planned social schedule:"
-Write-Host "  Variant 1 ($($VARIANT_LABELS[1])): $($socialDates[1])"
-Write-Host "  Variant 2 ($($VARIANT_LABELS[2])): $($socialDates[2])"
-Write-Host "  Variant 3 ($($VARIANT_LABELS[3])): $($socialDates[3])"
-
-if (-not $Force) {
-    Write-Host ""
-    $ans = Read-Host "Create 3 social cards? [Y/n]"
-    if ($ans -match '^[Nn]') { Write-Host "Aborted."; exit 0 }
-}
 
 foreach ($lbl in @('content-calendar', 'social-post')) {
     $exists = & gh label list --repo $REPO --json name | ConvertFrom-Json | Where-Object name -eq $lbl
