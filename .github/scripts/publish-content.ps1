@@ -3,12 +3,11 @@
 .SYNOPSIS
 Content Scheduler: publishes content by setting published: true on the publish-date.
 
-Handles two issue formats:
-  NEW  - issues titled "[Post] <Title>" labeled content-calendar + approve
-  OLD  - issues labeled content-calendar + approve with a CONTENT CALENDAR METADATA block
-
-Sets published: true in the content file, commits, pushes (triggers deploy),
-adds the 'published' label, and comments with the live URL.
+Reads [Content] issues labeled content-calendar + approve.
+Each issue contains a CONTENT CALENDAR METADATA block with file path and
+publish-date. When publish-date matches today, sets published: true in the
+content file, commits, pushes (triggers deploy), adds the 'published' label,
+comments with the live URL, and moves the project card to Published.
 #>
 
 param()
@@ -176,8 +175,6 @@ Write-Host "Found $($issues.Count) approved calendar issue(s)"
 foreach ($issue in $issues) {
     $labels = $issue.labels | ForEach-Object { $_.name }
 
-    # Skip social sub-issues — those are handled by post-to-linkedin.ps1
-    if ($issue.title -match '^\[Social') { continue }
     # Skip already published
     if ('published' -in $labels) { continue }
 

@@ -123,45 +123,36 @@ All content is driven by GitHub Issues + the **Content Calendar project (#9)**. 
 
 ---
 
-#### Step 1 — Create a draft card
+#### Step 1 — Create content
 
-Every post needs a draft card in the project's **Draft Posts** column. Two ways to create one:
+**A. New content (agentic workflow):**
+Create a GitHub issue with label `blogpost`, `book`, or `model`. The agent writes the post, reviews it, generates a social pack and hero image, opens a PR, and creates a `[Content]` tracking issue with LinkedIn variants in the body — all added to the project in **To Be Published**.
 
-**A. Via script (existing or new content file):**
+**B. Existing content (agentic workflow):**
+Create a GitHub issue with label `existingcontent` and include the file path. The agent generates a social pack and creates the tracking issue.
+
+**C. Via script (manual):**
 ```powershell
-# Creates a [Post] issue, adds it to the project in "Draft Posts", and sets the Post File field
+# Creates a [Content] issue, adds it to the project in "To Be Published", and sets the Post File field
 pwsh .github/scripts/New-DraftCard.ps1 -FilePath "_posts/2026-07-20-my-post.md"
 
 # Optionally set the publish date right away
 pwsh .github/scripts/New-DraftCard.ps1 -FilePath "_posts/2026-07-20-my-post.md" -PublishDate "2026-07-28"
 ```
 
-**B. Via agentic workflow:**
-The write/schedule agents call `New-DraftCard.ps1` automatically after creating the post file.
-
 > **Project setup (one-time):** Add a TEXT field named **`Post File`** in the project settings
 > (Project → ⋯ → Settings → Fields → + Add field → Text). The script will warn but still work without it.
 
 ---
 
-#### Step 2 — Set publish date + move to "To Be Published"
+#### Step 2 — Set publish date
 
-1. Open the draft card in the project, set the **Publish Date** field
-2. Drag the card to the **To Be Published** column
+Set the **Publish Date** field on the project card. Social dates are calculated automatically:
+- Variant 1 → publish date
+- Variant 2 → publish date + 7 days
+- Variant 3 → publish date + 14 days
 
-Within ~1 hour (or immediately on `workflow_dispatch`), `project-transition.yml` will:
-- Read the social pack file from `drafts/` (e.g. `2026-07-20-my-post-social.md`)
-- Create **[Social 1]**, **[Social 2]**, **[Social 3]** sub-issues with variant text + dates
-- Add all items to the project with their dates
-- Add the `approve` label to activate automation
-
-To trigger immediately or re-run for a specific issue:
-```powershell
-# Run locally
-pwsh .github/scripts/New-SocialSubIssues.ps1 -IssueNumber 42
-
-# Or trigger via GitHub Actions → Project Transition → Run workflow
-```
+Edit the LinkedIn variant sections in the issue body to customize the text before posting.
 
 ---
 
@@ -170,9 +161,9 @@ pwsh .github/scripts/New-SocialSubIssues.ps1 -IssueNumber 42
 | Workflow | What it does |
 |---|---|
 | `content-scheduler` | Sets `published: true` on the post file when `publish-date` = today; moves project card to **Published** |
-| `linkedin-poster` | Posts the LinkedIn variant on its scheduled date (publish day, +7 days, +14 days) |
+| `linkedin-poster` | Posts each LinkedIn variant from the issue body on its scheduled date |
 
-Remove the `approve` label from any sub-issue to pause it without affecting the others.
+Remove the `approve` label from the tracking issue to pause all automation for it.
 
 ---
 
@@ -181,9 +172,9 @@ Remove the `approve` label from any sub-issue to pause it without affecting the 
 | Label | Purpose |
 |---|---|
 | `blogpost` | Triggers the full write + schedule agent pipeline |
-| `schedule-content` | Triggers schedule-only pipeline (existing content) |
+| `existingcontent` | Triggers schedule-only pipeline (existing content) |
 | `content-calendar` | Marks issues managed by the content automation |
-| `approve` | Activates a sub-issue for automated publishing/posting |
+| `approve` | Activates automation (publishing + LinkedIn posting) |
 | `published` | Added after a post goes live |
 
 ### Adding a presentation

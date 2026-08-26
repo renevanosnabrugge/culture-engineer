@@ -2,9 +2,9 @@
 name: schedule-existing-content
 description: >
   Schedule an already-written post, book, or model for publishing and
-  LinkedIn distribution — without re-writing. Reads the file, generates
-  a social pack and hero image, creates the full content calendar issue
-  structure, and adds everything to the GitHub Project.
+  LinkedIn distribution -- without re-writing. Reads the file, generates
+  a social pack and hero image, creates a single [Content] tracking issue
+  with social variants in the body, and adds it to the GitHub Project.
 ---
 
 # Schedule Existing Content Skill
@@ -41,18 +41,18 @@ the repository by reading it via the GitHub API or bash. If it cannot be
 found, comment on the issue with a clear error and stop.
 
 Determine content type from path:
-- `_posts/` → `blog`
-- `_books/` → `book`
-- `_models/` → `model`
+- `_posts/` -> `blog`
+- `_books/` -> `book`
+- `_models/` -> `model`
 
 Derive the slug from the filename (strip the `YYYY-MM-DD-` prefix and `.md`).
 
 ### 2. Generate social pack
 
 Derive the canonical URL for the content from the file path:
-- `_posts/YYYY-MM-DD-slug.md` → `https://culture-engineers.nl/blog/YYYY/MM/DD/slug/`
-- `_books/slug.md` → `https://culture-engineers.nl/inspiration/books/slug/`
-- `_models/slug.md` → `https://culture-engineers.nl/inspiration/models/slug/`
+- `_posts/YYYY-MM-DD-slug.md` -> `https://culture-engineers.nl/blog/YYYY/MM/DD/slug/`
+- `_books/slug.md` -> `https://culture-engineers.nl/inspiration/books/slug/`
+- `_models/slug.md` -> `https://culture-engineers.nl/inspiration/models/slug/`
 
 Run `.github/skills/social-pack/SKILL.md` against the file content,
 passing the derived URL so each variant ends with the correct link.
@@ -71,7 +71,7 @@ path (not empty). If the image is missing:
    pwsh scripts/generate-image.ps1 -Prompt "<image prompt>" -Slug "<slug>"
    ```
 3. If the script succeeds, note the image path. If it fails, continue
-   without an image — log the error in the main issue body.
+   without an image -- log the error in the main issue body.
 
 ### 4. Open a pull request
 
@@ -85,48 +85,71 @@ PR title: `[schedule] <post title>`
 
 PR description must include:
 - Link to the trigger issue
-- All three LinkedIn variants inline under `## 📱 Social Pack`
-- The image prompt under `## 🎨 Image Prompt`
-- A note: "Post is already written — this PR only adds the social pack
+- All three LinkedIn variants inline under `## Social Pack`
+- The image prompt under `## Image Prompt`
+- A note: "Post is already written -- this PR only adds the social pack
   and image. Merge when ready."
 
 If no files changed (image already existed, social pack already exists),
 skip the PR and note that in the comment.
 
-### 5. Create content calendar issue structure
+### 5. Create content calendar tracking issue
 
-Follow the same steps as in `.github/workflows/blogpost-request.md`
-step 9 (a–f), using the data resolved above:
+Create a single `[Content] <Post Title>` tracking issue with social
+variants in the body. Use the `create-calendar-card` safe-output job
+(defined in the workflow) with:
 
-a. Ensure labels `content`, `content-calendar`, `content-type:<type>`,
-   `scheduled` exist in the repo.
+- `title`: `[Content] <Post Title>`
+- `labels`: `content-calendar,content-type:<type>,approve`
+- `post_file`: the content file path
+- `body` (exact format):
+  ```
+  <!-- CONTENT CALENDAR METADATA
+  file: <content file path>
+  type: <blog | book | model>
+  publish-date: YYYY-MM-DD
+  image: <image path if known, otherwise leave empty>
+  post-url:
+  -->
 
-b. Create the main `[Content] <Post Title>` tracking issue:
-   - Labels: `content`, `content-type:<type>`
-   - Body with links to: trigger issue, PR (if opened), file path
-   - `<!-- publish-date: YYYY-MM-DD -->` placeholder
+  ## Content Tracking
 
-c. Create 4 sub-issues:
-   - `[Post] <Title>` — body: file path + PR link; label: `content-calendar`
-   - `[Social 1] <Title>` — body: Contrarian hook variant; label: `content-calendar`
-   - `[Social 2] <Title>` — body: Story format variant; label: `content-calendar`
-   - `[Social 3] <Title>` — body: Question format variant; label: `content-calendar`
+  | Field | Value |
+  |-------|-------|
+  | Trigger issue | #<original issue number> |
+  | Pull Request  | <PR URL or "N/A"> |
+  | Draft file    | `<file path>` |
+  | Content type  | <blog | book | model> |
 
-d. Add all 5 issues to the GitHub Project #9 in "Draft Posts":
-   ```
-   pwsh .github/scripts/add-to-project.ps1 <url1> <url2> <url3> <url4> <url5>
-   ```
+  > Set the **Publish Date** in the project board, then the content
+  > scheduler and LinkedIn poster will handle the rest automatically.
 
-e. Comment on the main tracking issue with the sub-issue checklist and
-   instructions for setting the publish date.
+  ## LinkedIn -- Variant 1 (Contrarian hook)
+
+  <variant 1 text from social pack>
+
+  ---
+
+  ## LinkedIn -- Variant 2 (Story format)
+
+  <variant 2 text from social pack>
+
+  ---
+
+  ## LinkedIn -- Variant 3 (Question format)
+
+  <variant 3 text from social pack>
+  ```
+
+The job adds the issue to GitHub Project #9 in "To Be Published" status.
 
 ### 6. Comment on the trigger issue
 
 Add a single comment with:
-- Link to the main `[Content]` tracking issue
+- Link to the `[Content]` tracking issue
 - Link to the PR (if created)
-- Reminder: "Edit the publish date in the [Content] issue body, then add
-  the `scheduled` label to set all dates automatically."
+- Reminder: "Set the publish date in the project board. The content
+  scheduler and LinkedIn poster will handle the rest automatically."
 
 ---
 
@@ -134,7 +157,7 @@ Add a single comment with:
 
 - Never call the LinkedIn API directly.
 - Never push directly to `main`.
-- The `GH_PROJECT_TOKEN` secret must be set — it is injected via the
+- The `GH_PROJECT_TOKEN` secret must be set -- it is injected via the
   workflow for the `add-to-project.ps1` call.
 - If `published: true` is already set in the front matter, stop and
   comment: "This post is already published. Nothing to schedule."
