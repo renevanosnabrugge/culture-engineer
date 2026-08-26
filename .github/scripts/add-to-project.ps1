@@ -20,8 +20,8 @@ REQUIRES:
 #>
 
 param(
-    [string]$Status = 'To Be Published',
-    [string]$PublishDate = '',
+    [string]$Status = 'Draft',
+    [string]$PublishDate = '',,
     [string]$PostFile = '',
     [Parameter(Mandatory, ValueFromRemainingArguments)]
     [string[]]$IssueUrls

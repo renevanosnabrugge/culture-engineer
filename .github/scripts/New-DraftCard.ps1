@@ -179,7 +179,7 @@ foreach ($f in $proj.fields.nodes) {
     switch -Wildcard ($n) {
         'status' {
             $statusFieldId = $f.id
-            $opt = $f.options | Where-Object { $_.name -match '(?i)to.?be' } | Select-Object -First 1
+            $opt = $f.options | Where-Object { $_.name -match '(?i)draft' } | Select-Object -First 1
             if ($opt) { $draftOptionId = $opt.id }
         }
         { $_ -like '*publish*' -and $f.__typename -eq 'ProjectV2Field' -and $f.dataType -eq 'DATE' } {

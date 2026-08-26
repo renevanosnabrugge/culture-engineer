@@ -55,6 +55,29 @@ function Invoke-Gh {
     return $out -join "`n"
 }
 
+# Ensures the content file is published (published: true) before socials go out,
+# so every LinkedIn link resolves immediately.
+function Set-ContentPublished {
+    param([string]$FilePath)
+    if (-not $FilePath) { return }
+    if (-not (Test-Path $FilePath)) {
+        Write-Host "  Content file not found: '$FilePath' -- skipping publish check"
+        return
+    }
+    $content = Get-Content $FilePath -Raw
+    if ($content -match 'published:\s*true') { return }  # already live
+    if ($content -notmatch 'published:\s*false') { return }  # no field, skip
+    Write-Host "  Content not yet published -- setting published: true in $FilePath"
+    $updated = $content -replace 'published:\s*false', 'published: true'
+    Set-Content $FilePath $updated -NoNewline
+    git config user.email "github-actions[bot]@users.noreply.github.com" 2>$null
+    git config user.name  "github-actions[bot]" 2>$null
+    git add $FilePath
+    git commit -m "chore: publish $FilePath before LinkedIn post [skip ci]"
+    git push
+    Write-Host "  Committed published: true for $FilePath"
+}
+
 function ConvertFrom-Metadata {
     param([string]$Body)
     $meta = @{}
@@ -93,6 +116,8 @@ function Get-VariantText {
 
 function Invoke-ImageUpload {
     param([string]$ImagePath)
+    # Strip leading slash so the path resolves correctly from the repo root
+    if ($ImagePath) { $ImagePath = $ImagePath.TrimStart('/') }
     if (-not $ImagePath -or -not (Test-Path $ImagePath)) {
         Write-Host "  Image not found: '$ImagePath' -- posting without image"
         return $null
@@ -192,9 +217,6 @@ function Invoke-IssuePost {
     $num     = [string]$Issue.number
     $meta    = ConvertFrom-Metadata -Body $body
 
-    # Skip already-published issues
-    if ('published' -in $labels) { return }
-
     # Must have a publish-date to determine social dates
     if (-not $meta['publish-date']) {
         Write-Host "  #${num}: no publish-date in metadata -- skipping"
@@ -218,12 +240,24 @@ function Invoke-IssuePost {
     Write-Host ""
     Write-Host "Issue #${num}: $($Issue.title) -- variants: $($variantsToPost -join ',')"
 
+    # Ensure the content file is live before any social link goes out
+    Set-ContentPublished -FilePath $meta['file']
+
+    # Normalize image path and warn if missing
+    $imagePath = $meta['image']
+    if ($imagePath) { $imagePath = $imagePath.TrimStart('/') }
+    if (-not $imagePath -or -not (Test-Path $imagePath)) {
+        $warnMsg = "⚠️ LinkedIn Variant(s) will post **without an image** — no image found at ``$($meta['image'])``. Add an image and update the ``image:`` field in the metadata block."
+        Write-Host "  WARNING: $warnMsg"
+        Invoke-Gh @('issue', 'comment', $num, '--repo', $REPO, '--body', $warnMsg)
+    }
+
     foreach ($v in $variantsToPost) {
         $text = Get-VariantText -Body $body -N $v
         if (-not $text) { Write-Host "  Variant ${v}: no text -- skipping"; continue }
 
         Write-Host "  Posting variant ${v}..."
-        $ok, $resp = Invoke-LinkedInPost -Text $text -ImagePath $meta['image'] -PostUrl $meta['post-url']
+        $ok, $resp = Invoke-LinkedInPost -Text $text -ImagePath $imagePath -PostUrl $meta['post-url']
 
         if ($ok) {
             Invoke-Gh @('issue', 'edit', $num, '--repo', $REPO, '--add-label', "social-$v-posted")

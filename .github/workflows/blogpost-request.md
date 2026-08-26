@@ -89,7 +89,7 @@ safe-outputs:
               Write-Host "Image file not found at $imagePath after generation, skipping commit."
             }
     create-calendar-card:
-      description: "Create a content calendar tracking issue with social variants in the body, add it to the GitHub Project in To Be Published status"
+      description: "Create a content calendar tracking issue with placeholder variant sections, add it to the GitHub Project in Draft status"
       runs-on: ubuntu-latest
       permissions:
         contents: read
@@ -145,10 +145,38 @@ safe-outputs:
             }
             Write-Host "Issue created: $issueUrl"
 
+            # Store issue number as output for the social-cards job
+            $issueNumber = [int]($issueUrl -replace '.+/issues/(\d+)$', '$1')
+            "TRACKING_ISSUE_NUMBER=$issueNumber" | Out-File -Append $env:GITHUB_ENV
+
             # Add to project in "To Be Published" status with optional file path
             $addArgs = @()
             if ($item.post_file) { $addArgs += '-PostFile'; $addArgs += $item.post_file }
             pwsh .github/scripts/add-to-project.ps1 @addArgs $issueUrl
+    create-social-cards:
+      description: "Create three [Social N] project cards (one per LinkedIn variant) under the [Content] tracking issue, so each can be scheduled independently on the project board."
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+        issues: write
+      inputs:
+        issue_number:
+          description: "The [Content] tracking issue number"
+          required: true
+          type: number
+      steps:
+        - uses: actions/checkout@v4
+        - name: Create social sub-issues
+          shell: pwsh
+          env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GH_PROJECT_TOKEN: ${{ secrets.GH_PROJECT_TOKEN }}
+            GITHUB_REPOSITORY: ${{ github.repository }}
+          run: |
+            $data = Get-Content $env:GH_AW_AGENT_OUTPUT | ConvertFrom-Json
+            $item = $data.items | Where-Object type -eq 'create_social_cards' | Select-Object -First 1
+            if (-not $item) { Write-Host "No create-social-cards payload found."; exit 0 }
+            pwsh .github/scripts/New-SocialSubIssues.ps1 -IssueNumber $item.issue_number -Force
 timeout-minutes: 30
 tracker-id: blogpost-pipeline
 ---
@@ -221,6 +249,8 @@ already state a clear topic.
 6. Move the finished post into `_posts/` with correct Jekyll front matter
    per `.github/skills/publish-jekyll/SKILL.md` — skip any git push step,
    the safe-outputs PR mechanism handles that.
+   **Always set `published: false`** in the front matter. Never set it to
+   `true` — the content scheduler sets it to `true` on the publish date.
 
 7. Run `.github/skills/social-pack/SKILL.md` against the finished post,
    saving output as `drafts/social-<post-slug>.md`.
@@ -268,11 +298,7 @@ already state a clear topic.
       - `book`  — book summary (file in `_books/`)
       - `model` — model page (file in `_models/`)
 
-   c. **Read the social pack** from `drafts/social-<post-slug>.md` and
-      extract the three LinkedIn variants. You will include them in the
-      issue body.
-
-   d. **Create the tracking issue and add it to the project** by calling
+   c. **Create the tracking issue and add it to the project** by calling
       the `create-calendar-card` safe-output job with these exact fields:
       - `title`: `[Content] <Post Title>`
       - `labels`: `content-calendar,content-type:<type>,approve`
@@ -301,24 +327,31 @@ already state a clear topic.
 
         ## LinkedIn — Variant 1 (Contrarian hook)
 
-        <variant 1 text from social pack>
+        <!-- Add LinkedIn variant text here -->
 
         ---
 
         ## LinkedIn — Variant 2 (Story format)
 
-        <variant 2 text from social pack>
+        <!-- Add LinkedIn variant text here -->
 
         ---
 
         ## LinkedIn — Variant 3 (Question format)
 
-        <variant 3 text from social pack>
+        <!-- Add LinkedIn variant text here -->
         ```
 
       The `create-calendar-card` job will create the issue AND add it to
       the GitHub Project #9 in "To Be Published" status automatically.
       Do NOT call `gh issue create` or `add-to-project.ps1` separately.
+
+   d. **Immediately after the tracking issue is created**, call the
+      `create-social-cards` safe-output job with:
+      - `issue_number`: the number of the `[Content]` issue just created
+
+      This creates three `[Social N]` project cards (one per LinkedIn variant)
+      so René can set the scheduled date for each variant on the project board.
 
    e. **Comment on the main tracking issue** with:
       ```

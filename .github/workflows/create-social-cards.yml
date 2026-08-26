@@ -1,0 +1,27 @@
+name: Create Social Cards
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: '[Content] tracking issue number'
+        required: true
+        type: number
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  create-social-cards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create social sub-issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PROJECT_TOKEN: ${{ secrets.GH_PROJECT_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          pwsh .github/scripts/New-SocialSubIssues.ps1 -IssueNumber ${{ inputs.issue_number }} -Force
