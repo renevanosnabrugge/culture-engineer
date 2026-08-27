@@ -1,0 +1,202 @@
+{
+  "targetDate": "2026-08-26",
+  "collectedAt": "2026-08-27T08:56:39.5659712Z",
+  "projectId": "xk5gdi38n4",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": 5,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": 5,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "5",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "5",
+          "sessionsWithMetricPercentage": 20,
+          "sessionsWithoutMetricPercentage": 80,
+          "pagesViews": "1",
+          "subTotal": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": 5,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "5",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 47.57
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "5",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "4",
+          "pagesPerSessionPercentage": 1.5
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "456",
+          "activeTime": "167"
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Edge",
+          "sessionsCount": 5
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "PC",
+          "sessionsCount": "5"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "Windows",
+          "sessionsCount": "5"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": "5"
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "The One Question That Changes Every Conversation | René van Osnabrugge",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "If You Want to Become an IT Company, You Need to Behave Like One | René van Osnabrugge",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": "https://culture-engineers.nl/blog/",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "https://github.com/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://www.linkedin.com/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/08/19/explaining-the-engineering-culture-model/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/blog/2026/08/19/explaining-the-engineering-culture-model/",
+          "visitsCount": "3"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/08/26/start-with-why/",
+          "visitsCount": "3"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ]
+}
