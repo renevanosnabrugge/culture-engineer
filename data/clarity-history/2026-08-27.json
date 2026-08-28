@@ -1,0 +1,222 @@
+{
+  "targetDate": "2026-08-27",
+  "collectedAt": "2026-08-28T08:58:47.0136703Z",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 33.33,
+          "sessionsWithoutMetricPercentage": 66.67,
+          "pagesViews": "1",
+          "subTotal": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": 3,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "3",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 49.5
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "3",
+          "totalBotSessionCount": "1",
+          "distinctUserCount": "3",
+          "pagesPerSessionPercentage": 2.25
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": 227,
+          "activeTime": 61
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "ChromeMobile",
+          "sessionsCount": 2
+        },
+        {
+          "name": "Edge",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "Mobile",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "PC",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "Android",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "Windows",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": 3
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": 3
+        },
+        {
+          "name": "Welcome to Culture Engineers | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "The One Question That Changes Every Conversation. Why? | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "Home | René van Osnabrugge",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": null,
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "android-app://com.linkedin.android/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/blog/",
+          "visitsCount": "3"
+        },
+        {
+          "url": "https://culture-engineers.nl/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/08/26/start-with-why/",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ],
+  "projectId": "xk5gdi38n4"
+}
