@@ -1,0 +1,246 @@
+{
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": 10,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": 10,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": "10",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": 10,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "10",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": "10",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 51.82
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": "10",
+          "totalBotSessionCount": "0",
+          "distinctUserCount": "10",
+          "pagesPerSessionPercentage": 1.1
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": "123",
+          "activeTime": "73"
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Chrome",
+          "sessionsCount": "5"
+        },
+        {
+          "name": "EdgeMobile",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "MobileSafari",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "ChromeMobile",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "Mobile",
+          "sessionsCount": "5"
+        },
+        {
+          "name": "PC",
+          "sessionsCount": "5"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "IOS",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "Windows",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "Android",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Linux",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "United States",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "France",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "India",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "The One Question That Changes Every Conversation. Why? | René van Osnabrugge",
+          "sessionsCount": 6
+        },
+        {
+          "name": "Home | René van Osnabrugge",
+          "sessionsCount": 2
+        },
+        {
+          "name": "Presentations & Conferences | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": null,
+          "sessionsCount": "4"
+        },
+        {
+          "name": "https://www.linkedin.com/",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/blog/2026/08/26/start-with-why/",
+          "visitsCount": "6"
+        },
+        {
+          "url": "https://culture-engineers.nl/",
+          "visitsCount": "2"
+        },
+        {
+          "url": "https://culture-engineers.nl/presentations/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ],
+  "projectId": "xk5gdi38n4",
+  "targetDate": "2026-08-28",
+  "collectedAt": "2026-08-29T06:01:13.8476743Z"
+}
