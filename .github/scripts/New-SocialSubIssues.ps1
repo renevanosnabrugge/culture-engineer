@@ -247,18 +247,21 @@ $parentItem = $parentItemData?.data.user.projectV2.items.nodes |
     Select-Object -First 1
 if ($parentItem) {
     $publishDate = Get-ProjectFieldValue -FieldValues $parentItem.fieldValues.nodes -NamePattern '(?i)publish.?date'
+} else {
+    Write-Warning "Project card for #$IssueNumber was not found; falling back to issue metadata."
 }
 if (-not $publishDate) { $publishDate = $meta['publish-date'] }
 if (-not $publishDate -or $publishDate -eq 'YYYY-MM-DD') {
     Write-Error "No Publish Date found on project card for #$IssueNumber. Set it in the GitHub Project before creating social cards."
 }
 try {
-    $publishDate = [datetime]::ParseExact($publishDate, 'yyyy-MM-dd', $null).ToString('yyyy-MM-dd')
+    $publishDateValue = [datetime]::ParseExact($publishDate, 'yyyy-MM-dd', $null)
+    $publishDate = $publishDateValue.ToString('yyyy-MM-dd')
 } catch {
     Write-Error "Invalid Publish Date '$publishDate' on project card for #$IssueNumber. Use YYYY-MM-DD."
 }
 foreach ($v in 1..3) {
-    $socialDates[$v] = ([datetime]::ParseExact($publishDate, 'yyyy-MM-dd', $null)).AddDays(($v - 1) * 7).ToString('yyyy-MM-dd')
+    $socialDates[$v] = $publishDateValue.AddDays(($v - 1) * 7).ToString('yyyy-MM-dd')
 }
 Write-Host "Parent Publish Date: $publishDate"
 
