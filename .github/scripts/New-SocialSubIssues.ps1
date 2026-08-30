@@ -237,6 +237,14 @@ do {
                   field { ... on ProjectV2Field { name } }
                   date
                 }
+                ... on ProjectV2ItemFieldTextValue {
+                  field { ... on ProjectV2Field { name } }
+                  text
+                }
+                ... on ProjectV2ItemFieldSingleSelectValue {
+                  field { ... on ProjectV2SingleSelectField { name } }
+                  name
+                }
               }
             }
             content { ... on Issue { number } }
