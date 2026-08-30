@@ -84,6 +84,17 @@ function ConvertFrom-Metadata {
     return $meta
 }
 
+function Get-ProjectFieldValue {
+    param([array]$FieldValues, [string]$NamePattern)
+    foreach ($fv in ($FieldValues ?? @())) {
+        if (-not $fv -or -not $fv.field) { continue }
+        if ($fv.field.name -match $NamePattern) {
+            return ($fv.name ?? $fv.date ?? $fv.text)
+        }
+    }
+    return $null
+}
+
 function Get-VariantText {
     param([string]$Body, [int]$N)
     $pattern = "(?s)## LinkedIn[^\n]*Variant $N[^\n]*\n+(.*?)(?=\n---\n|\n## LinkedIn|\z)"
@@ -198,7 +209,7 @@ foreach ($f in $proj.fields.nodes) {
     $n = $f.name.ToLower()
     if ($n -eq 'status') {
         $script:statusFieldId = $f.id
-        $opt = $f.options | Where-Object { $_.name -match '(?i)draft' } | Select-Object -First 1
+        $opt = $f.options | Where-Object { $_.name -match '(?i)to.?be' } | Select-Object -First 1
         if ($opt) { $script:statusOptionId = $opt.id }
     }
     if ($f.__typename -eq 'ProjectV2Field' -and $f.dataType -eq 'DATE' -and $n -like '*publish*') {
@@ -207,6 +218,49 @@ foreach ($f in $proj.fields.nodes) {
 }
 
 if (-not $script:projectId) { Write-Error "Project #$PROJECT_NUMBER not found. Check GH_PROJECT_TOKEN." }
+
+# Read the parent card's Publish Date from the project. Metadata remains a
+# backwards-compatible fallback for cards created before project fields existed.
+$parentItemData = Invoke-GHGraphQL -Query @'
+  query($owner: String!, $number: Int!) {
+    user(login: $owner) {
+      projectV2(number: $number) {
+        items(first: 100) {
+          nodes {
+            fieldValues(first: 20) {
+              nodes {
+                ... on ProjectV2ItemFieldDateValue {
+                  field { ... on ProjectV2Field { name } }
+                  date
+                }
+              }
+            }
+            content { ... on Issue { number } }
+          }
+        }
+      }
+    }
+  }
+'@ -Variables @{ owner = $OWNER; number = $PROJECT_NUMBER }
+$parentItem = $parentItemData?.data.user.projectV2.items.nodes |
+    Where-Object { $_.content.number -eq $IssueNumber } |
+    Select-Object -First 1
+if ($parentItem) {
+    $publishDate = Get-ProjectFieldValue -FieldValues $parentItem.fieldValues.nodes -NamePattern '(?i)publish.?date'
+}
+if (-not $publishDate) { $publishDate = $meta['publish-date'] }
+if (-not $publishDate -or $publishDate -eq 'YYYY-MM-DD') {
+    Write-Error "No Publish Date found on project card for #$IssueNumber. Set it in the GitHub Project before creating social cards."
+}
+try {
+    $publishDate = [datetime]::ParseExact($publishDate, 'yyyy-MM-dd', $null).ToString('yyyy-MM-dd')
+} catch {
+    Write-Error "Invalid Publish Date '$publishDate' on project card for #$IssueNumber. Use YYYY-MM-DD."
+}
+foreach ($v in 1..3) {
+    $socialDates[$v] = ([datetime]::ParseExact($publishDate, 'yyyy-MM-dd', $null)).AddDays(($v - 1) * 7).ToString('yyyy-MM-dd')
+}
+Write-Host "Parent Publish Date: $publishDate"
 
 foreach ($lbl in @('content-calendar', 'social-post')) {
     $exists = & gh label list --repo $REPO --json name | ConvertFrom-Json | Where-Object name -eq $lbl
@@ -264,6 +318,9 @@ Write-Host ""
 Write-Host "Updating parent #$($parent.number) metadata block..."
 
 $newMeta = $parentBody
+if ($newMeta -match '(?m)^publish-date:') {
+    $newMeta = $newMeta -replace '(?m)^publish-date:.*$', "publish-date: $publishDate"
+}
 foreach ($v in 1..3) {
     $date = $socialDates[$v]
     $key  = "social-$v-date"
