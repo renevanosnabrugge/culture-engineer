@@ -221,11 +221,15 @@ if (-not $script:projectId) { Write-Error "Project #$PROJECT_NUMBER not found. C
 
 # Read the parent card's Publish Date from the project. Metadata remains a
 # backwards-compatible fallback for cards created before project fields existed.
-$parentItemData = Invoke-GHGraphQL -Query @'
-  query($owner: String!, $number: Int!) {
+$parentItem = $null
+$cursor = $null
+do {
+    $parentItemData = Invoke-GHGraphQL -Query @'
+  query($owner: String!, $number: Int!, $cursor: String) {
     user(login: $owner) {
       projectV2(number: $number) {
-        items(first: 100) {
+        items(first: 100, after: $cursor) {
+          pageInfo { hasNextPage endCursor }
           nodes {
             fieldValues(first: 20) {
               nodes {
@@ -241,10 +245,14 @@ $parentItemData = Invoke-GHGraphQL -Query @'
       }
     }
   }
-'@ -Variables @{ owner = $OWNER; number = $PROJECT_NUMBER }
-$parentItem = $parentItemData?.data.user.projectV2.items.nodes |
-    Where-Object { $_.content.number -eq $IssueNumber } |
-    Select-Object -First 1
+'@ -Variables @{ owner = $OWNER; number = $PROJECT_NUMBER; cursor = $cursor }
+    $parentItem = $parentItemData?.data.user.projectV2.items.nodes |
+        Where-Object { $_.content.number -eq $IssueNumber } |
+        Select-Object -First 1
+    $pageInfo = $parentItemData?.data.user.projectV2.items.pageInfo
+    $cursor = $pageInfo?.endCursor
+} while (-not $parentItem -and $pageInfo?.hasNextPage)
+
 if ($parentItem) {
     $publishDate = Get-ProjectFieldValue -FieldValues $parentItem.fieldValues.nodes -NamePattern '(?i)publish.?date'
 } else {
@@ -258,7 +266,7 @@ try {
     $publishDateValue = [datetime]::ParseExact($publishDate, 'yyyy-MM-dd', $null)
     $publishDate = $publishDateValue.ToString('yyyy-MM-dd')
 } catch {
-    Write-Error "Invalid Publish Date '$publishDate' on project card for #$IssueNumber. Use YYYY-MM-DD."
+    throw "Invalid Publish Date '$publishDate' on project card for #$IssueNumber. Use YYYY-MM-DD."
 }
 foreach ($v in 1..3) {
     $socialDates[$v] = $publishDateValue.AddDays(($v - 1) * 7).ToString('yyyy-MM-dd')
