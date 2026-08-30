@@ -231,7 +231,7 @@ do {
         items(first: 100, after: $cursor) {
           pageInfo { hasNextPage endCursor }
           nodes {
-            fieldValues(first: 20) {
+            fieldValues(first: 100) {
               nodes {
                 ... on ProjectV2ItemFieldDateValue {
                   field { ... on ProjectV2Field { name } }
@@ -260,7 +260,7 @@ if ($parentItem) {
 }
 if (-not $publishDate) { $publishDate = $meta['publish-date'] }
 if (-not $publishDate -or $publishDate -eq 'YYYY-MM-DD') {
-    Write-Error "No Publish Date found on project card for #$IssueNumber. Set it in the GitHub Project before creating social cards."
+    Write-Error "No Publish Date found on project card for #$IssueNumber. Set it in the GitHub Project before creating social cards." -ErrorAction Stop
 }
 try {
     $publishDateValue = [datetime]::ParseExact($publishDate, 'yyyy-MM-dd', $null)
