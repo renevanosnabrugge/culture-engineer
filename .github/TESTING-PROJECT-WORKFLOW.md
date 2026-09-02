@@ -171,7 +171,8 @@ Expected additional line: `Publish Date → 2026-08-04`
 
 You need an issue that:
 - Was created by `New-DraftCard.ps1` (or has `<!-- POST-FILE: path -->` in its body)
-- Has a **Publish Date** set in the project field (or `<!-- publish-date: YYYY-MM-DD -->` in the body)
+- Has a **Publish Date** set in the project field. The issue-body `publish-date`
+  metadata is used only as a fallback for cards created before project fields.
 
 **Option A — Use the issue from Script 1 above:**
 Set a publish date on it if you haven't already:
