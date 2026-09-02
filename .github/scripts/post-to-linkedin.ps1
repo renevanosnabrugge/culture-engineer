@@ -1,17 +1,14 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-LinkedIn Poster: posts scheduled social variants to LinkedIn on their target dates.
+LinkedIn Poster: posts standalone scheduled social variants to LinkedIn.
 
-Reads [Social N] project items with Publish Date = today from GitHub Projects.
-Gets variant text from the [Social N] issue body (fallback: parent [Content]
-issue's "## LinkedIn — Variant N" sections). Reads the image from the content
-file's front matter and derives the post URL from the file path.
+Reads [Social N] project items only when their Status is "To Be Published" and
+Publish Date is today. Each social item must provide its own Post File project
+field and LinkedIn text in its issue body.
 
-Falls back to the label-based approach for content without [Social N] project
-items (backward compatible).
-
-Manual override via env vars FORCE_ISSUE and FORCE_VARIANT (set by workflow_dispatch).
+Manual selection via env vars FORCE_ISSUE and FORCE_VARIANT (set by workflow_dispatch)
+still requires the social item to be in the "To Be Published" project column.
 #>
 
 param(
@@ -72,31 +69,8 @@ function Invoke-GHGraphQL {
             'User-Agent'   = 'culture-engineer-bot'
         } `
         -Body $bodyBytes
-    if ($resp.errors) { Write-Warning "GraphQL: $($resp.errors | ConvertTo-Json -Compress)" }
+    if ($resp.errors) { Write-Warning "GraphQL: $($resp.errors | ConvertTo-Json -Depth 10 -Compress)" }
     return $resp
-}
-
-# Ensures the content file is published (published: true) before socials go out,
-# so every LinkedIn link resolves immediately.
-function Set-ContentPublished {
-    param([string]$FilePath)
-    if (-not $FilePath) { return }
-    if (-not (Test-Path $FilePath)) {
-        Write-Host "  Content file not found: '$FilePath' -- skipping publish check"
-        return
-    }
-    $content = Get-Content $FilePath -Raw
-    if ($content -match 'published:\s*true') { return }  # already live
-    if ($content -notmatch 'published:\s*false') { return }  # no field, skip
-    Write-Host "  Content not yet published -- setting published: true in $FilePath"
-    $updated = $content -replace 'published:\s*false', 'published: true'
-    Set-Content $FilePath $updated -NoNewline
-    git config user.email "github-actions[bot]@users.noreply.github.com" 2>$null
-    git config user.name  "github-actions[bot]" 2>$null
-    git add $FilePath
-    git commit -m "chore: publish $FilePath before LinkedIn post [skip ci]"
-    git push
-    Write-Host "  Committed published: true for $FilePath"
 }
 
 function ConvertFrom-Metadata {
@@ -188,7 +162,7 @@ function Get-AllProjectItems {
                 content {
                   ... on Issue {
                     number title body
-                    labels { nodes { name } }
+                    labels(first: 20) { nodes { name } }
                   }
                 }
               }
@@ -207,29 +181,6 @@ function Get-FieldValue {
         if ($fv.field.name -match $NamePattern) {
             return ($fv.name ?? $fv.date ?? $fv.text)
         }
-    }
-    return $null
-}
-
-function Get-SocialDate {
-    param([hashtable]$Meta, [int]$N)
-    # Explicit override: social-N-date in metadata
-    $explicit = $Meta["social-$N-date"]
-    if ($explicit) { return $explicit }
-    # Default: publish-date + (N-1)*7 days
-    $pub = $Meta['publish-date']
-    if (-not $pub) { return $null }
-    $base = [datetime]::ParseExact($pub, 'yyyy-MM-dd', $null)
-    return $base.AddDays(($N - 1) * 7).ToString('yyyy-MM-dd')
-}
-
-function Get-VariantText {
-    # Extract ## LinkedIn -- Variant N section text from issue body
-    param([string]$Body, [int]$N)
-    $pattern = "(?s)## LinkedIn [^\n]*Variant $N[^\n]*\n(?:>\s*[^\n]*\n)*\s*(.*?)(?=\n---\n|\n## LinkedIn|\z)"
-    if ($Body -match $pattern) {
-        $text = $Matches[1].Trim()
-        if ($text -and $text -notmatch '^\[.*here\]$') { return $text }
     }
     return $null
 }
@@ -330,16 +281,15 @@ function Invoke-LinkedInPost {
 # ── primary poster (project-field based) ──────────────────────────────────────────────
 
 function Invoke-SocialItemPost {
-    # Reads variant text from [Social N] issue body; image from content file front matter.
-    param([pscustomobject]$Item, [hashtable]$ProjMap, [string]$ForceVariant = '')
+    # Reads variant text from a standalone [Social N] issue body.
+    param([pscustomobject]$Item, [string]$ForceVariant = '')
 
     $body   = $Item.content.body ?? ''
     $num    = [string]$Item.content.number
     $labels = $Item.content.labels.nodes | ForEach-Object { $_.name }
 
-    $sm        = ConvertFrom-SocialMetadata -Body $body
-    $parentNum = [int]($sm['parent'] -replace '[^0-9]', '')
-    $variantN  = [int]($sm['variant'])
+    $sm       = ConvertFrom-SocialMetadata -Body $body
+    $variantN = [int]($sm['variant'])
 
     # Fall back to title: "[Social 2] Title"
     if (-not $variantN -and $Item.content.title -match '\[Social\s+(\d)\]') {
@@ -358,37 +308,18 @@ function Invoke-SocialItemPost {
         return
     }
 
-    # Variant text: from [Social N] body, or fall back to parent's ## LinkedIn -- Variant N section
-    $text       = Get-SocialBodyText -Body $body
-    $parentBody = $null
-    if (-not $text -and $parentNum) {
-        $pr = Invoke-Gh @('issue', 'view', $parentNum, '--repo', $REPO, '--json', 'body')
-        if ($pr) {
-            $parentBody = ($pr | ConvertFrom-Json).body
-            $text = Get-VariantText -Body $parentBody -N $variantN
-        }
-    }
-
+    $text = Get-SocialBodyText -Body $body
     if (-not $text) {
         Write-Host "  #${num}: no variant $variantN text found -- skipping"
         return
     }
 
-    # File path: parent project card Post File -> parent metadata block
-    $postFile = if ($parentNum -and $ProjMap.ContainsKey($parentNum)) {
-        $ProjMap[$parentNum].PostFile
-    } else { $null }
-
-    if (-not $postFile -and $parentNum) {
-        if (-not $parentBody) {
-            $pr2 = Invoke-Gh @('issue', 'view', $parentNum, '--repo', $REPO, '--json', 'body')
-            if ($pr2) { $parentBody = ($pr2 | ConvertFrom-Json).body }
-        }
-        $postFile = (ConvertFrom-Metadata -Body ($parentBody ?? ''))['file']
-    }
+    $postFile = Get-FieldValue ($Item.fieldValues.nodes ?? @()) '(?i)post.?file'
     if ($postFile) { $postFile = $postFile.TrimStart('/') }
-
-    Set-ContentPublished -FilePath $postFile
+    if (-not $postFile) {
+        Write-Host "  #${num}: no Post File on social project card -- skipping"
+        return
+    }
 
     # Image from content file front matter (no need for image: in the issue body)
     $imagePath = Get-FrontMatterField -FilePath $postFile -Key 'image'
@@ -403,7 +334,7 @@ function Invoke-SocialItemPost {
     $postUrl = Get-PostUrl -FilePath $postFile
 
     Write-Host ""
-    Write-Host "[Social $variantN] #${num}: Variant $variantN (parent #$parentNum)"
+    Write-Host "[Social $variantN] #${num}: Variant $variantN"
     Write-Host "  Posting variant ${variantN}..."
 
     $ok, $resp = Invoke-LinkedInPost -Text $text -ImagePath $imagePath -PostUrl $postUrl
@@ -412,27 +343,8 @@ function Invoke-SocialItemPost {
         Invoke-Gh @('issue', 'edit', $num, '--repo', $REPO, '--add-label', $labelName)
         Invoke-Gh @('issue', 'comment', $num, '--repo', $REPO,
             '--body', "\u2705 LinkedIn Variant $variantN posted on $TODAY.")
-        if ($parentNum) {
-            Invoke-Gh @('issue', 'edit', $parentNum, '--repo', $REPO, '--add-label', $labelName)
-        }
         Invoke-Gh @('issue', 'close', $num, '--repo', $REPO, '--reason', 'completed')
         Write-Host "  Variant $variantN posted -- #${num} closed"
-
-        # Close parent [Content] issue when all 3 variants posted and content is published
-        if ($parentNum) {
-            $pRaw = Invoke-Gh @('issue', 'view', $parentNum, '--repo', $REPO, '--json', 'labels,state')
-            if ($pRaw) {
-                $pData       = $pRaw | ConvertFrom-Json
-                $pLabels     = $pData.labels | ForEach-Object { $_.name }
-                $allPosted   = (1..3 | Where-Object { "social-$_-posted" -notin $pLabels }).Count -eq 0
-                $isPublished = 'published' -in $pLabels
-                if ($allPosted -and $isPublished -and $pData.state -ne 'CLOSED') {
-                    Invoke-Gh @('issue', 'edit', $parentNum, '--repo', $REPO, '--add-label', 'done')
-                    Invoke-Gh @('issue', 'close', $parentNum, '--repo', $REPO, '--reason', 'completed')
-                    Write-Host "  All variants + published -- parent #$parentNum closed"
-                }
-            }
-        }
     } else {
         $msg = "LinkedIn Variant $variantN failed on $TODAY.`n`nResponse: ``$($resp.Substring(0, [Math]::Min(300, $resp.Length)))``"
         Invoke-Gh @('issue', 'comment', $num, '--repo', $REPO, '--body', $msg)
@@ -440,163 +352,48 @@ function Invoke-SocialItemPost {
     }
 }
 
-# ── fallback poster (label/metadata-block based) ────────────────────────────────
-
-function Invoke-IssuePost {
-    # Fallback: used for content without [Social N] project items.
-    param($Issue, [string]$ForceVariant = '')
-
-    $labels  = $Issue.labels | ForEach-Object { $_.name }
-    $body    = $Issue.body ?? ''
-    $num     = [string]$Issue.number
-    $meta    = ConvertFrom-Metadata -Body $body
-
-    # [Social N] issues are project cards only \u2014 variant text lives in [Content] issues
-    if ('social-post' -in $labels -or $Issue.title -like '[Social *') { return }
-
-    # Must have a publish-date to determine social dates
-    if (-not $meta['publish-date']) {
-        Write-Host "  #${num}: no publish-date in metadata -- skipping"
-        return
-    }
-
-    # Determine which variants to post
-    $variantsToPost = @()
-    if ($ForceVariant) {
-        $variantsToPost = @([int]$ForceVariant)
-    } else {
-        foreach ($v in 1..3) {
-            $targetDate = Get-SocialDate -Meta $meta -N $v
-            if ($targetDate -eq $TODAY -and "social-$v-posted" -notin $labels) {
-                $variantsToPost += $v
-            }
-        }
-    }
-    if ($variantsToPost.Count -eq 0) { return }
-
-    Write-Host ""
-    Write-Host "Issue #${num}: $($Issue.title) -- variants: $($variantsToPost -join ',')"
-
-    # Ensure the content file is live before any social link goes out
-    Set-ContentPublished -FilePath $meta['file']
-
-    # Normalize image path and warn if missing
-    $imagePath = $meta['image']
-    if ($imagePath) { $imagePath = $imagePath.TrimStart('/') }
-    if (-not $imagePath -or -not (Test-Path $imagePath)) {
-        $warnMsg = "⚠️ LinkedIn Variant(s) will post **without an image** — no image found at ``$($meta['image'])``. Add an image and update the ``image:`` field in the metadata block."
-        Write-Host "  WARNING: $warnMsg"
-        Invoke-Gh @('issue', 'comment', $num, '--repo', $REPO, '--body', $warnMsg)
-    }
-
-    foreach ($v in $variantsToPost) {
-        $text = Get-VariantText -Body $body -N $v
-        if (-not $text) { Write-Host "  Variant ${v}: no text -- skipping"; continue }
-
-        Write-Host "  Posting variant ${v}..."
-        $ok, $resp = Invoke-LinkedInPost -Text $text -ImagePath $imagePath -PostUrl (Get-PostUrl -FilePath $meta['file'])
-
-        if ($ok) {
-            Invoke-Gh @('issue', 'edit', $num, '--repo', $REPO, '--add-label', "social-$v-posted")
-            Invoke-Gh @('issue', 'comment', $num, '--repo', $REPO,
-                '--body', "LinkedIn Variant $v posted on $TODAY.")
-            Write-Host "  Variant $v posted"
-        } else {
-            $msg = "LinkedIn Variant $v failed on $TODAY.`n`nResponse: ``$($resp.Substring(0, [Math]::Min(300, $resp.Length)))``"
-            Invoke-Gh @('issue', 'comment', $num, '--repo', $REPO, '--body', $msg)
-            Write-Host "  Variant $v failed"
-        }
-    }
-
-    # Close issue when all 3 variants posted and content is published
-    $updatedRaw = Invoke-Gh @('issue', 'view', $num, '--repo', $REPO, '--json', 'labels')
-    if ($updatedRaw) {
-        $finalLabels = ($updatedRaw | ConvertFrom-Json).labels | ForEach-Object { $_.name }
-        $allPosted   = (1..3 | Where-Object { "social-$_-posted" -notin $finalLabels }).Count -eq 0
-        $isPublished = 'published' -in $finalLabels
-        if ($allPosted -and $isPublished) {
-            Invoke-Gh @('issue', 'edit', $num, '--repo', $REPO, '--add-label', 'done')
-            Invoke-Gh @('issue', 'close', $num, '--repo', $REPO, '--reason', 'completed')
-            Write-Host "  All variants posted + published -- issue #${num} closed"
-        }
-    }
-}
-
 # ── main ─────────────────────────────────────────────────────────────────────
 
 Write-Host "LinkedIn Poster -- $TODAY"
 
-# Query project items once: build Publish Date + Post File lookup for [Content] issues
+# Query standalone social project items.
 $allItems = @()
-$projMap  = @{}
 if ($env:GH_PROJECT_TOKEN) {
     $allItems = Get-AllProjectItems
-    foreach ($it in $allItems) {
-        if (-not $it.content?.number) { continue }
-        $fvs = $it.fieldValues.nodes ?? @()
-        $projMap[[int]$it.content.number] = @{
-            PostFile    = Get-FieldValue $fvs '(?i)post.?file'
-            PublishDate = Get-FieldValue $fvs '(?i)publish.?date'
-        }
-    }
 }
 
 if ($FORCE_ISSUE) {
-    $raw = Invoke-Gh @('issue', 'view', $FORCE_ISSUE, '--repo', $REPO,
-        '--json', 'number,title,labels,body')
-    if ($raw) {
-        $forced  = $raw | ConvertFrom-Json
-        $fLabels = $forced.labels | ForEach-Object { $_.name }
-        if ('social-post' -in $fLabels -or $forced.title -like '[Social *') {
-            $fakeItem = [pscustomobject]@{
-                id          = ''
-                content     = $forced
-                fieldValues = [pscustomobject]@{ nodes = @() }
-            }
-            Invoke-SocialItemPost -Item $fakeItem -ProjMap $projMap -ForceVariant $FORCE_VARIANT
-        } else {
-            # [Content] issue forced -- post its [Social N] children
-            $found = $false
-            foreach ($it in $allItems) {
-                if (-not $it.content) { continue }
-                $itL = $it.content.labels.nodes | ForEach-Object { $_.name }
-                if ('social-post' -notin $itL -and $it.content.title -notlike '[Social *') { continue }
-                $sm = ConvertFrom-SocialMetadata -Body ($it.content.body ?? '')
-                if ([int]($sm['parent'] -replace '[^0-9]', '') -eq [int]$FORCE_ISSUE) {
-                    Invoke-SocialItemPost -Item $it -ProjMap $projMap -ForceVariant $FORCE_VARIANT
-                    $found = $true
-                }
-            }
-            if (-not $found) { Invoke-IssuePost -Issue $forced -ForceVariant $FORCE_VARIANT }
-        }
+    $forcedItem = $allItems | Where-Object { $_.content.number -eq [int]$FORCE_ISSUE } | Select-Object -First 1
+    if (-not $forcedItem) {
+        Write-Host "#${FORCE_ISSUE}: not found in Project #$PROJECT_NUMBER -- skipping"
+        return
     }
+    $forcedLabels = $forcedItem.content.labels.nodes | ForEach-Object { $_.name }
+    $forcedStatus = Get-FieldValue ($forcedItem.fieldValues.nodes ?? @()) '(?i)^status$'
+    if (('social-post' -notin $forcedLabels -and $forcedItem.content.title -notlike '[Social *') -or
+        $forcedStatus -ine 'To Be Published') {
+        Write-Host "#${FORCE_ISSUE}: not a standalone social item in To Be Published -- skipping"
+        return
+    }
+    Invoke-SocialItemPost -Item $forcedItem -ForceVariant $FORCE_VARIANT
     return
 }
 
-# Scheduled run: find [Social N] project items with Publish Date = today
+# Scheduled run: only standalone [Social N] items in To Be Published with today's date.
 $socialsDue = @($allItems | Where-Object {
     if (-not $_.content) { return $false }
     $l = $_.content.labels.nodes | ForEach-Object { $_.name }
     if ('social-post' -notin $l -and $_.content.title -notlike '[Social *') { return $false }
-    return (Get-FieldValue ($_.fieldValues.nodes ?? @()) '(?i)publish.?date') -eq $TODAY
+    $fields = $_.fieldValues.nodes ?? @()
+    if ((Get-FieldValue $fields '(?i)^status$') -ine 'To Be Published') { return $false }
+    return (Get-FieldValue $fields '(?i)publish.?date') -eq $TODAY
 })
 Write-Host "Found $($socialsDue.Count) [Social N] item(s) due today"
 
 if ($socialsDue.Count -gt 0) {
     foreach ($item in $socialsDue) {
-        Invoke-SocialItemPost -Item $item -ProjMap $projMap
+        Invoke-SocialItemPost -Item $item
     }
 } else {
-    # Fallback: [Content] issues with social-N-date in metadata block (pre-project approach)
-    Write-Host "No project-based social items due -- falling back to label-based scan"
-    $raw = Invoke-Gh @(
-        'issue', 'list', '--repo', $REPO,
-        '--label', 'content-calendar', '--label', 'approve',
-        '--state', 'open',
-        '--json', 'number,title,labels,body',
-        '--limit', '50'
-    )
-    $issues = if ($raw) { $raw | ConvertFrom-Json } else { @() }
-    Write-Host "Found $($issues.Count) approved calendar issue(s) in fallback"
-    foreach ($issue in $issues) { Invoke-IssuePost -Issue $issue }
+    Write-Host "No standalone social items in To Be Published are due today"
 }

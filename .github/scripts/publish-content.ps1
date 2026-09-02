@@ -44,7 +44,7 @@ function Invoke-GHGraphQL {
             'User-Agent'   = 'culture-engineer-bot'
         } `
         -Body $bodyBytes
-    if ($resp.errors) { Write-Warning "GraphQL: $($resp.errors | ConvertTo-Json -Compress)" }
+    if ($resp.errors) { Write-Warning "GraphQL: $($resp.errors | ConvertTo-Json -Depth 10 -Compress)" }
     return $resp
 }
 
@@ -188,7 +188,7 @@ function Get-AllProjectItems {
                 content {
                   ... on Issue {
                     number title body
-                    labels { nodes { name } }
+                    labels(first: 20) { nodes { name } }
                   }
                 }
               }
@@ -231,7 +231,7 @@ foreach ($item in $allItems) {
     $publishDate = Get-FieldValue $fvs '(?i)publish.?date'
     $filePath    = Get-FieldValue $fvs '(?i)post.?file'
 
-    if ($status -notmatch '(?i)to.?be') { continue }
+    if ($status -ine 'To Be Published') { continue }
 
     # Fall back to metadata block if Post File project field is not populated
     if (-not $filePath) {
