@@ -14,7 +14,6 @@ on:
 
 permissions:
   issues: write
-  contents: write  # needed to commit published: true before posting
 
 jobs:
   post-linkedin:
@@ -25,6 +24,7 @@ jobs:
       - name: Post LinkedIn variants
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PROJECT_TOKEN: ${{ secrets.GH_PROJECT_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
