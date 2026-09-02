@@ -56,7 +56,7 @@ function Invoke-Gh {
 
 function Invoke-GHGraphQL {
     param([string]$Query, [hashtable]$Variables = @{})
-    $token = $env:GH_PROJECT_TOKEN
+    $token = $env:GH_PROJECT_TOKEN ?? $env:GH_TOKEN ?? $env:GITHUB_TOKEN
     if (-not $token) { return $null }
     $bodyBytes = [System.Text.Encoding]::UTF8.GetBytes(
         (@{ query = $Query; variables = $Variables } | ConvertTo-Json -Depth 15)
@@ -71,32 +71,6 @@ function Invoke-GHGraphQL {
         -Body $bodyBytes
     if ($resp.errors) { Write-Warning "GraphQL: $($resp.errors | ConvertTo-Json -Depth 10 -Compress)" }
     return $resp
-}
-
-function ConvertFrom-Metadata {
-    param([string]$Body)
-    $meta = @{}
-    if ($Body -match '(?s)<!-- CONTENT CALENDAR METADATA\r?\n(.*?)-->') {
-        foreach ($line in ($Matches[1] -split '\r?\n')) {
-            if ($line -match '^([^:\s]+):\s*(.*)$') {
-                $meta[$Matches[1]] = $Matches[2].Trim()
-            }
-        }
-    }
-    return $meta
-}
-
-function ConvertFrom-SocialMetadata {
-    param([string]$Body)
-    $meta = @{}
-    if ($Body -match '(?s)<!-- SOCIAL METADATA\r?\n(.*?)-->') {
-        foreach ($line in ($Matches[1] -split '\r?\n')) {
-            if ($line -match '^([^:\s]+):\s*(.*)$') {
-                $meta[$Matches[1]] = $Matches[2].Trim()
-            }
-        }
-    }
-    return $meta
 }
 
 function Get-SocialBodyText {
@@ -288,11 +262,8 @@ function Invoke-SocialItemPost {
     $num    = [string]$Item.content.number
     $labels = $Item.content.labels.nodes | ForEach-Object { $_.name }
 
-    $sm       = ConvertFrom-SocialMetadata -Body $body
-    $variantN = [int]($sm['variant'])
-
-    # Fall back to title: "[Social 2] Title"
-    if (-not $variantN -and $Item.content.title -match '\[Social\s+(\d)\]') {
+    $variantN = 0
+    if ($Item.content.title -match '\[Social\s+(\d+)\]') {
         $variantN = [int]$Matches[1]
     }
 
@@ -358,7 +329,7 @@ Write-Host "LinkedIn Poster -- $TODAY"
 
 # Query standalone social project items.
 $allItems = @()
-if ($env:GH_PROJECT_TOKEN) {
+if ($env:GH_PROJECT_TOKEN -or $env:GH_TOKEN -or $env:GITHUB_TOKEN) {
     $allItems = Get-AllProjectItems
 }
 
