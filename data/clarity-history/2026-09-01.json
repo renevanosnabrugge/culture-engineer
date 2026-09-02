@@ -1,0 +1,274 @@
+{
+  "targetDate": "2026-09-01",
+  "projectId": "xk5gdi38n4",
+  "collectedAt": "2026-09-02T06:01:09.8596197Z",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": "6",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": 6,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": 6,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": "6",
+          "sessionsWithMetricPercentage": 16.67,
+          "sessionsWithoutMetricPercentage": 83.33,
+          "pagesViews": "1",
+          "subTotal": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": "6",
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": "0",
+          "subTotal": "0"
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": 6,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 77
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": 6,
+          "totalBotSessionCount": 0,
+          "distinctUserCount": 4,
+          "pagesPerSessionPercentage": 2.6666666666666665
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": 294,
+          "activeTime": 121
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "MobileSafari",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "Edge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Safari",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "Mobile",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "PC",
+          "sessionsCount": "2"
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "IOS",
+          "sessionsCount": "4"
+        },
+        {
+          "name": "MacOSX",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Windows",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": 6
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "Inspiration | René van Osnabrugge",
+          "sessionsCount": "3"
+        },
+        {
+          "name": "Start with Why | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Welcome to Culture Engineers | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "The Five Dysfunctions of a Team | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "High Ten: Building Great Team Culture | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "The One Question That Changes Every Conversation. Why? | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Engineering Culture Model | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "About Me | René van Osnabrugge",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "Home | René van Osnabrugge",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": "https://culture-engineers.nl/inspiration/",
+          "sessionsCount": "4"
+        },
+        {
+          "name": null,
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://www.linkedin.com/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://culture-engineers.nl/inspiration/models/engineering-culture-model/",
+          "sessionsCount": "2"
+        },
+        {
+          "name": "https://culture-engineers.nl/about/",
+          "sessionsCount": "1"
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "sessionsCount": "1"
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/inspiration/",
+          "visitsCount": "3"
+        },
+        {
+          "url": "https://culture-engineers.nl/about/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/models/engineering-culture-model/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/books/start-with-why/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/books/high-ten/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/08/26/start-with-why/",
+          "visitsCount": "1"
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/books/five-dysfunctions/",
+          "visitsCount": "1"
+        }
+      ]
+    }
+  ]
+}
