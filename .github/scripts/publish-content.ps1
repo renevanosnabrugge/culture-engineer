@@ -1,11 +1,11 @@
 #!/usr/bin/env pwsh
 <#
 .SYNOPSIS
-Content Scheduler: publishes content by setting published: true on the publish-date.
+Content Scheduler: publishes content by setting published: true when scheduled on the project board.
 
-Reads Content Calendar project items with Status "To Be Published" and
-Publish Date = today from GitHub Projects. Gets the content file path from
-the "Post File" project field (fallback: CONTENT CALENDAR METADATA block).
+Reads Content Calendar project items with Status "To Be Published" from
+GitHub Projects. Gets the content file path from the "Post File" project
+field (fallback: CONTENT CALENDAR METADATA block).
 Sets published: true in the content file, commits, pushes (triggers deploy),
 adds the 'published' label, comments with the live URL, and moves the project
 card to Published.
@@ -14,7 +14,6 @@ card to Published.
 param()
 $ErrorActionPreference = 'Stop'
 
-$TODAY          = (Get-Date).ToString('yyyy-MM-dd')
 $REPO           = $env:GITHUB_REPOSITORY
 $SITE_URL       = 'https://culture-engineers.nl'
 $OWNER          = $REPO.Split('/')[0]
@@ -213,7 +212,7 @@ function Get-FieldValue {
 
 # ── main ─────────────────────────────────────────────────────────────────────
 
-Write-Host "Content Scheduler — $TODAY"
+Write-Host 'Content Scheduler'
 
 $allItems = Get-AllProjectItems
 Write-Host "Project items found: $($allItems.Count)"
@@ -228,7 +227,6 @@ foreach ($item in $allItems) {
 
     $fvs         = $item.fieldValues.nodes ?? @()
     $status      = Get-FieldValue $fvs '(?i)^status$'
-    $publishDate = Get-FieldValue $fvs '(?i)publish.?date'
     $filePath    = Get-FieldValue $fvs '(?i)post.?file'
 
     if ($status -ine 'To Be Published') { continue }
@@ -239,11 +237,6 @@ foreach ($item in $allItems) {
         $filePath = $meta['file']
     }
 
-    if (-not $publishDate) {
-        Write-Host "  #$($item.content.number): no Publish Date on project card — skipping"
-        continue
-    }
-    if ($publishDate -ne $TODAY) { continue }
     if (-not $filePath) {
         Write-Host "  #$($item.content.number): no Post File on project card — skipping"
         continue
@@ -282,7 +275,7 @@ foreach ($item in $allItems) {
     $comment = @"
 ✅ **Published:** $postUrl
 
-Push triggered ``deploy.yml``. LinkedIn Variant 1 will post today via ``linkedin-poster``.
+Push triggered ``deploy.yml``. Move LinkedIn cards to ``To Be Published`` when ready to post.
 "@
     Invoke-Gh @('issue', 'comment', $issue.number, '--repo', $REPO, '--body', $comment)
     Write-Host "  ✓ $postUrl"

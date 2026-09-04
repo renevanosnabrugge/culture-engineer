@@ -6,10 +6,10 @@ on:
   workflow_dispatch:
     inputs:
       issue_number:
-        description: 'Specific issue number to post (optional — posts all due if empty)'
+        description: 'Specific issue number to post (optional — posts all items in To Be Published if empty)'
         required: false
       variant:
-        description: 'Variant to post: 1, 2, or 3 (optional — posts all due variants if empty)'
+        description: 'Variant to post: 1, 2, or 3 (optional — posts all eligible variants if empty)'
         required: false
 
 permissions:

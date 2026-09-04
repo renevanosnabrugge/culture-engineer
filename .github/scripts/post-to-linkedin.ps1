@@ -3,9 +3,9 @@
 .SYNOPSIS
 LinkedIn Poster: posts standalone scheduled social variants to LinkedIn.
 
-Reads [Social N] project items only when their Status is "To Be Published" and
-Publish Date is today. Each social item must provide its own Post File project
-field and LinkedIn text in its issue body.
+Reads [Social N] project items only when their Status is "To Be Published".
+Each social item must provide its own Post File project field and LinkedIn text
+in its issue body.
 
 Manual selection via env vars FORCE_ISSUE and FORCE_VARIANT (set by workflow_dispatch)
 still requires the social item to be in the "To Be Published" project column.
@@ -28,7 +28,6 @@ if ($DryRun -or $env:DRY_RUN -eq '1') {
     Write-Host ''
 }
 
-$TODAY          = (Get-Date).ToString('yyyy-MM-dd')
 $REPO           = $env:GITHUB_REPOSITORY
 $OWNER          = $REPO.Split('/')[0]
 $SITE_URL       = 'https://culture-engineers.nl'
@@ -313,11 +312,11 @@ function Invoke-SocialItemPost {
     if ($ok) {
         Invoke-Gh @('issue', 'edit', $num, '--repo', $REPO, '--add-label', $labelName)
         Invoke-Gh @('issue', 'comment', $num, '--repo', $REPO,
-            '--body', "\u2705 LinkedIn Variant $variantN posted on $TODAY.")
+            '--body', "\u2705 LinkedIn Variant $variantN posted.")
         Invoke-Gh @('issue', 'close', $num, '--repo', $REPO, '--reason', 'completed')
         Write-Host "  Variant $variantN posted -- #${num} closed"
     } else {
-        $msg = "LinkedIn Variant $variantN failed on $TODAY.`n`nResponse: ``$($resp.Substring(0, [Math]::Min(300, $resp.Length)))``"
+        $msg = "LinkedIn Variant $variantN failed.`n`nResponse: ``$($resp.Substring(0, [Math]::Min(300, $resp.Length)))``"
         Invoke-Gh @('issue', 'comment', $num, '--repo', $REPO, '--body', $msg)
         Write-Host "  Variant $variantN failed"
     }
@@ -325,7 +324,7 @@ function Invoke-SocialItemPost {
 
 # ── main ─────────────────────────────────────────────────────────────────────
 
-Write-Host "LinkedIn Poster -- $TODAY"
+Write-Host 'LinkedIn Poster'
 
 # Query standalone social project items.
 $allItems = @()
@@ -350,21 +349,21 @@ if ($FORCE_ISSUE) {
     return
 }
 
-# Scheduled run: only standalone [Social N] items in To Be Published with today's date.
+# Scheduled run: only standalone [Social N] items in To Be Published.
 $socialsDue = @($allItems | Where-Object {
     if (-not $_.content) { return $false }
     $l = $_.content.labels.nodes | ForEach-Object { $_.name }
     if ('social-post' -notin $l -and $_.content.title -notlike '[Social *') { return $false }
     $fields = $_.fieldValues.nodes ?? @()
     if ((Get-FieldValue $fields '(?i)^status$') -ine 'To Be Published') { return $false }
-    return (Get-FieldValue $fields '(?i)publish.?date') -eq $TODAY
+    return $true
 })
-Write-Host "Found $($socialsDue.Count) [Social N] item(s) due today"
+Write-Host "Found $($socialsDue.Count) [Social N] item(s) in To Be Published"
 
 if ($socialsDue.Count -gt 0) {
     foreach ($item in $socialsDue) {
         Invoke-SocialItemPost -Item $item
     }
 } else {
-    Write-Host "No standalone social items in To Be Published are due today"
+    Write-Host 'No standalone social items in To Be Published'
 }
