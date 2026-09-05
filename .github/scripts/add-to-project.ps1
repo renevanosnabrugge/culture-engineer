@@ -21,7 +21,7 @@ REQUIRES:
 
 param(
     [string]$Status = 'Draft Posts',
-    [string]$PublishDate = '',,,
+    [string]$PublishDate = '',
     [string]$PostFile = '',
     [Parameter(Mandatory, ValueFromRemainingArguments)]
     [string[]]$IssueUrls
