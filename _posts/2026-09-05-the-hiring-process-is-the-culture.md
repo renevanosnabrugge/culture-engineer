@@ -4,13 +4,13 @@ title: "The Hiring Process Is the Culture"
 date: 2026-09-05 09:00:00 +0200
 tags: [hiring, culture, leadership, talent]
 image: "/assets/images/the-hiring-process-is-the-culture.png"
-image_prompt: "Abstract portrait illustration of a narrowing funnel made of interlocking gates or doors, each gate slightly different in texture and material, transitioning from rough stone to polished glass near the bottom, deep blue and warm amber palette, no text, 1024x1536 portrait format, geometric-conceptual style"
+image_prompt: "Abstract portrait illustration of a narrowing funnel made of interlocking gates or doors, each gate slightly different in texture and material, transitioning from rough stone to polished glass near the bottom, deep blue and warm amber palette, no text, 1024x1536 landscape format, geometric-conceptual style. make it a linked banner size"
 excerpt: >
   A candidate once told me he did not want to work for us because our hiring process took too long. I understood him. And I still would not change a thing.
 published: false
 ---
 
-A candidate once told me he did not want to go through our hiring process. Too long, too much time invested, too many people involved. He wanted an offer, not an odyssey. I understood him completely. And I still would not change a thing about how we hire.
+A candidate once told me he did not want to go through our hiring process. Too long, too much time invested, too many people involved. He just wanted an offer after a short conversation. I understood him completely. And I still would not change a thing about how we hire.
 
 At the company where I work, the process is famously long. Colleagues at other companies hear about it and react the same way every time: how do you expect anyone to sign up for that? People will not do that. And in a way, they are right. A lot of people do not. We lose plenty of good candidates simply because they do not want to invest the time.
 
@@ -30,7 +30,7 @@ Six people, multiple hours, several rounds. On paper it looks like overkill. In 
 
 Here is the part that surprises people: a high drop-off rate is doing useful work. The candidates who walk away because the process feels too long are self-selecting out, and that self-selection is information, not lost opportunity.
 
-The ones who make it through have already decided, multiple times, that this is worth the effort. That decision shows up later. Nobody inside the company doubts whether a new colleague belongs there, because everybody went through the same six hours to get in. That shared experience builds a baseline of trust before day one even starts.
+The ones who make it through have already decided, multiple times, that this is worth the effort. Even the candidates that do not finish succesfully usually thank us for the great learning they had during the process. That feedback is valuable for us as well. And those who make it? They are a direct fit in the group. Nobody inside the company doubts whether a new colleague belongs there, because everybody went through the same six or eight hours to get in. That shared experience builds a baseline of trust before day one even starts.
 
 It shows up with customers too. Our consultants talk openly about the process they went through, and clients notice. They are not hiring a name off a CV, they are hiring someone who cleared a bar that took real effort to clear. That is a different kind of confidence than a two-round interview loop provides.
 

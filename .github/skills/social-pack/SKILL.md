@@ -25,7 +25,7 @@ Output:
 
    If the content is not yet published (i.e. `published: false` in front
    matter), still include the URL — it will resolve once the post goes live.
-2. One image prompt suitable for an AI image generator (portrait 1024×1536,
+2. One image prompt suitable for an AI image generator (landscape 1024×1536 linked-in banner size,
    professional, abstract/metaphorical rather than literal — avoid stock-photo
    clichés like handshakes or lightbulbs). The prompt will be passed directly
    to the Image Generator agent (`image-generator`) to produce the actual PNG
