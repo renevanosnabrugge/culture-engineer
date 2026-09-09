@@ -7,12 +7,12 @@ image: "/assets/images/the-hiring-process-is-the-culture.png"
 image_prompt: "Abstract portrait illustration of a narrowing funnel made of interlocking gates or doors, each gate slightly different in texture and material, transitioning from rough stone to polished glass near the bottom, deep blue and warm amber palette, no text, 1024x1536 landscape format, geometric-conceptual style. make it a linked banner size"
 excerpt: >
   A candidate once told me he did not want to work for us because our hiring process took too long. I understood him. And I still would not change a thing.
-published: false
+published: true
 ---
 
-A candidate once told me he did not want to go through our hiring process. Too long, too much time invested, too many people involved. He just wanted an offer after a short conversation. I understood him completely. And I still would not change a thing about how we hire.
+Two weeks ago I was talking to a friend about our hiring process. And how a candidate, after a first very good conversation, told me he did not want to go through our hiring process. Too long, too much time invested, too many people involved. He just wanted an offer after a short hiring interview and this initial short conversation. It made me think, are we doing it the wrong way? But after reflecting on it, I decided I do not want to change a thing about how we hire.
 
-At the company where I work, the process is famously long. Colleagues at other companies hear about it and react the same way every time: how do you expect anyone to sign up for that? People will not do that. And in a way, they are right. A lot of people do not. We lose plenty of good candidates simply because they do not want to invest the time.
+At Xebia, the company where I work, the process is thorough (or long as some call it). Colleagues at other companies hear about it and react the same way every time: how do you expect anyone to sign up for that? People will not do that. And in a way, they are right. A lot of people do not. We lose plenty of good candidates simply because they do not want to invest the time.
 
 But the ones who make it through are a different story entirely.
 
