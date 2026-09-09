@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Hiring Process Is the Culture"
+title: "A culture fit starts with the hiring process"
 date: 2026-09-05 09:00:00 +0200
 tags: [hiring, culture, leadership, talent]
 image: "/assets/images/the-hiring-process-is-the-culture.png"
