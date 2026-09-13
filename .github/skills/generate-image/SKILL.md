@@ -34,7 +34,7 @@ and write it as a PNG to `assets/images/<slug>.png`.
 |---|---|
 | Endpoint | `https://culture-engineer-ai.services.ai.azure.com/openai/v1/images/generations` |
 | Model | `gpt-image-1` |
-| Size | `1024x1536` (portrait, optimised for LinkedIn) |
+| Size | `410x1024` (landscape, optimised for LinkedIn) |
 | Quality | `medium` |
 | Output | `assets/images/<slug>.png` |
 
