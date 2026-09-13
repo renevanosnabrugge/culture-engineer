@@ -1,18 +1,18 @@
 ---
 layout: post
 title: "Smooth Delivery Is More Than a Pipeline"
-date: 2026-09-15 09:00:00 +0200
+date: 2026-09-14 09:00:00 +0200
 tags: [delivery, engineering-culture, devops, leadership]
 image: "/assets/images/smooth-delivery-is-more-than-a-pipeline.png"
 image_prompt: "Abstract illustration of a winding river merging from many smaller streams into one smooth channel, with a few visible checkpoints or lock gates along the way, deep blue and warm amber palette, no text, 1024x1536 landscape format, geometric-conceptual style, linked-in banner size"
 excerpt: >
   Every time I hear someone talk about smooth delivery, the conversation drifts to CI/CD within a minute. Pipelines are the easy part. The hard part is everything around them.
-published: false
+published: true
 ---
 
 Every time I hear someone talk about smooth delivery, the conversation drifts to CI/CD within a minute. Build faster. Deploy faster. Automate the infrastructure. And sure, that matters. But I have sat in enough rooms with architecture boards, approval gates, and testers to know that the pipeline was rarely the thing slowing anyone down.
 
-Smooth delivery is one of the pillars of the Engineering Culture Model, and when I walk people through it, I notice the same reflex every time. Someone nods, says "so we need better CI/CD," and starts sketching a new deployment pipeline on the whiteboard. That is not wrong, it is just incomplete. A fast pipeline moving code through a slow process is like adding a faster elevator to a building where you still need six signatures to open the front door.
+Smooth delivery is one of the pillars of the [Engineering Culture Model](/inspiration/models/engineering-culture-model/), and when I walk people through it, I notice the same reflex every time. Someone nods, says "so we need better CI/CD," and starts sketching a new deployment pipeline on the whiteboard. It is good start, and an essential part of the solution, but it is not the whole picture. A fast pipeline moving code through a slow process is like adding a faster elevator to a building where people cannot press the buttons to go up. 
 
 ## The value stream nobody draws
 
