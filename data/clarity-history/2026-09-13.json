@@ -1,0 +1,286 @@
+{
+  "targetDate": "2026-09-13",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": 3,
+          "sessionsWithMetricPercentage": 33.33,
+          "sessionsWithoutMetricPercentage": 66.67,
+          "pagesViews": 2,
+          "subTotal": 2
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": 3,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": 3,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": 3,
+          "sessionsWithMetricPercentage": 66.67,
+          "sessionsWithoutMetricPercentage": 33.33,
+          "pagesViews": 12,
+          "subTotal": 12
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": 3,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": 3,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 43.57
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": 3,
+          "totalBotSessionCount": 6,
+          "distinctUserCount": 11,
+          "pagesPerSessionPercentage": 5.181818181818182
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": 638,
+          "activeTime": 203
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Edge",
+          "sessionsCount": 2
+        },
+        {
+          "name": "MobileSafari",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "PC",
+          "sessionsCount": 2
+        },
+        {
+          "name": "Mobile",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "Windows",
+          "sessionsCount": 2
+        },
+        {
+          "name": "IOS",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "United States",
+          "sessionsCount": 2
+        },
+        {
+          "name": "Belgium",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "A culture fit starts with the hiring process | René van Osnabrugge",
+          "sessionsCount": 3
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": 2
+        },
+        {
+          "name": "Home | René van Osnabrugge",
+          "sessionsCount": 2
+        },
+        {
+          "name": "Start with Why | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "Inspiration | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "The One Question That Changes Every Conversation. Why? | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "Engineering Culture Model | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "Smooth Delivery Is More Than a Pipeline | René van Osnabrugge",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": null,
+          "sessionsCount": 3
+        },
+        {
+          "name": "http://127.0.0.1:4000/",
+          "sessionsCount": 1
+        },
+        {
+          "name": "http://127.0.0.1:4000/blog/",
+          "sessionsCount": 1
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/",
+          "sessionsCount": 1
+        },
+        {
+          "name": "http://127.0.0.1:4000/blog/2026/09/12/smooth-delivery-is-more-than-a-pipeline/",
+          "sessionsCount": 1
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/09/05/the-hiring-process-is-the-culture/",
+          "sessionsCount": 1
+        },
+        {
+          "name": "https://culture-engineers.nl/",
+          "sessionsCount": 1
+        },
+        {
+          "name": "http://127.0.0.1:4000/blog/2026/08/26/start-with-why/",
+          "sessionsCount": 1
+        },
+        {
+          "name": "http://127.0.0.1:4000/inspiration/models/engineering-culture-model/",
+          "sessionsCount": 1
+        },
+        {
+          "name": "http://127.0.0.1:4000/inspiration/",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/",
+          "visitsCount": 5
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/09/05/the-hiring-process-is-the-culture/",
+          "visitsCount": 2
+        },
+        {
+          "url": "https://culture-engineers.nl/about/",
+          "visitsCount": 2
+        },
+        {
+          "url": "http://127.0.0.1:4000/inspiration/",
+          "visitsCount": 1
+        },
+        {
+          "url": "http://127.0.0.1:4000/inspiration/models/engineering-culture-model/",
+          "visitsCount": 1
+        },
+        {
+          "url": "http://127.0.0.1:4000/blog/2026/08/26/start-with-why/",
+          "visitsCount": 1
+        },
+        {
+          "url": "http://127.0.0.1:4000/blog/2026/09/11/smooth-delivery-is-more-than-a-pipeline/",
+          "visitsCount": 1
+        },
+        {
+          "url": "http://127.0.0.1:4000/",
+          "visitsCount": 1
+        },
+        {
+          "url": "http://127.0.0.1:4000/blog/",
+          "visitsCount": 1
+        },
+        {
+          "url": "http://127.0.0.1:4000/inspiration/books/start-with-why/",
+          "visitsCount": 1
+        }
+      ]
+    }
+  ],
+  "projectId": "xk5gdi38n4",
+  "collectedAt": "2026-09-14T06:01:22.8180640Z"
+}
