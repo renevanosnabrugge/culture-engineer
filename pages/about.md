@@ -72,12 +72,13 @@ permalink: /about/
 International speaker on 50+ stages, including:
 
 - **Techorama** — Belgium &amp; Netherlands (multiple years)
-- **NDC Conferences** — Porto, Oslo, London
+- **NDC Conferences** — Porto, Oslo
 - **Visual Studio Live!** — Las Vegas, San Diego
 - **Live! 360 Tech Con** — Orlando, FL
 - **All Day DevOps** — Online (multiple years)
 - **devCampNoord** — Groningen, Netherlands
-- **CloudBrew** — Mechelen, Belgium
+- **PolarConf** — Helsinki, Finland
+- **TechDays Sweden** — Stockholm, Sweden
 - **GitHub Universe** — San Francisco
 
 Topics include DevOps transformation, engineering culture, cloud strategy, FinOps,
