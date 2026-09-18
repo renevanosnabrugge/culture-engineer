@@ -1,0 +1,250 @@
+{
+  "targetDate": "2026-09-17",
+  "collectedAt": "2026-09-18T06:00:47.6263569Z",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": 6,
+          "sessionsWithMetricPercentage": 16.67,
+          "sessionsWithoutMetricPercentage": 83.33,
+          "pagesViews": 1,
+          "subTotal": 1
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": 6,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": 6,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": 6,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": 6,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": 6,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 55.38
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": 6,
+          "totalBotSessionCount": 0,
+          "distinctUserCount": 5,
+          "pagesPerSessionPercentage": 1.3333333333333333
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": 490,
+          "activeTime": 40
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Chrome",
+          "sessionsCount": 5
+        },
+        {
+          "name": "MobileSafari",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "PC",
+          "sessionsCount": 5
+        },
+        {
+          "name": "Mobile",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "Windows",
+          "sessionsCount": 4
+        },
+        {
+          "name": "IOS",
+          "sessionsCount": 1
+        },
+        {
+          "name": "MacOSX",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "United States",
+          "sessionsCount": 3
+        },
+        {
+          "name": "Netherlands",
+          "sessionsCount": 2
+        },
+        {
+          "name": "Denmark",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "Smooth Delivery Is More Than a Pipeline | René van Osnabrugge",
+          "sessionsCount": 3
+        },
+        {
+          "name": "Welcome to Culture Engineers | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "Publications | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "A culture fit starts with the hiring process | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "Presentations & Conferences | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": null,
+          "sessionsCount": 3
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/",
+          "sessionsCount": 2
+        },
+        {
+          "name": "https://www.google.com/",
+          "sessionsCount": 1
+        },
+        {
+          "name": "https://culture-engineers.nl/presentations/",
+          "sessionsCount": 1
+        },
+        {
+          "name": "https://www.linkedin.com/",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/blog/2026/09/14/smooth-delivery-is-more-than-a-pipeline/",
+          "visitsCount": 3
+        },
+        {
+          "url": "https://culture-engineers.nl/presentations/",
+          "visitsCount": 1
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/",
+          "visitsCount": 1
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/09/05/the-hiring-process-is-the-culture/",
+          "visitsCount": 1
+        },
+        {
+          "url": "https://culture-engineers.nl/publications/",
+          "visitsCount": 1
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "visitsCount": 1
+        }
+      ]
+    }
+  ],
+  "projectId": "xk5gdi38n4"
+}
