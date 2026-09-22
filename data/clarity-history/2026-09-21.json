@@ -1,0 +1,210 @@
+{
+  "projectId": "xk5gdi38n4",
+  "targetDate": "2026-09-21",
+  "collectedAt": "2026-09-22T06:01:06.3441893Z",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": 5,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": 5,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": 5,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": 5,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": 5,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": 5,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 63.83
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": 5,
+          "totalBotSessionCount": 2,
+          "distinctUserCount": 5,
+          "pagesPerSessionPercentage": 1.1428571428571428
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": 296,
+          "activeTime": 66
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Chrome",
+          "sessionsCount": 5
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "PC",
+          "sessionsCount": 5
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "Windows",
+          "sessionsCount": 5
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": 3
+        },
+        {
+          "name": "Denmark",
+          "sessionsCount": 1
+        },
+        {
+          "name": "Germany",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "Smooth Delivery Is More Than a Pipeline | René van Osnabrugge",
+          "sessionsCount": 3
+        },
+        {
+          "name": "Engineering Culture Model | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "A culture fit starts with the hiring process | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "Home | René van Osnabrugge",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": null,
+          "sessionsCount": 4
+        },
+        {
+          "name": "https://www.linkedin.com/",
+          "sessionsCount": 1
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/2026/09/14/smooth-delivery-is-more-than-a-pipeline/",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/blog/2026/09/14/smooth-delivery-is-more-than-a-pipeline/",
+          "visitsCount": 3
+        },
+        {
+          "url": "https://culture-engineers.nl/",
+          "visitsCount": 3
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/09/05/the-hiring-process-is-the-culture/",
+          "visitsCount": 1
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/models/engineering-culture-model/",
+          "visitsCount": 1
+        }
+      ]
+    }
+  ]
+}
