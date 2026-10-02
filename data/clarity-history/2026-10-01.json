@@ -1,0 +1,198 @@
+{
+  "collectedAt": "2026-10-02T06:01:17.8889422Z",
+  "projectId": "xk5gdi38n4",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": 2,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": 2,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": 2,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": 2,
+          "sessionsWithMetricPercentage": 100,
+          "sessionsWithoutMetricPercentage": 0,
+          "pagesViews": 2,
+          "subTotal": 2
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": 2,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": 2,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 51.1
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": 2,
+          "totalBotSessionCount": 1,
+          "distinctUserCount": 3,
+          "pagesPerSessionPercentage": 3.6666666666666665
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": 481,
+          "activeTime": 173
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Edge",
+          "sessionsCount": 2
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "PC",
+          "sessionsCount": 2
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "Windows",
+          "sessionsCount": 2
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": 2
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "Presentations & Conferences | René van Osnabrugge",
+          "sessionsCount": 2
+        },
+        {
+          "name": "Home | René van Osnabrugge",
+          "sessionsCount": 2
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": null,
+          "sessionsCount": 2
+        },
+        {
+          "name": "https://culture-engineers.nl/",
+          "sessionsCount": 2
+        },
+        {
+          "name": "https://culture-engineers.nl/presentations/",
+          "sessionsCount": 1
+        },
+        {
+          "name": "https://culture-engineers.nl/blog/",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/",
+          "visitsCount": 3
+        },
+        {
+          "url": "https://culture-engineers.nl/presentations/",
+          "visitsCount": 2
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/",
+          "visitsCount": 1
+        }
+      ]
+    }
+  ],
+  "targetDate": "2026-10-01"
+}
