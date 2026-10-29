@@ -7,7 +7,7 @@ isbn: "1930885504"
 url: "https://www.amazon.com/dp/1930885504"
 tags: [change, management]
 excerpt: "The human side of change — one person at a time."
-published: false
+published: true
 ---
 
 Organizations don't change — people do, one at a time.
