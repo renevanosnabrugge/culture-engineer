@@ -1,0 +1,282 @@
+{
+  "targetDate": "2026-10-29",
+  "data": [
+    {
+      "metricName": "DeadClickCount",
+      "information": [
+        {
+          "sessionsCount": 18,
+          "sessionsWithMetricPercentage": 5.56,
+          "sessionsWithoutMetricPercentage": 94.44,
+          "pagesViews": 1,
+          "subTotal": 2
+        }
+      ]
+    },
+    {
+      "metricName": "ExcessiveScroll",
+      "information": [
+        {
+          "sessionsCount": 18,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "RageClickCount",
+      "information": [
+        {
+          "sessionsCount": 18,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "QuickbackClick",
+      "information": [
+        {
+          "sessionsCount": 18,
+          "sessionsWithMetricPercentage": 16.67,
+          "sessionsWithoutMetricPercentage": 83.33,
+          "pagesViews": 8,
+          "subTotal": 8
+        }
+      ]
+    },
+    {
+      "metricName": "ScriptErrorCount",
+      "information": [
+        {
+          "sessionsCount": 18,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ErrorClickCount",
+      "information": [
+        {
+          "sessionsCount": 18,
+          "sessionsWithMetricPercentage": 0,
+          "sessionsWithoutMetricPercentage": 100,
+          "pagesViews": 0,
+          "subTotal": 0
+        }
+      ]
+    },
+    {
+      "metricName": "ScrollDepth",
+      "information": [
+        {
+          "averageScrollDepth": 56.98
+        }
+      ]
+    },
+    {
+      "metricName": "Traffic",
+      "information": [
+        {
+          "totalSessionCount": 18,
+          "totalBotSessionCount": 5,
+          "distinctUserCount": 10,
+          "pagesPerSessionPercentage": 2.7222222222222223
+        }
+      ]
+    },
+    {
+      "metricName": "EngagementTime",
+      "information": [
+        {
+          "totalTime": 286,
+          "activeTime": 81
+        }
+      ]
+    },
+    {
+      "metricName": "Browser",
+      "information": [
+        {
+          "name": "Edge",
+          "sessionsCount": 8
+        },
+        {
+          "name": "Chrome",
+          "sessionsCount": 7
+        },
+        {
+          "name": "MobileSafari",
+          "sessionsCount": 3
+        }
+      ]
+    },
+    {
+      "metricName": "Device",
+      "information": [
+        {
+          "name": "PC",
+          "sessionsCount": 13
+        },
+        {
+          "name": "Mobile",
+          "sessionsCount": 5
+        }
+      ]
+    },
+    {
+      "metricName": "OS",
+      "information": [
+        {
+          "name": "Windows",
+          "sessionsCount": 13
+        },
+        {
+          "name": "IOS",
+          "sessionsCount": 3
+        },
+        {
+          "name": "Android",
+          "sessionsCount": 2
+        }
+      ]
+    },
+    {
+      "metricName": "Country",
+      "information": [
+        {
+          "name": "Netherlands",
+          "sessionsCount": 14
+        },
+        {
+          "name": "Ireland",
+          "sessionsCount": 2
+        },
+        {
+          "name": "United States",
+          "sessionsCount": 2
+        }
+      ]
+    },
+    {
+      "metricName": "PageTitle",
+      "information": [
+        {
+          "name": "Home | René van Osnabrugge",
+          "sessionsCount": 7
+        },
+        {
+          "name": "Your AI Roadmap Is Missing a Step: ADKAR | René van Osnabrugge",
+          "sessionsCount": 7
+        },
+        {
+          "name": "Blog | René van Osnabrugge",
+          "sessionsCount": 5
+        },
+        {
+          "name": "Engineering Culture Model | René van Osnabrugge",
+          "sessionsCount": 3
+        },
+        {
+          "name": "Inspiration | René van Osnabrugge",
+          "sessionsCount": 3
+        },
+        {
+          "name": "Presentations & Conferences | René van Osnabrugge",
+          "sessionsCount": 3
+        },
+        {
+          "name": "A culture fit starts with the hiring process | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "ADKAR Change Model | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "ADKAR: A Model for Change in Business, Government and Our Community | René van Osnabrugge",
+          "sessionsCount": 1
+        },
+        {
+          "name": "Don’t Let AI Optimize the Wrong 30% | René van Osnabrugge",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "ReferrerUrl",
+      "information": [
+        {
+          "name": "culture-engineers.nl",
+          "sessionsCount": 7
+        },
+        {
+          "name": "www.linkedin.com",
+          "sessionsCount": 5
+        },
+        {
+          "name": "127.0.0.1",
+          "sessionsCount": 1
+        },
+        {
+          "name": "www.google.com",
+          "sessionsCount": 1
+        }
+      ]
+    },
+    {
+      "metricName": "PopularPages",
+      "information": [
+        {
+          "url": "https://culture-engineers.nl/",
+          "visitsCount": 7
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/10/29/your-ai-roadmap-is-missing-a-step-adkar/",
+          "visitsCount": 7
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/",
+          "visitsCount": 5
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/",
+          "visitsCount": 3
+        },
+        {
+          "url": "https://culture-engineers.nl/inspiration/models/engineering-culture-model/",
+          "visitsCount": 3
+        },
+        {
+          "url": "https://culture-engineers.nl/presentations/",
+          "visitsCount": 3
+        },
+        {
+          "url": "http://127.0.0.1:4000/inspiration/books/adkar/",
+          "visitsCount": 1
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2025/11/26/dont-let-ai-optimize-the-wrong-30/",
+          "visitsCount": 1
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/07/01/welcome-to-culture-engineers/",
+          "visitsCount": 1
+        },
+        {
+          "url": "https://culture-engineers.nl/blog/2026/07/22/using-ai-coding-agents/",
+          "visitsCount": 1
+        }
+      ]
+    }
+  ],
+  "collectedAt": "2026-10-30T06:01:28.2465226Z",
+  "projectId": "xk5gdi38n4"
+}
